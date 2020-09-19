@@ -1,0 +1,77 @@
+<div class="row h-100 align-content-center">
+    <div class="col-12 shadow shadow-lg border border-radius-5">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="p-5">
+                    <form [formGroup]="form" (ngSubmit)="register(form.value)">
+                        <div class="form-group">
+                            <input formControlName="firstName" id="firstName"
+                                class="form-control border-top-0 border-right-0 border-left-0 border-radius-0"
+                                type="text" placeholder="First Name" autocomplete="off"
+                                [ngClass]="{'is-invalid' : submited && form.controls.firstName.invalid}" required />
+                        </div>
+                        <div class="form-group">
+                            <input formControlName="lastName"
+                                class="form-control border-top-0 border-right-0 border-left-0 border-radius-0"
+                                type="text" placeholder="Last Name" autocomplete="off"
+                                [ngClass]="{'is-invalid' : submited && form.controls.lastName.invalid}" required />
+                        </div>
+                        <div class="form-group">
+                            <input formControlName="username"
+                                class="form-control border-top-0 border-right-0 border-left-0 border-radius-0"
+                                type="email" placeholder="Email" autocomplete="off"
+                                [ngClass]="{'is-invalid' : submited && form.controls.username.invalid}" required />
+                        </div>
+                        <div class="form-group">
+                            <input formControlName="password"
+                                class="form-control border-top-0 border-right-0 border-left-0 border-radius-0"
+                                type="password" placeholder="Password"
+                                [ngClass]="{'is-invalid' : submited && form.controls.password.invalid}"
+                                autocomplete="off" required />
+                        </div>
+                        <div class="form-group">
+                            <input formControlName="confirmPassword"
+                                class="form-control border-top-0 border-right-0 border-left-0 border-radius-0"
+                                type="password" placeholder="Confirm password"
+                                [ngClass]="{'is-invalid' : submited && form.controls.confirmPassword.invalid}"
+                                autocomplete="off" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="terms" formControlName="terms" required />
+                            <label for="terms" class="label-agree-term ml-2">I agree all statements in
+                                <a href="#" class="term-service">Terms of service</a>
+                            </label>
+                        </div>
+
+                        <div class="mt-3">
+                            <button [disabled]="!form.value.terms || loading" class="btn btn-primary">
+                                <span *ngIf="loading">
+                                    <i class="fa fa-spin fa-spinner"></i>
+                                </span>
+                                <span *ngIf="!loading">Register</span>
+                            </button>
+                            <a routerLink="/account/login" class="btn btn-link">i'm already member</a>
+                        </div>
+
+                        <div class="alert alert-danger mt-3" *ngIf="alert && alert.return == 300">{{alert.message}}
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="mt-5 px-5">
+                    <h2>Which One Are You?</h2>
+                    <div class="row mt-5">
+                        <div class="col-lg-4 mb-3" *ngFor="let item of roles">
+                            <div class="pointer">
+                                <img [src]="'/assets/images/' + item.name" class="img-thumbnail"
+                                    [ngClass]="{'border-primary': item.active}" (click)="setRole(item)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

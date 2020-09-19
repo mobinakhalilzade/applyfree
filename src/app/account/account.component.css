@@ -1,0 +1,10 @@
+.row.h-100::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 1px;
+    background-color: #fff;
+    width: 100%;
+    z-index: 1;
+}

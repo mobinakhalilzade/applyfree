@@ -1,0 +1,83 @@
+<div class="container py-5" *ngIf="data">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-capitalize position-relative">
+                {{data.title}}
+
+                <div *ngIf="data.status == 4" class="expire border border-danger border-radius-5 h2 p-2 text-danger">
+                    CLOSED
+                </div>
+            </h1>
+            <span class="text-success ml-auto" [hidden]="data.lockBy > 0">
+                <i class="fa fa-lock mr-3"></i>
+                <small>This contract is traceable</small>
+            </span>
+        </div>
+        <div class="col-12 my-5">
+            <p [innerHTML]="data.content"></p>
+        </div>
+        <div class="col-12">
+            <span class="badge badge-primary text-uppercase p-2 ml-1" *ngFor="let item of data.tags">
+                {{item.name}}
+            </span>
+        </div>
+        <div class="col-12 mt-3" *ngIf="data.lockBy > 0">
+            <div class="alert alert-sm alert-warning" *ngIf="!reservedByThisUser">
+                <i class="fa fa-asterisk mr-3"></i>
+                <small>This contract already reserved by another user, find more <a
+                        routerLink="/contracts">contracts</a></small>
+            </div>
+
+            <div class="col-12 mt-3 p-0" *ngIf="reservedByThisUser && data.firstPartyConfirm">
+                <div class="alert alert-success">
+                    Congratulations, you were able to win this contract
+                </div>
+            </div>
+
+            <div class="col-12 mt-3 p-0" *ngIf="reservedByThisUser && !data.firstPartyConfirm">
+                <hr>
+                <p>
+                    If you agree with the first party to the contract, press the key below
+                </p>
+                <button class="btn btn-sm btn-success" (click)="agreement()"
+                    [disabled]="loading || data.secondPartyConfirm">
+                    <span *ngIf="loading">
+                        <i class="fa fa-spin fa-spinner"></i>
+                    </span>
+                    <span *ngIf="!loading">
+                        Continue
+                    </span>
+                </button>
+
+                <span class="ml-3" *ngIf="alert"
+                    [ngClass]="{'text-danger': alert.return > 200, 'text-success': alert.return == 200}">
+                    {{alert.message}}
+                </span>
+
+                <span class="text-success ml-3" *ngIf="!alert && data.secondPartyConfirm">
+                    Please wait until we notify you, to continue ..
+                </span>
+
+            </div>
+        </div>
+        <div class="col-12 mt-3" *ngIf="data.lockBy == 0">
+            <hr>
+            <button class="btn btn-sm btn-success" [disabled]="loading" (click)="confirm()">
+                <span *ngIf="loading">
+                    <i class="fa fa-spin fa-spinner"></i>
+                </span>
+                <span *ngIf="!loading">
+                    I want it
+                </span>
+            </button>
+
+            <span class="text-success ml-3" *ngIf="alert && alert.return == 200">
+                Please check your email to confirm
+            </span>
+
+            <span class="text-danger ml-3" *ngIf="alert && alert.return > 200">
+                {{alert.message}}
+            </span>
+        </div>
+    </div>
+</div>

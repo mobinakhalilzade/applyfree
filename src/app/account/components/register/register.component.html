@@ -1,0 +1,147 @@
+<div class="row h-100 align-content-center bg-white">
+    <div class="col-xl-4 col-lg-5 col-md-8 col-sm-8 col-10 shadow-lg p-5 bg-light mx-auto border-radius-30 bg-duplicate"
+        *ngIf="registerForm">
+        <span class="as-shadow"></span>
+        <span class="bg-copyright"></span>
+        <div class="row">
+            <div class="col-12 ">
+                <div class="row mb-4">
+                    <div class="col-xl-6 col-lg-6 col-md-4 col-sm-4 col-4 mx-auto text-center">
+                        <img src="assets/images/logo.png" class="img-fluid" alt="Applyfree">
+                    </div>
+                </div>
+                <form [formGroup]="form" (ngSubmit)="completeForm(form.value)">
+                    <div class="form-group">
+                        <input formControlName="firstName" id="firstName"
+                            class="form-control bg-transparent border-top-0 border-right-0 border-left-0 border-radius-0"
+                            type="text" placeholder="First Name" autocomplete="off"
+                            [ngClass]="{'is-invalid' : submited && form.controls.firstName.invalid}" required />
+                    </div>
+                    <div class="form-group">
+                        <input formControlName="lastName"
+                            class="form-control bg-transparent border-top-0 border-right-0 border-left-0 border-radius-0"
+                            type="text" placeholder="Last Name" autocomplete="off"
+                            [ngClass]="{'is-invalid' : submited && form.controls.lastName.invalid}" required />
+                    </div>
+                    <div class="form-group">
+                        <input formControlName="username"
+                            class="form-control bg-transparent border-top-0 border-right-0 border-left-0 border-radius-0"
+                            type="email" placeholder="Email" autocomplete="off"
+                            [ngClass]="{'is-invalid' : submited && form.controls.username.invalid}" required />
+                    </div>
+                    <div class="form-group">
+                        <input formControlName="password"
+                            class="form-control bg-transparent border-top-0 border-right-0 border-left-0 border-radius-0"
+                            type="password" placeholder="Password"
+                            [ngClass]="{'is-invalid' : submited && form.controls.password.invalid}" autocomplete="off"
+                            required />
+                    </div>
+                    <div class="form-group">
+                        <input formControlName="confirmPassword"
+                            class="form-control bg-transparent border-top-0 border-right-0 border-left-0 border-radius-0"
+                            type="password" placeholder="Confirm password"
+                            [ngClass]="{'is-invalid' : submited && form.controls.confirmPassword.invalid}"
+                            autocomplete="off" required />
+                    </div>
+                    <div class="form-group">
+                        <div class="dropdown">
+                            <select class="form-control" name="roles">
+                                <option>Select your role</option>
+                                <option value="1">Student</option>
+                                <option value="2">Tutor</option>
+                                <option value="3">Recruiter</option>
+                                <option value="4">Translator</option>
+                                <option value="5">School</option>
+                                <option value="6">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="terms" formControlName="terms" required />
+                        <label for="terms" class="label-agree-term ml-2 text-dark">I agree all statements in
+                            <a href="#" class="term-service">Terms of service</a>
+                        </label>
+                    </div>
+                    <div class="row">
+                        <div
+                            class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-12 text-xl-left text-lg-left text-md-left text-sm-left text-center">
+                            <a routerLink="/login" class="btn btn-link text-muted text-truncate">I'm already member</a>
+                        </div>
+                        <div
+                            class="col-xl-8 col-lg-8 col-md-8 col-sm-7 col-12 text-xl-right text-lg-right text-md-right text-sm-right text-center
+                                 mb-xl-0 mb-lg-0 mb-md-0 mb-sm-0 mb-3 order-xl-last order-lg-last order-md-last order-sm-last order-first">
+                            <button [disabled]="loading"
+                                class="btn btn-orangered border-radius-20 px-xl-4 px-lg-2 px-md-4 px-sm-5 px-1 position-relative btn-custom-1">
+                                <span *ngIf="loading">
+                                    <i class="fa fa-spin fa-spinner"></i>
+                                </span>
+                                <span>Register</span>
+                            </button>
+                            <button class="btn btn-orangered border-radius-full ml-2 position-relative btn-custom-2">
+                                <i class="fa fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- <div class="alert alert-danger mt-3" *ngIf="message">{{message}}</div> -->
+                    <!-- <ng-container *ngIf="errors">
+                        <div class="alert alert-danger mt-3" *ngFor="let item of errors">
+                            {{item}}
+                        </div>
+                    </ng-container> -->
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 h-100" *ngIf="selectRole">
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10">
+                <div class="row my-5">
+                    <div class="col-1 mx-auto text-center">
+                        <img src="assets/images/logo.png" class="img-fluid" alt="Applyfree">
+                    </div>
+                    <div class="col-10 mx-auto text-center mb-3">
+                        <h3 class="pt-5 mt-5 font-weight-normal text-muted">Which one are you?</h3>
+                    </div>
+                    <div class="col-1 mx-auto p-0 text-center">
+                        <button class="btn btn-light rounded-circle shadow-lg text-orangered" (click)="back()">
+                            <i class="fa fa-arrow-left"></i></button>
+                        <b class="mx-1 px-2">Back</b>
+                    </div>
+                </div>
+                <div class="row mx-1">
+                    <div class="card-group mx-auto my-5" >
+                        <div class="card pointer shadow-left border-right-0 border-top-0 border-bottom-0"
+                            *ngFor="let item of roles" (click)="setRole(item);" [ngClass]="{'selected':item.active}">
+                            <img class="mx-auto img-fluid" [src]="item.image" width="100" alt="item.title">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">{{item.name}}</h5>
+                                <small class="card-text text-muted">{{item.description}}</small>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-sm btn-gray-outline mr-2"
+                                    (click)="setRole(item); item.active = true ">{{item.title}}</button>
+                                <i class="fa fa-arrow-right text-muted"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center mt-5 pt-5">
+                        <button [disabled]="!loading" (click)="register()"
+                        class="btn btn-orangered border-radius-20 px-xl-4 px-lg-2 px-md-4 px-sm-5 px-1 position-relative btn-custom-1">
+                        <span *ngIf="!loading">
+                            <i class="fa fa-spin fa-spinner"></i>
+                        </span>
+                        <span>Register</span>
+                    </button>
+                    <button class="btn btn-orangered border-radius-full ml-2 position-relative btn-custom-2">
+                        <i class="fa fa-arrow-right"></i>
+                    </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
