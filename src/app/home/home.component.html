@@ -1,0 +1,225 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 p-0">
+            <div class="bg-orangered">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg py-5">
+                        <a class="navbar-brand text-light" href="#">
+                            <h3>
+                                applyfree
+                            </h3>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav ml-auto mr-5">
+                                <a class="nav-item text-light font-x-large nav-link active ml-3">Home <span
+                                        class="sr-only">(current)</span></a>
+                                <a class="nav-item text-light font-x-large nav-link ml-3">About</a>
+                                <a class="nav-item text-light font-x-large nav-link ml-3"
+                                    routerLink="/contracts">Contracts</a>
+                                <a class="nav-item text-light font-x-large nav-link ml-3">Disabled</a>
+                            </div>
+                        </div>
+                        <div class="float-right">
+                            <button class="btn btn-light btn-link text-dark" routerLink="/login">Login /
+                                Register</button>
+                        </div>
+                    </nav>
+                    <div class="row text-light mt-5">
+                        <div class="col-5">
+                            <h3 class="mb-5">
+                                applyfree
+                            </h3>
+                            <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero,
+                                perferendis! Asperiores
+                                facere maxime numquam quasi vel expedita, obcaecati sequi quaerat voluptas,
+                                exercitationem accusantium cum impedit sed fugiat hic veniam deserunt.</p>
+                            <div class="row">
+                                <div class="col-6 px-0 border-right">
+                                    <button class="btn btn-success px-5 py-3 border-radius-30">Apply free</button>
+                                </div>
+                                <div class="col-6 px-5">
+                                    <p> at sed fugiat hic veniam deserunt</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-7"></div>
+                    </div>
+                    <div class="row my-5 py-5 text-light text-center">
+                        <div class="col-2">
+                            watterloo
+                        </div>
+                        <div class="col-2">
+                            sample
+                        </div>
+                        <div class="col-2">
+                            sample
+                        </div>
+                        <div class="col-2">
+                            sample
+                        </div>
+                        <div class="col-2">
+                            sample
+                        </div>
+                        <div class="col-2">
+                            sample
+                        </div>
+                    </div>
+                    <div class="row my-5 py-5 text-light text-center">
+                        <div class="col-2 border-right ">
+                            watterloo
+                        </div>
+                        <div class="col-2 border-right">
+                            sample
+                        </div>
+                        <div class="col-2 border-right">
+                            sample
+                        </div>
+                        <div class="col-2 border-right">
+                            sample
+                        </div>
+                        <div class="col-2 border-right">
+                            sample
+                        </div>
+                        <div class="col-2">
+                            sample
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <h4>How <span class="text-orangered">applyfree</span> works?</h4>
+                        </div>
+                    </div>
+                    <div class="row my-5 py-5">
+                        <div class="col-7"></div>
+                        <div class="col-5">
+                            <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero,
+                                perferendis! Asperiores
+                                facere maxime numquam quasi vel expedita, obcaecati sequi quaerat voluptas,
+                                exercitationem accusantium cum impedit sed fugiat hic veniam deserunt.
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia, aliquam molestias.
+                                Exercitationem rerum voluptas eveniet illum reiciendis iste ratione, autem, porro harum
+                                laudantium, eos corrupti error itaque! Impedit, provident tenetur.
+                            </p>
+                            <div class="row">
+                                <div class="col-6 px-0 border-right">
+                                    <button class="btn btn-success px-5 py-3 border-radius-30">Join us</button>
+                                </div>
+                                <div class="col-6 px-5">
+                                    <p> at sed fugiat hic veniam deserunt</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid">
+                    <div class="row mx-1">
+                        <div class="col-12">
+                            <div class="card-group mx-auto my-5">
+                                <div class="card mx-3 py-5 px-2 pointer shadow-left border-right-0 border-top-0 border-bottom-0"
+                                    *ngFor="let item of roles">
+                                    <img class="mx-auto img-fluid" [src]="item.image" width="100" alt="item.title">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">{{item.name}}</h5>
+                                        <small class="card-text text-muted">{{item.description}}</small>
+                                    </div>
+                                    <div class="text-center">
+                                        <button class="btn btn-sm btn-gray-outline mr-2">{{item.title}}</button>
+                                        <i class="fa fa-arrow-right text-muted"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-7"></div>
+                        <div class="col-5">
+                            <h3>why applyfree?</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur non magnam obcaecati
+                                impedit blanditiis, suscipit consequatur aspernatur accusantium labore rem corporis
+                                omnis iure provident minus, pariatur nostrum numquam architecto eligendi.</p>
+                            <div class="row">
+                                <div class="col-6 px-0 border-right">
+                                    <button class="btn btn-success px-5 py-3 border-radius-30">Join us</button>
+                                </div>
+                                <div class="col-6 px-5">
+                                    <p> at sed fugiat hic veniam deserunt</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-5">
+                            <h3>why applyfree?</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur non magnam obcaecati
+                                impedit blanditiis, suscipit consequatur aspernatur accusantium labore rem corporis
+                                omnis iure provident minus, pariatur nostrum numquam architecto eligendi.</p>
+                            <div class="row">
+                                <div class="col-6 px-0 border-right">
+                                    <button class="btn btn-success px-5 py-3 border-radius-30">Join us</button>
+                                </div>
+                                <div class="col-6 px-5">
+                                    <p> at sed fugiat hic veniam deserunt</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-7"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                          
+                        </div>
+                        <div class="col-12">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia itaque natus, inventore
+                                cum nulla beatae incidunt sunt earum soluta, a veritatis fugit quidem corporis, voluptas
+                                laboriosam aliquam? Explicabo, consequatur eligendi!</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <h3>Why applyfree is the best</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+
+                        </div>
+                        <div class="col-4">
+
+                        </div>
+                        <div class="col-4">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 px-0">
+                            <!-- img gallery -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="row">
+                <div class="col-12">
+
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>

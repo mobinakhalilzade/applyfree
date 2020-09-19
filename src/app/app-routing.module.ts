@@ -21,6 +21,7 @@ import { ConfirmComponent } from './dashboard/components/confirm/confirm.compone
 import { ReservedComponent } from './dashboard/components/reserved/reserved.component';
 
 //public
+import { HomeComponent } from './home/home.component'
 import { ReportComponent } from "./report/report.component";
 import { ContractListComponent } from "./contract-list/contract-list.component";
 import { ContractComponent } from "./contract/contract.component";
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'register', redirectTo: '/account/signup' },
   // { path: '404', component: PageNotFoundComponent },
   { path: '*', component: PageNotFoundComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'contracts', component: ContractListComponent, },
   { path: 'contract/:id', component: ContractComponent },
   { path: 'search', component: SearchComponent },

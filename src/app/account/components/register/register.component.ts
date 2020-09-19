@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RegisterService } from './register.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import * as countries from 'src/assets/countries.json';
 
 @Component({
   selector: 'app-register',
@@ -19,6 +20,8 @@ export class RegisterComponent implements OnInit {
   registerForm: boolean = true;
   selectRole: boolean;
   command: any = {};
+
+  country: any;
 
   constructor(
     private service: RegisterService,
@@ -87,6 +90,8 @@ export class RegisterComponent implements OnInit {
 
     this.command = {
       username: form.username,
+      country: form.country,
+      city: form.city,
       password: form.password,
       firstName: form.firstName,
       lastName: form.lastName,
@@ -99,10 +104,20 @@ export class RegisterComponent implements OnInit {
     this.form = this.formBuilder.group({
       username: [null, [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
       password: [null, [Validators.required]],
+      country: [null, [Validators.required]],
+      city: [null, [Validators.required]],
       confirmPassword: [null, [Validators.required]],
       firstName: [null, [Validators.required]],
       lastName: [null, [Validators.required]],
       terms: [true, [Validators.required]],
     });
+
+
+
+    this.country = countries['default'];
+
+    console.log(this.country);
+
+
   }
 }

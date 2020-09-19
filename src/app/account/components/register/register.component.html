@@ -11,38 +11,80 @@
                     </div>
                 </div>
                 <form [formGroup]="form" (ngSubmit)="completeForm(form.value)">
-                    <div class="form-group">
-                        <input formControlName="firstName" id="firstName"
-                            class="form-control bg-transparent border-top-0 border-right-0 border-left-0 border-radius-0"
-                            type="text" placeholder="First Name" autocomplete="off"
-                            [ngClass]="{'is-invalid' : submited && form.controls.firstName.invalid}" required />
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <input formControlName="firstName" id="firstName"
+                                    class="form-control bg-transparent border-top-0 border-right-0 border-left-0 border-radius-0"
+                                    type="text" placeholder="First Name" autocomplete="off"
+                                    [ngClass]="{'is-invalid' : submited && form.controls.firstName.invalid}" required />
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <input formControlName="lastName"
+                                    class="form-control bg-transparent border-top-0 border-right-0 border-left-0 border-radius-0"
+                                    type="text" placeholder="Last Name" autocomplete="off"
+                                    [ngClass]="{'is-invalid' : submited && form.controls.lastName.invalid}" required />
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input formControlName="lastName"
-                            class="form-control bg-transparent border-top-0 border-right-0 border-left-0 border-radius-0"
-                            type="text" placeholder="Last Name" autocomplete="off"
-                            [ngClass]="{'is-invalid' : submited && form.controls.lastName.invalid}" required />
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <input formControlName="username"
+                                    class="form-control bg-transparent border-top-0 border-right-0 border-left-0 border-radius-0"
+                                    type="email" placeholder="Email" autocomplete="off"
+                                    [ngClass]="{'is-invalid' : submited && form.controls.username.invalid}" required />
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input formControlName="username"
-                            class="form-control bg-transparent border-top-0 border-right-0 border-left-0 border-radius-0"
-                            type="email" placeholder="Email" autocomplete="off"
-                            [ngClass]="{'is-invalid' : submited && form.controls.username.invalid}" required />
+
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <select formControlName="country">
+                                    <option *ngFor="let item of country" [ngValue]="item.name">
+                                        {{item.name }}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <select formControlName="city">
+                                    <option *ngFor="let item of country.states" [ngValue]="item.name">
+                                        {{ item.name }}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input formControlName="password"
-                            class="form-control bg-transparent border-top-0 border-right-0 border-left-0 border-radius-0"
-                            type="password" placeholder="Password"
-                            [ngClass]="{'is-invalid' : submited && form.controls.password.invalid}" autocomplete="off"
-                            required />
+
+
+
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <input formControlName="password"
+                                    class="form-control bg-transparent border-top-0 border-right-0 border-left-0 border-radius-0"
+                                    type="password" placeholder="Password"
+                                    [ngClass]="{'is-invalid' : submited && form.controls.password.invalid}"
+                                    autocomplete="off" required />
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <input formControlName="confirmPassword"
+                                    class="form-control bg-transparent border-top-0 border-right-0 border-left-0 border-radius-0"
+                                    type="password" placeholder="Confirm password"
+                                    [ngClass]="{'is-invalid' : submited && form.controls.confirmPassword.invalid}"
+                                    autocomplete="off" required />
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input formControlName="confirmPassword"
-                            class="form-control bg-transparent border-top-0 border-right-0 border-left-0 border-radius-0"
-                            type="password" placeholder="Confirm password"
-                            [ngClass]="{'is-invalid' : submited && form.controls.confirmPassword.invalid}"
-                            autocomplete="off" required />
-                    </div>
+
+
                     <div class="form-group">
                         <div class="dropdown">
                             <select class="form-control" name="roles">
@@ -110,7 +152,7 @@
                     </div>
                 </div>
                 <div class="row mx-1">
-                    <div class="card-group mx-auto my-5" >
+                    <div class="card-group mx-auto my-5">
                         <div class="card pointer shadow-left border-right-0 border-top-0 border-bottom-0"
                             *ngFor="let item of roles" (click)="setRole(item);" [ngClass]="{'selected':item.active}">
                             <img class="mx-auto img-fluid" [src]="item.image" width="100" alt="item.title">
@@ -129,15 +171,15 @@
                 <div class="row">
                     <div class="col-12 text-center mt-5 pt-5">
                         <button [disabled]="!loading" (click)="register()"
-                        class="btn btn-orangered border-radius-20 px-xl-4 px-lg-2 px-md-4 px-sm-5 px-1 position-relative btn-custom-1">
-                        <span *ngIf="!loading">
-                            <i class="fa fa-spin fa-spinner"></i>
-                        </span>
-                        <span>Register</span>
-                    </button>
-                    <button class="btn btn-orangered border-radius-full ml-2 position-relative btn-custom-2">
-                        <i class="fa fa-arrow-right"></i>
-                    </button>
+                            class="btn btn-orangered border-radius-20 px-xl-4 px-lg-2 px-md-4 px-sm-5 px-1 position-relative btn-custom-1">
+                            <span *ngIf="!loading">
+                                <i class="fa fa-spin fa-spinner"></i>
+                            </span>
+                            <span>Register</span>
+                        </button>
+                        <button class="btn btn-orangered border-radius-full ml-2 position-relative btn-custom-2">
+                            <i class="fa fa-arrow-right"></i>
+                        </button>
                     </div>
                 </div>
             </div>

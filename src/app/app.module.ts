@@ -28,6 +28,7 @@ import { SignatureComponent } from './dashboard/components/signatures/components
 import { ConfirmComponent } from './dashboard/components/confirm/confirm.component';
 import { ReservedComponent } from './dashboard/components/reserved/reserved.component';
 import { StatusPipe } from './pipes/status.pipe';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { StatusPipe } from './pipes/status.pipe';
     SignatureComponent,
     ConfirmComponent,
     ReservedComponent,
-    StatusPipe
+    StatusPipe,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
