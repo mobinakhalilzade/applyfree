@@ -10,6 +10,7 @@ import * as countries from 'src/assets/countries.json';
 })
 export class RegisterComponent implements OnInit {
   form: FormGroup;
+  countries = countries['default'];
   roleId: number = 1;
   alert: any = {
     message: null,
@@ -18,16 +19,6 @@ export class RegisterComponent implements OnInit {
   submited: boolean;
   loading: boolean;
   registerForm: boolean = true;
-  selectRole: boolean;
-  command: any = {};
-
-  country: any;
-
-  constructor(
-    private service: RegisterService,
-    private formBuilder: FormBuilder) {
-  }
-
   roles = [
     { image: 'assets/images/student.png', id: 1, active: false, name: 'Student', title: 'Im student', description: 'some thing like lorem ipsum' },
     { image: 'assets/images/tutor.png', id: 2, active: false, name: 'Tutor', title: 'Im tutor', description: 'some thing like lorem ipsum' },
@@ -37,9 +28,9 @@ export class RegisterComponent implements OnInit {
     { image: 'assets/images/other.png', id: 6, active: false, name: 'Other', title: 'Im other', description: 'some thing like lorem ipsum' }
   ]
 
-  back() {
-    this.registerForm = true;
-    this.selectRole = false;
+  constructor(
+    private service: RegisterService,
+    private formBuilder: FormBuilder) {
   }
 
   setRole(item: any) {
@@ -53,71 +44,52 @@ export class RegisterComponent implements OnInit {
 
   gerError() { return this.form.controls; }
 
-  register() {
-    this.command.role = this.roleId;
-    this.service.register(this.command).subscribe((response: any) => {
-      if (response.status == 200) {
-        const data = response.body;
+  register(form: any) {
+    console.log(form);
 
-        if (data.return == 200) {
-          localStorage.setItem('token', data.token);
-          window.location.href = "/dashboard";
-        }
-
-        if (data.return == 300) {
-          this.loading = false;
-          this.alert = data;
-        }
-      }
-    });
-  }
-
-  completeForm(form: any) {
-    this.submited = true;
-    if (form.firstName == '' || form.firstName == null) {
-      this.form.controls.firstName.setErrors({ 'incorrect': true });
-      return;
-    }
-
-    if (form.confirmPassword !== form.password) {
-      this.form.controls.confirmPassword.setErrors({ 'incorrect': true });
-      return;
-    }
-
-    this.loading = true;
-    this.registerForm = false;
-    this.selectRole = true;
-
-    this.command = {
+    const command = {
       username: form.username,
       country: form.country,
       city: form.city,
       password: form.password,
       firstName: form.firstName,
       lastName: form.lastName,
+      role: this.roleId,
       image: "avatar.jpg"
     };
 
+    console.log(command);
+
+    // this.service.register(command).subscribe((response: any) => {
+    //   if (response.status == 200) {
+    //     const data = response.body;
+
+    //     if (data.return == 200) {
+    //       localStorage.setItem('token', data.token);
+    //       window.location.href = "/dashboard";
+    //     }
+
+    //     if (data.return == 300) {
+    //       this.loading = false;
+    //       this.alert = data;
+    //     }
+    //   }
+    // });
   }
 
   ngOnInit(): void {
+    const defaultCountry = this.countries.find(x => x.code2 == 'US');
+
     this.form = this.formBuilder.group({
       username: [null, [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
       password: [null, [Validators.required]],
-      country: [null, [Validators.required]],
+      country: [defaultCountry, [Validators.required]],
       city: [null, [Validators.required]],
       confirmPassword: [null, [Validators.required]],
       firstName: [null, [Validators.required]],
       lastName: [null, [Validators.required]],
       terms: [true, [Validators.required]],
     });
-
-
-
-    this.country = countries['default'];
-
-    console.log(this.country);
-
 
   }
 }
