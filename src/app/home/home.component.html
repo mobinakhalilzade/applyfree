@@ -1,6 +1,17 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 p-0">
+            <!-- <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 1805"
+                style="enable-background:new 0 0 1920 1805;" xml:space="preserve">
+
+                <image style="overflow:visible;" width="1920" height="1816" xlink:href="assets/images/back-header.png"
+                    transform="matrix(1 0 0 1 0 -6)">
+                </image>
+                <text fill="#ffffff" font-size="45px" z-index="999" x="50" y="86">
+                    testtt
+                </text>
+            </svg> -->
             <div class="bg-orangered">
                 <div class="container">
                     <nav class="navbar navbar-expand-lg py-5">
@@ -91,16 +102,18 @@
                     </div>
                 </div>
             </div>
-            <div class="main">
-                <div class="container">
+            <div class="container-fluid">
+                <div class="main">
                     <div class="row">
                         <div class="col-12 text-center">
                             <h4>How <span class="text-orangered">applyfree</span> works?</h4>
                         </div>
                     </div>
-                    <div class="row my-5 py-5">
-                        <div class="col-7"></div>
-                        <div class="col-5">
+                    <div class="row mx-5 justify-content-center">
+                        <div class="col-6">
+                            <img src="assets/images/landing-1.png" alt="landing-1" class="img-fluid">
+                        </div>
+                        <div class="col-4 my-auto px-5">
                             <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero,
                                 perferendis! Asperiores
                                 facere maxime numquam quasi vel expedita, obcaecati sequi quaerat voluptas,
@@ -108,60 +121,83 @@
                                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia, aliquam molestias.
                                 Exercitationem rerum voluptas eveniet illum reiciendis iste ratione, autem, porro harum
                                 laudantium, eos corrupti error itaque! Impedit, provident tenetur.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non totam laboriosam dolor,
+                                consequuntur accusantium maiores, dolores omnis iusto commodi est quam repudiandae
+                                accusamus ducimus. Incidunt nostrum magni odit illum praesentium.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque facere molestiae earum,
+                                dolore blanditiis praesentium temporibus ratione eveniet rerum cum tempora quas
+                                dignissimos in consequuntur, placeat, hic magnam est amet.
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores praesentium nemo
+                                facilis aliquam mollitia sapiente laboriosam itaque modi ab corporis esse tempore natus,
+                                excepturi perferendis debitis ad unde rem quidem!
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse ipsa id rem dolorum
                             </p>
                             <div class="row">
-                                <div class="col-6 px-0 border-right">
+                                <div class="col-6 px-0  border-right text-center">
                                     <button class="btn btn-success px-5 py-3 border-radius-30">Join us</button>
                                 </div>
-                                <div class="col-6 px-5">
+                                <div class="col-6 px-5 my-auto text-center">
                                     <p> at sed fugiat hic veniam deserunt</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="container-fluid">
                     <div class="row mx-1">
                         <div class="col-12">
                             <div class="card-group mx-auto my-5">
-                                <div class="card mx-3 py-5 px-2 pointer shadow-left border-right-0 border-top-0 border-bottom-0"
-                                    *ngFor="let item of roles">
-                                    <img class="mx-auto img-fluid" [src]="item.image" width="100" alt="item.title">
-                                    <div class="card-body text-center">
+                                <div class="card mx-3 border-0 bg-transparent" *ngFor="let item of roles">
+                                    <div
+                                        class="card-body text-center py-5 px-2 pointer shadow-lg border-radius-30 bg-light">
+                                        <img class="mx-auto img-fluid" [src]="item.image" width="100" alt="item.title">
                                         <h5 class="card-title">{{item.name}}</h5>
                                         <small class="card-text text-muted">{{item.description}}</small>
+                                        <div class="mt-4">
+                                            <button class="btn btn-sm btn-gray-outline mr-2">{{item.title}}</button>
+                                            <i class="fa fa-arrow-right text-muted"></i>
+                                        </div>
                                     </div>
-                                    <div class="text-center">
-                                        <button class="btn btn-sm btn-gray-outline mr-2">{{item.title}}</button>
-                                        <i class="fa fa-arrow-right text-muted"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-7"></div>
-                        <div class="col-5">
-                            <h3>why applyfree?</h3>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur non magnam obcaecati
-                                impedit blanditiis, suscipit consequatur aspernatur accusantium labore rem corporis
-                                omnis iure provident minus, pariatur nostrum numquam architecto eligendi.</p>
-                            <div class="row">
-                                <div class="col-6 px-0 border-right">
-                                    <button class="btn btn-success px-5 py-3 border-radius-30">Join us</button>
-                                </div>
-                                <div class="col-6 px-5">
-                                    <p> at sed fugiat hic veniam deserunt</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div class="row mx-5 justify-content-center">
+                        <div class="col-4 my-auto pl-5 pr-0">
+                            <h3>why applyfree?</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur non magnam obcaecati
+                                perferendis! Asperiores
+                                facere maxime numquam quasi vel expedita, obcaecati sequi quaerat voluptas,
+                                exercitationem accusantium cum impedit sed fugiat hic veniam deserunt.
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia, aliquam molestias.
+                                Exercitationem rerum voluptas eveniet illum reiciendis iste ratione, autem, porro harum
+                                laudantium, eos corrupti error itaque! Impedit, provident tenetur.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non totam laboriosam dolor,
+                                consequuntur accusantium maiores, dolores omnis iusto commodi est quam repudiandae
+                                accusamus ducimus. Incidunt nostrum magni odit illum praesentium.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque facere molestiae earum,
+                                dolore blanditiis praesentium temporibus ratione eveniet rerum cum tempora quas
+                                dignissimos in consequuntur, placeat, hic magnam est amet.
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores praesentium nemo
+                                facilis aliquam mollitia sapiente laboriosam itaque modi ab corporis esse tempore natus,
+                                excepturi perferendis debitis ad unde rem quidem!
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse ipsa id rem dolorum</p>
+                            <div class="row">
+                                <div class="col-12">
+                                    <button class="btn btn-success px-5 py-3 border-radius-30">Join us</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 pl-0">
+                            <img src="assets/images/landing-2.png" alt="landing-2" class="img-fluid">
+                        </div>
+                    </div>
+
+                    <div class="row mx-5 justify-content-center">
                         <div class="col-5">
+                            <img src="assets/images/landing-3.png" alt="landing-3" class="img-fluid">
+                        </div>
+                        <div class="col-4 my-auto px-5">
                             <h3>why applyfree?</h3>
                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur non magnam obcaecati
                                 impedit blanditiis, suscipit consequatur aspernatur accusantium labore rem corporis
@@ -175,37 +211,33 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-7"></div>
+                     
                     </div>
-                    <div class="row">
-                        <div class="col-12">
-                          
-                        </div>
-                        <div class="col-12">
+                    <div class="row justify-content-center">
+                        <div class="col-5">
+                            <img src="assets/images/landing-4.png" alt="landing-4" class="img-fluid">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia itaque natus, inventore
                                 cum nulla beatae incidunt sunt earum soluta, a veritatis fugit quidem corporis, voluptas
                                 laboriosam aliquam? Explicabo, consequatur eligendi!</p>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row my-5 py-5">
                         <div class="col-12 text-center">
                             <h3>Why applyfree is the best</h3>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-4">
-
+                    <div class="container row mx-auto">
+                        <div class="col-4 text-center">
+                            <img src="assets/images/money.png" alt="" width="30%" class="img-fluid">
                         </div>
-                        <div class="col-4">
-
+                        <div class="col-4 text-center">
+                            <img src="assets/images/diamond.png" alt="" width="30%" class="img-fluid">
                         </div>
-                        <div class="col-4">
-
+                        <div class="col-4 text-center">
+                            <img src="assets/images/target.png" alt="" width="30%" class="img-fluid">
                         </div>
                     </div>
-                </div>
 
-                <div class="container-fluid">
                     <div class="row">
                         <div class="col-12 px-0">
                             <!-- img gallery -->
@@ -215,11 +247,7 @@
             </div>
         </div>
         <footer>
-            <div class="row">
-                <div class="col-12">
-
-                </div>
-            </div>
+            <img src="assets/images/back-footer.png" width="100%" alt="">
         </footer>
     </div>
 </div>

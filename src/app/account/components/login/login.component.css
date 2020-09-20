@@ -132,8 +132,8 @@ span.as-shadow::after {
 .bg-copyright::before{
     content:"applyfree \00A9 copyright 2020";
     position: absolute;
-    bottom: 1%;
-    left: -51%;
+    bottom: -21%;
+    left: 28%;
     color: var(--white);
     font-size: 1.2rem;
 }

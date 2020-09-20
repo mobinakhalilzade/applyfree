@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "link": "/dashboard/contracts",
+        "name": "My contracts",
+        "menus": [
+            {
+                "title": "test",
+                "link": "/dashboard/contracts/test"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "link": "/dashboard/reserved",
+        "name": "My reserved contracts",
+        "menus": [
+            {
+                "title": "lorem",
+                "link": "/dashboard/reserved/lorem"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "link": "/dashboard/signatures",
+        "name": "My signatures",
+        "menus": [
+            {
+                "title": "ipsum",
+                "link": "/dashboard/signatures/ipsum"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "link": "/dashboard/bookmarks",
+        "name": "My bookmarks",
+        "menus": [
+            {
+                "title": "angular",
+                "link": "/dashboard/bookmarks/angular"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "link": "/dashboard/payments",
+        "name": "My payments",
+        "menus": [
+            {
+                "title": "temp",
+                "link": "/dashboard/payments/temp"
+            }
+        ]
+    }
+]

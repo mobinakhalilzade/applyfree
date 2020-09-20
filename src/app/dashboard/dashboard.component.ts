@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DashboardService } from "./dashboard.service";
+import * as menu from 'src/assets/menu.json';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -9,7 +10,18 @@ import { DashboardService } from "./dashboard.service";
 export class DashboardComponent implements OnInit {
   isAuth: boolean = true;
   user: any;
+  menus = menu['default'];
+  subMenus: any[] = this.menus[0]['menus'];
+
   constructor(public router: Router, private service: DashboardService) { }
+
+  logout() {
+    this.service.logout().subscribe((response: any) => {
+      console.log(response);
+      localStorage.removeItem('token');
+      this.router.navigate(['account/login']);
+    });
+  }
 
   profile() {
     this.service.profile().subscribe((response: any) => {

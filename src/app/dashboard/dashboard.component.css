@@ -1,0 +1,25 @@
+.nav-item .nav-link{
+    color:#fff;
+}
+
+.active{
+    background-color: #fff;
+    color:#000 !important;
+}
+
+.active-light{
+    background-color:var(--orangelight);
+}
+
+.active-light:hover{
+    background-color:var(--orangelight);
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color:var(--white);
+}

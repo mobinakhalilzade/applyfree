@@ -71,4 +71,8 @@ export class DashboardService {
     pay(data: any) {
         return this.http.writeApi.post('pay', data);
     }
+
+    logout(){
+        return this.http.writeApi.post('logout');
+    }
 }

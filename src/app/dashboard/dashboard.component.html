@@ -1,33 +1,70 @@
-<div class="container h-100" *ngIf="user">
-    <div class="row h-100">
-        <div class="col-12">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-                <a class="navbar-brand" routerLinkActive="active" routerLink="/dashboard">{{user.firstName}} {{user.lastName}}</a>
+<div class="container-fluid h-100" *ngIf="user">
+    <div class="row">
+        <div class="col-12 px-0 bg-orangered">
+            <nav class="container navbar navbar-expand-lg pt-4 pb-0">
+                <!-- <a class="navbar-brand text-light" href="#">
+                    <img src="assets/images/logo-header.png" width="70" height="70" alt="applyfree">
+                </a> -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" routerLinkActive="active" routerLink="/dashboard/contracts">My contracts</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" routerLinkActive="active" routerLink="/dashboard/reserved">My reserved contracts</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" routerLinkActive="active" routerLink="/dashboard/signatures">My signatures</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" routerLinkActive="active" routerLink="/dashboard/bookmarks">My bookmarks</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" routerLinkActive="active" routerLink="/dashboard/payments">Payments</a>
+                    <ul class="navbar-nav mt-2 mt-lg-0">
+                        <li class="nav-item mr-2" *ngFor="let item of menus">
+                            <a class="nav-link py-3 border-radius-x-5"
+                                routerLinkActive="active" [routerLink]="item.link" (click)="subMenus = item.menus">
+                                {{item.name}}
+                            </a>
                         </li>
                     </ul>
+                    <div class="text-light ml-auto">
+                        <i class="fa fa-envelope"></i>
+                        <i class="fa fa-sign-out-alt ml-3" alt="logout" (click)="logout()"></i>
+                        <i class="fa fa-user mx-3 mb-2"></i>
+                        <a class="text-light" routerLink="/dashboard">Hi {{user.firstName}} {{user.lastName}}</a>
+                    </div>
                 </div>
             </nav>
-            <router-outlet></router-outlet>
+        </div>
+    </div>
+
+    <div class="row shadow">
+        <div class="col-12 px-0 bg-white">
+            <nav class="container navbar navbar-expand-lg">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item mr-2" *ngFor="let item of subMenus">
+                        <a class="nav-link text-dark border-radius-5 active" [routerLink]="item.link">
+                            {{item.title}}
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+
+    <div class="footer shadow">
+        <div class="container">
+            <div class="mt-2 py-1">
+                <span class="float-left text-muted">
+                    2020 applyfree
+                </span>
+                <span class="float-right text-muted">
+                    <span class="border-right border-dark px-2">
+                        About
+                    </span>
+                    <span class="border-right border-dark ml-2 px-2">
+                        Team
+                    </span>
+                    <span class="ml-2 pl-1">
+                        Contact
+                    </span>
+                </span>
+            </div>
         </div>
     </div>
 </div>

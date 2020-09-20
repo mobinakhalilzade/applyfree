@@ -1,0 +1,19 @@
+.card{
+    transition: transform 0.3s;
+}
+.row.dropdown{
+    display: none;
+}
+
+.card:hover {
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1); 
+}
+  
+ .card:hover  button.btn-gray-outline{
+    background-color: var(--orangered);
+    border-color: var(--orangered);
+    border-style: dashed;
+    color: var(--white);
+}
