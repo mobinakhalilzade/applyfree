@@ -29,6 +29,11 @@ import { ConfirmComponent } from './dashboard/components/confirm/confirm.compone
 import { ReservedComponent } from './dashboard/components/reserved/reserved.component';
 import { StatusPipe } from './pipes/status.pipe';
 import { HomeComponent } from './home/home.component';
+import { PagesComponent } from './pages/pages.component';
+import { AboutusComponent } from './pages/components/aboutus/aboutus.component';
+import { ContactusComponent } from './pages/components/contactus/contactus.component';
+import { TermsComponent } from './pages/components/terms/terms.component';
+import { PolicyComponent } from './pages/components/policy/policy.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +61,12 @@ import { HomeComponent } from './home/home.component';
     ConfirmComponent,
     ReservedComponent,
     StatusPipe,
-    HomeComponent
+    HomeComponent,
+    PagesComponent,
+    AboutusComponent,
+    ContactusComponent,
+    TermsComponent,
+    PolicyComponent
   ],
   imports: [
     BrowserModule,

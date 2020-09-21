@@ -28,26 +28,19 @@ import { ContractComponent } from "./contract/contract.component";
 import { SearchComponent } from "./search/search.component";
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
+//static pages
+import{PagesComponent} from './pages/pages.component';
+import { TermsComponent } from './pages/components/terms/terms.component';
+import { AboutusComponent } from './pages/components/aboutus/aboutus.component';
+import { ContactusComponent } from './pages/components/contactus/contactus.component';
+import { PolicyComponent } from './pages/components/policy/policy.component';
+
 const routes: Routes = [
-  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
   { path: 'login', redirectTo: '/account/login' },
   { path: 'register', redirectTo: '/account/signup' },
-  // { path: '404', component: PageNotFoundComponent },
-  { path: '*', component: PageNotFoundComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'contracts', component: ContractListComponent, },
-  { path: 'contract/:id', component: ContractComponent },
-  { path: 'search', component: SearchComponent },
-  { path: 'report', component: ReportComponent },
-  {
-    path: 'account', component: AccountComponent,
-    children: [
-      { path: 'login', component: LoginComponent },
-      { path: 'signup', component: RegisterComponent },
-      { path: 'forgot', component: ForgotComponent },
-      { path: 'password/:token', component: PasswordComponent },
-    ]
-  },
+
   {
     path: 'dashboard', component: DashboardComponent,
     children: [
@@ -70,6 +63,36 @@ const routes: Routes = [
       { path: 'payments', component: PaymentsComponent },
     ]
   },
+
+  {
+    path: 'account', component: AccountComponent,
+    children: [
+      { path: 'login', component: LoginComponent },
+      { path: 'signup', component: RegisterComponent },
+      { path: 'forgot', component: ForgotComponent },
+      { path: 'password/:token', component: PasswordComponent },
+    ]
+  },
+
+  {
+    path: 'pages', component: PagesComponent,
+    children: [
+      { path: 'aboutus', component: AboutusComponent },
+      { path: 'contactus', component: ContactusComponent },
+      { path: 'terms', component: TermsComponent },
+      { path: 'policy', component: PolicyComponent }
+    ]
+  },
+
+  { path: 'contracts', component: ContractListComponent, },
+  { path: 'contract/:id', component: ContractComponent },
+  { path: 'search', component: SearchComponent },
+  { path: 'report', component: ReportComponent },
+
+
+  { path: '**', redirectTo: '/404', pathMatch: 'full' },
+  { path: '404', component: PageNotFoundComponent },
+
 ];
 
 @NgModule({

@@ -1,18 +1,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 p-0">
-            <!-- <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 1805"
-                style="enable-background:new 0 0 1920 1805;" xml:space="preserve">
-
-                <image style="overflow:visible;" width="1920" height="1816" xlink:href="assets/images/back-header.png"
-                    transform="matrix(1 0 0 1 0 -6)">
-                </image>
-                <text fill="#ffffff" font-size="45px" z-index="999" x="50" y="86">
-                    testtt
-                </text>
-            </svg> -->
-            <div class="bg-orangered">
+            <div class="header">
                 <div class="container">
                     <nav class="navbar navbar-expand-lg py-5">
                         <a class="navbar-brand text-light" href="#">
@@ -27,28 +16,47 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <div class="navbar-nav ml-auto mr-5">
-                                <a class="nav-item text-light font-x-large nav-link active ml-3">Home <span
+                                <a class="nav-item text-light  nav-link active ml-3">Home<span
                                         class="sr-only">(current)</span></a>
-                                <a class="nav-item text-light font-x-large nav-link ml-3">About</a>
-                                <a class="nav-item text-light font-x-large nav-link ml-3"
-                                    routerLink="/contracts">Contracts</a>
-                                <a class="nav-item text-light font-x-large nav-link ml-3">Disabled</a>
+                                <a class="nav-item text-light  nav-link ml-3" routerLink="/contracts">Contracts</a>
+                                <a class="nav-item text-light nav-link ml-3" routerLink="/pages/contactus">Contact us</a>
+                                <a class="nav-item text-light  nav-link ml-3" routerLink="/pages/aboutus">About us</a>
+                                <!-- <a class="nav-item text-light  nav-link ml-3" routerLink="/terms">Terms</a>
+                                <a class="nav-item text-light  nav-link ml-3"
+                                    routerLink="/policy">Policy</a> -->
                             </div>
                         </div>
                         <div class="float-right">
-                            <button class="btn btn-light btn-link text-dark" routerLink="/login">Login /
-                                Register</button>
+                            <button
+                                class="btn btn-light border-radius-20 px-lg-4 px-md-5 px-sm-5 px-4 position-relative btn-custom-1"
+                                routerLink="/login">
+                                <span>Log in | Register</span>
+                            </button>
+                            <button class="btn btn-light border-radius-full ml-2 position-relative btn-custom-2"
+                                routerLink="/login">
+                                <span>
+                                    <i class="fa fa-arrow-right"></i>
+                                </span>
+                            </button>
                         </div>
                     </nav>
                     <div class="row text-light mt-5">
                         <div class="col-5">
-                            <h3 class="mb-5">
-                                applyfree
-                            </h3>
-                            <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero,
-                                perferendis! Asperiores
-                                facere maxime numquam quasi vel expedita, obcaecati sequi quaerat voluptas,
-                                exercitationem accusantium cum impedit sed fugiat hic veniam deserunt.</p>
+                            <div class="mb-4 ml-3">
+                                <h1>applyfree</h1>
+                                <small class="text-light">Free education for students</small>
+                            </div>
+                            <p class="mb-5">
+                                applyfree helps students and their parents find meaningful information beneficial to
+                                their education path. Before applyfree, each student had to do extensive research and in
+                                most cases a purposeless loop of googling with a lot of irrelevant - and in some cases
+                                wrong - information awaiting them. Since applyfree, the whole research process has
+                                turned into a meaningful search of available "contracts" that predict real meaningful
+                                actions. But who provides these contracts? applyfree's search engine is fueled by
+                                offerings from one of these groups: 1. school admins, 2. student recruiters and
+                                consultants, 3. tutors and private teachers or 4. translators from anywhere in the
+                                world.
+                            </p>
                             <div class="row">
                                 <div class="col-6 px-0 border-right">
                                     <button class="btn btn-success px-5 py-3 border-radius-30">Apply free</button>
@@ -58,26 +66,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-7"></div>
-                    </div>
-                    <div class="row my-5 py-5 text-light text-center">
-                        <div class="col-2">
-                            watterloo
-                        </div>
-                        <div class="col-2">
-                            sample
-                        </div>
-                        <div class="col-2">
-                            sample
-                        </div>
-                        <div class="col-2">
-                            sample
-                        </div>
-                        <div class="col-2">
-                            sample
-                        </div>
-                        <div class="col-2">
-                            sample
+                        <div class="col-7">
+                            <img src="assets/images/header-landing.png" alt="applyfree" class="img-fluid">
                         </div>
                     </div>
                     <div class="row my-5 py-5 text-light text-center">
@@ -106,7 +96,7 @@
                 <div class="main">
                     <div class="row">
                         <div class="col-12 text-center">
-                            <h4>How <span class="text-orangered">applyfree</span> works?</h4>
+                            <h4>How <span class="text-orangered">applyfree</span> is being used?</h4>
                         </div>
                     </div>
                     <div class="row mx-5 justify-content-center">
@@ -114,23 +104,12 @@
                             <img src="assets/images/landing-1.png" alt="landing-1" class="img-fluid">
                         </div>
                         <div class="col-4 my-auto px-5">
-                            <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero,
-                                perferendis! Asperiores
-                                facere maxime numquam quasi vel expedita, obcaecati sequi quaerat voluptas,
-                                exercitationem accusantium cum impedit sed fugiat hic veniam deserunt.
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia, aliquam molestias.
-                                Exercitationem rerum voluptas eveniet illum reiciendis iste ratione, autem, porro harum
-                                laudantium, eos corrupti error itaque! Impedit, provident tenetur.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non totam laboriosam dolor,
-                                consequuntur accusantium maiores, dolores omnis iusto commodi est quam repudiandae
-                                accusamus ducimus. Incidunt nostrum magni odit illum praesentium.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque facere molestiae earum,
-                                dolore blanditiis praesentium temporibus ratione eveniet rerum cum tempora quas
-                                dignissimos in consequuntur, placeat, hic magnam est amet.
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores praesentium nemo
-                                facilis aliquam mollitia sapiente laboriosam itaque modi ab corporis esse tempore natus,
-                                excepturi perferendis debitis ad unde rem quidem!
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse ipsa id rem dolorum
+                            <p class="mb-5">applyfree is being used to search for education specific offerings. On the
+                                other hand, it is being used to create and publish searchable offerings as contracts.
+                                You can enter any contract as the second party when you find it. After finding the right
+                                contract for you, you're free to contact the first party in order to negotiate, bargain
+                                and communicate whatever you like. At the end, if the first party, the user who has
+                                created the contract, agrees to work with you, you'll have a deal.
                             </p>
                             <div class="row">
                                 <div class="col-6 px-0  border-right text-center">
@@ -143,45 +122,20 @@
                         </div>
                     </div>
 
-                    <div class="row mx-1">
-                        <div class="col-12">
-                            <div class="card-group mx-auto my-5">
-                                <div class="card mx-3 border-0 bg-transparent" *ngFor="let item of roles">
-                                    <div
-                                        class="card-body text-center py-5 px-2 pointer shadow-lg border-radius-30 bg-light">
-                                        <img class="mx-auto img-fluid" [src]="item.image" width="100" alt="item.title">
-                                        <h5 class="card-title">{{item.name}}</h5>
-                                        <small class="card-text text-muted">{{item.description}}</small>
-                                        <div class="mt-4">
-                                            <button class="btn btn-sm btn-gray-outline mr-2">{{item.title}}</button>
-                                            <i class="fa fa-arrow-right text-muted"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="row mx-5 justify-content-center">
                         <div class="col-4 my-auto pl-5 pr-0">
-                            <h3>why applyfree?</h3>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur non magnam obcaecati
-                                perferendis! Asperiores
-                                facere maxime numquam quasi vel expedita, obcaecati sequi quaerat voluptas,
-                                exercitationem accusantium cum impedit sed fugiat hic veniam deserunt.
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia, aliquam molestias.
-                                Exercitationem rerum voluptas eveniet illum reiciendis iste ratione, autem, porro harum
-                                laudantium, eos corrupti error itaque! Impedit, provident tenetur.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non totam laboriosam dolor,
-                                consequuntur accusantium maiores, dolores omnis iusto commodi est quam repudiandae
-                                accusamus ducimus. Incidunt nostrum magni odit illum praesentium.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque facere molestiae earum,
-                                dolore blanditiis praesentium temporibus ratione eveniet rerum cum tempora quas
-                                dignissimos in consequuntur, placeat, hic magnam est amet.
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores praesentium nemo
-                                facilis aliquam mollitia sapiente laboriosam itaque modi ab corporis esse tempore natus,
-                                excepturi perferendis debitis ad unde rem quidem!
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse ipsa id rem dolorum</p>
+                            <h3>Why applyfree?</h3>
+                            <p>applyfree's information is relevant, real and serious. Promotional content is not part of
+                                our search algorithms. When you search within applyfree, you actually search for
+                                promises that will most likely happen.
+                                applyfree is on a mission to make free education available to everyone. By using our
+                                service, you are helping us in this mission.
+                                In applyfree, you can enter a deal, close the contract and export (i.e. print) your
+                                version with both parties' signatures on it, all from your home. With your contract in
+                                hand, you are able to seek those signed promises outside.
+                                In applyfree, enterprises can build trust. As an enterprise, the history of your good
+                                works will be available to anyone who wants to decide to do business with you.
+                                In applyfree, you engage with real people with real, clear intentions.</p>
                             <div class="row">
                                 <div class="col-12">
                                     <button class="btn btn-success px-5 py-3 border-radius-30">Join us</button>
@@ -198,10 +152,10 @@
                             <img src="assets/images/landing-3.png" alt="landing-3" class="img-fluid">
                         </div>
                         <div class="col-4 my-auto px-5">
-                            <h3>why applyfree?</h3>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur non magnam obcaecati
-                                impedit blanditiis, suscipit consequatur aspernatur accusantium labore rem corporis
-                                omnis iure provident minus, pariatur nostrum numquam architecto eligendi.</p>
+                            <h3>What happens in applyfree?</h3>
+                            <p>In applyfree, you can enter a deal, close the contract and export (i.e. print) your
+                                version with both parties' signatures on it, all from your home. With your contract in
+                                hand, you are able to seek those signed promises outside.</p>
                             <div class="row">
                                 <div class="col-6 px-0 border-right">
                                     <button class="btn btn-success px-5 py-3 border-radius-30">Join us</button>
@@ -211,14 +165,15 @@
                                 </div>
                             </div>
                         </div>
-                     
+
                     </div>
                     <div class="row justify-content-center">
                         <div class="col-5">
                             <img src="assets/images/landing-4.png" alt="landing-4" class="img-fluid">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia itaque natus, inventore
-                                cum nulla beatae incidunt sunt earum soluta, a veritatis fugit quidem corporis, voluptas
-                                laboriosam aliquam? Explicabo, consequatur eligendi!</p>
+                            <p> After finding the right contract for you, you're free to contact the first party in
+                                order to negotiate, bargain and communicate whatever you like. At the end, if the first
+                                party, the user who has created the contract, agrees to work with you, you'll have a
+                                deal.</p>
                         </div>
                     </div>
                     <div class="row my-5 py-5">
@@ -229,25 +184,82 @@
                     <div class="container row mx-auto">
                         <div class="col-4 text-center">
                             <img src="assets/images/money.png" alt="" width="30%" class="img-fluid">
+                            <h3>THIS SERVICE IS FREE</h3>
+                            <small>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architect</small>
                         </div>
                         <div class="col-4 text-center">
                             <img src="assets/images/diamond.png" alt="" width="30%" class="img-fluid">
+                            <h3>THIS SERVICE IS FREE</h3>
+                            <small>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architect</small>
                         </div>
                         <div class="col-4 text-center">
                             <img src="assets/images/target.png" alt="" width="30%" class="img-fluid">
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12 px-0">
-                            <!-- img gallery -->
+                            <h3>THIS SERVICE IS FREE</h3>
+                            <small>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architect</small>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="footer">
+                <div class="container">
+                    <div class="content-footer">
+                    <div class="row">
+                        <div class="col-2">
+                            <h5>Quick access</h5>
+                            <ul class="list-unstyled">
+                                <li>About us</li>
+                                <li>Contact us</li>
+                                <li>Contracts</li>
+                                <li>Terms and conditions</li>
+                                <li>Privacy Policy</li>
+                            </ul>
+                        </div>
+                        <div class="col-2">
+                            <h5>Quick access</h5>
+                            <ul class="list-unstyled">
+                                <li>About us</li>
+                                <li>Contact us</li>
+                                <li>Contracts</li>
+                                <li>Terms and conditions</li>
+                                <li>Privacy Policy</li>
+                            </ul>
+                        </div>
+                        <div class="col-5">
+                            <h5>applyfree departments</h5>
+                            <ul class="list-unstyled">
+                                <li>Lorem ipsum dolor sit aLorem ipsum dolor sit a</li>
+                                <li>Lorem ipsum dolor sit aLorem ipsum dolor sit a</li>
+                                <li>Lorem ipsum dolor sit aLorem ipsum dolor sit a</li>
+                                <li>Lorem ipsum dolor sit aLorem ipsum dolor sit a</li>
+                                <li>Lorem ipsum dolor sit aLorem ipsum dolor sit a</li>
+                            </ul>
+                        </div>
+                        <div class="col-2">
+                            <h5>Quick access</h5>
+                            <ul class="list-unstyled">
+                                <li>About us</li>
+                                <li>Contact us</li>
+                                <li>Contracts</li>
+                                <li>Terms and conditions</li>
+                                <li>Privacy Policy</li>
+                            </ul>
+                        </div>
+                        <div class="col-1">
+                            <h5>Social</h5>
+                            <img src="assets/images/instagram.png" class="img-fluid" alt="instagram">
+                            <img src="assets/images/linkedin.png" class="img-fluid" alt="linkedin">
+                            <img src="assets/images/twitter.png" class="img-fluid" alt="twitter">
+                            <img src="assets/images/telegram.png" class="img-fluid" alt="telegram">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mx-auto">
+                            <img src="assets/images/building-footer.png" alt="footer applyfree" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
         </div>
-        <footer>
-            <img src="assets/images/back-footer.png" width="100%" alt="">
-        </footer>
     </div>
 </div>

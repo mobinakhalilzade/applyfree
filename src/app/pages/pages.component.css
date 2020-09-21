@@ -1,0 +1,13 @@
+.header {
+    background-image: url(src/assets/svg/header-small.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 44%;
+  }
+
+  .footer{
+    background-image: url(src/assets/svg/footer.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 37%;
+  }
