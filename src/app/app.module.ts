@@ -29,11 +29,7 @@ import { ConfirmComponent } from './dashboard/components/confirm/confirm.compone
 import { ReservedComponent } from './dashboard/components/reserved/reserved.component';
 import { StatusPipe } from './pipes/status.pipe';
 import { HomeComponent } from './home/home.component';
-import { PagesComponent } from './pages/pages.component';
-import { AboutusComponent } from './pages/components/aboutus/aboutus.component';
-import { ContactusComponent } from './pages/components/contactus/contactus.component';
-import { TermsComponent } from './pages/components/terms/terms.component';
-import { PolicyComponent } from './pages/components/policy/policy.component';
+import { ContractFilterPipe } from './pipes/contract-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -62,11 +58,7 @@ import { PolicyComponent } from './pages/components/policy/policy.component';
     ReservedComponent,
     StatusPipe,
     HomeComponent,
-    PagesComponent,
-    AboutusComponent,
-    ContactusComponent,
-    TermsComponent,
-    PolicyComponent
+    ContractFilterPipe
   ],
   imports: [
     BrowserModule,
