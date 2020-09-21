@@ -22,6 +22,14 @@ export class UpdateContractComponent implements OnInit {
   };
   tag: string;
   tags: [];
+  contracts = [
+    { id: 1, title: 'Students' },
+    { id: 2, title: 'Schools' },
+    { id: 3, title: 'Translators' },
+    { id: 4, title: 'Tutors' },
+    { id: 5, title: 'Recruiters' },
+    { id: 6, title: 'Parents' }
+  ];
 
   constructor(private service: DashboardService,
     private formBuilder: FormBuilder,
@@ -30,7 +38,9 @@ export class UpdateContractComponent implements OnInit {
       title: null,
       type: null,
       price: null,
-      content: null
+      content: null,
+      filter: null,
+      expire: null,
     });
   }
 
@@ -43,7 +53,9 @@ export class UpdateContractComponent implements OnInit {
           title: data.title,
           type: data.type,
           price: data.price,
-          content: data.content
+          content: data.content,
+          filter: data.filter,
+          expire: data.expire
         });
 
         if (data.hold) {
@@ -133,7 +145,9 @@ export class UpdateContractComponent implements OnInit {
       title: form.title,
       type: form.type,
       price: form.price,
-      content: form.content
+      content: form.content,
+      filter: form.filter,
+      expire: form.expire,
     }
 
     this.service.documentation(command).subscribe((response: any) => {

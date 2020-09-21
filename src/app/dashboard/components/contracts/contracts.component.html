@@ -34,6 +34,8 @@
                                 <th class="th-number"></th>
                                 <th class="text-center">Title</th>
                                 <th class="text-center th-bool">Type</th>
+                                <th class="text-center th-bool">Between</th>
+                                <th class="text-center th-bool">Expire at</th>
                                 <th class="text-center th-bool">Status</th>
                                 <th class="text-center th-action">Action</th>
                             </tr>
@@ -45,6 +47,8 @@
                                     <td>{{i + 1}}</td>
                                     <td>{{item.title}}</td>
                                     <td>{{item.type | contractType}}</td>
+                                    <td>{{item.filter | contractFilter}}</td>
+                                    <td class="text-truncate">{{item.expire | date}}</td>
                                     <td class="text-truncate">{{item.status | status}}</td>
                                     <td>
                                         <a class="btn btn-primary btn-sm mr-3" [routerLink]="['/contract', item.id]"
@@ -52,7 +56,7 @@
                                             Preview
                                         </a>
 
-                                        <a class="btn btn-success btn-sm" *ngIf="item.isParty && !item.payment || !item.payment.success"
+                                        <a class="btn btn-success btn-sm" *ngIf="item.isParty && !item.payment || item.payment && !item.payment.success"
                                             (click)="pay(item)">
                                             Pay
                                         </a>
@@ -63,12 +67,12 @@
                                             Print
                                         </a>
 
-                                        <a class="btn btn-warning btn-sm mr-3" *ngIf="item.status < 1"
+                                        <a class="btn btn-warning btn-sm mr-3" *ngIf="item.status == 0"
                                             [hidden]="inlineModal && selectedId == item.id"
                                             [routerLink]="['/dashboard/contracts/modify', item.id]">
                                             Edit
                                         </a>
-                                        <button class="btn btn-danger btn-sm" *ngIf="item.status < 1"
+                                        <button class="btn btn-danger btn-sm" *ngIf="item.status == 0"
                                             [hidden]="inlineModal && selectedId == item.id" (click)="confirm(item.id)">
                                             Remove
                                         </button>

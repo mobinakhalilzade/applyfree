@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ContractListService } from './contract-list.service';
 
 @Component({
   selector: 'app-contract-list',
@@ -6,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contract-list.component.css']
 })
 export class ContractListComponent implements OnInit {
+  form: any = { query: null };
+  constructor(private service: ContractListService) { }
 
-  constructor() { }
+  search() {
+    this.service.contracts({ query: this.form.query }).subscribe((resposne: any) => {
+      console.log(resposne);
+    });
+  }
 
   ngOnInit(): void {
   }

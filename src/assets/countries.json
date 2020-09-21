@@ -9,12 +9,12 @@
     "states": [
       {
         "code": "BDS",
-        "name": "Badakhshān",
+        "name": "Badakhshan",
         "subdivision": null
       },
       {
         "code": "BGL",
-        "name": "Baghlān",
+        "name": "Baghlan",
         "subdivision": null
       },
       {
@@ -24,37 +24,37 @@
       },
       {
         "code": "BDG",
-        "name": "Bādghīs",
+        "name": "Badghis",
         "subdivision": null
       },
       {
         "code": "BAM",
-        "name": "Bāmyān",
+        "name": "Bamyan",
         "subdivision": null
       },
       {
         "code": "DAY",
-        "name": "Dāykundī",
+        "name": "Daykundi",
         "subdivision": null
       },
       {
         "code": "FRA",
-        "name": "Farāh",
+        "name": "Farah",
         "subdivision": null
       },
       {
         "code": "FYB",
-        "name": "Fāryāb",
+        "name": "Faryab",
         "subdivision": null
       },
       {
         "code": "GHA",
-        "name": "Ghaznī",
+        "name": "Ghazni",
         "subdivision": null
       },
       {
         "code": "GHO",
-        "name": "Ghōr",
+        "name": "Ghor",
         "subdivision": null
       },
       {
@@ -64,22 +64,22 @@
       },
       {
         "code": "HER",
-        "name": "Herāt",
+        "name": "Herat",
         "subdivision": null
       },
       {
         "code": "JOW",
-        "name": "Jowzjān",
+        "name": "Jowzjan",
         "subdivision": null
       },
       {
         "code": "KAN",
-        "name": "Kandahār",
+        "name": "Kandahar",
         "subdivision": null
       },
       {
         "code": "KHO",
-        "name": "Khōst",
+        "name": "Khost",
         "subdivision": null
       },
       {
@@ -94,47 +94,47 @@
       },
       {
         "code": "KAB",
-        "name": "Kābul",
+        "name": "Kabul",
         "subdivision": null
       },
       {
         "code": "KAP",
-        "name": "Kāpīsā",
+        "name": "Kapisa",
         "subdivision": null
       },
       {
         "code": "LAG",
-        "name": "Laghmān",
+        "name": "Laghman",
         "subdivision": null
       },
       {
         "code": "LOG",
-        "name": "Lōgar",
+        "name": "Logar",
         "subdivision": null
       },
       {
         "code": "NAN",
-        "name": "Nangarhār",
+        "name": "Nangarhar",
         "subdivision": null
       },
       {
         "code": "NIM",
-        "name": "Nīmrōz",
+        "name": "Nimroz",
         "subdivision": null
       },
       {
         "code": "NUR",
-        "name": "Nūristān",
+        "name": "Nūristan",
         "subdivision": null
       },
       {
         "code": "PIA",
-        "name": "Paktiyā",
+        "name": "Paktiya",
         "subdivision": null
       },
       {
         "code": "PKA",
-        "name": "Paktīkā",
+        "name": "Paktika",
         "subdivision": null
       },
       {
@@ -144,12 +144,12 @@
       },
       {
         "code": "PAR",
-        "name": "Parwān",
+        "name": "Parwan",
         "subdivision": null
       },
       {
         "code": "SAM",
-        "name": "Samangān",
+        "name": "Samangan",
         "subdivision": null
       },
       {
@@ -159,12 +159,12 @@
       },
       {
         "code": "TAK",
-        "name": "Takhār",
+        "name": "Takhar",
         "subdivision": null
       },
       {
         "code": "URU",
-        "name": "Uruzgān",
+        "name": "Uruzgan",
         "subdivision": null
       },
       {
@@ -174,7 +174,7 @@
       },
       {
         "code": "ZAB",
-        "name": "Zābul",
+        "name": "Zabul",
         "subdivision": null
       }
     ]
@@ -203,12 +203,12 @@
       },
       {
         "code": "09",
-        "name": "Dibër",
+        "name": "Diber",
         "subdivision": null
       },
       {
         "code": "02",
-        "name": "Durrës",
+        "name": "Durres",
         "subdivision": null
       },
       {
@@ -223,37 +223,37 @@
       },
       {
         "code": "05",
-        "name": "Gjirokastër",
+        "name": "Gjirokaster",
         "subdivision": null
       },
       {
         "code": "06",
-        "name": "Korçë",
+        "name": "Korce",
         "subdivision": null
       },
       {
         "code": "07",
-        "name": "Kukës",
+        "name": "Kukes",
         "subdivision": null
       },
       {
         "code": "08",
-        "name": "Lezhë",
+        "name": "Lezhe",
         "subdivision": null
       },
       {
         "code": "10",
-        "name": "Shkodër",
+        "name": "Shkoder",
         "subdivision": null
       },
       {
         "code": "11",
-        "name": "Tiranë",
+        "name": "Tirane",
         "subdivision": null
       },
       {
         "code": "12",
-        "name": "Vlorë",
+        "name": "Vlore",
         "subdivision": null
       }
     ]
@@ -288,7 +288,7 @@
       },
       {
         "code": "46",
-        "name": "Aïn Témouchent",
+        "name": "Aïn Temouchent",
         "subdivision": null
       },
       {
@@ -308,7 +308,7 @@
       },
       {
         "code": "34",
-        "name": "Bordj Bou Arréridj",
+        "name": "Bordj Bou Arreridj",
         "subdivision": null
       },
       {
@@ -318,17 +318,17 @@
       },
       {
         "code": "35",
-        "name": "Boumerdès",
+        "name": "Boumerdes",
         "subdivision": null
       },
       {
         "code": "08",
-        "name": "Béchar",
+        "name": "Bechar",
         "subdivision": null
       },
       {
         "code": "06",
-        "name": "Béjaïa",
+        "name": "Bejaïa",
         "subdivision": null
       },
       {
@@ -413,7 +413,7 @@
       },
       {
         "code": "26",
-        "name": "Médéa",
+        "name": "Medea",
         "subdivision": null
       },
       {
@@ -448,7 +448,7 @@
       },
       {
         "code": "22",
-        "name": "Sidi Bel Abbès",
+        "name": "Sidi Bel Abbes",
         "subdivision": null
       },
       {
@@ -463,7 +463,7 @@
       },
       {
         "code": "19",
-        "name": "Sétif",
+        "name": "Setif",
         "subdivision": null
       },
       {
@@ -503,7 +503,7 @@
       },
       {
         "code": "12",
-        "name": "Tébessa",
+        "name": "Tebessa",
         "subdivision": null
       }
     ]
@@ -557,7 +557,7 @@
       },
       {
         "code": "06",
-        "name": "Sant Julià de Lòria",
+        "name": "Sant Julie de Loria",
         "subdivision": null
       }
     ]
@@ -582,7 +582,7 @@
       },
       {
         "code": "BIE",
-        "name": "Bié",
+        "name": "Bie",
         "subdivision": null
       },
       {
@@ -602,7 +602,7 @@
       },
       {
         "code": "HUI",
-        "name": "Huíla",
+        "name": "Huila",
         "subdivision": null
       },
       {
@@ -652,7 +652,7 @@
       },
       {
         "code": "UIG",
-        "name": "Uíge",
+        "name": "Uige",
         "subdivision": null
       },
       {
@@ -760,7 +760,7 @@
       },
       {
         "code": "C",
-        "name": "Ciudad Autónoma de Buenos Aires",
+        "name": "Ciudad Autonoma de Buenos Aires",
         "subdivision": null
       },
       {
@@ -770,12 +770,12 @@
       },
       {
         "code": "X",
-        "name": "Córdoba",
+        "name": "Cordoba",
         "subdivision": null
       },
       {
         "code": "E",
-        "name": "Entre Ríos",
+        "name": "Entre Rios",
         "subdivision": null
       },
       {
@@ -810,12 +810,12 @@
       },
       {
         "code": "Q",
-        "name": "Neuquén",
+        "name": "Neuquen",
         "subdivision": null
       },
       {
         "code": "R",
-        "name": "Río Negro",
+        "name": "Rio Negro",
         "subdivision": null
       },
       {
@@ -890,7 +890,7 @@
       },
       {
         "code": "GR",
-        "name": "Geġark'unik'",
+        "name": "Gegark'unik'",
         "subdivision": null
       },
       {
@@ -999,7 +999,7 @@
       },
       {
         "code": "K",
-        "name": "Kärnten",
+        "name": "Karnten",
         "subdivision": null
       },
       {
@@ -1049,7 +1049,7 @@
     "states": [
       {
         "code": "NX",
-        "name": "Naxçıvan",
+        "name": "Naxcıvan",
         "subdivision": null
       }
     ]
@@ -1229,12 +1229,12 @@
     "states": [
       {
         "code": "14",
-        "name": "Al Janūbīyah",
+        "name": "Al Janūbiyah",
         "subdivision": null
       },
       {
         "code": "13",
-        "name": "Al Manāmah",
+        "name": "Al Manamah",
         "subdivision": null
       },
       {
@@ -1249,7 +1249,7 @@
       },
       {
         "code": "17",
-        "name": "Ash Shamālīyah",
+        "name": "Ash Shamaliyah",
         "subdivision": null
       }
     ]
@@ -1424,7 +1424,7 @@
       },
       {
         "code": "WAL",
-        "name": "Région Wallonne",
+        "name": "Region Wallonne",
         "subdivision": null
       },
       {
@@ -1529,7 +1529,7 @@
       },
       {
         "code": "OU",
-        "name": "Ouémé",
+        "name": "Oueme",
         "subdivision": null
       },
       {
@@ -1703,7 +1703,7 @@
       },
       {
         "code": "P",
-        "name": "Potosí",
+        "name": "Potosi",
         "subdivision": null
       },
       {
@@ -1855,7 +1855,7 @@
     "code2": "BR",
     "code3": "BRA",
     "name": "Brazil",
-    "capital": "Brasília",
+    "capital": "Brasilia",
     "region": "Americas",
     "subregion": "South America",
     "states": [
@@ -1896,7 +1896,7 @@
       },
       {
         "code": "ES",
-        "name": "Espírito Santo",
+        "name": "Espirito Santo",
         "subdivision": null
       },
       {
@@ -1931,7 +1931,7 @@
       },
       {
         "code": "PB",
-        "name": "Paraíba",
+        "name": "Paraiba",
         "subdivision": null
       },
       {
@@ -1946,7 +1946,7 @@
       },
       {
         "code": "PI",
-        "name": "Piauí",
+        "name": "Piaui",
         "subdivision": null
       },
       {
@@ -2562,7 +2562,7 @@
     "code2": "CM",
     "code3": "CMR",
     "name": "Cameroon",
-    "capital": "Yaoundé",
+    "capital": "Yaounde",
     "region": "Africa",
     "subregion": "Middle Africa",
     "states": [
@@ -2762,12 +2762,12 @@
       },
       {
         "code": "HS",
-        "name": "Haute-Sangha / Mambéré-Kadéï",
+        "name": "Haute-Sangha / Mambere-Kadeï",
         "subdivision": null
       },
       {
         "code": "KG",
-        "name": "Kémo-Gribingui",
+        "name": "Kemo-Gribingui",
         "subdivision": null
       },
       {
@@ -2782,7 +2782,7 @@
       },
       {
         "code": "NM",
-        "name": "Nana-Mambéré",
+        "name": "Nana-Mambere",
         "subdivision": null
       },
       {
@@ -2802,7 +2802,7 @@
       },
       {
         "code": "OP",
-        "name": "Ouham-Pendé",
+        "name": "Ouham-Pende",
         "subdivision": null
       },
       {
@@ -2837,7 +2837,7 @@
       },
       {
         "code": "BG",
-        "name": "Baḩr al Ghazāl",
+        "name": "Baḩr al Ghazal",
         "subdivision": null
       },
       {
@@ -2847,92 +2847,92 @@
       },
       {
         "code": "EN",
-        "name": "Innīdī",
+        "name": "Innidi",
         "subdivision": null
       },
       {
         "code": "KA",
-        "name": "Kānim",
+        "name": "Kanim",
         "subdivision": null
       },
       {
         "code": "LO",
-        "name": "Lūqūn al Gharbī",
+        "name": "Lūqūn al Gharbi",
         "subdivision": null
       },
       {
         "code": "LR",
-        "name": "Lūqūn ash Sharqī",
+        "name": "Lūqūn ash Sharqi",
         "subdivision": null
       },
       {
         "code": "ND",
-        "name": "Madīnat Injamīnā",
+        "name": "Madinat Injamina",
         "subdivision": null
       },
       {
         "code": "MA",
-        "name": "Māndūl",
+        "name": "Mandūl",
         "subdivision": null
       },
       {
         "code": "MO",
-        "name": "Māyū Kībbī al Gharbī",
+        "name": "Mayū Kibbi al Gharbi",
         "subdivision": null
       },
       {
         "code": "ME",
-        "name": "Māyū Kībbī ash Sharqī",
+        "name": "Mayū Kibbi ash Sharqi",
         "subdivision": null
       },
       {
         "code": "GR",
-        "name": "Qīrā",
+        "name": "Qira",
         "subdivision": null
       },
       {
         "code": "SA",
-        "name": "Salāmāt",
+        "name": "Salamat",
         "subdivision": null
       },
       {
         "code": "CB",
-        "name": "Shārī Bāqirmī",
+        "name": "Shari Baqirmi",
         "subdivision": null
       },
       {
         "code": "MC",
-        "name": "Shārī al Awsaṭ",
+        "name": "Shari al Awsaṭ",
         "subdivision": null
       },
       {
         "code": "SI",
-        "name": "Sīlā",
+        "name": "Sila",
         "subdivision": null
       },
       {
         "code": "TI",
-        "name": "Tibastī",
+        "name": "Tibasti",
         "subdivision": null
       },
       {
         "code": "TA",
-        "name": "Tānjilī",
+        "name": "Tanjili",
         "subdivision": null
       },
       {
         "code": "OD",
-        "name": "Waddāy",
+        "name": "Wadday",
         "subdivision": null
       },
       {
         "code": "WF",
-        "name": "Wādī Fīrā",
+        "name": "Wadi Fira",
         "subdivision": null
       },
       {
         "code": "HL",
-        "name": "Ḥajjar Lamīs",
+        "name": "Ḥajjar Lamis",
         "subdivision": null
       }
     ]
@@ -2947,7 +2947,7 @@
     "states": [
       {
         "code": "AI",
-        "name": "Aisén del General Carlos Ibañez del Campo",
+        "name": "Aisen del General Carlos Ibañez del Campo",
         "subdivision": null
       },
       {
@@ -2957,7 +2957,7 @@
       },
       {
         "code": "AR",
-        "name": "Araucanía",
+        "name": "Araucania",
         "subdivision": null
       },
       {
@@ -2972,7 +2972,7 @@
       },
       {
         "code": "BI",
-        "name": "Bío-Bío",
+        "name": "Bio-Bio",
         "subdivision": null
       },
       {
@@ -2992,7 +2992,7 @@
       },
       {
         "code": "LR",
-        "name": "Los Ríos",
+        "name": "Los Rios",
         "subdivision": null
       },
       {
@@ -3007,7 +3007,7 @@
       },
       {
         "code": "RM",
-        "name": "Región Metropolitana de Santiago",
+        "name": "Region Metropolitana de Santiago",
         "subdivision": null
       },
       {
@@ -3017,7 +3017,7 @@
       },
       {
         "code": "VS",
-        "name": "Valparaíso",
+        "name": "Valparaiso",
         "subdivision": null
       }
     ]
@@ -3265,7 +3265,7 @@
       },
       {
         "code": "BOL",
-        "name": "Bolívar",
+        "name": "Bolivar",
         "subdivision": null
       },
       {
@@ -3300,7 +3300,7 @@
       },
       {
         "code": "CHO",
-        "name": "Chocó",
+        "name": "Choco",
         "subdivision": null
       },
       {
@@ -3310,7 +3310,7 @@
       },
       {
         "code": "COR",
-        "name": "Córdoba",
+        "name": "Cordoba",
         "subdivision": null
       },
       {
@@ -3320,7 +3320,7 @@
       },
       {
         "code": "GUA",
-        "name": "Guainía",
+        "name": "Guainia",
         "subdivision": null
       },
       {
@@ -3365,7 +3365,7 @@
       },
       {
         "code": "QUI",
-        "name": "Quindío",
+        "name": "Quindio",
         "subdivision": null
       },
       {
@@ -3375,7 +3375,7 @@
       },
       {
         "code": "SAP",
-        "name": "San Andrés, Providencia y Santa Catalina",
+        "name": "San Andres, Providencia y Santa Catalina",
         "subdivision": null
       },
       {
@@ -3400,7 +3400,7 @@
       },
       {
         "code": "VAU",
-        "name": "Vaupés",
+        "name": "Vaupes",
         "subdivision": null
       },
       {
@@ -3430,7 +3430,7 @@
       },
       {
         "code": "M",
-        "name": "Mohéli",
+        "name": "Moheli",
         "subdivision": null
       }
     ]
@@ -3475,7 +3475,7 @@
       },
       {
         "code": "2",
-        "name": "Lékoumou",
+        "name": "Lekoumou",
         "subdivision": null
       },
       {
@@ -3565,7 +3565,7 @@
       },
       {
         "code": "EQ",
-        "name": "Équateur",
+        "name": "equateur",
         "subdivision": null
       }
     ]
@@ -3583,7 +3583,7 @@
     "code2": "CR",
     "code3": "CRI",
     "name": "Costa Rica",
-    "capital": "San José",
+    "capital": "San Jose",
     "region": "Americas",
     "subregion": "Central America",
     "states": [
@@ -3609,7 +3609,7 @@
       },
       {
         "code": "L",
-        "name": "Limón",
+        "name": "Limon",
         "subdivision": null
       },
       {
@@ -3619,7 +3619,7 @@
       },
       {
         "code": "SJ",
-        "name": "San José",
+        "name": "San Jose",
         "subdivision": null
       }
     ]
@@ -3779,7 +3779,7 @@
       },
       {
         "code": "11",
-        "name": "Holguín",
+        "name": "Holguin",
         "subdivision": null
       },
       {
@@ -3809,12 +3809,12 @@
       },
       {
         "code": "01",
-        "name": "Pinar del Río",
+        "name": "Pinar del Rio",
         "subdivision": null
       },
       {
         "code": "07",
-        "name": "Sancti Spíritus",
+        "name": "Sancti Spiritus",
         "subdivision": null
       },
       {
@@ -3832,7 +3832,7 @@
   {
     "code2": "CW",
     "code3": "CUW",
-    "name": "Curaçao",
+    "name": "Curacao",
     "capital": "Willemstad",
     "region": "Americas",
     "subregion": "Caribbean",
@@ -3903,7 +3903,7 @@
       },
       {
         "code": "KR",
-        "name": "Královéhradecký kraj",
+        "name": "Královehradecký kraj",
         "subdivision": null
       },
       {
@@ -3933,7 +3933,7 @@
       },
       {
         "code": "PR",
-        "name": "Praha, hlavní město",
+        "name": "Praha, hlavni město",
         "subdivision": null
       },
       {
@@ -3948,7 +3948,7 @@
       },
       {
         "code": "ZL",
-        "name": "Zlínský kraj",
+        "name": "Zlinský kraj",
         "subdivision": null
       },
       {
@@ -4168,7 +4168,7 @@
       },
       {
         "code": "B",
-        "name": "Bolívar",
+        "name": "Bolivar",
         "subdivision": null
       },
       {
@@ -4223,12 +4223,12 @@
       },
       {
         "code": "R",
-        "name": "Los Ríos",
+        "name": "Los Rios",
         "subdivision": null
       },
       {
         "code": "M",
-        "name": "Manabí",
+        "name": "Manabi",
         "subdivision": null
       },
       {
@@ -4268,7 +4268,7 @@
       },
       {
         "code": "U",
-        "name": "Sucumbíos",
+        "name": "Sucumbios",
         "subdivision": null
       },
       {
@@ -4293,7 +4293,7 @@
     "states": [
       {
         "code": "DK",
-        "name": "Ad Daqahlīyah",
+        "name": "Ad Daqahliyah",
         "subdivision": null
       },
       {
@@ -4313,42 +4313,42 @@
       },
       {
         "code": "GH",
-        "name": "Al Gharbīyah",
+        "name": "Al Gharbiyah",
         "subdivision": null
       },
       {
         "code": "ALX",
-        "name": "Al Iskandarīyah",
+        "name": "Al Iskandariyah",
         "subdivision": null
       },
       {
         "code": "IS",
-        "name": "Al Ismāٰīlīyah",
+        "name": "Al Ismaٰiliyah",
         "subdivision": null
       },
       {
         "code": "GZ",
-        "name": "Al Jīzah",
+        "name": "Al Jizah",
         "subdivision": null
       },
       {
         "code": "MN",
-        "name": "Al Minyā",
+        "name": "Al Minya",
         "subdivision": null
       },
       {
         "code": "MNF",
-        "name": "Al Minūfīyah",
+        "name": "Al Minūfiyah",
         "subdivision": null
       },
       {
         "code": "KB",
-        "name": "Al Qalyūbīyah",
+        "name": "Al Qalyūbiyah",
         "subdivision": null
       },
       {
         "code": "C",
-        "name": "Al Qāhirah",
+        "name": "Al Qahirah",
         "subdivision": null
       },
       {
@@ -4358,7 +4358,7 @@
       },
       {
         "code": "WAD",
-        "name": "Al Wādī al Jadīd",
+        "name": "Al Wadi al Jadid",
         "subdivision": null
       },
       {
@@ -4368,17 +4368,17 @@
       },
       {
         "code": "SU",
-        "name": "As Sādis min Uktūbar",
+        "name": "As Sadis min Uktūbar",
         "subdivision": null
       },
       {
         "code": "SHR",
-        "name": "Ash Sharqīyah",
+        "name": "Ash Sharqiyah",
         "subdivision": null
       },
       {
         "code": "ASN",
-        "name": "Aswān",
+        "name": "Aswan",
         "subdivision": null
       },
       {
@@ -4388,22 +4388,22 @@
       },
       {
         "code": "BNS",
-        "name": "Banī Suwayf",
+        "name": "Bani Suwayf",
         "subdivision": null
       },
       {
         "code": "PTS",
-        "name": "Būr Saٰīd",
+        "name": "Būr Saٰid",
         "subdivision": null
       },
       {
         "code": "DT",
-        "name": "Dumyāţ",
+        "name": "Dumyaţ",
         "subdivision": null
       },
       {
         "code": "JS",
-        "name": "Janūb Sīnā'",
+        "name": "Janūb Sina'",
         "subdivision": null
       },
       {
@@ -4418,22 +4418,22 @@
       },
       {
         "code": "KN",
-        "name": "Qinā",
+        "name": "Qina",
         "subdivision": null
       },
       {
         "code": "SIN",
-        "name": "Shamāl Sīnā'",
+        "name": "Shamal Sina'",
         "subdivision": null
       },
       {
         "code": "SHG",
-        "name": "Sūhāj",
+        "name": "Sūhaj",
         "subdivision": null
       },
       {
         "code": "HU",
-        "name": "Ḩulwān",
+        "name": "Ḩulwan",
         "subdivision": null
       }
     ]
@@ -4478,7 +4478,7 @@
       },
       {
         "code": "UN",
-        "name": "La Unión",
+        "name": "La Union",
         "subdivision": null
       },
       {
@@ -4528,12 +4528,12 @@
     "states": [
       {
         "code": "C",
-        "name": "Región Continental",
+        "name": "Region Continental",
         "subdivision": null
       },
       {
         "code": "I",
-        "name": "Región Insular",
+        "name": "Region Insular",
         "subdivision": null
       }
     ]
@@ -4558,22 +4558,22 @@
       },
       {
         "code": "AN",
-        "name": "Ansabā",
+        "name": "Ansaba",
         "subdivision": null
       },
       {
         "code": "DK",
-        "name": "Janūbī al Baḩrī al Aḩmar",
+        "name": "Janūbi al Baḩri al Aḩmar",
         "subdivision": null
       },
       {
         "code": "GB",
-        "name": "Qāsh-Barkah",
+        "name": "Qash-Barkah",
         "subdivision": null
       },
       {
         "code": "SK",
-        "name": "Shimālī al Baḩrī al Aḩmar",
+        "name": "Shimali al Baḩri al Aḩmar",
         "subdivision": null
       }
     ]
@@ -4603,7 +4603,7 @@
       },
       {
         "code": "51",
-        "name": "Järvamaa",
+        "name": "Jarvamaa",
         "subdivision": null
       },
       {
@@ -4613,17 +4613,17 @@
       },
       {
         "code": "59",
-        "name": "Lääne-Virumaa",
+        "name": "Laane-Virumaa",
         "subdivision": null
       },
       {
         "code": "57",
-        "name": "Läänemaa",
+        "name": "Laanemaa",
         "subdivision": null
       },
       {
         "code": "67",
-        "name": "Pärnumaa",
+        "name": "Parnumaa",
         "subdivision": null
       },
       {
@@ -4673,7 +4673,7 @@
     "states": [
       {
         "code": "BE",
-        "name": "Bīnshangul Gumuz",
+        "name": "Binshangul Gumuz",
         "subdivision": null
       },
       {
@@ -4688,12 +4688,12 @@
       },
       {
         "code": "HA",
-        "name": "Hārerī Hizb",
+        "name": "Hareri Hizb",
         "subdivision": null
       },
       {
         "code": "OR",
-        "name": "Oromīya",
+        "name": "Oromiya",
         "subdivision": null
       },
       {
@@ -4713,17 +4713,17 @@
       },
       {
         "code": "AA",
-        "name": "Ādīs Ābeba",
+        "name": "adis abeba",
         "subdivision": null
       },
       {
         "code": "AF",
-        "name": "Āfar",
+        "name": "afar",
         "subdivision": null
       },
       {
         "code": "AM",
-        "name": "Āmara",
+        "name": "amara",
         "subdivision": null
       }
     ]
@@ -4741,7 +4741,7 @@
     "code2": "FO",
     "code3": "FRO",
     "name": "Faroe Islands",
-    "capital": "Tórshavn",
+    "capital": "Torshavn",
     "region": "Europe",
     "subregion": "Northern Europe",
     "states": []
@@ -4796,17 +4796,17 @@
       },
       {
         "code": "02",
-        "name": "Etelä-Karjala",
+        "name": "Etela-Karjala",
         "subdivision": null
       },
       {
         "code": "03",
-        "name": "Etelä-Pohjanmaa",
+        "name": "Etela-Pohjanmaa",
         "subdivision": null
       },
       {
         "code": "04",
-        "name": "Etelä-Savo",
+        "name": "Etela-Savo",
         "subdivision": null
       },
       {
@@ -4816,7 +4816,7 @@
       },
       {
         "code": "06",
-        "name": "Kanta-Häme",
+        "name": "Kanta-Hame",
         "subdivision": null
       },
       {
@@ -4866,7 +4866,7 @@
       },
       {
         "code": "16",
-        "name": "Päijät-Häme",
+        "name": "Paijat-Hame",
         "subdivision": null
       },
       {
@@ -4936,7 +4936,7 @@
       },
       {
         "code": "I",
-        "name": "Franche-Comté",
+        "name": "Franche-Comte",
         "subdivision": "Metropolitan region"
       },
       {
@@ -4961,7 +4961,7 @@
       },
       {
         "code": "N",
-        "name": "Midi-Pyrénées",
+        "name": "Midi-Pyrenees",
         "subdivision": "Metropolitan region"
       },
       {
@@ -5028,7 +5028,7 @@
     "code2": "TF",
     "code3": "ATF",
     "name": "French Southern and Antarctic Lands",
-    "capital": "Port-aux-Français",
+    "capital": "Port-aux-Francais",
     "region": "Africa",
     "subregion": "Southern Africa",
     "states": []
@@ -5048,17 +5048,17 @@
       },
       {
         "code": "2",
-        "name": "Haut-Ogooué",
+        "name": "Haut-Ogooue",
         "subdivision": null
       },
       {
         "code": "3",
-        "name": "Moyen-Ogooué",
+        "name": "Moyen-Ogooue",
         "subdivision": null
       },
       {
         "code": "4",
-        "name": "Ngounié",
+        "name": "Ngounie",
         "subdivision": null
       },
       {
@@ -5068,17 +5068,17 @@
       },
       {
         "code": "6",
-        "name": "Ogooué-Ivindo",
+        "name": "Ogooue-Ivindo",
         "subdivision": null
       },
       {
         "code": "7",
-        "name": "Ogooué-Lolo",
+        "name": "Ogooue-Lolo",
         "subdivision": null
       },
       {
         "code": "8",
-        "name": "Ogooué-Maritime",
+        "name": "Ogooue-Maritime",
         "subdivision": null
       },
       {
@@ -5590,7 +5590,7 @@
       },
       {
         "code": "PE",
-        "name": "Petén",
+        "name": "Peten",
         "subdivision": null
       },
       {
@@ -5600,7 +5600,7 @@
       },
       {
         "code": "QC",
-        "name": "Quiché",
+        "name": "Quiche",
         "subdivision": null
       },
       {
@@ -5610,7 +5610,7 @@
       },
       {
         "code": "SA",
-        "name": "Sacatepéquez",
+        "name": "Sacatepequez",
         "subdivision": null
       },
       {
@@ -5630,7 +5630,7 @@
       },
       {
         "code": "SU",
-        "name": "Suchitepéquez",
+        "name": "Suchitepequez",
         "subdivision": null
       },
       {
@@ -5664,7 +5664,7 @@
     "states": [
       {
         "code": "B",
-        "name": "Boké",
+        "name": "Boke",
         "subdivision": null
       },
       {
@@ -5689,7 +5689,7 @@
       },
       {
         "code": "L",
-        "name": "Labé",
+        "name": "Labe",
         "subdivision": null
       },
       {
@@ -5699,7 +5699,7 @@
       },
       {
         "code": "N",
-        "name": "Nzérékoré",
+        "name": "Nzerekore",
         "subdivision": null
       }
     ]
@@ -5887,7 +5887,7 @@
       },
       {
         "code": "CL",
-        "name": "Colón",
+        "name": "Colon",
         "subdivision": null
       },
       {
@@ -5902,12 +5902,12 @@
       },
       {
         "code": "CR",
-        "name": "Cortés",
+        "name": "Cortes",
         "subdivision": null
       },
       {
         "code": "EP",
-        "name": "El Paraíso",
+        "name": "El Paraiso",
         "subdivision": null
       },
       {
@@ -5927,7 +5927,7 @@
       },
       {
         "code": "IB",
-        "name": "Islas de la Bahía",
+        "name": "Islas de la Bahia",
         "subdivision": null
       },
       {
@@ -5991,7 +5991,7 @@
       },
       {
         "code": "BZ",
-        "name": "Borsod-Abaúj-Zemplén",
+        "name": "Borsod-Abaúj-Zemplen",
         "subdivision": null
       },
       {
@@ -6006,12 +6006,12 @@
       },
       {
         "code": "BE",
-        "name": "Békés",
+        "name": "Bekes",
         "subdivision": null
       },
       {
         "code": "BC",
-        "name": "Békéscsaba",
+        "name": "Bekescsaba",
         "subdivision": null
       },
       {
@@ -6036,7 +6036,7 @@
       },
       {
         "code": "FE",
-        "name": "Fejér",
+        "name": "Fejer",
         "subdivision": null
       },
       {
@@ -6061,7 +6061,7 @@
       },
       {
         "code": "HV",
-        "name": "Hódmezővásárhely",
+        "name": "Hodmezővásárhely",
         "subdivision": null
       },
       {
@@ -6076,7 +6076,7 @@
       },
       {
         "code": "KM",
-        "name": "Kecskemét",
+        "name": "Kecskemet",
         "subdivision": null
       },
       {
@@ -6096,12 +6096,12 @@
       },
       {
         "code": "NY",
-        "name": "Nyíregyháza",
+        "name": "Nyiregyháza",
         "subdivision": null
       },
       {
         "code": "NO",
-        "name": "Nógrád",
+        "name": "Nográd",
         "subdivision": null
       },
       {
@@ -6111,12 +6111,12 @@
       },
       {
         "code": "PS",
-        "name": "Pécs",
+        "name": "Pecs",
         "subdivision": null
       },
       {
         "code": "ST",
-        "name": "Salgótarján",
+        "name": "Salgotarján",
         "subdivision": null
       },
       {
@@ -6156,7 +6156,7 @@
       },
       {
         "code": "SF",
-        "name": "Székesfehérvár",
+        "name": "Szekesfehervár",
         "subdivision": null
       },
       {
@@ -6176,12 +6176,12 @@
       },
       {
         "code": "VE",
-        "name": "Veszprém",
+        "name": "Veszprem",
         "subdivision": null
       },
       {
         "code": "VM",
-        "name": "Veszprém",
+        "name": "Veszprem",
         "subdivision": null
       },
       {
@@ -6196,7 +6196,7 @@
       },
       {
         "code": "ER",
-        "name": "Érd",
+        "name": "erd",
         "subdivision": null
       }
     ]
@@ -6205,7 +6205,7 @@
     "code2": "IS",
     "code3": "ISL",
     "name": "Iceland",
-    "capital": "Reykjavík",
+    "capital": "Reykjavik",
     "region": "Europe",
     "subregion": "Northern Europe",
     "states": [
@@ -6216,7 +6216,7 @@
       },
       {
         "code": "1",
-        "name": "Höfuðborgarsvæði utan Reykjavíkur",
+        "name": "Höfuðborgarsvæði utan Reykjavikur",
         "subdivision": null
       },
       {
@@ -6231,7 +6231,7 @@
       },
       {
         "code": "0",
-        "name": "Reykjavík",
+        "name": "Reykjavik",
         "subdivision": null
       },
       {
@@ -6506,7 +6506,7 @@
       },
       {
         "code": "16",
-        "name": "Agnébi",
+        "name": "Agnebi",
         "subdivision": null
       },
       {
@@ -6521,7 +6521,7 @@
       },
       {
         "code": "10",
-        "name": "Denguélé",
+        "name": "Denguele",
         "subdivision": null
       },
       {
@@ -6546,7 +6546,7 @@
       },
       {
         "code": "12",
-        "name": "Marahoué",
+        "name": "Marahoue",
         "subdivision": null
       },
       {
@@ -6556,12 +6556,12 @@
       },
       {
         "code": "05",
-        "name": "Moyen-Comoé",
+        "name": "Moyen-Comoe",
         "subdivision": null
       },
       {
         "code": "11",
-        "name": "Nzi-Comoé",
+        "name": "Nzi-Comoe",
         "subdivision": null
       },
       {
@@ -6576,12 +6576,12 @@
       },
       {
         "code": "13",
-        "name": "Sud-Comoé",
+        "name": "Sud-Comoe",
         "subdivision": null
       },
       {
         "code": "04",
-        "name": "Vallée du Bandama",
+        "name": "Vallee du Bandama",
         "subdivision": null
       },
       {
@@ -6611,7 +6611,7 @@
       },
       {
         "code": "03",
-        "name": "Ardabīl",
+        "name": "Ardabil",
         "subdivision": null
       },
       {
@@ -6621,97 +6621,97 @@
       },
       {
         "code": "08",
-        "name": "Chahār Maḩāll va Bakhtīārī",
+        "name": "Chahar Maḩall va Bakhtiari",
         "subdivision": null
       },
       {
         "code": "04",
-        "name": "Eşfahān",
+        "name": "Eşfahan",
         "subdivision": null
       },
       {
         "code": "14",
-        "name": "Fārs",
+        "name": "Fars",
         "subdivision": null
       },
       {
         "code": "27",
-        "name": "Golestān",
+        "name": "Golestan",
         "subdivision": null
       },
       {
         "code": "19",
-        "name": "Gīlān",
+        "name": "Gilan",
         "subdivision": null
       },
       {
         "code": "24",
-        "name": "Hamadān",
+        "name": "Hamadan",
         "subdivision": null
       },
       {
         "code": "23",
-        "name": "Hormozgān",
+        "name": "Hormozgan",
         "subdivision": null
       },
       {
         "code": "15",
-        "name": "Kermān",
+        "name": "Kerman",
         "subdivision": null
       },
       {
         "code": "17",
-        "name": "Kermānshāh",
+        "name": "Kermanshah",
         "subdivision": null
       },
       {
         "code": "29",
-        "name": "Khorāsān-e Janūbī",
+        "name": "Khorasan-e Janūbi",
         "subdivision": null
       },
       {
         "code": "30",
-        "name": "Khorāsān-e Razavī",
+        "name": "Khorasan-e Razavi",
         "subdivision": null
       },
       {
         "code": "31",
-        "name": "Khorāsān-e Shemālī",
+        "name": "Khorasan-e Shemali",
         "subdivision": null
       },
       {
         "code": "10",
-        "name": "Khūzestān",
+        "name": "Khūzestan",
         "subdivision": null
       },
       {
         "code": "18",
-        "name": "Kohgīlūyeh va Būyer Aḩmad",
+        "name": "Kohgilūyeh va Būyer Aḩmad",
         "subdivision": null
       },
       {
         "code": "16",
-        "name": "Kordestān",
+        "name": "Kordestan",
         "subdivision": null
       },
       {
         "code": "20",
-        "name": "Lorestān",
+        "name": "Lorestan",
         "subdivision": null
       },
       {
         "code": "22",
-        "name": "Markazī",
+        "name": "Markazi",
         "subdivision": null
       },
       {
         "code": "21",
-        "name": "Māzandarān",
+        "name": "Mazandaran",
         "subdivision": null
       },
       {
         "code": "28",
-        "name": "Qazvīn",
+        "name": "Qazvin",
         "subdivision": null
       },
       {
@@ -6721,17 +6721,17 @@
       },
       {
         "code": "12",
-        "name": "Semnān",
+        "name": "Semnan",
         "subdivision": null
       },
       {
         "code": "13",
-        "name": "Sīstān va Balūchestān",
+        "name": "Sistan va Balūchestan",
         "subdivision": null
       },
       {
         "code": "07",
-        "name": "Tehrān",
+        "name": "Tehran",
         "subdivision": null
       },
       {
@@ -6741,22 +6741,22 @@
       },
       {
         "code": "11",
-        "name": "Zanjān",
+        "name": "Zanjan",
         "subdivision": null
       },
       {
         "code": "02",
-        "name": "Āz̄arbāyjān-e Gharbī",
+        "name": "az̄arbayjan-e Gharbi",
         "subdivision": null
       },
       {
         "code": "01",
-        "name": "Āz̄arbāyjān-e Sharqī",
+        "name": "az̄arbayjan-e Sharqi",
         "subdivision": null
       },
       {
         "code": "05",
-        "name": "Īlām",
+        "name": "ilam",
         "subdivision": null
       }
     ]
@@ -6771,7 +6771,7 @@
     "states": [
       {
         "code": "AN",
-        "name": "Al Anbār",
+        "name": "Al Anbar",
         "subdivision": null
       },
       {
@@ -6786,7 +6786,7 @@
       },
       {
         "code": "QA",
-        "name": "Al Qādisīyah",
+        "name": "Al Qadisiyah",
         "subdivision": null
       },
       {
@@ -6796,27 +6796,27 @@
       },
       {
         "code": "AR",
-        "name": "Arbīl",
+        "name": "Arbil",
         "subdivision": null
       },
       {
         "code": "SU",
-        "name": "As Sulaymānīyah",
+        "name": "As Sulaymaniyah",
         "subdivision": null
       },
       {
         "code": "TS",
-        "name": "At Ta'mīm",
+        "name": "At Ta'mim",
         "subdivision": null
       },
       {
         "code": "BG",
-        "name": "Baghdād",
+        "name": "Baghdad",
         "subdivision": null
       },
       {
         "code": "BB",
-        "name": "Bābil",
+        "name": "Babil",
         "subdivision": null
       },
       {
@@ -6826,37 +6826,37 @@
       },
       {
         "code": "DQ",
-        "name": "Dhī Qār",
+        "name": "Dhi Qar",
         "subdivision": null
       },
       {
         "code": "DI",
-        "name": "Diyālá",
+        "name": "Diyalá",
         "subdivision": null
       },
       {
         "code": "KA",
-        "name": "Karbalā'",
+        "name": "Karbala'",
         "subdivision": null
       },
       {
         "code": "MA",
-        "name": "Maysān",
+        "name": "Maysan",
         "subdivision": null
       },
       {
         "code": "NI",
-        "name": "Nīnawá",
+        "name": "Ninawá",
         "subdivision": null
       },
       {
         "code": "WA",
-        "name": "Wāsiţ",
+        "name": "Wasiţ",
         "subdivision": null
       },
       {
         "code": "SD",
-        "name": "Şalāḩ ad Dīn",
+        "name": "Şalaḩ ad Din",
         "subdivision": null
       }
     ]
@@ -7394,7 +7394,7 @@
     "states": [
       {
         "code": "BA",
-        "name": "Al Balqā'",
+        "name": "Al Balqa'",
         "subdivision": null
       },
       {
@@ -7404,12 +7404,12 @@
       },
       {
         "code": "AZ",
-        "name": "Az Zarqā'",
+        "name": "Az Zarqa'",
         "subdivision": null
       },
       {
         "code": "AT",
-        "name": "Aţ Ţafīlah",
+        "name": "Aţ Ţafilah",
         "subdivision": null
       },
       {
@@ -7429,7 +7429,7 @@
       },
       {
         "code": "MN",
-        "name": "Ma'ān",
+        "name": "Ma'an",
         "subdivision": null
       },
       {
@@ -7439,7 +7439,7 @@
       },
       {
         "code": "MD",
-        "name": "Mādabā",
+        "name": "Madaba",
         "subdivision": null
       },
       {
@@ -7449,7 +7449,7 @@
       },
       {
         "code": "AM",
-        "name": "‘Ammān",
+        "name": "‘Amman",
         "subdivision": null
       }
     ]
@@ -7634,12 +7634,12 @@
       },
       {
         "code": "FA",
-        "name": "Al Farwānīyah",
+        "name": "Al Farwaniyah",
         "subdivision": null
       },
       {
         "code": "JA",
-        "name": "Al Jahrā’",
+        "name": "Al Jahra’",
         "subdivision": null
       },
       {
@@ -7649,12 +7649,12 @@
       },
       {
         "code": "MU",
-        "name": "Mubārak al Kabīr",
+        "name": "Mubarak al Kabir",
         "subdivision": null
       },
       {
         "code": "HA",
-        "name": "Ḩawallī",
+        "name": "Ḩawalli",
         "subdivision": null
       }
     ]
@@ -7724,7 +7724,7 @@
       },
       {
         "code": "BK",
-        "name": "Bokèo",
+        "name": "Bokeo",
         "subdivision": null
       },
       {
@@ -7774,7 +7774,7 @@
       },
       {
         "code": "SV",
-        "name": "Savannakhét",
+        "name": "Savannakhet",
         "subdivision": null
       },
       {
@@ -7804,7 +7804,7 @@
       },
       {
         "code": "XE",
-        "name": "Xékong",
+        "name": "Xekong",
         "subdivision": null
       }
     ]
@@ -7834,7 +7834,7 @@
       },
       {
         "code": "004",
-        "name": "Aknīstes novads",
+        "name": "Aknistes novads",
         "subdivision": null
       },
       {
@@ -7869,7 +7869,7 @@
       },
       {
         "code": "012",
-        "name": "Babītes novads",
+        "name": "Babites novads",
         "subdivision": null
       },
       {
@@ -7894,7 +7894,7 @@
       },
       {
         "code": "017",
-        "name": "Beverīnas novads",
+        "name": "Beverinas novads",
         "subdivision": null
       },
       {
@@ -8064,27 +8064,27 @@
       },
       {
         "code": "047",
-        "name": "Krāslavas novads",
+        "name": "Kraslavas novads",
         "subdivision": null
       },
       {
         "code": "050",
-        "name": "Kuldīgas novads",
+        "name": "Kuldigas novads",
         "subdivision": null
       },
       {
         "code": "044",
-        "name": "Kārsavas novads",
+        "name": "Karsavas novads",
         "subdivision": null
       },
       {
         "code": "053",
-        "name": "Lielvārdes novads",
+        "name": "Lielvardes novads",
         "subdivision": null
       },
       {
         "code": "LPX",
-        "name": "Liepāja",
+        "name": "Liepaja",
         "subdivision": null
       },
       {
@@ -8094,7 +8094,7 @@
       },
       {
         "code": "057",
-        "name": "Lubānas novads",
+        "name": "Lubanas novads",
         "subdivision": null
       },
       {
@@ -8104,12 +8104,12 @@
       },
       {
         "code": "055",
-        "name": "Līgatnes novads",
+        "name": "Ligatnes novads",
         "subdivision": null
       },
       {
         "code": "056",
-        "name": "Līvānu novads",
+        "name": "Livanu novads",
         "subdivision": null
       },
       {
@@ -8124,12 +8124,12 @@
       },
       {
         "code": "061",
-        "name": "Mālpils novads",
+        "name": "Malpils novads",
         "subdivision": null
       },
       {
         "code": "062",
-        "name": "Mārupes novads",
+        "name": "Marupes novads",
         "subdivision": null
       },
       {
@@ -8149,7 +8149,7 @@
       },
       {
         "code": "066",
-        "name": "Nīcas novads",
+        "name": "Nicas novads",
         "subdivision": null
       },
       {
@@ -8184,12 +8184,12 @@
       },
       {
         "code": "070",
-        "name": "Pārgaujas novads",
+        "name": "Pargaujas novads",
         "subdivision": null
       },
       {
         "code": "071",
-        "name": "Pāvilostas novads",
+        "name": "Pavilostas novads",
         "subdivision": null
       },
       {
@@ -8224,12 +8224,12 @@
       },
       {
         "code": "082",
-        "name": "Rugāju novads",
+        "name": "Rugaju novads",
         "subdivision": null
       },
       {
         "code": "083",
-        "name": "Rundāles novads",
+        "name": "Rundales novads",
         "subdivision": null
       },
       {
@@ -8244,7 +8244,7 @@
       },
       {
         "code": "RIX",
-        "name": "Rīga",
+        "name": "Riga",
         "subdivision": null
       },
       {
@@ -8254,7 +8254,7 @@
       },
       {
         "code": "086",
-        "name": "Salacgrīvas novads",
+        "name": "Salacgrivas novads",
         "subdivision": null
       },
       {
@@ -8289,7 +8289,7 @@
       },
       {
         "code": "092",
-        "name": "Skrīveru novads",
+        "name": "Skriveru novads",
         "subdivision": null
       },
       {
@@ -8344,7 +8344,7 @@
       },
       {
         "code": "102",
-        "name": "Varakļānu novads",
+        "name": "Varakļanu novads",
         "subdivision": null
       },
       {
@@ -8369,7 +8369,7 @@
       },
       {
         "code": "107",
-        "name": "Viesītes novads",
+        "name": "Viesites novads",
         "subdivision": null
       },
       {
@@ -8379,12 +8379,12 @@
       },
       {
         "code": "109",
-        "name": "Viļānu novads",
+        "name": "Viļanu novads",
         "subdivision": null
       },
       {
         "code": "103",
-        "name": "Vārkavas novads",
+        "name": "Varkavas novads",
         "subdivision": null
       },
       {
@@ -8394,7 +8394,7 @@
       },
       {
         "code": "011",
-        "name": "Ādažu novads",
+        "name": "adažu novads",
         "subdivision": null
       },
       {
@@ -8439,7 +8439,7 @@
       },
       {
         "code": "BI",
-        "name": "Béqaa",
+        "name": "Beqaa",
         "subdivision": null
       },
       {
@@ -8459,7 +8459,7 @@
       },
       {
         "code": "NA",
-        "name": "Nabatîyé",
+        "name": "Nabatîye",
         "subdivision": null
       }
     ]
@@ -8619,7 +8619,7 @@
     "states": [
       {
         "code": "BU",
-        "name": "Al Buţnān",
+        "name": "Al Buţnan",
         "subdivision": null
       },
       {
@@ -8629,12 +8629,12 @@
       },
       {
         "code": "JG",
-        "name": "Al Jabal al Gharbī",
+        "name": "Al Jabal al Gharbi",
         "subdivision": null
       },
       {
         "code": "JI",
-        "name": "Al Jifārah",
+        "name": "Al Jifarah",
         "subdivision": null
       },
       {
@@ -8659,7 +8659,7 @@
       },
       {
         "code": "WA",
-        "name": "Al Wāḩāt",
+        "name": "Al Waḩat",
         "subdivision": null
       },
       {
@@ -8669,12 +8669,12 @@
       },
       {
         "code": "ZA",
-        "name": "Az Zāwiyah",
+        "name": "Az Zawiyah",
         "subdivision": null
       },
       {
         "code": "BA",
-        "name": "Banghāzī",
+        "name": "Banghazi",
         "subdivision": null
       },
       {
@@ -8684,12 +8684,12 @@
       },
       {
         "code": "GT",
-        "name": "Ghāt",
+        "name": "Ghat",
         "subdivision": null
       },
       {
         "code": "MI",
-        "name": "Mişrātah",
+        "name": "Mişratah",
         "subdivision": null
       },
       {
@@ -8699,12 +8699,12 @@
       },
       {
         "code": "NL",
-        "name": "Nālūt",
+        "name": "Nalūt",
         "subdivision": null
       },
       {
         "code": "SB",
-        "name": "Sabhā",
+        "name": "Sabha",
         "subdivision": null
       },
       {
@@ -8714,17 +8714,17 @@
       },
       {
         "code": "WD",
-        "name": "Wādī al Ḩayāt",
+        "name": "Wadi al Ḩayat",
         "subdivision": null
       },
       {
         "code": "WS",
-        "name": "Wādī ash Shāţiʾ",
+        "name": "Wadi ash Shaţiʾ",
         "subdivision": null
       },
       {
         "code": "TB",
-        "name": "Ţarābulus",
+        "name": "Ţarabulus",
         "subdivision": null
       }
     ]
@@ -9477,7 +9477,7 @@
     "code2": "MV",
     "code3": "MDV",
     "name": "Maldives",
-    "capital": "Malé",
+    "capital": "Male",
     "region": "Asia",
     "subregion": "Southern Asia",
     "states": [
@@ -9568,7 +9568,7 @@
       },
       {
         "code": "4",
-        "name": "Ségou",
+        "name": "Segou",
         "subdivision": null
       },
       {
@@ -9608,7 +9608,7 @@
       },
       {
         "code": "05",
-        "name": "Birżebbuġa",
+        "name": "Birżebbuga",
         "subdivision": null
       },
       {
@@ -9758,7 +9758,7 @@
       },
       {
         "code": "31",
-        "name": "Mġarr",
+        "name": "Mgarr",
         "subdivision": null
       },
       {
@@ -9783,7 +9783,7 @@
       },
       {
         "code": "41",
-        "name": "Pietà",
+        "name": "Piete",
         "subdivision": null
       },
       {
@@ -9828,12 +9828,12 @@
       },
       {
         "code": "48",
-        "name": "San Ġiljan",
+        "name": "San giljan",
         "subdivision": null
       },
       {
         "code": "49",
-        "name": "San Ġwann",
+        "name": "San gwann",
         "subdivision": null
       },
       {
@@ -9853,7 +9853,7 @@
       },
       {
         "code": "55",
-        "name": "Siġġiewi",
+        "name": "Siggiewi",
         "subdivision": null
       },
       {
@@ -9908,12 +9908,12 @@
       },
       {
         "code": "65",
-        "name": "Żebbuġ Għawdex",
+        "name": "Żebbug Għawdex",
         "subdivision": null
       },
       {
         "code": "66",
-        "name": "Żebbuġ Malta",
+        "name": "Żebbug Malta",
         "subdivision": null
       },
       {
@@ -10107,7 +10107,7 @@
       },
       {
         "code": "RR",
-        "name": "Rivière du Rempart",
+        "name": "Riviere du Rempart",
         "subdivision": null
       },
       {
@@ -10226,7 +10226,7 @@
       },
       {
         "code": "MEX",
-        "name": "México",
+        "name": "Mexico",
         "subdivision": "state"
       },
       {
@@ -10236,7 +10236,7 @@
       },
       {
         "code": "NLE",
-        "name": "Nuevo León",
+        "name": "Nuevo Leon",
         "subdivision": "state"
       },
       {
@@ -10251,7 +10251,7 @@
       },
       {
         "code": "QUE",
-        "name": "Querétaro",
+        "name": "Queretaro",
         "subdivision": "state"
       },
       {
@@ -10261,7 +10261,7 @@
       },
       {
         "code": "SLP",
-        "name": "San Luis Potosí",
+        "name": "San Luis Potosi",
         "subdivision": "state"
       },
       {
@@ -10611,12 +10611,12 @@
       },
       {
         "code": "SD",
-        "name": "Sainte-Dévote",
+        "name": "Sainte-Devote",
         "subdivision": null
       },
       {
         "code": "SP",
-        "name": "Spélugues",
+        "name": "Spelugues",
         "subdivision": null
       },
       {
@@ -10900,7 +10900,7 @@
       },
       {
         "code": "05",
-        "name": "Fès-Boulemane",
+        "name": "Fes-Boulemane",
         "subdivision": null
       },
       {
@@ -10935,7 +10935,7 @@
       },
       {
         "code": "06",
-        "name": "Meknès-Tafilalet",
+        "name": "Meknes-Tafilalet",
         "subdivision": null
       },
       {
@@ -10945,7 +10945,7 @@
       },
       {
         "code": "07",
-        "name": "Rabat-Salé-Zemmour-Zaer",
+        "name": "Rabat-Sale-Zemmour-Zaer",
         "subdivision": null
       },
       {
@@ -10960,7 +10960,7 @@
       },
       {
         "code": "01",
-        "name": "Tanger-Tétouan",
+        "name": "Tanger-Tetouan",
         "subdivision": null
       },
       {
@@ -11030,7 +11030,7 @@
       },
       {
         "code": "Q",
-        "name": "Zambézia",
+        "name": "Zambezia",
         "subdivision": null
       }
     ]
@@ -11385,7 +11385,7 @@
       },
       {
         "code": "CW",
-        "name": "Curaçao",
+        "name": "Curacao",
         "subdivision": "country"
       },
       {
@@ -11414,7 +11414,7 @@
     "code2": "NC",
     "code3": "NCL",
     "name": "New Caledonia",
-    "capital": "Nouméa",
+    "capital": "Noumea",
     "region": "Oceania",
     "subregion": "Melanesia",
     "states": []
@@ -11564,7 +11564,7 @@
       },
       {
         "code": "ES",
-        "name": "Estelí",
+        "name": "Esteli",
         "subdivision": null
       },
       {
@@ -11579,7 +11579,7 @@
       },
       {
         "code": "LE",
-        "name": "León",
+        "name": "Leon",
         "subdivision": null
       },
       {
@@ -11614,7 +11614,7 @@
       },
       {
         "code": "SJ",
-        "name": "Río San Juan",
+        "name": "Rio San Juan",
         "subdivision": null
       }
     ]
@@ -11659,7 +11659,7 @@
       },
       {
         "code": "6",
-        "name": "Tillabéri",
+        "name": "Tillaberi",
         "subdivision": null
       },
       {
@@ -12081,17 +12081,17 @@
     "states": [
       {
         "code": "DA",
-        "name": "Ad Dākhilīyah",
+        "name": "Ad Dakhiliyah",
         "subdivision": null
       },
       {
         "code": "BU",
-        "name": "Al Buraymī",
+        "name": "Al Buraymi",
         "subdivision": null
       },
       {
         "code": "BA",
-        "name": "Al Bāţinah",
+        "name": "Al Baţinah",
         "subdivision": null
       },
       {
@@ -12101,12 +12101,12 @@
       },
       {
         "code": "SH",
-        "name": "Ash Sharqīyah",
+        "name": "Ash Sharqiyah",
         "subdivision": null
       },
       {
         "code": "ZA",
-        "name": "Az̧ Z̧āhirah",
+        "name": "Az̧ Z̧ahirah",
         "subdivision": null
       },
       {
@@ -12121,7 +12121,7 @@
       },
       {
         "code": "ZU",
-        "name": "Z̧ufār",
+        "name": "Z̧ufar",
         "subdivision": null
       }
     ]
@@ -12371,22 +12371,22 @@
       },
       {
         "code": "4",
-        "name": "Chiriquí",
+        "name": "Chiriqui",
         "subdivision": null
       },
       {
         "code": "2",
-        "name": "Coclé",
+        "name": "Cocle",
         "subdivision": null
       },
       {
         "code": "3",
-        "name": "Colón",
+        "name": "Colon",
         "subdivision": null
       },
       {
         "code": "5",
-        "name": "Darién",
+        "name": "Darien",
         "subdivision": null
       },
       {
@@ -12411,7 +12411,7 @@
       },
       {
         "code": "NB",
-        "name": "Ngöbe-Buglé",
+        "name": "Ngöbe-Bugle",
         "subdivision": null
       },
       {
@@ -12545,7 +12545,7 @@
     "code2": "PY",
     "code3": "PRY",
     "name": "Paraguay",
-    "capital": "Asunción",
+    "capital": "Asuncion",
     "region": "Americas",
     "subregion": "South America",
     "states": [
@@ -12566,12 +12566,12 @@
       },
       {
         "code": "ASU",
-        "name": "Asunción",
+        "name": "Asuncion",
         "subdivision": null
       },
       {
         "code": "19",
-        "name": "Boquerón",
+        "name": "Boqueron",
         "subdivision": null
       },
       {
@@ -12596,7 +12596,7 @@
       },
       {
         "code": "1",
-        "name": "Concepción",
+        "name": "Concepcion",
         "subdivision": null
       },
       {
@@ -12621,7 +12621,7 @@
       },
       {
         "code": "9",
-        "name": "Paraguarí",
+        "name": "Paraguari",
         "subdivision": null
       },
       {
@@ -12661,7 +12661,7 @@
       },
       {
         "code": "APU",
-        "name": "Apurímac",
+        "name": "Apurimac",
         "subdivision": null
       },
       {
@@ -12706,7 +12706,7 @@
       },
       {
         "code": "JUN",
-        "name": "Junín",
+        "name": "Junin",
         "subdivision": null
       },
       {
@@ -12761,7 +12761,7 @@
       },
       {
         "code": "SAM",
-        "name": "San Martín",
+        "name": "San Martin",
         "subdivision": null
       },
       {
@@ -12960,7 +12960,7 @@
       },
       {
         "code": "LD",
-        "name": "Łódzkie",
+        "name": "Łodzkie",
         "subdivision": null
       },
       {
@@ -13000,7 +13000,7 @@
       },
       {
         "code": "04",
-        "name": "Bragança",
+        "name": "Braganca",
         "subdivision": null
       },
       {
@@ -13045,17 +13045,17 @@
       },
       {
         "code": "30",
-        "name": "Região Autónoma da Madeira",
+        "name": "Região Autonoma da Madeira",
         "subdivision": null
       },
       {
         "code": "20",
-        "name": "Região Autónoma dos Açores",
+        "name": "Região Autonoma dos Acores",
         "subdivision": null
       },
       {
         "code": "14",
-        "name": "Santarém",
+        "name": "Santarem",
         "subdivision": null
       },
       {
@@ -13080,7 +13080,7 @@
       },
       {
         "code": "07",
-        "name": "Évora",
+        "name": "evora",
         "subdivision": null
       }
     ]
@@ -13109,7 +13109,7 @@
       },
       {
         "code": "KH",
-        "name": "Al Khawr wa adh Dhakhīrah",
+        "name": "Al Khawr wa adh Dhakhirah",
         "subdivision": null
       },
       {
@@ -13119,22 +13119,22 @@
       },
       {
         "code": "RA",
-        "name": "Ar Rayyān",
+        "name": "Ar Rayyan",
         "subdivision": null
       },
       {
         "code": "MS",
-        "name": "Ash Shamāl",
+        "name": "Ash Shamal",
         "subdivision": null
       },
       {
         "code": "ZA",
-        "name": "Az̧ Za̧`āyin",
+        "name": "Az̧ Za̧`ayin",
         "subdivision": null
       },
       {
         "code": "US",
-        "name": "Umm Şalāl",
+        "name": "Umm Şalal",
         "subdivision": null
       }
     ]
@@ -13151,7 +13151,7 @@
   {
     "code2": "RE",
     "code3": "REU",
-    "name": "Réunion",
+    "name": "Reunion",
     "capital": "Saint-Denis",
     "region": "Africa",
     "subregion": "Eastern Africa",
@@ -13840,7 +13840,7 @@
   {
     "code2": "BL",
     "code3": "BLM",
-    "name": "Saint Barthélemy",
+    "name": "Saint Barthelemy",
     "capital": "Gustavia",
     "region": "Americas",
     "subregion": "Caribbean",
@@ -13946,7 +13946,7 @@
       },
       {
         "code": "10",
-        "name": "Soufrière",
+        "name": "Soufriere",
         "subdivision": null
       },
       {
@@ -14137,19 +14137,19 @@
   {
     "code2": "ST",
     "code3": "STP",
-    "name": "São Tomé and Príncipe",
-    "capital": "São Tomé",
+    "name": "São Tome and Principe",
+    "capital": "São Tome",
     "region": "Africa",
     "subregion": "Middle Africa",
     "states": [
       {
         "code": "P",
-        "name": "Príncipe",
+        "name": "Principe",
         "subdivision": null
       },
       {
         "code": "S",
-        "name": "São Tomé",
+        "name": "São Tome",
         "subdivision": null
       }
     ]
@@ -14164,7 +14164,7 @@
     "states": [
       {
         "code": "11",
-        "name": "Al Bāḩah",
+        "name": "Al Baḩah",
         "subdivision": null
       },
       {
@@ -14174,32 +14174,32 @@
       },
       {
         "code": "03",
-        "name": "Al Madīnah",
+        "name": "Al Madinah",
         "subdivision": null
       },
       {
         "code": "05",
-        "name": "Al Qaşīm",
+        "name": "Al Qaşim",
         "subdivision": null
       },
       {
         "code": "08",
-        "name": "Al Ḩudūd ash Shamālīyah",
+        "name": "Al Ḩudūd ash Shamaliyah",
         "subdivision": null
       },
       {
         "code": "01",
-        "name": "Ar Riyāḑ",
+        "name": "Ar Riyaḑ",
         "subdivision": null
       },
       {
         "code": "04",
-        "name": "Ash Sharqīyah",
+        "name": "Ash Sharqiyah",
         "subdivision": null
       },
       {
         "code": "09",
-        "name": "Jīzān",
+        "name": "Jizan",
         "subdivision": null
       },
       {
@@ -14209,7 +14209,7 @@
       },
       {
         "code": "10",
-        "name": "Najrān",
+        "name": "Najran",
         "subdivision": null
       },
       {
@@ -14219,12 +14219,12 @@
       },
       {
         "code": "14",
-        "name": "ٰĀsīr",
+        "name": "ٰasir",
         "subdivision": null
       },
       {
         "code": "06",
-        "name": "Ḩā'il",
+        "name": "Ḩa'il",
         "subdivision": null
       }
     ]
@@ -14269,7 +14269,7 @@
       },
       {
         "code": "KE",
-        "name": "Kédougou",
+        "name": "Kedougou",
         "subdivision": null
       },
       {
@@ -14289,7 +14289,7 @@
       },
       {
         "code": "SE",
-        "name": "Sédhiou",
+        "name": "Sedhiou",
         "subdivision": null
       },
       {
@@ -14299,7 +14299,7 @@
       },
       {
         "code": "TH",
-        "name": "Thiès",
+        "name": "Thies",
         "subdivision": null
       },
       {
@@ -16052,7 +16052,7 @@
       },
       {
         "code": "AL",
-        "name": "Almería",
+        "name": "Almeria",
         "subdivision": "Province"
       },
       {
@@ -16087,7 +16087,7 @@
       },
       {
         "code": "CS",
-        "name": "Castellón",
+        "name": "Castellon",
         "subdivision": "Province"
       },
       {
@@ -16112,7 +16112,7 @@
       },
       {
         "code": "CO",
-        "name": "Córdoba",
+        "name": "Cordoba",
         "subdivision": "Province"
       },
       {
@@ -16147,7 +16147,7 @@
       },
       {
         "code": "J",
-        "name": "Jaén",
+        "name": "Jaen",
         "subdivision": "Province"
       },
       {
@@ -16162,7 +16162,7 @@
       },
       {
         "code": "LE",
-        "name": "León",
+        "name": "Leon",
         "subdivision": "Province"
       },
       {
@@ -16297,12 +16297,12 @@
       },
       {
         "code": "AN",
-        "name": "Andalucía",
+        "name": "Andalucia",
         "subdivision": "autonomous community"
       },
       {
         "code": "AR",
-        "name": "Aragón",
+        "name": "Aragon",
         "subdivision": "autonomous community"
       },
       {
@@ -16322,7 +16322,7 @@
       },
       {
         "code": "CL",
-        "name": "Castilla y León",
+        "name": "Castilla y Leon",
         "subdivision": "autonomous community"
       },
       {
@@ -16362,7 +16362,7 @@
       },
       {
         "code": "MC",
-        "name": "Murcia, Región de",
+        "name": "Murcia, Region de",
         "subdivision": "autonomous community"
       },
       {
@@ -16372,7 +16372,7 @@
       },
       {
         "code": "PV",
-        "name": "País Vasco",
+        "name": "Pais Vasco",
         "subdivision": "autonomous community"
       },
       {
@@ -16452,7 +16452,7 @@
       },
       {
         "code": "GZ",
-        "name": "Al Jazīrah",
+        "name": "Al Jazirah",
         "subdivision": null
       },
       {
@@ -16462,67 +16462,67 @@
       },
       {
         "code": "GD",
-        "name": "Al Qaḑārif",
+        "name": "Al Qaḑarif",
         "subdivision": null
       },
       {
         "code": "NR",
-        "name": "An Nīl",
+        "name": "An Nil",
         "subdivision": null
       },
       {
         "code": "NW",
-        "name": "An Nīl al Abyaḑ",
+        "name": "An Nil al Abyaḑ",
         "subdivision": null
       },
       {
         "code": "NB",
-        "name": "An Nīl al Azraq",
+        "name": "An Nil al Azraq",
         "subdivision": null
       },
       {
         "code": "NO",
-        "name": "Ash Shamālīyah",
+        "name": "Ash Shamaliyah",
         "subdivision": null
       },
       {
         "code": "DW",
-        "name": "Gharb Dārfūr",
+        "name": "Gharb Darfūr",
         "subdivision": null
       },
       {
         "code": "DS",
-        "name": "Janūb Dārfūr",
+        "name": "Janūb Darfūr",
         "subdivision": null
       },
       {
         "code": "KS",
-        "name": "Janūb Kurdufān",
+        "name": "Janūb Kurdufan",
         "subdivision": null
       },
       {
         "code": "KA",
-        "name": "Kassalā",
+        "name": "Kassala",
         "subdivision": null
       },
       {
         "code": "DN",
-        "name": "Shamāl Dārfūr",
+        "name": "Shamal Darfūr",
         "subdivision": null
       },
       {
         "code": "KN",
-        "name": "Shamāl Kurdufān",
+        "name": "Shamal Kurdufan",
         "subdivision": null
       },
       {
         "code": "DE",
-        "name": "Sharq Dārfūr",
+        "name": "Sharq Darfūr",
         "subdivision": null
       },
       {
         "code": "SI",
-        "name": "Sinnār",
+        "name": "Sinnar",
         "subdivision": null
       },
       {
@@ -16641,107 +16641,107 @@
     "states": [
       {
         "code": "K",
-        "name": "Blekinge län",
+        "name": "Blekinge lan",
         "subdivision": null
       },
       {
         "code": "W",
-        "name": "Dalarnas län",
+        "name": "Dalarnas lan",
         "subdivision": null
       },
       {
         "code": "I",
-        "name": "Gotlands län",
+        "name": "Gotlands lan",
         "subdivision": null
       },
       {
         "code": "X",
-        "name": "Gävleborgs län",
+        "name": "Gavleborgs lan",
         "subdivision": null
       },
       {
         "code": "N",
-        "name": "Hallands län",
+        "name": "Hallands lan",
         "subdivision": null
       },
       {
         "code": "Z",
-        "name": "Jämtlands län",
+        "name": "Jamtlands lan",
         "subdivision": null
       },
       {
         "code": "F",
-        "name": "Jönköpings län",
+        "name": "Jönköpings lan",
         "subdivision": null
       },
       {
         "code": "H",
-        "name": "Kalmar län",
+        "name": "Kalmar lan",
         "subdivision": null
       },
       {
         "code": "G",
-        "name": "Kronobergs län",
+        "name": "Kronobergs lan",
         "subdivision": null
       },
       {
         "code": "BD",
-        "name": "Norrbottens län",
+        "name": "Norrbottens lan",
         "subdivision": null
       },
       {
         "code": "M",
-        "name": "Skåne län",
+        "name": "Skåne lan",
         "subdivision": null
       },
       {
         "code": "AB",
-        "name": "Stockholms län",
+        "name": "Stockholms lan",
         "subdivision": null
       },
       {
         "code": "D",
-        "name": "Södermanlands län",
+        "name": "Södermanlands lan",
         "subdivision": null
       },
       {
         "code": "C",
-        "name": "Uppsala län",
+        "name": "Uppsala lan",
         "subdivision": null
       },
       {
         "code": "S",
-        "name": "Värmlands län",
+        "name": "Varmlands lan",
         "subdivision": null
       },
       {
         "code": "AC",
-        "name": "Västerbottens län",
+        "name": "Vasterbottens lan",
         "subdivision": null
       },
       {
         "code": "Y",
-        "name": "Västernorrlands län",
+        "name": "Vasternorrlands lan",
         "subdivision": null
       },
       {
         "code": "U",
-        "name": "Västmanlands län",
+        "name": "Vastmanlands lan",
         "subdivision": null
       },
       {
         "code": "O",
-        "name": "Västra Götalands län",
+        "name": "Vastra Götalands lan",
         "subdivision": null
       },
       {
         "code": "T",
-        "name": "Örebro län",
+        "name": "Örebro lan",
         "subdivision": null
       },
       {
         "code": "E",
-        "name": "Östergötlands län",
+        "name": "Östergötlands lan",
         "subdivision": null
       }
     ]
@@ -16791,7 +16791,7 @@
       },
       {
         "code": "GE",
-        "name": "Genève",
+        "name": "Geneve",
         "subdivision": null
       },
       {
@@ -16896,7 +16896,7 @@
     "states": [
       {
         "code": "LA",
-        "name": "Al Lādhiqīyah",
+        "name": "Al Ladhiqiyah",
         "subdivision": null
       },
       {
@@ -16916,12 +16916,12 @@
       },
       {
         "code": "SU",
-        "name": "As Suwaydā'",
+        "name": "As Suwayda'",
         "subdivision": null
       },
       {
         "code": "DR",
-        "name": "Darٰā",
+        "name": "Darٰa",
         "subdivision": null
       },
       {
@@ -16941,7 +16941,7 @@
       },
       {
         "code": "RD",
-        "name": "Rīf Dimashq",
+        "name": "Rif Dimashq",
         "subdivision": null
       },
       {
@@ -16956,7 +16956,7 @@
       },
       {
         "code": "HM",
-        "name": "Ḩamāh",
+        "name": "Ḩamah",
         "subdivision": null
       },
       {
@@ -17696,7 +17696,7 @@
       },
       {
         "code": "DI",
-        "name": "Díli",
+        "name": "Dili",
         "subdivision": null
       },
       {
@@ -17711,7 +17711,7 @@
       },
       {
         "code": "LI",
-        "name": "Liquiça",
+        "name": "Liquica",
         "subdivision": null
       },
       {
@@ -17740,7 +17740,7 @@
     "code2": "TG",
     "code3": "TGO",
     "name": "Togo",
-    "capital": "Lomé",
+    "capital": "Lome",
     "region": "Africa",
     "subregion": "Western Africa",
     "states": [
@@ -17930,12 +17930,12 @@
       },
       {
         "code": "31",
-        "name": "Béja",
+        "name": "Beja",
         "subdivision": null
       },
       {
         "code": "81",
-        "name": "Gabès",
+        "name": "Gabes",
         "subdivision": null
       },
       {
@@ -18415,17 +18415,17 @@
       },
       {
         "code": "17",
-        "name": "Çanakkale",
+        "name": "canakkale",
         "subdivision": null
       },
       {
         "code": "18",
-        "name": "Çankırı",
+        "name": "cankırı",
         "subdivision": null
       },
       {
         "code": "19",
-        "name": "Çorum",
+        "name": "corum",
         "subdivision": null
       },
       {
@@ -18734,7 +18734,7 @@
     "states": [
       {
         "code": "AJ",
-        "name": "'Ajmān",
+        "name": "'Ajman",
         "subdivision": null
       },
       {
@@ -18749,7 +18749,7 @@
       },
       {
         "code": "SH",
-        "name": "Ash Shāriqah",
+        "name": "Ash Shariqah",
         "subdivision": null
       },
       {
@@ -20344,7 +20344,7 @@
       },
       {
         "code": "RN",
-        "name": "Río Negro",
+        "name": "Rio Negro",
         "subdivision": null
       },
       {
@@ -20354,7 +20354,7 @@
       },
       {
         "code": "SJ",
-        "name": "San José",
+        "name": "San Jose",
         "subdivision": null
       },
       {
@@ -20364,7 +20364,7 @@
       },
       {
         "code": "TA",
-        "name": "Tacuarembó",
+        "name": "Tacuarembo",
         "subdivision": null
       },
       {
@@ -20469,7 +20469,7 @@
       },
       {
         "code": "PAM",
-        "name": "Pénama",
+        "name": "Penama",
         "subdivision": null
       },
       {
@@ -20479,12 +20479,12 @@
       },
       {
         "code": "SEE",
-        "name": "Shéfa",
+        "name": "Shefa",
         "subdivision": null
       },
       {
         "code": "TAE",
-        "name": "Taféa",
+        "name": "Tafea",
         "subdivision": null
       },
       {
@@ -20529,7 +20529,7 @@
       },
       {
         "code": "F",
-        "name": "Bolívar",
+        "name": "Bolivar",
         "subdivision": null
       },
       {
@@ -20559,7 +20559,7 @@
       },
       {
         "code": "I",
-        "name": "Falcón",
+        "name": "Falcon",
         "subdivision": null
       },
       {
@@ -20584,7 +20584,7 @@
       },
       {
         "code": "L",
-        "name": "Mérida",
+        "name": "Merida",
         "subdivision": null
       },
       {
@@ -20644,7 +20644,7 @@
       },
       {
         "code": "43",
-        "name": "Bà Rịa–Vũng Tàu",
+        "name": "Be Rịa–Vũng Teu",
         "subdivision": null
       },
       {
@@ -20699,7 +20699,7 @@
       },
       {
         "code": "59",
-        "name": "Cà Mau",
+        "name": "Ce Mau",
         "subdivision": null
       },
       {
@@ -20714,32 +20714,32 @@
       },
       {
         "code": "03",
-        "name": "Hà Giang",
+        "name": "He Giang",
         "subdivision": null
       },
       {
         "code": "63",
-        "name": "Hà Nam",
+        "name": "He Nam",
         "subdivision": null
       },
       {
         "code": "HN",
-        "name": "Hà Nội",
+        "name": "He Nội",
         "subdivision": null
       },
       {
         "code": "15",
-        "name": "Hà Tây",
+        "name": "He Tây",
         "subdivision": null
       },
       {
         "code": "23",
-        "name": "Hà Tĩnh",
+        "name": "He Tĩnh",
         "subdivision": null
       },
       {
         "code": "14",
-        "name": "Hòa Bình",
+        "name": "Hoa Bình",
         "subdivision": null
       },
       {
@@ -20754,7 +20754,7 @@
       },
       {
         "code": "HP",
-        "name": "Hải Phòng",
+        "name": "Hải Phong",
         "subdivision": null
       },
       {
@@ -20764,12 +20764,12 @@
       },
       {
         "code": "SG",
-        "name": "Hồ Chí Minh",
+        "name": "Hồ Chi Minh",
         "subdivision": null
       },
       {
         "code": "34",
-        "name": "Khánh Hòa",
+        "name": "Khánh Hoa",
         "subdivision": null
       },
       {
@@ -20794,7 +20794,7 @@
       },
       {
         "code": "02",
-        "name": "Lào Cai",
+        "name": "Leo Cai",
         "subdivision": null
       },
       {
@@ -20864,7 +20864,7 @@
       },
       {
         "code": "52",
-        "name": "Sóc Trăng",
+        "name": "Soc Trăng",
         "subdivision": null
       },
       {
@@ -20874,7 +20874,7 @@
       },
       {
         "code": "21",
-        "name": "Thanh Hóa",
+        "name": "Thanh Hoa",
         "subdivision": null
       },
       {
@@ -20899,7 +20899,7 @@
       },
       {
         "code": "51",
-        "name": "Trà Vinh",
+        "name": "Tre Vinh",
         "subdivision": null
       },
       {
@@ -20934,7 +20934,7 @@
       },
       {
         "code": "DN",
-        "name": "Đà Nẵng",
+        "name": "Đe Nẵng",
         "subdivision": null
       },
       {
@@ -20992,17 +20992,17 @@
       },
       {
         "code": "AM",
-        "name": "'Amrān",
+        "name": "'Amran",
         "subdivision": null
       },
       {
         "code": "AB",
-        "name": "Abyān",
+        "name": "Abyan",
         "subdivision": null
       },
       {
         "code": "BA",
-        "name": "Al Bayḑā'",
+        "name": "Al Bayḑa'",
         "subdivision": null
       },
       {
@@ -21017,7 +21017,7 @@
       },
       {
         "code": "MW",
-        "name": "Al Maḩwīt",
+        "name": "Al Maḩwit",
         "subdivision": null
       },
       {
@@ -21027,12 +21027,12 @@
       },
       {
         "code": "DA",
-        "name": "Aḑ Ḑāli'",
+        "name": "Aḑ Ḑali'",
         "subdivision": null
       },
       {
         "code": "DH",
-        "name": "Dhamār",
+        "name": "Dhamar",
         "subdivision": null
       },
       {
@@ -21062,22 +21062,22 @@
       },
       {
         "code": "TA",
-        "name": "Tā‘izz",
+        "name": "Ta‘izz",
         "subdivision": null
       },
       {
         "code": "SA",
-        "name": "Şan‘ā'",
+        "name": "Şan‘a'",
         "subdivision": null
       },
       {
         "code": "SN",
-        "name": "Şan‘ā'",
+        "name": "Şan‘a'",
         "subdivision": null
       },
       {
         "code": "SD",
-        "name": "Şā‘dah",
+        "name": "Şa‘dah",
         "subdivision": null
       },
       {

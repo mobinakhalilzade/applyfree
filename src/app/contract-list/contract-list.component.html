@@ -1,1 +1,12 @@
-<p>contract-list works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <form (ngSubmit)='search()'>
+                <div class="input-group">
+                    <input type="search" placeholder="Search your contract" class="form-control" [(ngModel)]="form.query" [ngModelOptions]="{standalone: true}">
+                    <button class="btn btn-primary">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

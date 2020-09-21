@@ -45,11 +45,9 @@ export class RegisterComponent implements OnInit {
   gerError() { return this.form.controls; }
 
   register(form: any) {
-    console.log(form);
-
     const command = {
       username: form.username,
-      country: form.country,
+      country: form.country.name,
       city: form.city,
       password: form.password,
       firstName: form.firstName,
@@ -58,23 +56,20 @@ export class RegisterComponent implements OnInit {
       image: "avatar.jpg"
     };
 
-    console.log(command);
+    this.service.register(command).subscribe((response: any) => {
+      if (response.status == 200) {
+        const body = response.body;
+        if (body.return == 200) {
+          localStorage.setItem('token', body.token);
+          window.location.href = "/dashboard";
+        }
 
-    // this.service.register(command).subscribe((response: any) => {
-    //   if (response.status == 200) {
-    //     const data = response.body;
-
-    //     if (data.return == 200) {
-    //       localStorage.setItem('token', data.token);
-    //       window.location.href = "/dashboard";
-    //     }
-
-    //     if (data.return == 300) {
-    //       this.loading = false;
-    //       this.alert = data;
-    //     }
-    //   }
-    // });
+        if (body.return == 300) {
+          this.loading = false;
+          this.alert = body;
+        }
+      }
+    });
   }
 
   ngOnInit(): void {
