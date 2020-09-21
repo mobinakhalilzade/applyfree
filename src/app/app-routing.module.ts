@@ -29,11 +29,7 @@ import { SearchComponent } from "./search/search.component";
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 //static pages
-import{PagesComponent} from './pages/pages.component';
-import { TermsComponent } from './pages/components/terms/terms.component';
-import { AboutusComponent } from './pages/components/aboutus/aboutus.component';
-import { ContactusComponent } from './pages/components/contactus/contactus.component';
-import { PolicyComponent } from './pages/components/policy/policy.component';
+import { PagesComponent } from './pages/pages.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
@@ -71,17 +67,9 @@ const routes: Routes = [
       { path: 'password/:token', component: PasswordComponent },
     ]
   },
-
   {
-    path: 'pages', component: PagesComponent,
-    children: [
-      { path: 'aboutus', component: AboutusComponent },
-      { path: 'contactus', component: ContactusComponent },
-      { path: 'terms', component: TermsComponent },
-      { path: 'policy', component: PolicyComponent }
-    ]
+    path: 'pages', component: PagesComponent
   },
-
   { path: 'contracts', component: ContractListComponent, },
   { path: 'contract/:id', component: ContractComponent },
   { path: 'search', component: SearchComponent },
