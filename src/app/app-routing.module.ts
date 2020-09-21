@@ -36,11 +36,10 @@ import { ContactusComponent } from './pages/components/contactus/contactus.compo
 import { PolicyComponent } from './pages/components/policy/policy.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '', component: HomeComponent },
   { path: 'login', redirectTo: '/account/login' },
   { path: 'register', redirectTo: '/account/signup' },
-
   {
     path: 'dashboard', component: DashboardComponent,
     children: [
@@ -63,7 +62,6 @@ const routes: Routes = [
       { path: 'payments', component: PaymentsComponent },
     ]
   },
-
   {
     path: 'account', component: AccountComponent,
     children: [
