@@ -34,8 +34,10 @@ import { PagesComponent } from './pages/pages.component';
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: '', component: HomeComponent },
+
   { path: 'login', redirectTo: '/account/login' },
   { path: 'register', redirectTo: '/account/signup' },
+  
   {
     path: 'dashboard', component: DashboardComponent,
     children: [
@@ -67,14 +69,11 @@ const routes: Routes = [
       { path: 'password/:token', component: PasswordComponent },
     ]
   },
-  {
-    path: 'pages', component: PagesComponent
-  },
   { path: 'contracts', component: ContractListComponent, },
   { path: 'contract/:id', component: ContractComponent },
   { path: 'search', component: SearchComponent },
   { path: 'report', component: ReportComponent },
-
+  { path: 'page/:section', component: PagesComponent },
 
   { path: '**', redirectTo: '/404', pathMatch: 'full' },
   { path: '404', component: PageNotFoundComponent },
