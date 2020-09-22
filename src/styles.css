@@ -131,3 +131,84 @@ table tr td {
 .rounded-10{
     border-radius: 10%!important;
 }
+
+.btn-custom-1:after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    background-color: var(--orangered);
+    height: 10px;
+    top: 50%;
+    left: 100%;
+    transform: translate(0, -50%);
+    margin-left: -5px;
+    z-index: 1;
+}
+
+.btn-custom-2:before {
+    content: "";
+    position: absolute;
+    background-color: var(--light);
+    width: 10px;
+    height: 10px;
+    right: 100%;
+    margin-right: 0;
+    margin-top: 0;
+    z-index: 1;
+    border-radius: 100%;
+}
+
+.btn-custom-2:after {
+    content: "";
+    position: absolute;
+    background-color: var(--light);
+    width: 10px;
+    height: 10px;
+    right: 100%;
+    margin-right: 0;
+    margin-top: -15px;
+    z-index: 1;
+    border-radius: 100%;
+    top: 100%;
+}
+
+
+.btn-custom-light-1:after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    background-color: var(--light);
+    height: 10px;
+    top: 50%;
+    left: 100%;
+    transform: translate(0, -50%);
+    margin-left: -5px;
+    z-index: 1;
+}
+
+.btn-custom-light-2:before {
+    content: "";
+    position: absolute;
+    background-color: var(--orangered);
+    width: 10px;
+    height: 10px;
+    right: 100%;
+    margin-right: 0;
+    margin-top: 0;
+    z-index: 1;
+    border-radius: 100%;
+}
+
+.btn-custom-light-2:after {
+    content: "";
+    position: absolute;
+    background-color: var(--orangered);
+    width: 10px;
+    height: 10px;
+    right: 100%;
+    margin-right: 0;
+    margin-top: -15px;
+    z-index: 1;
+    border-radius: 100%;
+    top: 100%;
+}

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,6 +31,7 @@ import { ReservedComponent } from './dashboard/components/reserved/reserved.comp
 import { StatusPipe } from './pipes/status.pipe';
 import { HomeComponent } from './home/home.component';
 import { ContractFilterPipe } from './pipes/contract-filter.pipe';
+import { PagesComponent } from './pages/pages.component';
 
 @NgModule({
   declarations: [
@@ -58,9 +60,11 @@ import { ContractFilterPipe } from './pipes/contract-filter.pipe';
     ReservedComponent,
     StatusPipe,
     HomeComponent,
+    PagesComponent,
     ContractFilterPipe
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
