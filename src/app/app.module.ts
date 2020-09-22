@@ -32,6 +32,7 @@ import { StatusPipe } from './pipes/status.pipe';
 import { HomeComponent } from './home/home.component';
 import { ContractFilterPipe } from './pipes/contract-filter.pipe';
 import { PagesComponent } from './pages/pages.component';
+import { NavigatorComponent } from './navigator/navigator.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { PagesComponent } from './pages/pages.component';
     StatusPipe,
     HomeComponent,
     PagesComponent,
-    ContractFilterPipe
+    ContractFilterPipe,
+    NavigatorComponent
   ],
   imports: [
     CommonModule,

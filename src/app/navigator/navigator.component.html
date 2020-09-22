@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg py-5">
+    <a class="navbar-brand text-light" href="#">
+        <h3>
+            applyfree
+        </h3>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto mr-5">
+            <a class="nav-item text-light  nav-link active ml-3">Home<span class="sr-only">(current)</span></a>
+            <a class="nav-item text-light  nav-link ml-3" routerLink="/contracts">Contracts</a>
+            <a class="nav-item text-light nav-link ml-3" [routerLink]="['/page', 'contact']">Contact us</a>
+            <a class="nav-item text-light  nav-link ml-3" [routerLink]="['/page', 'about']">About us</a>
+        </div>
+    </div>
+    <div class="float-right">
+        <button class="btn btn-light border-radius-20 px-lg-4 px-md-5 px-sm-5 px-4 position-relative btn-custom-light-1" routerLink="/login">
+            <span>Log in | Register</span>
+        </button>
+        <button class="btn btn-light border-radius-full ml-2 position-relative btn-custom-light-2" routerLink="/login">
+            <span>
+                <i class="fa fa-arrow-right"></i>
+            </span>
+        </button>
+    </div>
+</nav>

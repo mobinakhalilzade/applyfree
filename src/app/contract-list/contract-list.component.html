@@ -1,12 +1,43 @@
 <div class="container">
-    <div class="row">
-        <div class="col-12">
-            <form (ngSubmit)='search()'>
+    <div class="row py-5">
+        <div class="col-6 mx-auto">
+            <form>
                 <div class="input-group">
+                    <div class="input-group-prepend">
+                        <a class="btn btn-primary" [routerLink]="['/contracts']" [queryParams]="{ query: form.query }">Search</a>
+                    </div>
                     <input type="search" placeholder="Search your contract" class="form-control" [(ngModel)]="form.query" [ngModelOptions]="{standalone: true}">
-                    <button class="btn btn-primary">Search</button>
                 </div>
             </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4" *ngFor='let item of results '>
+            <div class="card">
+                <div class="card-header">
+                    {{item.title}}
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            Type: {{item.type | contractType}}
+                        </li>
+                        <li class="list-group-item">
+                            Reserved: {{item.lockBy | bool}}
+                        </li>
+                        <li class="list-group-item" *ngIf="item.type > 1">
+                            Price: {{item.price}}$
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-footer text-danger">
+                    {{item.expire | date}}
+
+                    <a class="ml-auto btn btn-sm btn-success" [routerLink]='[ "/contract", item.id] '>
+                        Details
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

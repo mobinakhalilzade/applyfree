@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DashboardService } from "./dashboard.service";
-import * as menu from 'src/assets/menu.json';
+import * as menu from 'src/assets/data.json';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -10,7 +10,7 @@ import * as menu from 'src/assets/menu.json';
 export class DashboardComponent implements OnInit {
   isAuth: boolean = true;
   user: any;
-  menus = menu['default'];
+  menus = menu['default'][0]['data'];
   subMenus: any[] = this.menus[0]['menus'];
 
   constructor(public router: Router, private service: DashboardService) { }

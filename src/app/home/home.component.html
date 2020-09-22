@@ -1,51 +1,14 @@
 <header>
     <div class="container position-relative z-index-1">
-        <nav class="navbar navbar-expand-lg py-5">
-            <a class="navbar-brand text-light" href="#">
-                <h3>
-                    applyfree
-                </h3>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav ml-auto mr-5">
-                    <a class="nav-item text-light  nav-link active ml-3">Home<span class="sr-only">(current)</span></a>
-                    <a class="nav-item text-light  nav-link ml-3" routerLink="/contracts">Contracts</a>
-                    <a class="nav-item text-light nav-link ml-3" routerLink="/page/:contactus">Contact
-                        us</a>
-                    <a class="nav-item text-light  nav-link ml-3" routerLink="/page/:aboutus">About us</a>
-                </div>
-            </div>
-            <div class="float-right">
-                <button
-                    class="btn btn-light border-radius-20 px-lg-4 px-md-5 px-sm-5 px-4 position-relative btn-custom-light-1"
-                    routerLink="/login">
-                    <span>Log in | Register</span>
-                </button>
-                <button class="btn btn-light border-radius-full ml-2 position-relative btn-custom-light-2"
-                    routerLink="/login">
-                    <span>
-                        <i class="fa fa-arrow-right"></i>
-                    </span>
-                </button>
-            </div>
-        </nav>
+        <app-navigator></app-navigator>
 
         <div class="row text-light mt-5">
             <div class="col-5">
                 <p class="text-light">Free education for students</p>
                 <p class="my-2">
-                    applyfree helps students and their parents find meaningful information beneficial to their education
-                    path. Before applyfree, each student had to do extensive research and in most cases a purposeless
-                    loop of googling with a lot of irrelevant - and in some
-                    cases wrong - information awaiting them. Since applyfree, the whole research process has turned into
-                    a meaningful search of available "contracts" that predict real meaningful actions. But who provides
-                    these contracts? applyfree's search
-                    engine is fueled by offerings from one of these groups: 1. school admins, 2. student recruiters and
-                    consultants, 3. tutors and private teachers or 4. translators from anywhere in the world.
+                    applyfree helps students and their parents find meaningful information beneficial to their education path. Before applyfree, each student had to do extensive research and in most cases a purposeless loop of googling with a lot of irrelevant - and in some
+                    cases wrong - information awaiting them. Since applyfree, the whole research process has turned into a meaningful search of available "contracts" that predict real meaningful actions. But who provides these contracts? applyfree's search
+                    engine is fueled by offerings from one of these groups: 1. school admins, 2. student recruiters and consultants, 3. tutors and private teachers or 4. translators from anywhere in the world.
                 </p>
                 <div class="d-flex mt-5 align-items-center">
                     <div class="w-50">
@@ -78,12 +41,8 @@
                 <div class="col-4">
                     <div class="mt-5 pt-5 px-5">
                         <p class="text-justify">
-                            applyfree is being used to search for education specific offerings. On the other hand, it is
-                            being used to create and publish searchable offerings as contracts. You can enter any
-                            contract as the second party when you find it. After finding the right contract
-                            for you, you're free to contact the first party in order to negotiate, bargain and
-                            communicate whatever you like. At the end, if the first party, the user who has created the
-                            contract, agrees to work with you, you'll have a
+                            applyfree is being used to search for education specific offerings. On the other hand, it is being used to create and publish searchable offerings as contracts. You can enter any contract as the second party when you find it. After finding the right contract
+                            for you, you're free to contact the first party in order to negotiate, bargain and communicate whatever you like. At the end, if the first party, the user who has created the contract, agrees to work with you, you'll have a
                             deal.
                         </p>
                         <div class="row mt-5">
@@ -106,14 +65,11 @@
                 </div>
                 <div class="col-4 my-auto px-5">
                     <h3>What happens in applyfree?</h3>
-                    <p>In applyfree, you can enter a deal, close the contract and export (i.e. print) your version with
-                        both parties' signatures on it, all from your home. With your contract in hand, you are able to
-                        seek those signed promises outside.
+                    <p>In applyfree, you can enter a deal, close the contract and export (i.e. print) your version with both parties' signatures on it, all from your home. With your contract in hand, you are able to seek those signed promises outside.
                     </p>
                     <div class="d-flex mt-5 align-items-center">
                         <div class="w-50">
-                            <button
-                                class="btn btn-lg text-uppercase btn-dark font-weight-lighter border-radius-30 px-5">Get
+                            <button class="btn btn-lg text-uppercase btn-dark font-weight-lighter border-radius-30 px-5">Get
                                 start</button>
                         </div>
                         <div class="w-50">
@@ -134,8 +90,8 @@
                     <li class="p-2">About us</li>
                     <li class="p-2">Contact us</li>
                     <li class="p-2">Contracts</li>
-                    <li class="p-2" routerLink="/page/:terms">Terms and conditions</li>
-                    <li class="p-2" routerLink="/page/:policy">Privacy Policy</li>
+                    <li class="p-2" [routerLink]="['/page', 'terms']">Terms and conditions</li>
+                    <li class="p-2" [routerLink]="['/page', 'policy']">Privacy Policy</li>
                 </ul>
             </div>
             <div class="col-2 pt-5 mt-5 text-center">
@@ -178,7 +134,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-6">
-               <h4 class="text-light text-center font-weight-light">Powered by applyfree</h4>
+                <h4 class="text-light text-center font-weight-light">Powered by applyfree</h4>
             </div>
         </div>
         <div class="row">

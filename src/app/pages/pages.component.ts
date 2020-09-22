@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-pages',
@@ -7,13 +7,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./pages.component.css']
 })
 export class PagesComponent implements OnInit {
-
-  url: any;
+  section: string;
 
   constructor(
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {
-    this.url = this.router.url;
+    router.events.subscribe((val) => {
+      this.section = this.route.snapshot.params.section;
+    });
   }
 
   faq = [
@@ -28,7 +30,7 @@ export class PagesComponent implements OnInit {
     { question: 'What are three types of contracts in applyfree platform?', answer: 'free deals, paid services and affiliate marketing transactions(referral schemes).', img: 'assets/images/1.png' },
   ]
 
-  applyfreeTeam = [
+  team = [
     { img: 'assets/images/maher-ashori.jpg', title: 'CTO', name: 'Maher Ashori' },
     { img: 'assets/images/mobina-khalilzade.jpg', title: 'Developer', name: 'Mobina Khalilzade' },
     { img: 'assets/images/vahid-karimi.jpg', title: 'CEO', name: 'Vahid Karimi' },
@@ -36,6 +38,7 @@ export class PagesComponent implements OnInit {
   ]
 
   ngOnInit(): void {
+    this.section = this.route.snapshot.params.section;
   }
 
 }
