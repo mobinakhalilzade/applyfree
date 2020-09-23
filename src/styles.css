@@ -132,12 +132,16 @@ table tr td {
     border-radius: 10%!important;
 }
 
-.btn-custom-1:after {
+.btn-custom-1:after ,.btn-custom-2:before ,.btn-custom-2:after,.btn-custom-light-1:after,.btn-custom-light-2:before,.btn-custom-light-2:after{
     content: "";
     position: absolute;
+    height: 10px;
+
+}
+
+.btn-custom-1:after {
     width: 20px;
     background-color: var(--orangered);
-    height: 10px;
     top: 50%;
     left: 100%;
     transform: translate(0, -50%);
@@ -146,11 +150,8 @@ table tr td {
 }
 
 .btn-custom-2:before {
-    content: "";
-    position: absolute;
     background-color: var(--light);
     width: 10px;
-    height: 10px;
     right: 100%;
     margin-right: 0;
     margin-top: 0;
@@ -159,11 +160,8 @@ table tr td {
 }
 
 .btn-custom-2:after {
-    content: "";
-    position: absolute;
     background-color: var(--light);
     width: 10px;
-    height: 10px;
     right: 100%;
     margin-right: 0;
     margin-top: -15px;
@@ -174,11 +172,8 @@ table tr td {
 
 
 .btn-custom-light-1:after {
-    content: "";
-    position: absolute;
     width: 20px;
     background-color: var(--light);
-    height: 10px;
     top: 50%;
     left: 100%;
     transform: translate(0, -50%);
@@ -187,11 +182,8 @@ table tr td {
 }
 
 .btn-custom-light-2:before {
-    content: "";
-    position: absolute;
     background-color: var(--orangered);
     width: 10px;
-    height: 10px;
     right: 100%;
     margin-right: 0;
     margin-top: 0;
@@ -200,11 +192,8 @@ table tr td {
 }
 
 .btn-custom-light-2:after {
-    content: "";
-    position: absolute;
     background-color: var(--orangered);
     width: 10px;
-    height: 10px;
     right: 100%;
     margin-right: 0;
     margin-top: -15px;
@@ -212,3 +201,4 @@ table tr td {
     border-radius: 100%;
     top: 100%;
 }
+

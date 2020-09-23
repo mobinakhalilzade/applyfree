@@ -1,29 +1,27 @@
 header {
-    background-color: orangered;
+    /* background-color:var(--orangered); */
+    background-image: linear-gradient(to left bottom, #eb405e, #ef3d4e, #f23d3d, #f24029, #f0460b);
     height: 80vh;
 }
 
-header::before {
+header::before,header::after,footer::before,footer::after{
     content: '';
     background-image: url(src/assets/svg/shadow.svg);
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: top right;
     width: 100%;
-    height: 300px;
     position: absolute;
+}
+
+header::before {
+    background-position: top right;
+    height: 300px;
     top: 0;
     right: 0;
 }
 
 header::after {
-    content: '';
-    background-image: url(src/assets/svg/shadow.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 100%;
     height: 300px;
-    position: absolute;
     top: 400px;
     left: 0;
     transform: scale(-1);
@@ -34,32 +32,43 @@ header::after {
 }
 
 footer{
-    background-color: orangered;
-    height: 71vh;
+    /* background-color: var(--orangered); */
+    background-image: linear-gradient(to right top, #eb405e, #ef3d4e, #f23d3d, #f24029, #f0460b);
+    height: 70vh;
 }
 
 footer::before {
-    content: '';
-    background-image: url(src/assets/svg/shadow.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
     background-position: top right;
-    width: 100%;
     height: 300px;
-    position: absolute;
     bottom: 255px;
     right: 0;
 }
 
 footer::after {
-    content: '';
-    background-image: url(src/assets/svg/shadow.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 100%;
-    height: 300px;
-    position: absolute;
+    height: 435px;
     bottom: 220px;
     left: 0;
     transform: scale(-1,-2);
+}
+
+ @media only screen and (min-width: 2560px) {
+
+    header::before,header::after,footer::before,footer::after{
+        width: 75%;
+    }
+    
+   
+   
+ } 
+
+@media only screen and (max-width: 1440px) {
+   
+ }
+
+@media only screen and (max-width: 1024px) {
+   
+ }
+ 
+@media only screen and  (max-width: 768px) {
+   
 }

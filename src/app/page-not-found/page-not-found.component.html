@@ -1,25 +1,34 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12">
+<div class="container-fluid h-100">
+    <div class="row align-content-center h-100 bg-404">
+        <div class="col-10 mx-auto">
             <div class="row">
-                <div class="col-4">
-                    <h3>Oooops !</h3>
-                    <h1>404</h1>
-                    <span>This page not found</span>
-                    <div class="row">
-                        <div class="col-4 border-right">
-                            <a [routerLink]="['/home']">Home</a>
+                <div class="col-12">
+                    <div class="row justify-content-center">
+                        <div class="col-3 my-auto">
+                            <div class="text-center">
+                                <h1>Oooops <span><img src="assets/images/!!.png" class="img-fluid"  alt="404!"></span></h1>
+                                <h1>4<span class="px-2"><img src="assets/images/applyfree404.png" class="img-fluid"  alt="404!"></span>4</h1>
+                                <span>This page not found</span>
+                            </div>
+                            <div class="d-flex justify-content-around mt-4">
+                                <div>
+                                    <a class="text-dark font-weight-bold" [routerLink]="['/home']">Home</a>
+                                </div>
+                                <div>
+                                    <a class="text-dark font-weight-bold" [routerLink]="['/page', 'contact']">Contact us</a>
+                                </div>
+                                <div>
+                                    <a class="text-dark font-weight-bold" [routerLink]="['/dashboard']">dashboard</a>
+                                </div>
+                            </div>
+                            <div class="text-center mt-3">
+                                <small>powered by applyfree</small>
+                            </div>
                         </div>
-                        <div class="col-4">
-                            <a routerLink="">Contact us</a>
-                        </div>
-                        <div class="col-4">
-                            <a [routerLink]="['/dashboard']">dashboard</a>
+                        <div class="col-6 text-center">
+                            <img src="assets/images/404.png" class="img-fluid" alt="Not found">
                         </div>
                     </div>
-                </div>
-                <div class="col-8">
-                    <img src="assets/images/404.png" class="img-fluid" alt="Not found">
                 </div>
             </div>
         </div>
