@@ -1,6 +1,5 @@
 <a routerLink="/dashboard/contracts" class="btn btn-secondary">
-    <i class="fa fa-chevron-left"></i>
-    Back
+    <i class="fa fa-chevron-left"></i> Back
 </a>
 
 <form class="form-row mt-5" [formGroup]="form">
@@ -23,22 +22,19 @@
                 <div class="row text-right">
                     <div class="col">
                         <div class="custom-control custom-radio">
-                            <input formControlName="type" type="radio" class="custom-control-input pointer" [value]="1"
-                                id="contractTypeFree" name="type">
+                            <input formControlName="type" type="radio" class="custom-control-input pointer" [value]="1" id="contractTypeFree" name="type">
                             <label class="custom-control-label pointer" for="contractTypeFree">Free</label>
                         </div>
                     </div>
                     <div class="col">
                         <div class="custom-control custom-radio">
-                            <input formControlName="type" type="radio" class="custom-control-input pointer" [value]="2"
-                                id="contractTypePremium" name="type">
+                            <input formControlName="type" type="radio" class="custom-control-input pointer" [value]="2" id="contractTypePremium" name="type">
                             <label class="custom-control-label pointer" for="contractTypePremium">Premium</label>
                         </div>
                     </div>
                     <div class="col">
                         <div class="custom-control custom-radio">
-                            <input formControlName="type" type="radio" class="custom-control-input pointer" [value]="3"
-                                id="contractTypeAgency" name="type">
+                            <input formControlName="type" type="radio" class="custom-control-input pointer" [value]="3" id="contractTypeAgency" name="type">
                             <label class="custom-control-label pointer" for="contractTypeAgency">Agency</label>
                         </div>
                     </div>
@@ -47,7 +43,7 @@
         </div>
         <hr>
         <div class="row">
-            <div class="col-4">
+            <div class="col-8">
                 <div class="form-group">
                     <input formControlName="title" type="text" placeholder="Title" class="form-control" />
                 </div>
@@ -61,17 +57,11 @@
                     </select>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="form-group">
-                    <input formControlName="expire" type="date" placeholder="Expire datetime" class="form-control" />
-                </div>
-            </div>
         </div>
 
         <div class="form-group" [hidden]="inHold">
             <div class="alert alert-primary alert-sm">
-                <i class="fa fa-info-circle"></i>
-                dubleclick on text to show editor tools
+                <i class="fa fa-info-circle"></i> dubleclick on text to show editor tools
             </div>
             <div id="content" class="border border-radius-5 border-primary">
                 {{form.value.content}}
@@ -83,15 +73,12 @@
             <input formControlName="price" type="text" placeholder="Price" class="form-control" />
         </div>
         <div class="form-group">
-            <input [(ngModel)]="tag" type="text" [disabled]="loadTag" [disabled]="inHold"
-                placeholder="insert contract tags (ENTER)" id="tag" autocomplete="off" (keyup)="tagHandler($event, tag)"
-                class="form-control" [ngModelOptions]="{standalone: true}"
-                [ngClass]="{'is-invalid': alert && alert.return == 301}" />
+            <input [(ngModel)]="tag" type="text" [disabled]="loadTag" [disabled]="inHold" placeholder="insert contract tags (ENTER)" id="tag" autocomplete="off" (keyup)="tagHandler($event, tag)" class="form-control" [ngModelOptions]="{standalone: true}" [ngClass]="{'is-invalid': alert && alert.return == 301}"
+            />
         </div>
         <div class="mt-2">
             <ng-container *ngFor="let item of tags">
-                <span class="badge badge-primary font-weight-light mr-2 position-relative"
-                    [ngClass]="{'badge-danger': selectedTag == item.id || tag == item.name}">
+                <span class="badge badge-primary font-weight-light mr-2 position-relative" [ngClass]="{'badge-danger': selectedTag == item.id || tag == item.name}">
                     {{item.name}}
                     <button type="button" class="btn btn-sm btn-link p-0" *ngIf="!inHold"
                         (click)="confirmation(item.id)">
@@ -105,8 +92,7 @@
             </ng-container>
         </div>
         <div class="mt-4" *ngIf="!inHold">
-            <button type="button" [disabled]="submit" (click)="update(form.value)"
-                class="btn btn-primary">
+            <button type="button" [disabled]="submit" (click)="update(form.value)" class="btn btn-primary">
                 <span *ngIf="submit"><i class="fa fa-spin fa-spinner"></i></span>
                 <span *ngIf="!submit">Save</span>
             </button>
@@ -117,8 +103,7 @@
             </span>
         </div>
 
-        <div class="alert mt-3" *ngIf="alert && alert.return"
-            [ngClass]="{'alert-danger': alert.return > 200, 'alert-success': alert.return == 200}">
+        <div class="alert mt-3" *ngIf="alert && alert.return" [ngClass]="{'alert-danger': alert.return > 200, 'alert-success': alert.return == 200}">
             {{alert.message}}
             <a *ngIf="alert.return == 400" class="float-right" routerLink="/dashboard/signatures">
                 Add signature

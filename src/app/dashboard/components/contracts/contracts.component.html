@@ -37,43 +37,40 @@
                                 <th class="text-center th-bool">Between</th>
                                 <th class="text-center th-bool">Expire at</th>
                                 <th class="text-center th-bool">Status</th>
+                                <th class="text-center th-bool">Days left</th>
                                 <th class="text-center th-action">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <ng-container *ngFor="let item of data;index as i">
-                                <tr class="text-center"
-                                    [ngClass]="{'table-warning': item.status == 1, 'table-success': item.status >= 3}">
+                                <tr class="text-center" [ngClass]="{'table-warning': item.status == 1, 'table-success': item.status >= 3}">
                                     <td>{{i + 1}}</td>
                                     <td>{{item.title}}</td>
                                     <td>{{item.type | contractType}}</td>
                                     <td>{{item.filter | contractFilter}}</td>
                                     <td class="text-truncate">{{item.expire | date}}</td>
                                     <td class="text-truncate">{{item.status | status}}</td>
+                                    <td class="text-truncate">
+                                        <span *ngIf="item.days > 0">{{item.days}} days</span>
+                                        <span *ngIf="item.days == 0">Expired</span>
+                                    </td>
                                     <td>
-                                        <a class="btn btn-primary btn-sm mr-3" [routerLink]="['/contract', item.id]"
-                                            [hidden]="inlineModal && selectedId == item.id">
+                                        <a class="btn btn-primary btn-sm mr-3" [routerLink]="['/contract', item.id]" [hidden]="inlineModal && selectedId == item.id">
                                             Preview
                                         </a>
 
-                                        <a class="btn btn-success btn-sm" *ngIf="item.isParty && !item.payment || item.payment && !item.payment.success"
-                                            (click)="pay(item)">
+                                        <a class="btn btn-success btn-sm" *ngIf="item.isParty && !item.payment || item.payment && !item.payment.success" (click)="pay(item)">
                                             Pay
                                         </a>
 
-                                        <a class="btn btn-warning btn-sm"
-                                            *ngIf="item.isParty && item.payment && item.payment.success"
-                                            [href]="'http://localhost/applyfree/download/' + item.id + '.pdf'">
+                                        <a class="btn btn-warning btn-sm" *ngIf="item.isParty && item.payment && item.payment.success" [href]="'http://localhost/applyfree/download/' + item.id + '.pdf'">
                                             Print
                                         </a>
 
-                                        <a class="btn btn-warning btn-sm mr-3" *ngIf="item.status == 0"
-                                            [hidden]="inlineModal && selectedId == item.id"
-                                            [routerLink]="['/dashboard/contracts/modify', item.id]">
+                                        <a class="btn btn-warning btn-sm mr-3" *ngIf="item.status == 0 && item.days > 0" [hidden]="inlineModal && selectedId == item.id" [routerLink]="['/dashboard/contracts/modify', item.id]">
                                             Edit
                                         </a>
-                                        <button class="btn btn-danger btn-sm" *ngIf="item.status == 0"
-                                            [hidden]="inlineModal && selectedId == item.id" (click)="confirm(item.id)">
+                                        <button class="btn btn-danger btn-sm" *ngIf="item.status == 0 && item.days > 0" [hidden]="inlineModal && selectedId == item.id" (click)="confirm(item.id)">
                                             Remove
                                         </button>
 
@@ -83,20 +80,16 @@
                                     </td>
                                 </tr>
                                 <tr [hidden]="item.payment && item.payment.success">
-                                    <td colspan="6" class="p-3" *ngIf="item.isOwner">
-                                        <div class="alert alert-warning p-2 m-0"
-                                            *ngIf="item.lockBy > 0 && !item.secondPartyConfirm">
+                                    <td colspan="8" class="p-3" *ngIf="item.isOwner">
+                                        <div class="alert alert-warning p-2 m-0" *ngIf="item.lockBy > 0 && !item.secondPartyConfirm">
                                             The contract has been reserved by <a href="#">{{item.user.firstName}}
                                                 {{item.user.lastName}}</a>
                                         </div>
-                                        <div class="alert alert-info p-2 m-0"
-                                            *ngIf="item.lockBy > 0 && item.secondPartyConfirm && !item.firstPartyConfirm">
+                                        <div class="alert alert-info p-2 m-0" *ngIf="item.lockBy > 0 && item.secondPartyConfirm && !item.firstPartyConfirm">
                                             <a href="#">{{item.user.firstName}}
-                                                {{item.user.lastName}}</a> already accept or paid the contract, it's
-                                            right?
+                                                {{item.user.lastName}}</a> already accept or paid the contract, it's right?
 
-                                            <button class="btn btn-sm btn-success" [disabled]="btnLoading"
-                                                (click)="agreement(item)">
+                                            <button class="btn btn-sm btn-success" [disabled]="btnLoading" (click)="agreement(item)">
                                                 <span *ngIf="btnLoading">
                                                     <i class="fa fa-spin fa-spinner"></i>
                                                 </span>
@@ -116,9 +109,8 @@
                                                     {{item.user.lastName}}</a> can export the contract</small>
                                         </div>
                                     </td>
-                                    <td colspan="6" class="p-3" *ngIf="item.isParty">
-                                        <div class="alert alert-success p-2 m-0"
-                                            *ngIf="item.firstPartyConfirm && item.secondPartyConfirm && !item.payment || !item.payment.success">
+                                    <td colspan="8" class="p-3" *ngIf="item.isParty">
+                                        <div class="alert alert-success p-2 m-0" *ngIf="item.firstPartyConfirm && item.secondPartyConfirm && !item.payment || !item.payment.success">
                                             pay 10$ to get copy of the contract
                                         </div>
                                     </td>
@@ -136,8 +128,7 @@
 </div>
 
 <ng-template #delete>
-    Are you sure ? <button class="btn btn-sm btn-success">Yes</button> <button class="btn btn-sm btn-link"
-        (click)="selectedId = null">Cancel</button>
+    Are you sure ? <button class="btn btn-sm btn-success">Yes</button> <button class="btn btn-sm btn-link" (click)="selectedId = null">Cancel</button>
     <div class="text-muted">
         <small>It will not be reversible</small>
     </div>
