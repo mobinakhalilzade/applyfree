@@ -191,7 +191,7 @@ table tr td {
 }
 
 .btn-custom-light-2:before {
-    background-color: var(--orangered);
+    background-color: transparent;
     width: 10px;
     right: 100%;
     margin-right: 0;
@@ -201,7 +201,7 @@ table tr td {
 }
 
 .btn-custom-light-2:after {
-    background-color: var(--orangered);
+    background-color: transparent;
     width: 10px;
     right: 100%;
     margin-right: 0;

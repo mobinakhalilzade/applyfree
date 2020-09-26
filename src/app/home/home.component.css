@@ -27,6 +27,13 @@ header::after {
     transform: scale(-1);
 }
 
+.bg-home{
+    background-image: url(src/assets/images/bg-home.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .z-index-1 {
     z-index: 1;
 }
