@@ -35,9 +35,8 @@
                                 <th class="text-center">Title</th>
                                 <th class="text-center th-bool">Type</th>
                                 <th class="text-center th-bool">Between</th>
-                                <th class="text-center th-bool">Expire at</th>
                                 <th class="text-center th-bool">Status</th>
-                                <th class="text-center th-bool">Days left</th>
+                                <th class="text-center th-bool">to expire</th>
                                 <th class="text-center th-action">Action</th>
                             </tr>
                         </thead>
@@ -48,7 +47,6 @@
                                     <td>{{item.title}}</td>
                                     <td>{{item.type | contractType}}</td>
                                     <td>{{item.filter | contractFilter}}</td>
-                                    <td class="text-truncate">{{item.expire | date}}</td>
                                     <td class="text-truncate">{{item.status | status}}</td>
                                     <td class="text-truncate">
                                         <span *ngIf="item.days > 0">{{item.days}} days</span>
@@ -79,7 +77,7 @@
                                         </ng-container>
                                     </td>
                                 </tr>
-                                <tr [hidden]="item.payment && item.payment.success">
+                                <tr [hidden]="item.status > item.payment && item.payment.success">
                                     <td colspan="8" class="p-3" *ngIf="item.isOwner">
                                         <div class="alert alert-warning p-2 m-0" *ngIf="item.lockBy > 0 && !item.secondPartyConfirm">
                                             The contract has been reserved by <a href="#">{{item.user.firstName}}

@@ -12,4 +12,8 @@ export class ContractListService {
         return this.http.readApi.getByParam('contracts/search', data);
     }
 
+    notify(data: any) {
+        return this.http.writeApi.post('notify', data);
+    }
+
 }

@@ -39,8 +39,7 @@ export class UpdateContractComponent implements OnInit {
       type: null,
       price: null,
       content: null,
-      filter: null,
-      expire: null,
+      filter: null
     });
   }
 
@@ -54,8 +53,7 @@ export class UpdateContractComponent implements OnInit {
           type: data.type,
           price: data.price,
           content: data.content,
-          filter: data.filter,
-          expire: data.expire
+          filter: data.filter
         });
 
         if (data.hold) {
@@ -146,8 +144,7 @@ export class UpdateContractComponent implements OnInit {
       type: form.type,
       price: form.price,
       content: form.content,
-      filter: form.filter,
-      expire: form.expire,
+      filter: form.filter
     }
 
     this.service.documentation(command).subscribe((response: any) => {
@@ -217,6 +214,7 @@ export class UpdateContractComponent implements OnInit {
             title: self.form.value.title,
             type: self.form.value.type,
             price: self.form.value.price,
+            filter: self.form.value.filter,
             content: editor.getData()
           });
         });

@@ -127,10 +127,6 @@ table tr td {
     border-top-right-radius: 5px;
 }
 
-.font-x-large {
-    font-size: x-large;
-}
-
 .z-index-1 {
     z-index: 1;
 }
@@ -139,85 +135,36 @@ table tr td {
     color: var(--orangered);
 }
 
-.rounded-10 {
-    border-radius: 10%!important;
+.btn-custom .btn {
+    border: none;
+    background-color: var(--light);
 }
 
-.btn-custom-light-1:hover ,.btn-custom-light-2:hover{
-    background-color: #f8f9fa !important ;
-}
-
-
-.btn-custom-1:after,
-.btn-custom-2:before,
-.btn-custom-2:after,
-.btn-custom-light-1:after,
-.btn-custom-light-2:before,
-.btn-custom-light-2:after {
+.btn-custom .btn:last-child:after,
+.btn-custom .btn:last-child:before {
     content: "";
     position: absolute;
     height: 10px;
-}
-
-.btn-custom-1:after {
-    width: 20px;
-    background-color: var(--orangered);
+    width: 12px;
+    right: 100%;
+    margin-right: 0px;
+    z-index: 1;
+    border-radius: 100%;
     top: 50%;
-    left: 100%;
-    transform: translate(0, -50%);
-    margin-left: -5px;
-    z-index: 1;
+    transform: translate(2px, -50%);
 }
 
-.btn-custom-2:before {
-    background-color: var(--light);
-    width: 10px;
-    right: 100%;
-    margin-right: 0;
-    margin-top: 0;
-    z-index: 1;
-    border-radius: 100%;
+.btn-custom .btn:last-child:before {
+    margin-top: -3px;
+    box-shadow: inset 0px -4px 0px 1px white;
 }
 
-.btn-custom-2:after {
-    background-color: var(--light);
-    width: 10px;
-    right: 100%;
-    margin-right: 0;
-    margin-top: -15px;
-    z-index: 1;
-    border-radius: 100%;
-    top: 100%;
+.btn-custom .btn:last-child:after {
+    margin-top: 4px;
+    box-shadow: inset 0px 3px 0px 1px white;
 }
 
-.btn-custom-light-1:after {
-    width: 20px;
-    background-color: var(--light);
-    top: 50%;
-    left: 100%;
-    transform: translate(0, -50%);
-    margin-left: -5px;
-    z-index: 1;
+.btn-custom .btn:hover,
+.btn-custom .btn:focus {
+    background-color: #fff;
 }
-
-.btn-custom-light-2:before {
-    background-color: var(--orangedark);
-    width: 10px;
-    right: 100%;
-    margin-right: 0;
-    margin-top: 0;
-    z-index: 1;
-    border-radius: 100%;
-}
-
-.btn-custom-light-2:after {
-    background-color: var(--orangedark);
-    width: 10px;
-    right: 100%;
-    margin-right: 0;
-    margin-top: -15px;
-    z-index: 1;
-    border-radius: 100%;
-    top: 100%;
-}
-

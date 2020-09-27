@@ -29,9 +29,9 @@
                 </div>
                 <div class="w-50 ml-auto align-self-center">
                     <span class="ml-5">
-                        <input type="range" min="1" max="30" class="form-control-range" [(ngModel)]="form.days">
+                        <input type="range" min="1" max="30" class="form-control-range" [(ngModel)]="form.expire">
                     </span>
-                    <span class="badge badge-primary float-right font-weight-lighter p-1">{{form.days}} days to expire</span>
+                    <span class="badge badge-primary float-right font-weight-lighter p-1">{{form.expire}} days to expire</span>
                 </div>
             </div>
 
@@ -44,15 +44,18 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row" *ngIf="!loading">
         <div class="col-12" *ngIf="results.length == 0">
             <div class="text-center p-5">
                 <h5>We are sorry , there is no contracts match with your filters ...</h5>
 
                 <div class="mt-3">
-                    <button class="btn btn-warning">
+                    <button class="btn btn-warning" (click)="notify()">
                         Notify me if this search has result
                     </button>
+                    <div class="mt-3" *ngIf="alert" [ngClass]="{'text-danger': alert.return > 200, 'text-success': alert.return == 200}">
+                        <small>{{alert.message}}</small>
+                    </div>
                 </div>
             </div>
         </div>

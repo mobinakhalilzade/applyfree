@@ -11,6 +11,8 @@ export class ContractTypePipe implements PipeTransform {
         return "Free";
       case 2:
         return "Premiume"
+      case 3:
+        return "Agancy"
     }
   }
 

@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12">
             <h1 class="text-capitalize position-relative">
-                {{data.title}} <small class="h6 text-muted font-weight-lighter">expire at: {{data.expire | date}}</small>
+                {{data.title}} <small class="h6 text-muted font-weight-lighter">expire in <b>{{data.days}}</b> days</small>
             </h1>
 
             <span class="text-success ml-auto" [hidden]="data.lockBy > 0">
@@ -11,11 +11,12 @@
             </span>
 
             <div class="text-danger ml-auto">
-                <i class="fa fa-info-circle mr-3"></i>
                 <span *ngIf="data.status == 4">
+                <i class="fa fa-info-circle mr-3"></i>
                     <small>Contract already closed</small>
                 </span>
-                <span *ngIf="data.status != 4 && data.expired">
+                <span *ngIf="data.status != 4 && data.days == 0">
+                <i class="fa fa-info-circle mr-3"></i>
                     <small>Contract already expired</small>
                 </span>
             </div>
@@ -65,7 +66,7 @@
 
             </div>
         </div>
-        <div class="col-12 mt-3" *ngIf="data.lockBy == 0 && !data.expired">
+        <div class="col-12 mt-3" *ngIf="data.lockBy == 0 && data.days > 0">
             <hr>
             <button class="btn btn-sm btn-success" [disabled]="loading" (click)="confirm()">
                 <span *ngIf="loading">
