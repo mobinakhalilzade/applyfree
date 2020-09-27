@@ -1,5 +1,4 @@
 header {
-    /* background-color:var(--orangered); */
     background-image: linear-gradient(to left bottom, #eb405e, #ef3d4e, #f23d3d, #f24029, #f0460b);
     height: 80vh;
 }
@@ -27,19 +26,37 @@ header::after {
     transform: scale(-1);
 }
 
-.bg-home{
-    background-image: url(src/assets/images/bg-home.png);
+.bg-section-1{
+    background-image: url(src/assets/images/bg-section-1.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+ 
+.bg-section-2{
+    background-image: url(src/assets/images/bg-section-2.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.z-index-1 {
-    z-index: 1;
+.bg-section-3{
+    background-image: url(src/assets/images/bg-section-3.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
+.bg-section-4{
+    background-image: url(src/assets/images/bg-section-4.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+} 
+
+
+
 footer{
-    /* background-color: var(--orangered); */
     background-image: linear-gradient(to right top, #eb405e, #ef3d4e, #f23d3d, #f24029, #f0460b);
     height: 70vh;
 }
@@ -60,22 +77,38 @@ footer::after {
 
  @media only screen and (min-width: 2560px) {
 
+    header{
+        height: 60vh;
+    }
+
     header::before,header::after,footer::before,footer::after{
         width: 75%;
     }
-    
-   
-   
  } 
 
 @media only screen and (max-width: 1440px) {
-   
+    footer{
+        height: 90vh;
+    }
+    header::after{
+    height: 265px;
+    }
  }
 
 @media only screen and (max-width: 1024px) {
-   
+    footer{
+        height: 90vh;
+    }
  }
  
 @media only screen and  (max-width: 768px) {
+
+    footer{
+        height: 165vh;
+    }
+
+    header{
+        height: 145vh;
+    }
    
 }

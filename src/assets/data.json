@@ -113,22 +113,22 @@
         "name": "team",
         "data": [
             {
-                "img": "assets/images/maher-ashori.jpg",
+                "img": "assets/images/team/maher-ashori.jpg",
                 "title": "CTO",
                 "name": "Maher Ashori"
             },
             {
-                "img": "assets/images/mobina-khalilzade.jpg",
+                "img": "assets/images/team/mobina-khalilzade.jpg",
                 "title": "Developer",
                 "name": "Mobina Khalilzade"
             },
             {
-                "img": "assets/images/vahid-karimi.jpg",
+                "img": "assets/images/team/vahid-karimi.jpg",
                 "title": "CEO",
                 "name": "Vahid Karimi"
             },
             {
-                "img": "assets/images/ryan-sharifi.jpg",
+                "img": "assets/images/team/ryan-sharifi.jpg",
                 "title": "COO",
                 "name": "Ryan Sharifi"
             }

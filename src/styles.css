@@ -3,6 +3,7 @@
     --white: #fff;
     --gray: #818181;
     --orangelight: #F7F1EF;
+    --orangedark: #f03d4c;
 }
 
 body,
@@ -130,6 +131,10 @@ table tr td {
     font-size: x-large;
 }
 
+.z-index-1 {
+    z-index: 1;
+}
+
 .text-orangered {
     color: var(--orangered);
 }
@@ -137,6 +142,11 @@ table tr td {
 .rounded-10 {
     border-radius: 10%!important;
 }
+
+.btn-custom-light-1:hover ,.btn-custom-light-2:hover{
+    background-color: #f8f9fa !important ;
+}
+
 
 .btn-custom-1:after,
 .btn-custom-2:before,
@@ -191,7 +201,7 @@ table tr td {
 }
 
 .btn-custom-light-2:before {
-    background-color: transparent;
+    background-color: var(--orangedark);
     width: 10px;
     right: 100%;
     margin-right: 0;
@@ -201,7 +211,7 @@ table tr td {
 }
 
 .btn-custom-light-2:after {
-    background-color: transparent;
+    background-color: var(--orangedark);
     width: 10px;
     right: 100%;
     margin-right: 0;
@@ -210,3 +220,4 @@ table tr td {
     border-radius: 100%;
     top: 100%;
 }
+

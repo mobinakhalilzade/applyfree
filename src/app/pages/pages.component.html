@@ -3,7 +3,7 @@
         <app-navigator></app-navigator>
     </div>
 </header>
-<main>
+<main class="bg-pages">
     <div class="container">
         <div [ngSwitch]="section">
             <ng-template [ngSwitchCase]="'about'">
@@ -374,7 +374,19 @@
 <footer>
     <div class="container position-relative z-index-1">
         <div class="row text-light">
-            <div class="col-2 pt-5 mt-5 text-center">
+            <div
+                class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
+                <h5>Quick access</h5>
+                <ul class="list-unstyled">
+                    <li class="p-2">About us</li>
+                    <li class="p-2">Contact us</li>
+                    <li class="p-2">Contracts</li>
+                    <li class="p-2" [routerLink]="['/page', 'terms']">Terms and conditions</li>
+                    <li class="p-2" [routerLink]="['/page', 'policy']">Privacy Policy</li>
+                </ul>
+            </div>
+            <div
+                class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
                 <h5>Quick access</h5>
                 <ul class="list-unstyled">
                     <li class="p-2">About us</li>
@@ -384,17 +396,8 @@
                     <li class="p-2">Privacy Policy</li>
                 </ul>
             </div>
-            <div class="col-2 pt-5 mt-5 text-center">
-                <h5>Quick access</h5>
-                <ul class="list-unstyled">
-                    <li class="p-2">About us</li>
-                    <li class="p-2">Contact us</li>
-                    <li class="p-2">Contracts</li>
-                    <li class="p-2">Terms and conditions</li>
-                    <li class="p-2">Privacy Policy</li>
-                </ul>
-            </div>
-            <div class="col-5 pt-5 mt-5 text-center">
+            <div
+                class="col-xl-5 col-lg-4 col-md-4 col-sm-5 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
                 <h5>applyfree departments</h5>
                 <ul class="list-unstyled">
                     <li class="p-2">Lorem ipsum dolor sit aLorem ipsum dolor sit a</li>
@@ -404,7 +407,8 @@
                     <li class="p-2">Lorem ipsum dolor sit aLorem ipsum dolor sit a</li>
                 </ul>
             </div>
-            <div class="col-2 pt-5 mt-5 text-center">
+            <div
+                class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
                 <h5>Quick access</h5>
                 <ul class="list-unstyled">
                     <li class="p-2">About us</li>
@@ -414,7 +418,8 @@
                     <li class="p-2">Privacy Policy</li>
                 </ul>
             </div>
-            <div class="col-1 pt-5 mt-5 text-center">
+            <div
+                class="col-xl-1 col-lg-1 col-md-1 col-sm-2 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
                 <h5>Social</h5>
                 <i class="fab fa-instagram text-light fa-2x p-2"></i>
                 <i class="fab fa-linkedin text-light fa-2x p-2"></i>
@@ -432,5 +437,6 @@
                 <img src="assets/images/building-footer.png" alt="footer applyfree" class="img-fluid">
             </div>
         </div>
+
     </div>
 </footer>

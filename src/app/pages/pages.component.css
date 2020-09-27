@@ -1,5 +1,4 @@
 header {
-  /* background-color: orangered; */
   background-image: linear-gradient(to left bottom, #eb405e, #ef3d4e, #f23d3d, #f24029, #f0460b);
   height: 16vh;
 }
@@ -36,7 +35,6 @@ header::after {
 
 footer{
   background-image: linear-gradient(to right top, #eb405e, #ef3d4e, #f23d3d, #f24029, #f0460b);
-  /* background-color: orangered; */
   height: 70vh;
 }
 
@@ -72,13 +70,34 @@ footer::after {
   height: 35px;
 }
 
-/* .number:after{
-  content: "";
-  position: relative;
-  top: 45px;
-  width: 0; 
-  height: 0; 
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-top: 20px solid #f34040;
-} */
+.bg-pages{
+  background-image: url(src/assets/images/bg-pages.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@media only screen and (min-width: 2560px) {
+
+  header::before,header::after,footer::before,footer::after{
+      width: 75%;
+  }
+} 
+
+@media only screen and (max-width: 1440px) {
+  footer{
+      height: 90vh;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  footer{
+      height: 90vh;
+  }
+}
+
+@media only screen and  (max-width: 768px) {
+  footer{
+      height: 165vh;
+  }
+}
