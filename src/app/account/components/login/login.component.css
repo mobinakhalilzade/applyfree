@@ -2,11 +2,12 @@
     box-shadow: none;
 }
 
-.bg-baloon{
+.bg-baloon {
     z-index: 2;
 }
 
-.bg-baloon::before,.bg-baloon::after{
+.bg-baloon::before,
+.bg-baloon::after {
     content: "";
     position: fixed;
     width: 100%;
@@ -16,20 +17,18 @@
     background-image: url(/assets/images/baloon.png);
 }
 
-.bg-baloon::before{
+.bg-baloon::before {
     left: 15%;
     bottom: 65%;
 }
 
-
-.bg-baloon::after{
+.bg-baloon::after {
     left: 7%;
     bottom: 70%;
     transform-origin: top left;
     transform: scale(0.8);
     opacity: 0.5;
 }
-
 
 .bg-duplicate {
     z-index: 2;
@@ -88,84 +87,57 @@ span.as-shadow::after {
     right: 100%;
 }
 
-.bg-copyright::before{
-    content:"applyfree \00A9 copyright 2020";
+.bg-copyright::before {
+    content: "applyfree \00A9 copyright 2020";
     position: absolute;
-    bottom: -135px;
-    left: 35%;
-    color: #cab6b6;
+    bottom: 10%;
+    left: 50%;
     font-size: 1rem;
+    transform: translate(-50%, 0%);
 }
 
- @media only screen and (min-width: 1440px) and (max-width:2560px) {
+@media only screen and (min-width: 1440px) and (max-width:2560px) {
     span.as-shadow::before,
     span.as-shadow::after {
         top: 23%;
     }
+}
 
-    .bg-copyright::before{
-        bottom: -28%;
-    }
- } 
-
- @media only screen and (min-width: 2560px) {
+@media only screen and (min-width: 2560px) {
     span.as-shadow::before,
     span.as-shadow::after {
         top: 257px;
     }
-
-    .bg-copyright::before{
-        bottom: -28%;
-    }
- } 
-
-
+}
 
 @media only screen and (max-width: 1440px) {
     span.as-shadow::before,
     span.as-shadow::after {
         top: -3%;
     }
-
-    .bg-copyright::before{
-        bottom: 2%;
-        left: -59%;
-    }
- }
-
+}
 
 @media only screen and (max-width: 1024px) {
-    .bg-duplicate:before, .bg-duplicate:after {
+    .bg-duplicate:before,
+    .bg-duplicate:after {
         top: 84%;
         transform: translate(0, -50%);
     }
-
-    .bg-copyright::before{
-        bottom: 4%;
-        left: -76%;
-    }
-
-    .bg-baloon::after{
+    .bg-baloon::after {
         left: 2%;
     }
-
     span.as-shadow::before,
     span.as-shadow::after {
         bottom: 22px;
     }
- }
- 
- 
-@media only screen and  (max-width: 768px) {
-    .bg-duplicate:before,
-    .bg-duplicate:after,span.as-shadow,
-    .bg-baloon::before,.bg-baloon::after
-     {
-        display: none;
-    }
+}
 
-    .bg-copyright::before{
-        bottom: -27%;
-        left: 25%;
+@media only screen and (max-width: 768px) {
+    .bg-duplicate:before,
+    .bg-duplicate:after,
+    span.as-shadow,
+    .bg-baloon::before,
+    .bg-baloon::after {
+        display: none;
     }
 }
