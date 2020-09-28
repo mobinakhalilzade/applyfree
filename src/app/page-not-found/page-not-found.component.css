@@ -1,6 +1,7 @@
-.bg-404{
+#bg-404{
     background-image: url(src/assets/images/bg-404.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
+

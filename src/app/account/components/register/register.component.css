@@ -66,16 +66,16 @@ span.as-shadow::after {
 .bg-copyright::before{
     content: "applyfree \00A9 copyright 2020";
     position: absolute;
-    bottom: -21%;
-    left: 28%;
-    color: var(--orangered);
-    font-size: 1.2rem;
+    bottom: -135px;
+    left: 35%;
+    color: #cab6b6;
+    font-size: 1rem;
 }
 
 .selected{
-        -ms-transform: scale(1.5);
-        -webkit-transform: scale(1.5);
-        transform: scale(1.1); 
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1); 
 }
 
 .selected button.btn-gray-outline{
@@ -89,12 +89,11 @@ span.as-shadow::after {
 @media only screen and (min-width: 1440px) and (max-width:2560px) {
     span.as-shadow::before,
     span.as-shadow::after {
-        top: 77%;
+        top: 74%;
     }
 
     .bg-copyright::before{
         bottom: -21%;
-        font-size: 1.4rem;
     }
  } 
 
@@ -106,7 +105,6 @@ span.as-shadow::after {
 
     .bg-copyright::before{
         bottom: -28%;
-        font-size: 1.4rem;
     }
 
     .dropdown{
@@ -122,7 +120,6 @@ span.as-shadow::after {
 
     .bg-copyright::before{
         bottom: 2%;
-        font-size: 1.2rem;
         left: -59%;
     }
 
@@ -139,7 +136,6 @@ span.as-shadow::after {
 
     .bg-copyright::before{
         bottom: 4%;
-        font-size: 1.1rem;
         left: -56%;
     }
 
@@ -157,7 +153,6 @@ span.as-shadow::after {
     }
 
     .bg-copyright::before{
-        font-size: 1rem;
         bottom: -27%;
         left: 25%;
     }

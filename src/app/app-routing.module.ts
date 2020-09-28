@@ -35,7 +35,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: '', component: ContractListComponent },
 
-  { path: 'home', component: HomeComponent },
+  { path: 'landing', component: HomeComponent },
 
   { path: 'login', redirectTo: '/account/login' },
   { path: 'register', redirectTo: '/account/signup' },
@@ -71,8 +71,6 @@ const routes: Routes = [
       { path: 'password/:token', component: PasswordComponent },
     ]
   },
-
- 
 
   { path: 'contract/:id', component: ContractComponent },
   { path: 'search', component: SearchComponent },
