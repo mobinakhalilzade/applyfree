@@ -1,41 +1,37 @@
 <div class="row h-100 align-content-center bg-white">
-    <div class="col-xl-4 col-lg-5 col-md-8 col-sm-8 col-10 shadow-lg p-5 bg-light mx-auto border-radius-30 bg-duplicate"
-        *ngIf="registerForm">
+    <div class="col-xl-4 col-lg-5 col-md-8 col-sm-8 col-10 shadow-lg p-5 bg-light mx-auto border-radius-30 bg-duplicate" *ngIf="registerForm">
         <span class="as-shadow"></span>
         <span class="bg-copyright"></span>
         <div class="row">
             <div class="col-12 ">
                 <div class="row mb-4">
                     <div class="col-xl-6 col-lg-6 col-md-4 col-sm-4 col-4 mx-auto text-center">
-                        <img src="assets/images/logo.png" class="img-fluid" alt="Applyfree">
+                        <div class="logo">
+                            <span class="number"></span>
+                            <span class="line"></span>
+                        </div>
                     </div>
                 </div>
                 <form [formGroup]="form" (ngSubmit)="registerForm = false">
                     <div class="row">
                         <div class="col-6">
                             <div class="form-group">
-                                <input formControlName="firstName" id="firstName"
-                                    class="form-control bg-transparent border-top-0 border-right-0 border-left-0 border-radius-0"
-                                    type="text" placeholder="First Name" autocomplete="off"
-                                    [ngClass]="{'is-invalid' : submited && form.controls.firstName.invalid}" required />
+                                <input formControlName="firstName" id="firstName" class="form-control bg-transparent border-top-0 border-right-0 border-left-0 border-radius-0" type="text" placeholder="First Name" autocomplete="off" [ngClass]="{'is-invalid' : submited && form.controls.firstName.invalid}"
+                                    required />
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <input formControlName="lastName"
-                                    class="form-control bg-transparent border-top-0 border-right-0 border-left-0 border-radius-0"
-                                    type="text" placeholder="Last Name" autocomplete="off"
-                                    [ngClass]="{'is-invalid' : submited && form.controls.lastName.invalid}" required />
+                                <input formControlName="lastName" class="form-control bg-transparent border-top-0 border-right-0 border-left-0 border-radius-0" type="text" placeholder="Last Name" autocomplete="off" [ngClass]="{'is-invalid' : submited && form.controls.lastName.invalid}"
+                                    required />
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
-                                <input formControlName="username"
-                                    class="form-control bg-transparent border-top-0 border-right-0 border-left-0 border-radius-0"
-                                    type="email" placeholder="Email" autocomplete="off"
-                                    [ngClass]="{'is-invalid' : submited && form.controls.username.invalid}" required />
+                                <input formControlName="username" class="form-control bg-transparent border-top-0 border-right-0 border-left-0 border-radius-0" type="email" placeholder="Email" autocomplete="off" [ngClass]="{'is-invalid' : submited && form.controls.username.invalid}"
+                                    required />
                             </div>
                         </div>
                     </div>
@@ -63,19 +59,13 @@
                     <div class="row">
                         <div class="col-6">
                             <div class="form-group">
-                                <input formControlName="password"
-                                    class="form-control bg-transparent border-top-0 border-right-0 border-left-0 border-radius-0"
-                                    type="password" placeholder="Password"
-                                    [ngClass]="{'is-invalid' : submited && form.controls.password.invalid}"
-                                    autocomplete="off" required />
+                                <input formControlName="password" class="form-control bg-transparent border-top-0 border-right-0 border-left-0 border-radius-0" type="password" placeholder="Password" [ngClass]="{'is-invalid' : submited && form.controls.password.invalid}" autocomplete="off"
+                                    required />
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <input formControlName="confirmPassword"
-                                    class="form-control bg-transparent border-top-0 border-right-0 border-left-0 border-radius-0"
-                                    type="password" placeholder="Confirm password"
-                                    [ngClass]="{'is-invalid' : submited && form.controls.confirmPassword.invalid}"
+                                <input formControlName="confirmPassword" class="form-control bg-transparent border-top-0 border-right-0 border-left-0 border-radius-0" type="password" placeholder="Confirm password" [ngClass]="{'is-invalid' : submited && form.controls.confirmPassword.invalid}"
                                     autocomplete="off" required />
                             </div>
                         </div>
@@ -102,16 +92,13 @@
                         </label>
                     </div>
                     <div class="row">
-                        <div
-                            class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-12 text-xl-left text-lg-left text-md-left text-sm-left text-center">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-12 text-xl-left text-lg-left text-md-left text-sm-left text-center">
                             <a routerLink="/login" class="btn btn-link text-muted text-truncate">I'm already member</a>
                         </div>
-                        <div
-                            class="col-xl-8 col-lg-8 col-md-8 col-sm-7 col-12 text-xl-right text-lg-right text-md-right text-sm-right text-center
+                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-7 col-12 text-xl-right text-lg-right text-md-right text-sm-right text-center
                                  mb-xl-0 mb-lg-0 mb-md-0 mb-sm-0 mb-3 order-xl-last order-lg-last order-md-last order-sm-last order-first">
-                            <div class="float-right btn-custom-orangred d-block">
-                                <button [disabled]="loading"
-                                    class="btn border-radius-20 position-relative text-light px-xl-4 px-lg-2 px-md-4 px-sm-5 px-1">
+                            <div class="float-right btn-custom reverse d-block">
+                                <button [disabled]="loading" class="btn border-radius-20 position-relative text-light px-xl-4 px-lg-2 px-md-4 px-sm-5 px-1">
                                     <span *ngIf="loading">
                                         <i class="fa fa-spin fa-spinner"></i>
                                     </span>
@@ -146,16 +133,14 @@
                 </div>
                 <div class="row mx-1">
                     <div class="card-group mx-auto my-5">
-                        <div class="card pointer shadow-left border-right-0 border-top-0 border-bottom-0"
-                            *ngFor="let item of roles" (click)="setRole(item);" [ngClass]="{'selected':item.active}">
+                        <div class="card pointer shadow-left border-right-0 border-top-0 border-bottom-0" *ngFor="let item of roles" (click)="setRole(item);" [ngClass]="{'selected':item.active}">
                             <img class="mx-auto img-fluid" [src]="item.image" width="100" alt="item.title">
                             <div class="card-body text-center">
                                 <h5 class="card-title">{{item.name}}</h5>
                                 <small class="card-text text-muted">{{item.description}}</small>
                             </div>
                             <div class="text-center">
-                                <button class="btn btn-sm btn-gray-outline mr-2"
-                                    (click)="setRole(item); item.active = true ">{{item.title}}</button>
+                                <button class="btn btn-sm btn-gray-outline mr-2" (click)="setRole(item); item.active = true ">{{item.title}}</button>
                                 <i class="fa fa-arrow-right text-muted"></i>
                             </div>
                         </div>
@@ -163,8 +148,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12 text-center mt-5 pt-5">
-                        <button [disabled]="loading" (click)="register(form.value)"
-                            class="btn btn-orangered border-radius-20">
+                        <button [disabled]="loading" (click)="register(form.value)" class="btn btn-orangered border-radius-20">
                             <span *ngIf="loading">
                                 <i class="fa fa-spin fa-spinner"></i>
                             </span>
