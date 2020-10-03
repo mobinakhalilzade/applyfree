@@ -1,3 +1,8 @@
-.menu-active{
-    font-weight: 700;
+.logo {
+    width: 101px;
+    height: 94px;
+}
+
+.logo::before {
+    border: solid 0.7vw var(--white);
 }

@@ -1,4 +1,4 @@
-<header>
+<header class="h-auto">
     <div class="container position-relative z-index-1">
         <app-navigator></app-navigator>
     </div>
@@ -48,8 +48,8 @@
                         <h4>applyfree team</h4>
                     </div>
                 </div>
-                <div class="row justify-content-center my-5 pb-5">
-                    <div class="col-2" *ngFor="let item of team">
+                <div class="row justify-content-center my-xl-5 my-lg-5 my-md-5 my-xs-2 my-2 pb-xl-5 pb-lg-5 pb-md-5 pb-sm-2 pb-1">
+                    <div class="col-xl-2 col-lg-2 col-md-3 col-sm-10 col-10 my-xl-0 my-lg-0 my-md-0 my-sm-2 my-2 py-sm-2 py-2" *ngFor="let item of team">
                         <div class="card border-0">
                             <img class="card-img-top rounded-circle" [src]="item.img" alt="applyfree team">
                             <div class="card-body text-center">
@@ -65,15 +65,15 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 mb-4 pb-2 px-5" *ngFor="let item of faq">
+                    <div class="col-12 mb-xl-4 mb-lg-4 mb-md-3 mb-sm-3 mb-3 pb-2 px-xl-5 px-lg-5 px-md-2 px-sm-2 px-1" *ngFor="let item of faq">
                         <div class="row mt-2">
-                            <div class="col-1 pr-0 pl-4">
+                            <div class="col-xl-1 col-lg-1 col-md-2 col-sm-3 col-3 pr-0 pl-4">
                                 <div class="number border-radius-full text-light text-center pt-1">{{item.number}}</div>
                             </div>
-                            <div class="col-11 pl-0">{{item.question}}</div>
+                            <div class="col-xl-11 col-lg-11 col-md-10 col-sm-8 col-8 pl-0">{{item.question}}</div>
                         </div>
-                        <div class="row ml-5 pl-4">
-                            <div class="col-10 bg-muted border-radius-10 px-4 py-3 text-muted">
+                        <div class="row mt-xl-0 mt-lg-0 mt-md-0 mt-sm-3 mt-3 mb-xl-0 mb-lg-0 mb-md-0 mb-sm-4 mb-4 ml-xl-5 ml-lg-5 mx-md-auto mx-sm-auto mx-auto pl-xl-4 pl-lg-4 px-0">
+                            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 bg-muted border-radius-10 px-4 py-3 mx-xl-0 mx-lg-0 mx-md-auto mx-sm-auto mx-auto text-muted">
                                 {{item.answer}}
                             </div>
                         </div>
@@ -371,9 +371,9 @@
         </div>
     </div>
 </main>
-<footer>
+<footer class="h-auto">
     <div class="container position-relative z-index-1">
-        <div class="row text-light">
+        <div class="row text-light d-xl-flex d-lg-flex d-md-none d-sm-none d-none">
             <div
                 class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
                 <h5>Quick access</h5>
@@ -427,6 +427,39 @@
                 <i class="fab fa-facebook text-light fa-2x p-2"></i>
             </div>
         </div>
+        <div class="row d-xl-none d-lg-none d-md-block d-sm-block d-block">
+            <div class="row justify-content-center pt-5">
+                <div class="col-xl-0 col-lg-0 col-md-2 col-sm-10 col-10 text-center">
+                    <a class="text-light" [routerLink]="['/page', 'about']">About us</a>
+                </div>
+                <div class="col-xl-0 col-lg-0 col-md-2 col-sm-10 col-10 text-center">
+                    <a class="text-light" [routerLink]="['/page', 'contact']">Contact us</a>
+                </div>
+                <div class="col-xl-0 col-lg-0 col-md-2 col-sm-10 col-10 text-center">
+                    <a class="text-light" [routerLink]="['/']">Contracts</a>
+                </div>
+                <div class="col-xl-0 col-lg-0 col-md-2 col-sm-10 col-10 text-center">
+                    <a class="text-light" [routerLink]="['/page', 'policy']">Privacy Policy</a>
+                </div>
+                <div class="col-xl-0 col-lg-0 col-md-2 col-sm-10 col-10 text-center">
+                    <a class="text-light" [routerLink]="['/page', 'terms']">Terms and conditions</a>
+                </div>
+            </div>
+            <div class="row justify-content-center py-4">
+                <div class="col-xl-0 col-lg-0 col-md-2 col-sm-2 col-2">
+                    <i class="fab fa-instagram text-light fa-2x p-2"></i>
+                </div>
+                <div class="col-xl-0 col-lg-0 col-md-2 col-sm-2 col-2">
+                    <i class="fab fa-linkedin text-light fa-2x p-2"></i>
+                </div>
+                <div class="col-xl-0 col-lg-0 col-md-2 col-sm-2 col-2">
+                    <i class="fab fa-twitter text-light fa-2x p-2"></i>
+                </div>
+                <div class="col-xl-0 col-lg-0 col-md-2 col-sm-2 col-2">
+                    <i class="fab fa-facebook text-light fa-2x p-2"></i>
+                </div>
+            </div>
+        </div>
         <div class="row justify-content-center">
             <div class="col-6">
                 <h4 class="text-light text-center font-weight-light">Powered by applyfree</h4>
@@ -437,6 +470,5 @@
                 <img src="assets/images/building-footer.png" alt="footer applyfree" class="img-fluid">
             </div>
         </div>
-
     </div>
 </footer>

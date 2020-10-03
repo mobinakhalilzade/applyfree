@@ -21,6 +21,47 @@ export class ContractListComponent implements OnInit {
     { id: 6, title: 'parents', description: 'I want to find Parents contract' }
   ];
 
+  programmes = [
+    { title: 'programme', image: 'assets/images/Harvard-University.jpg', description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point' },
+    { title: 'programme', image: 'assets/images/Harvard-University.jpg', description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point' },
+    { title: 'programme', image: 'assets/images/Harvard-University.jpg', description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point' },
+    { title: 'programme', image: 'assets/images/Harvard-University.jpg', description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point' },
+    { title: 'programme', image: 'assets/images/Harvard-University.jpg', description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point' },
+    { title: 'programme', image: 'assets/images/Harvard-University.jpg', description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point' },
+    { title: 'programme', image: 'assets/images/Harvard-University.jpg', description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point' },
+    { title: 'programme', image: 'assets/images/Harvard-University.jpg', description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point' },
+    { title: 'programme', image: 'assets/images/Harvard-University.jpg', description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point' },
+    { title: 'programme', image: 'assets/images/Harvard-University.jpg', description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point' },
+    { title: 'programme', image: 'assets/images/Harvard-University.jpg', description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point' },
+    { title: 'programme', image: 'assets/images/Harvard-University.jpg', description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point' }
+  ];
+
+  category = [
+    { title: 'Agriculture and Biology', value: 1 },
+    { title: 'Applied Sciences and Professions', value: 2 },
+    { title: 'Architecture and Building', value: 3 },
+    { title: 'Art, Design and Fashion', value: 4 },
+    { title: 'Business, Management and Finance', value: 5 },
+    { title: 'Computer Science and IT', value: 6 },
+    { title: 'Economics, Accounting and Taxation', value: 7 },
+    { title: 'Education and Training', value: 1 },
+    { title: 'Engineering and Technology', value: 1 },
+    { title: 'Environmental Studies and Earth Sciences', value: 1 },
+    { title: 'Food Nutrition and Beverage Studies', value: 1 },
+    { title: 'Journalism and Media', value: 1 },
+    { title: 'Law and Jurisprudence', value: 1 },
+    { title: 'Leisure and Sports', value: 1 },
+    { title: 'Logistics and Transportation', value: 1 },
+    { title: 'Marketing, Media and Communication', value: 1 },
+    { title: 'Mathematics, Physics and Chemistry', value: 1 },
+    { title: 'Medicine and Health', value: 1 },
+    { title: 'Military Science and Security', value: 1 },
+    { title: 'Philology and Culturology', value: 1 },
+    { title: 'Psychology', value: 1 },
+    { title: 'Sociology, Political Science and History', value: 1 },
+    { title: 'Tourism, Hospitality and Restaurant Business', value: 1 }
+  ];
+
   constructor(private service: ContractListService,
     private routeParams: ActivatedRoute,
     private router: Router) {

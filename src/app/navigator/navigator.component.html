@@ -1,28 +1,52 @@
-<nav class="navbar navbar-expand-lg py-5">
+<nav class="navbar navbar-expand-lg pt-4">
     <a class="navbar-brand text-light" href="#">
-        <h3>
-            applyfree
-        </h3>
+        <div class="row">
+            <div class="col mt-2">
+                <div class="logo light">
+                    <span class="line"></span>
+                </div>
+            </div>
+            <div class="col mt-4 pl-0 pt-2">
+                <div class="d-flex">
+                    <h3>applyfree</h3>
+                </div>
+            </div>
+        </div>
     </a>
+    <div class="float-right">
+        <div class="d-xl-none d-lg-none d-md-inline-block d-sm-inline-block d-inline-block">
+            <button class="btn btn-light text-dark" routerLink="/login">
+                <span>Log in</span>
+            </button>
+        </div>
+        <button class="navbar-toggler mx-2" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-align-justify text-light"></i>
+        </button>
+    </div>
+
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto mr-5">
-            <a class="nav-item text-light nav-link ml-3" routerLink="/landing" routerLinkActive="menu-active">Home</a>
-            <a class="nav-item text-light nav-link ml-3" routerLink="/" routerLinkActive="menu-active">Contracts</a>
-            <a class="nav-item text-light nav-link ml-3" [routerLink]="['/page', 'contact']" routerLinkActive="menu-active">Contact us</a>
-            <a class="nav-item text-light nav-link ml-3" [routerLink]="['/page', 'about']" routerLinkActive="menu-active">About us</a>
+            <a class="nav-item text-light nav-link ml-3" routerLink="/landing"
+                routerLinkActive="font-weight-bolder">Home</a>
+            <a class="nav-item text-light nav-link ml-3" routerLink="/">Contracts</a>
+            <a class="nav-item text-light nav-link ml-3" [routerLink]="['/page', 'contact']"
+                routerLinkActive="font-weight-bolder">Contact us</a>
+            <a class="nav-item text-light nav-link ml-3" [routerLink]="['/page', 'about']"
+                routerLinkActive="font-weight-bolder">About us</a>
         </div>
     </div>
-    <div class="float-right btn-custom">
-        <button class="btn border-radius-20 px-lg-4 px-md-3 px-sm-5 px-4 position-relative" routerLink="/login">
-            <span>Log in | Register</span>
-        </button>
-        <button class="btn border-radius-full ml-2 position-relative" routerLink="/login">
-            <span>
-                <i class="fa fa-arrow-right"></i>
-            </span>
-        </button>
+
+    <div class="d-xl-inline-block d-lg-inline-block d-md-none d-sm-none d-none">
+        <div class="float-right btn-custom">
+            <button class="btn border-radius-20 px-lg-4 px-md-3 px-sm-5 px-4 position-relative" routerLink="/login">
+                <span>Log in | Register</span>
+            </button>
+            <button class="btn border-radius-full ml-2 position-relative" routerLink="/login">
+                <span>
+                    <i class="fa fa-arrow-right"></i>
+                </span>
+            </button>
+        </div>
     </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <i class="fa fa-align-justify text-light"></i>
-</button>
 </nav>
