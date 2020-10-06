@@ -1,17 +1,32 @@
 <nav class="navbar navbar-expand-lg pt-4">
     <a class="navbar-brand text-light" href="#">
-        <div class="row">
-            <div class="col mt-2">
+        <!-- <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-5 col-sm-4 col-3 mt-md-3 mt-2">
                 <div class="logo light">
                     <span class="line"></span>
                 </div>
             </div>
-            <div class="col mt-4 pl-0 pt-2">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-2 mt-4 pl-0 pt-2">
                 <div class="d-flex">
                     <h3>applyfree</h3>
                 </div>
             </div>
-        </div>
+        </div> -->
+
+
+            <div class="d-flex mt-md-3 mt-2">
+                <div class="logo light">
+                    <span class="line"></span>
+                </div>
+            </div>
+            <div class="d-flex mt-4 pl-0 pt-2">
+                <div class="brand">
+                    <h5>applyfree</h5>
+                </div>
+            </div>
+
+
+
     </a>
     <div class="float-right">
         <div class="d-xl-none d-lg-none d-md-inline-block d-sm-inline-block d-inline-block">
@@ -19,17 +34,55 @@
                 <span>Log in</span>
             </button>
         </div>
-        <button class="navbar-toggler mx-2" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <button id="collapseBtn" class="navbar-toggler mx-2" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation" (click)="isMenuSmall ? isMenuSmall = false : isMenuSmall = true;">
             <i class="fa fa-align-justify text-light"></i>
         </button>
     </div>
 
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="sidebar" [ngClass]="{'show':isMenuSmall}">
+        <div class="headerMenu border-bottom py-3 px-2">
+            <button type="button" class="close" aria-label="Close"
+                (click)="isMenuSmall ? isMenuSmall = false : isMenuSmall = true;">
+                <i class="fas fa-times text-orangepink" aria-hidden="true"></i>
+            </button>
+            <div><span class="text-uppercase text-orangedark">applyfree</span></div>
+        </div>
+        <div class="navbar-nav ml-auto mr-5 py-3 pl-2">
+            <a class="nav-item text-dark nav-link ml-3" routerLink="/landing"
+                routerLinkActive="font-weight-bolder">Home</a>
+            <a class="nav-item text-dark nav-link ml-3" routerLinkActive="font-weight-bolder"
+                routerLink="/">Contracts</a>
+            <a class="nav-item text-dark nav-link ml-3" [routerLink]="['/page', 'contact']"
+                routerLinkActive="font-weight-bolder">Contact us</a>
+            <a class="nav-item text-dark nav-link ml-3" [routerLink]="['/page', 'about']"
+                routerLinkActive="font-weight-bolder">About us</a>
+        </div>
+        <div class="footerMenu w-100 text-center border-top py-1 position-absolute bottom-0">
+            <small class="text-muted">copyright applyfree</small>
+        </div>
+    </div>
+
+    <!-- <div class="collapse navbar-collapse" id="navbarNavAltMarkup"  [ngClass]="{'showsidebar':isMenuSmall,'collapse navbar-collapse':!isMenuSmall}">
         <div class="navbar-nav ml-auto mr-5">
             <a class="nav-item text-light nav-link ml-3" routerLink="/landing"
                 routerLinkActive="font-weight-bolder">Home</a>
-            <a class="nav-item text-light nav-link ml-3" routerLink="/">Contracts</a>
+            <a class="nav-item text-light nav-link ml-3" routerLinkActive="font-weight-bolder"
+                routerLink="/">Contracts</a>
+            <a class="nav-item text-light nav-link ml-3" [routerLink]="['/page', 'contact']"
+                routerLinkActive="font-weight-bolder">Contact us</a>
+            <a class="nav-item text-light nav-link ml-3" [routerLink]="['/page', 'about']"
+                routerLinkActive="font-weight-bolder">About us</a>
+        </div>
+    </div> -->
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup" *ngIf="!isMenuSmall">
+        <div class="navbar-nav ml-auto mr-5">
+            <a class="nav-item text-light nav-link ml-3" routerLink="/landing"
+                routerLinkActive="font-weight-bolder">Home</a>
+            <a class="nav-item text-light nav-link ml-3" routerLinkActive="font-weight-bolder"
+                routerLink="/">Contracts</a>
             <a class="nav-item text-light nav-link ml-3" [routerLink]="['/page', 'contact']"
                 routerLinkActive="font-weight-bolder">Contact us</a>
             <a class="nav-item text-light nav-link ml-3" [routerLink]="['/page', 'about']"

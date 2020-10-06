@@ -66,10 +66,10 @@ span.as-shadow::after {
 .bg-copyright::before {
     content: "applyfree \00A9 copyright 2020";
     position: absolute;
-    bottom: -135px;
-    left: 35%;
-    color: #cab6b6;
+    bottom: 2%;
+    left: 50%;
     font-size: 1rem;
+    transform: translate(-50%, 0%);
 }
 
 .selected {
@@ -82,13 +82,7 @@ span.as-shadow::after {
 @media only screen and (max-width: 2560px) {
     span.as-shadow::after,
     span.as-shadow::before {
-        top: 75%;
-    }
-    .bg-copyright::before {
-        bottom: -10%;
-    }
-    .dropdown {
-        display: none;
+        top: 72%;
     }
 }
 
@@ -97,13 +91,6 @@ span.as-shadow::after {
     span.as-shadow::before {
         top: 58%;
     }
-    .bg-copyright::before {
-        bottom: 2%;
-        left: -59%;
-    }
-    .dropdown {
-        display: none;
-    }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -111,43 +98,11 @@ span.as-shadow::after {
     span.as-shadow::before {
         top: 51%;
     }
-    .bg-copyright::before {
-        bottom: 4%;
-        left: -56%;
-    }
-    .dropdown {
-        display: none;
-    }
 }
 
 @media only screen and (max-width: 768px) {
     .bg-duplicate:before,
-    .bg-duplicate:after,
-    span.as-shadow ,.roleImages {
+    .bg-duplicate:after {
         display: none;
     }
-    .bg-copyright::before {
-        bottom: -27%;
-        left: 25%;
-    }
-    .dropdown {
-        display: block;
-    }
-}
-
-.card {
-    transition: transform 0.3s;
-}
-
-.card:hover {
-    -ms-transform: scale(1.5);
-    -webkit-transform: scale(1.5);
-    transform: scale(1.1);
-}
-
-.card:hover button.btn-gray-outline {
-    background-color: var(--orangered);
-    border-color: var(--orangered);
-    border-style: dashed;
-    color: var(--white);
 }

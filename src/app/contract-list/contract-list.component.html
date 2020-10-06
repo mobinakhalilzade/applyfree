@@ -8,17 +8,81 @@
         <div class="row">
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
                 <div class="filters">
-                    <div class="programCategory">
-                        <div class="btn btn-orangedark" type="button" data-toggle="collapse"
-                            data-target="#programCategory" aria-expanded="false" aria-controls="programCategory">
-                            Program Category
-                            <span><i class="fa fa-angle-down text-light"></i></span>
+                    <div class="location mb-5">
+                        <label>Location</label>
+                        <div id="country" class="my-2">
+                            <label class="text-muted">Country</label>
+                            <select class="form-control custom-select">
+                                <option *ngFor="let country of countries">
+                                    {{country.name}}
+                                </option>
+                            </select>
                         </div>
-                        <div class="collapse show mt-2" id="programCategory">
-                            <ul class="list-unstyled"> 
-
-                                <li *ngFor="let item of category">
-                                <input type="checkbox" aria-label="Checkbox for following text input">
+                        <div id="city" class="my-2">
+                            <label class="text-muted">City</label>
+                            <select class="form-control custom-select">
+                                <option *ngFor="let country of countries">
+                                    {{country.name}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="about program mb-5">
+                        <label>About Program</label>
+                        <div id="programCategory" class="my-2">
+                            <label class="text-muted">Program Category</label>
+                            <select class="form-control custom-select">
+                                <option *ngFor="let item of category">
+                                    {{item.title}}
+                                </option>
+                            </select>
+                        </div>
+                        <div id="university" class="my-2">
+                            <label class="text-muted">University</label>
+                            <select class="form-control custom-select">
+                                <option *ngFor="let university of universities">
+                                    {{university.title}}
+                                </option>
+                            </select>
+                        </div>
+                        <div id="degree" class="my-2">
+                            <label class="text-muted">Degree</label>
+                            <select class="form-control custom-select">
+                                <option *ngFor="let item of degree">
+                                    {{item.title}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="Cost mb-5">
+                        <label>Cost</label>
+                        <div id="tuition" class="mb-4 mt-2">
+                            <label class="text-muted">Tuition</label>
+                                <input type="range" min="1" max="1000" class="form-control-range">
+                            <span class="badge badge-success float-right font-weight-lighter p-1">Tuition</span>
+                        </div>
+                        <div id="costOfLiving">
+                            <label class="text-muted">Cost of Living</label>
+                                <input type="range" min="1" max="1000" class="form-control-range">
+                            <span class="badge badge-primary float-right font-weight-lighter p-1">Cost of Living</span>
+                        </div>
+                    </div>
+                    <div class="time">
+                        <label>Time</label>
+                        <div id="lenght">
+                            <label class="text-muted">Lenght of Program</label>
+                            <ul class="list-unstyled">
+                                <li *ngFor="let item of lenght">
+                                    <input type="checkbox">
+                                    {{item.title}}
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="intakes">
+                            <label class="text-muted">Intakes</label>
+                            <ul class="list-unstyled">
+                                <li *ngFor="let item of intakes">
+                                    <input type="checkbox">
                                     {{item.title}}
                                 </li>
                             </ul>

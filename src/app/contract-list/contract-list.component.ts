@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ContractListService } from './contract-list.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import * as countries from 'src/assets/countries.json';
 
 @Component({
   selector: 'app-contract-list',
@@ -12,6 +13,7 @@ export class ContractListComponent implements OnInit {
   results: any = [];
   loading: boolean = true;
   alert: any;
+  countries = countries['default'];
   contracts = [
     { id: 1, title: 'students', description: 'I want to find student contract' },
     { id: 2, title: 'schools', description: 'I want to find Schools contract' },
@@ -62,6 +64,33 @@ export class ContractListComponent implements OnInit {
     { title: 'Tourism, Hospitality and Restaurant Business', value: 1 }
   ];
 
+  degree=[
+    {id:1 ,title:"bachelor"},
+    {id:1 ,title:"PHD"},
+    {id:1 ,title:"BBA"}
+  ]
+
+  lenght=[
+    {id:1 ,title:"more than 4 years"},
+    {id:1 ,title:"4 years"},
+    {id:1 ,title:"3 years"},
+    {id:1 ,title:"2 years"},
+    {id:1 ,title:"1 year"},
+    {id:1 ,title:"less than 1 year"}
+  ] 
+
+  intakes=[
+    {id:1 ,title:"This Term"},
+    {id:1 ,title:"Next Term"}
+  ]
+
+  universities=[
+    {id:1,title:"Harvard"},
+    {id:1,title:"Cambridge"},
+    {id:1,title:"Oxford"},
+    {id:1,title:"MIT"}
+  ]
+
   constructor(private service: ContractListService,
     private routeParams: ActivatedRoute,
     private router: Router) {
@@ -95,6 +124,11 @@ export class ContractListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    console.log(countries);
+
+
+
     const filter = this.routeParams.snapshot.queryParams.filter;
 
     if (filter) {
@@ -120,4 +154,5 @@ export class ContractListComponent implements OnInit {
 
     this.search();
   }
+  
 }

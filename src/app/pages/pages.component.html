@@ -8,7 +8,7 @@
         <div [ngSwitch]="section">
             <ng-template [ngSwitchCase]="'about'">
                 <div class="row justify-content-center my-5">
-                    <div class="col-6 text-center">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 text-center">
                         <h4>About applyfree</h4>
                     </div>
                 </div>
@@ -48,8 +48,10 @@
                         <h4>applyfree team</h4>
                     </div>
                 </div>
-                <div class="row justify-content-center my-xl-5 my-lg-5 my-md-5 my-xs-2 my-2 pb-xl-5 pb-lg-5 pb-md-5 pb-sm-2 pb-1">
-                    <div class="col-xl-2 col-lg-2 col-md-3 col-sm-10 col-10 my-xl-0 my-lg-0 my-md-0 my-sm-2 my-2 py-sm-2 py-2" *ngFor="let item of team">
+                <div
+                    class="row justify-content-center my-xl-5 my-lg-5 my-md-5 my-xs-2 my-2 pb-xl-5 pb-lg-5 pb-md-5 pb-sm-2 pb-1">
+                    <div class="col-xl-2 col-lg-2 col-md-3 col-sm-10 col-10 my-xl-0 my-lg-0 my-md-0 my-sm-2 my-2 py-sm-2 py-2"
+                        *ngFor="let item of team">
                         <div class="card border-0">
                             <img class="card-img-top rounded-circle" [src]="item.img" alt="applyfree team">
                             <div class="card-body text-center">
@@ -65,15 +67,18 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 mb-xl-4 mb-lg-4 mb-md-3 mb-sm-3 mb-3 pb-2 px-xl-5 px-lg-5 px-md-2 px-sm-2 px-1" *ngFor="let item of faq">
+                    <div class="col-12 mb-xl-4 mb-lg-4 mb-md-3 mb-sm-3 mb-3 pb-2 px-xl-5 px-lg-5 px-md-2 px-sm-2 px-1"
+                        *ngFor="let item of faq">
                         <div class="row mt-2">
                             <div class="col-xl-1 col-lg-1 col-md-2 col-sm-3 col-3 pr-0 pl-4">
                                 <div class="number border-radius-full text-light text-center pt-1">{{item.number}}</div>
                             </div>
                             <div class="col-xl-11 col-lg-11 col-md-10 col-sm-8 col-8 pl-0">{{item.question}}</div>
                         </div>
-                        <div class="row mt-xl-0 mt-lg-0 mt-md-0 mt-sm-3 mt-3 mb-xl-0 mb-lg-0 mb-md-0 mb-sm-4 mb-4 ml-xl-5 ml-lg-5 mx-md-auto mx-sm-auto mx-auto pl-xl-4 pl-lg-4 px-0">
-                            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 bg-muted border-radius-10 px-4 py-3 mx-xl-0 mx-lg-0 mx-md-auto mx-sm-auto mx-auto text-muted">
+                        <div
+                            class="row mt-xl-0 mt-lg-0 mt-md-0 mt-sm-3 mt-3 mb-xl-0 mb-lg-0 mb-md-0 mb-sm-4 mb-4 ml-xl-5 ml-lg-5 mx-md-auto mx-sm-auto mx-auto pl-xl-4 pl-lg-4 px-0">
+                            <div
+                                class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 bg-muted border-radius-10 px-4 py-3 mx-xl-0 mx-lg-0 mx-md-auto mx-sm-auto mx-auto text-muted">
                                 {{item.answer}}
                             </div>
                         </div>
@@ -82,7 +87,7 @@
             </ng-template>
             <ng-template [ngSwitchCase]="'contact'">
                 <div class="row justify-content-center my-5">
-                    <div class="col-6 text-center">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 text-center">
                         <h4>Contact with applyfree</h4>
                     </div>
                 </div>
@@ -101,24 +106,29 @@
                         </p>
                     </div>
                 </div>
-                <div class="row py-5">
-                    <div class="col-6">
+                <div
+                    class="row py-5 justify-content-xl-around justify-content-lg-around justify-content-md-center justify-content-sm-center justify-content-center">
+                    <div class="col-xl-6 col-lg-6 col-md-10 col-sm-10 col-10 order-md-firts">
                         <div class="row">
-                            <div class="col-2 shadow-right">
-                                <div class="d-block m-4 pb-4">
+                            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-3 shadow-right">
+                                <div
+                                    class="d-block mx-xl-4 mx-lg-4 mx-md-4 mx-sm-4 mx-3  pb-xl-4 pb-lg-4 pb-md-4 pb-sm-4 pb-5 pt-5">
                                     <i class="fa fa-location-arrow fa-2x"></i>
                                 </div>
-                                <div class="d-block m-4 py-4">
+                                <div
+                                    class="d-block mx-xl-4 mx-lg-4 mx-md-4 mx-sm-4 mx-3 pb-xl-4 pb-lg-4 pb-md-4 pb-sm-4 pb-5  pt-5">
                                     <i class="fa fa-phone-alt fa-2x"></i>
                                 </div>
-                                <div class="d-block m-4 py-4">
+                                <div
+                                    class="d-block mx-xl-4 mx-lg-4 mx-md-4 mx-sm-4 mx-3 mt-xl-0 mt-lg-0 mt-md-0 mt-sm-0 mt-4 pb-xl-4 pb-lg-4 pb-md-4 pb-sm-4 pb-5  pt-5">
                                     <i class="fa fa-mail-bulk fa-2x"></i>
                                 </div>
-                                <div class="d-block m-4 py-4">
+                                <div
+                                    class="d-block mx-xl-4 mx-lg-4 mx-md-4 mx-sm-4 mx-3 pb-xl-4 pb-lg-4 pb-md-4 pb-sm-4 pb-5 pt-5">
                                     <i class="fa fa-share-alt fa-2x"></i>
                                 </div>
                             </div>
-                            <div class="col-10 pl-4 text-muted">
+                            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-9 pl-4 text-muted">
                                 <div class="row mb-4">
                                     <div class="col">
                                         <h5>Address</h5>
@@ -153,7 +163,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div
+                        class="col-xl-6 col-lg-5 col-md-10 col-sm-10 col-10 mt-xl-0 mt-lg-0 mt-md-5 mt-sm-4 mt-4 pt-xl-0 pt-lg-0 pt-md-4 pt-sm-4 pt-4">
                         <form class="px-5 py-4 border-radius-20 shadow">
                             <div class="row">
                                 <div class="col text-center">
@@ -179,7 +190,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-3 mx-auto">
                                     <button type="submit"
-                                        class="btn btn-lg btn-orangered border-radius-30">Send</button>
+                                        class="btn btn-lg btn-orangedark border-radius-30">Send</button>
                                 </div>
                             </div>
 
@@ -208,7 +219,7 @@
             </ng-template>
             <ng-template [ngSwitchCase]="'terms'">
                 <div class="row justify-content-center my-5">
-                    <div class="col-6 text-center">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 text-center">
                         <h4>Terms and Conditions</h4>
                     </div>
                 </div>
@@ -237,9 +248,17 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-10 shadow-lg border-radius-20 p-5">
-                        <h5 class="text-muted mb-3">Note: Terms</h5>
+                        <div class="row">
+                            <div class="col-3 d-xl-none d-lg-none d-md-none d-sm-flex d-flex ">
+                                <span class="mx-3"><i class="fa fa-quote-left fa-2x"></i></span>
+                            </div>
+                            <div class="col">
+                                <h5 class="text-muted mb-3">Note: Terms</h5>
+                            </div>
+                        </div>
                         <div class="d-flex">
-                            <span class="mx-3"><i class="fa fa-quote-left fa-2x"></i></span>
+                            <span class="d-xl-flex d-lg-flex d-md-flex d-sm-none d-none mx-3"><i
+                                    class="fa fa-quote-left fa-2x"></i></span>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque est hic sed ipsa nesciunt
                                 excepturi porro, assumenda totam! Nisi harum ea officiis sit, quidem obcaecati dicta
                                 alias culpa.
@@ -289,7 +308,7 @@
             </ng-template>
             <ng-template [ngSwitchCase]="'policy'">
                 <div class="row justify-content-center my-5">
-                    <div class="col-6 text-center">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 text-center">
                         <h4>Terms and Conditions</h4>
                     </div>
                 </div>
@@ -318,9 +337,17 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-10 shadow-lg border-radius-20 p-5">
-                        <h5 class="text-muted mb-3">Note: Terms</h5>
+                        <div class="row">
+                            <div class="col-3 d-xl-none d-lg-none d-md-none d-sm-flex d-flex ">
+                                <span class="mx-3"><i class="fa fa-quote-left fa-2x"></i></span>
+                            </div>
+                            <div class="col">
+                                <h5 class="text-muted mb-3">Note: Terms</h5>
+                            </div>
+                        </div>
                         <div class="d-flex">
-                            <span class="mx-3"><i class="fa fa-quote-left fa-2x"></i></span>
+                            <span class="d-xl-flex d-lg-flex d-md-flex d-sm-none d-none mx-3"><i
+                                    class="fa fa-quote-left fa-2x"></i></span>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque est hic sed ipsa nesciunt
                                 excepturi porro, assumenda totam! Nisi harum ea officiis sit, quidem obcaecati dicta
                                 alias culpa.

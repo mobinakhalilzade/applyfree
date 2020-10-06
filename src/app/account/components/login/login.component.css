@@ -96,24 +96,18 @@ span.as-shadow::after {
     transform: translate(-50%, 0%);
 }
 
-@media only screen and (min-width: 1440px) and (max-width:2560px) {
-    span.as-shadow::before,
-    span.as-shadow::after {
-        top: 23%;
-    }
-}
 
-@media only screen and (min-width: 2560px) {
+@media only screen and (max-width: 2560px) {
     span.as-shadow::before,
     span.as-shadow::after {
-        top: 257px;
+        top:34%;
     }
 }
 
 @media only screen and (max-width: 1440px) {
     span.as-shadow::before,
     span.as-shadow::after {
-        top: -3%;
+        top: 11%;
     }
 }
 

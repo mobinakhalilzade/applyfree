@@ -1,4 +1,340 @@
-<div class="container py-5" *ngIf="data">
+<header class="h-auto">
+    <div class="container position-relative z-index-1">
+        <app-navigator></app-navigator>
+    </div>
+</header>
+<main>
+    <div class="container mt-4">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-transparent">
+              <li class="breadcrumb-item"><a href="#">Contracts</a></li>
+              <li class="breadcrumb-item"><a href="#">U.s Programs</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Harvard IT Program</li>
+            </ol>
+          </nav>
+
+
+        <div class="card border-0">
+            <div class="card-header contractHeader">
+                <div class="row">
+                    <div class="col-4 my-auto">
+                        <div id="programNotification" class="text-left">
+                            <!-- <h4 class="text-danger text-uppercase">this program has expired</h4> -->
+                            <h6 class="text-success text-uppercase">this program has reserved</h6>
+                        </div>
+                    </div>
+                    <div class="col-4 text-center my-auto">
+                        <div id="price">
+                            <i class="fas fa-dollar-sign fa-2x text-info"></i> :
+                            <span>3200</span>
+                        </div>
+                    </div>
+                    <div class="col-4 float-right">
+                        <div id="bookmark" class="text-right">
+                            <i class="far fa-bookmark fa-3x text-primary"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="bg-light">
+                                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#carouselExampleIndicators" data-slide-to="0"
+                                                class="active"></li>
+                                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                        </ol>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img class="d-block w-100" src="assets/images/Harvard-University.jpg"
+                                                    alt="First slide">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img class="d-block w-100" src="assets/images/Harvard-University.jpg"
+                                                    alt="Second slide">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img class="d-block w-100" src="assets/images/Harvard-University.jpg"
+                                                    alt="Third slide">
+                                            </div>
+                                        </div>
+                                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                                            data-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                                            data-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <div class="card" style="width: 18rem;">
+                                    <img class="card-img-top" src="assets/images/harvard-logo.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up the
+                                            bulk of
+                                            the card's content.</p>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Cras justo odio</li>
+                                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                                        <li class="list-group-item">Vestibulum at eros</li>
+                                    </ul>
+                                    <div class="card-body">
+                                        <a href="#" class="card-link">Card link</a>
+                                        <a href="#" class="card-link">Another link</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-6 col-6 pl-5">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="bg-light">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            Featured
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Special title treatment</h5>
+                                            <p class="card-text">With supporting text below as a natural lead-in to
+                                                additional
+                                                content.
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem
+                                                et
+                                                laudantium
+                                                beatae impedit rerum? Earum laboriosam quos, architecto corrupti
+                                                possimus
+                                                pariatur cum
+                                                repellat numquam, sed dolorum optio quia cumque assumenda.
+                                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum
+                                                praesentium fuga
+                                                magni,
+                                                maxime sunt aliquam consectetur amet, nihil eum iste ducimus optio
+                                                suscipit
+                                                architecto
+                                                vero eos, assumenda deserunt odit? Consectetur!
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non illum
+                                                consequatur,
+                                                voluptates autem debitis odio. Ducimus est officiis fuga reiciendis eius
+                                                quidem
+                                                aspernatur expedita quo maiores ut quibusdam, voluptas mollitia!Loremlo
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, saepe?
+                                                Laboriosam,
+                                                molestiae blanditiis. Dignissimos sapiente quod reprehenderit placeat?
+                                                Neque
+                                                enim
+                                                blanditiis expedita repellat assumenda voluptatem nam minima obcaecati
+                                                inventore
+                                                voluptatum.
+                                            </p>
+                                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <div class="card text-center">
+                                    <div class="card-header">
+                                        Featured
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Special title treatment</h5>
+                                        <p class="card-text">With supporting text below as a natural lead-in to
+                                            additional
+                                            content.</p>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                    <div class="card-footer text-muted">
+                                        2 days ago
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <div class="text-center text-info">
+                                    <i class="fa fa-book-reader fa-3x mx-5"></i>
+                                    <i class="fa fa-book fa-3x mx-5"></i>
+                                    <i class="fa fa-university fa-3x mx-5"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <div class="card text-center">
+                            <div class="card-header">
+                                <ul class="nav nav-tabs card-header-tabs">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="#">Active</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Link</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link disabled" href="#">Disabled</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Special title treatment</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-2">
+                        <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+                            <div class="card-header">Header</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Secondary card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up ick
+                                    example
+                                    text to build on the card title and make up ick example text to build on the card
+                                    title and
+                                    make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-10">
+                        <img src="assets/images/sample-map.png" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="h-auto">
+    <div class="container position-relative z-index-1">
+        <div class="row text-light d-xl-flex d-lg-flex d-md-none d-sm-none d-none">
+            <div
+                class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
+                <h5>Quick access</h5>
+                <ul class="list-unstyled">
+                    <li class="p-2">About us</li>
+                    <li class="p-2">Contact us</li>
+                    <li class="p-2">Contracts</li>
+                    <li class="p-2" [routerLink]="['/page', 'terms']">Terms and conditions</li>
+                    <li class="p-2" [routerLink]="['/page', 'policy']">Privacy Policy</li>
+                </ul>
+            </div>
+            <div
+                class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
+                <h5>Quick access</h5>
+                <ul class="list-unstyled">
+                    <li class="p-2">About us</li>
+                    <li class="p-2">Contact us</li>
+                    <li class="p-2">Contracts</li>
+                    <li class="p-2">Terms and conditions</li>
+                    <li class="p-2">Privacy Policy</li>
+                </ul>
+            </div>
+            <div
+                class="col-xl-5 col-lg-4 col-md-4 col-sm-5 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
+                <h5>applyfree departments</h5>
+                <ul class="list-unstyled">
+                    <li class="p-2">Lorem ipsum dolor sit aLorem ipsum dolor sit a</li>
+                    <li class="p-2">Lorem ipsum dolor sit aLorem ipsum dolor sit a</li>
+                    <li class="p-2">Lorem ipsum dolor sit aLorem ipsum dolor sit a</li>
+                    <li class="p-2">Lorem ipsum dolor sit aLorem ipsum dolor sit a</li>
+                    <li class="p-2">Lorem ipsum dolor sit aLorem ipsum dolor sit a</li>
+                </ul>
+            </div>
+            <div
+                class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
+                <h5>Quick access</h5>
+                <ul class="list-unstyled">
+                    <li class="p-2">About us</li>
+                    <li class="p-2">Contact us</li>
+                    <li class="p-2">Contracts</li>
+                    <li class="p-2">Terms and conditions</li>
+                    <li class="p-2">Privacy Policy</li>
+                </ul>
+            </div>
+            <div
+                class="col-xl-1 col-lg-1 col-md-1 col-sm-2 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
+                <h5>Social</h5>
+                <i class="fab fa-instagram text-light fa-2x p-2"></i>
+                <i class="fab fa-linkedin text-light fa-2x p-2"></i>
+                <i class="fab fa-twitter text-light fa-2x p-2"></i>
+                <i class="fab fa-facebook text-light fa-2x p-2"></i>
+            </div>
+        </div>
+        <div class="row d-xl-none d-lg-none d-md-block d-sm-block d-block">
+            <div class="row justify-content-center pt-5">
+                <div class="col-xl-0 col-lg-0 col-md-2 col-sm-10 col-10 text-center">
+                    <a class="text-light" [routerLink]="['/page', 'about']">About us</a>
+                </div>
+                <div class="col-xl-0 col-lg-0 col-md-2 col-sm-10 col-10 text-center">
+                    <a class="text-light" [routerLink]="['/page', 'contact']">Contact us</a>
+                </div>
+                <div class="col-xl-0 col-lg-0 col-md-2 col-sm-10 col-10 text-center">
+                    <a class="text-light" [routerLink]="['/']">Contracts</a>
+                </div>
+                <div class="col-xl-0 col-lg-0 col-md-2 col-sm-10 col-10 text-center">
+                    <a class="text-light" [routerLink]="['/page', 'policy']">Privacy Policy</a>
+                </div>
+                <div class="col-xl-0 col-lg-0 col-md-2 col-sm-10 col-10 text-center">
+                    <a class="text-light" [routerLink]="['/page', 'terms']">Terms and conditions</a>
+                </div>
+            </div>
+            <div class="row justify-content-center py-4">
+                <div class="col-xl-0 col-lg-0 col-md-2 col-sm-2 col-2">
+                    <i class="fab fa-instagram text-light fa-2x p-2"></i>
+                </div>
+                <div class="col-xl-0 col-lg-0 col-md-2 col-sm-2 col-2">
+                    <i class="fab fa-linkedin text-light fa-2x p-2"></i>
+                </div>
+                <div class="col-xl-0 col-lg-0 col-md-2 col-sm-2 col-2">
+                    <i class="fab fa-twitter text-light fa-2x p-2"></i>
+                </div>
+                <div class="col-xl-0 col-lg-0 col-md-2 col-sm-2 col-2">
+                    <i class="fab fa-facebook text-light fa-2x p-2"></i>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <h4 class="text-light text-center font-weight-light">Powered by applyfree</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 mx-auto mt-4">
+                <img src="assets/images/building-footer.png" alt="footer applyfree" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+
+<!-- <div class="container py-5" *ngIf="data">
     <div class="row">
         <div class="col-12">
             <h1 class="text-capitalize position-relative">
@@ -86,4 +422,4 @@
             </span>
         </div>
     </div>
-</div>
+</div> -->

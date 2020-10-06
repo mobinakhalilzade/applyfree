@@ -6,8 +6,3 @@ header::after {
     height: 93px;
     top: 48px;
 }
-
-#programCategory{
-    height:224px;
-    overflow:auto;
-}
