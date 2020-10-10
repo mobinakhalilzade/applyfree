@@ -4,5 +4,5 @@ header::before {
 
 header::after {
     height: 80px;
-    top: 48px;
+    top: 40px;
 }

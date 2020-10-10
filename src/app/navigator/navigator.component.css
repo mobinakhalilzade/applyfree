@@ -7,22 +7,6 @@
     border: solid 0.7vw var(--white);
 }
 
-.sidebar {
-    background-color: var(--orangelight);
-    height: 100%;
-    width: 0; 
-    position: fixed; 
-    z-index: 9; 
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
-    transition: 0.5s; 
-}
-
-.sidebar.show {
-   width: 100%;
- }
-
  .menu-backdoor {
      display: none;
      background-color: rgba(0,0,0,0.5);
@@ -49,7 +33,7 @@
       top: 0;
       height: 100%;
       width: 80%;  
-      background-color: #fff;
+      background-color:  var(--orangelight);
       z-index: 3;
   }
 
@@ -58,7 +42,7 @@
   }
 
   ::ng-deep .z-index-effect {
-      z-index: 1;
+      z-index: 0;
   }
 }
 

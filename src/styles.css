@@ -133,6 +133,10 @@ table tr td {
     border-top-right-radius: 5px;
 }
 
+.z-index-0{
+    z-index: 0;
+}
+
 .z-index-1 {
     z-index: 1;
 }
@@ -196,7 +200,11 @@ table tr td {
 
 header {
     background-image: linear-gradient(to left bottom, #eb405e, #ef3d4e, #f23d3d, #f24029, #f0460b);
-    position: relative;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    /* position: relative; */
 }
 
 header::before,
@@ -359,9 +367,23 @@ footer::after {
 }
 
 @media only screen and (max-width: 1024px) {
+    header::before,
+    header::after,
+    footer::before,
+    footer::after{
+        display: none;
+    }
    
 }
 
 @media only screen and (max-width: 768px) {
+
+    header::before,
+    header::after,
+    footer::before,
+    footer::after{
+        display: none;
+    }
+
   
 }
