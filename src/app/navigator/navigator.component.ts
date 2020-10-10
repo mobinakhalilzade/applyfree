@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigator.component.css']
 })
 export class NavigatorComponent implements OnInit {
-  isMenuSmall: boolean; 
+  sidebar: boolean; 
   constructor() { }
 
   ngOnInit(): void {

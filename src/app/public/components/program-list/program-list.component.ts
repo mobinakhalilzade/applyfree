@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { ContractListService } from './contract-list.service';
+import { PublicService } from '../../public.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as countries from 'src/assets/countries.json';
 
 @Component({
-  selector: 'app-contract-list',
-  templateUrl: './contract-list.component.html',
-  styleUrls: ['./contract-list.component.css']
+  selector: 'app-program-list',
+  templateUrl: './program-list.component.html',
+  styleUrls: ['./program-list.component.css']
 })
-export class ContractListComponent implements OnInit {
+export class ProgramListComponent implements OnInit {
   form: any = { in: 'students', filter: 1, type: 1, expire: 30 };
   results: any = [];
   loading: boolean = true;
@@ -91,7 +91,7 @@ export class ContractListComponent implements OnInit {
     {id:1,title:"MIT"}
   ]
 
-  constructor(private service: ContractListService,
+  constructor(private service: PublicService,
     private routeParams: ActivatedRoute,
     private router: Router) {
   }
@@ -124,11 +124,6 @@ export class ContractListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    console.log(countries);
-
-
-
     const filter = this.routeParams.snapshot.queryParams.filter;
 
     if (filter) {

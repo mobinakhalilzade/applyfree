@@ -21,25 +21,36 @@ import { ConfirmComponent } from './dashboard/components/confirm/confirm.compone
 import { ReservedComponent } from './dashboard/components/reserved/reserved.component';
 
 //public
-import { HomeComponent } from './home/home.component'
+import { PublicComponent } from './public/public.component';
+import { PagesComponent } from './public/components/pages/pages.component';
+import { ProgramListComponent } from "./public/components/program-list/program-list.component";
+import { ProgramComponent } from "./public/components/program/program.component";
 import { ReportComponent } from "./report/report.component";
-import { ContractListComponent } from "./contract-list/contract-list.component";
 import { ContractComponent } from "./contract/contract.component";
 import { SearchComponent } from "./search/search.component";
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 //static pages
-import { PagesComponent } from './pages/pages.component';
+import { LandingComponent } from './landing/landing.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/', pathMatch: 'full' },
-  { path: '', component: ContractListComponent },
+  
+  {
+    path: '', component: PublicComponent,
+    children: [
+      { path: '', redirectTo: '/', pathMatch: 'full' },
+      { path: '', component: ProgramListComponent },
+      { path: 'program/:id', component: ProgramComponent },
+      { path: 'page/:section', component: PagesComponent },
 
-  { path: 'landing', component: HomeComponent },
+    ]
+  },
+
+  { path: 'landing', component: LandingComponent },
 
   { path: 'login', redirectTo: '/account/login' },
   { path: 'register', redirectTo: '/account/signup' },
-  
+
   {
     path: 'dashboard', component: DashboardComponent,
     children: [
@@ -72,15 +83,17 @@ const routes: Routes = [
     ]
   },
 
-  { path: 'contract/:id', component: ContractComponent },
+  { path: 'contract', component: ContractComponent },
   { path: 'search', component: SearchComponent },
   { path: 'report', component: ReportComponent },
-  { path: 'page/:section', component: PagesComponent },
 
   { path: '**', redirectTo: '/404', pathMatch: 'full' },
   { path: '404', component: PageNotFoundComponent },
 
 ];
+
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {

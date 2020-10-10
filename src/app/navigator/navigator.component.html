@@ -1,88 +1,34 @@
-<nav class="navbar navbar-expand-lg pt-4">
+<nav class="navbar navbar-expand-lg pt-xl-4 pt-lg-4 pt-md-4 pt-sm-1 pt-0">
     <a class="navbar-brand text-light" href="#">
-        <!-- <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-5 col-sm-4 col-3 mt-md-3 mt-2">
-                <div class="logo light">
-                    <span class="line"></span>
-                </div>
+        <div class="row">
+            <div class="col-xl-6 col-lg-7 col-md-6 col-sm-3 col-5 mt-2">
+                <img src="assets/images/logo-white.png" class="img-fluid" alt="applyfree">
             </div>
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-2 mt-4 pl-0 pt-2">
+            <div class="col-xl-6 col-lg-1 col-md-1 col-sm-2 col-2 mt-4 pl-0 pt-2 d-none d-xl-block">
                 <div class="d-flex">
-                    <h3>applyfree</h3>
+                    <span>applyfree</span>
                 </div>
             </div>
-        </div> -->
-
-
-            <div class="d-flex mt-md-3 mt-2">
-                <div class="logo light">
-                    <span class="line"></span>
-                </div>
-            </div>
-            <div class="d-flex mt-4 pl-0 pt-2">
-                <div class="brand">
-                    <h5>applyfree</h5>
-                </div>
-            </div>
-
-
-
+        </div>
     </a>
+
     <div class="float-right">
-        <div class="d-xl-none d-lg-none d-md-inline-block d-sm-inline-block d-inline-block">
+        <!-- <div class="d-xl-none d-lg-none d-md-inline-block d-sm-inline-block d-inline-block">
             <button class="btn btn-light text-dark" routerLink="/login">
                 <span>Log in</span>
             </button>
-        </div>
-        <button id="collapseBtn" class="navbar-toggler mx-2" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation" (click)="isMenuSmall ? isMenuSmall = false : isMenuSmall = true;">
-            <i class="fa fa-align-justify text-light"></i>
+        </div> -->
+        <button id="collapseBtn" class="navbar-toggler text-light" type="button" (click)="sidebar = true">
+            <i class="fa fa-bars"></i>
         </button>
     </div>
 
-    <div class="sidebar" [ngClass]="{'show':isMenuSmall}">
-        <div class="headerMenu border-bottom py-3 px-2">
-            <button type="button" class="close" aria-label="Close"
-                (click)="isMenuSmall ? isMenuSmall = false : isMenuSmall = true;">
-                <i class="fas fa-times text-orangepink" aria-hidden="true"></i>
-            </button>
-            <div><span class="text-uppercase text-orangedark">applyfree</span></div>
-        </div>
-        <div class="navbar-nav ml-auto mr-5 py-3 pl-2">
-            <a class="nav-item text-dark nav-link ml-3" routerLink="/landing"
-                routerLinkActive="font-weight-bolder">Home</a>
-            <a class="nav-item text-dark nav-link ml-3" routerLinkActive="font-weight-bolder"
-                routerLink="/">Contracts</a>
-            <a class="nav-item text-dark nav-link ml-3" [routerLink]="['/page', 'contact']"
-                routerLinkActive="font-weight-bolder">Contact us</a>
-            <a class="nav-item text-dark nav-link ml-3" [routerLink]="['/page', 'about']"
-                routerLinkActive="font-weight-bolder">About us</a>
-        </div>
-        <div class="footerMenu w-100 text-center border-top py-1 position-absolute bottom-0">
-            <small class="text-muted">copyright applyfree</small>
-        </div>
-    </div>
-
-    <!-- <div class="collapse navbar-collapse" id="navbarNavAltMarkup"  [ngClass]="{'showsidebar':isMenuSmall,'collapse navbar-collapse':!isMenuSmall}">
-        <div class="navbar-nav ml-auto mr-5">
+    <div class="menu ml-auto" [ngClass]="{'show' : sidebar}">
+        <div class="navbar-nav">
             <a class="nav-item text-light nav-link ml-3" routerLink="/landing"
-                routerLinkActive="font-weight-bolder">Home</a>
-            <a class="nav-item text-light nav-link ml-3" routerLinkActive="font-weight-bolder"
-                routerLink="/">Contracts</a>
-            <a class="nav-item text-light nav-link ml-3" [routerLink]="['/page', 'contact']"
-                routerLinkActive="font-weight-bolder">Contact us</a>
-            <a class="nav-item text-light nav-link ml-3" [routerLink]="['/page', 'about']"
-                routerLinkActive="font-weight-bolder">About us</a>
-        </div>
-    </div> -->
-
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup" *ngIf="!isMenuSmall">
-        <div class="navbar-nav ml-auto mr-5">
-            <a class="nav-item text-light nav-link ml-3" routerLink="/landing"
-                routerLinkActive="font-weight-bolder">Home</a>
-            <a class="nav-item text-light nav-link ml-3" routerLinkActive="font-weight-bolder"
-                routerLink="/">Contracts</a>
+                routerLinkActive="font-weight-bolder">Landing</a>
+            <a class="nav-item text-light nav-link ml-3" routerLinkActive="font-weight-bolder" routerLink="/"
+                [routerLinkActiveOptions]="{ exact: true }">Programs</a>
             <a class="nav-item text-light nav-link ml-3" [routerLink]="['/page', 'contact']"
                 routerLinkActive="font-weight-bolder">Contact us</a>
             <a class="nav-item text-light nav-link ml-3" [routerLink]="['/page', 'about']"
@@ -91,7 +37,7 @@
     </div>
 
     <div class="d-xl-inline-block d-lg-inline-block d-md-none d-sm-none d-none">
-        <div class="float-right btn-custom">
+        <div class="btn-custom">
             <button class="btn border-radius-20 px-lg-4 px-md-3 px-sm-5 px-4 position-relative" routerLink="/login">
                 <span>Log in | Register</span>
             </button>
@@ -102,4 +48,5 @@
             </button>
         </div>
     </div>
+    <div class="menu-backdoor" [ngClass]="{'show' : sidebar}" (click)="sidebar = false"></div>
 </nav>

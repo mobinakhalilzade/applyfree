@@ -1,0 +1,243 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
+            <div class="filters">
+                <div class="location mb-5">
+                    <label>Location</label>
+                    <div id="country" class="my-2">
+                        <label class="text-muted">Country</label>
+                        <select class="form-control custom-select">
+                            <option *ngFor="let country of countries">
+                                {{country.name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div id="city" class="my-2">
+                        <label class="text-muted">City</label>
+                        <select class="form-control custom-select">
+                            <option *ngFor="let country of countries">
+                                {{country.name}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="about program mb-5">
+                    <label>About Program</label>
+                    <div id="programCategory" class="my-2">
+                        <label class="text-muted">Program Category</label>
+                        <select class="form-control custom-select">
+                            <option *ngFor="let item of category">
+                                {{item.title}}
+                            </option>
+                        </select>
+                    </div>
+                    <div id="university" class="my-2">
+                        <label class="text-muted">University</label>
+                        <select class="form-control custom-select">
+                            <option *ngFor="let university of universities">
+                                {{university.title}}
+                            </option>
+                        </select>
+                    </div>
+                    <div id="degree" class="my-2">
+                        <label class="text-muted">Degree</label>
+                        <select class="form-control custom-select">
+                            <option *ngFor="let item of degree">
+                                {{item.title}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="Cost mb-5">
+                    <label>Cost</label>
+                    <div id="tuition" class="mb-4 mt-2">
+                        <label class="text-muted">Tuition</label>
+                        <input type="range" min="1" max="1000" class="form-control-range">
+                        <span class="badge badge-success float-right font-weight-lighter p-1">Tuition</span>
+                    </div>
+                    <div id="costOfLiving">
+                        <label class="text-muted">Cost of Living</label>
+                        <input type="range" min="1" max="1000" class="form-control-range">
+                        <span class="badge badge-primary float-right font-weight-lighter p-1">Cost of Living</span>
+                    </div>
+                </div>
+                <div class="time">
+                    <label>Time</label>
+                    <div id="lenght">
+                        <label class="text-muted">Lenght of Program</label>
+                        <ul class="list-unstyled">
+                            <li *ngFor="let item of lenght">
+                                <input type="checkbox">
+                                {{item.title}}
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="intakes">
+                        <label class="text-muted">Intakes</label>
+                        <ul class="list-unstyled">
+                            <li *ngFor="let item of intakes">
+                                <input type="checkbox">
+                                {{item.title}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-9">
+            <div class="row position-relative z-index-effect">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="SEARCH YOUR PROGRAM ...">
+                    <div class="input-group-append">
+                        <button class="btn input-group-text">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 my-4" *ngFor="let item of programmes">
+                    <div class="card-deck">
+                        <div class="card">
+                            <img [src]="item.image" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{item.title}}</h5>
+                                <p class="card-text">{{item.description}}</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+
+
+
+    <!-- <div class="row py-5">
+            <div class="col-12 text-center">
+                <h6>What kind of contracts do you want?</h6>
+
+                <div class="d-flex mt-4">
+                    <div class="w-auto mr-2" *ngFor='let item of contracts' (click)="form.filter = item.id">
+                        <div class="card pointer" [ngClass]="{'bg-primary': form.filter == item.id}">
+                            <div class="card-body">
+                                <h6 class="text-capitalize"
+                                    [ngClass]="{'text-white': form.filter == item.id, 'text-primary': form.filter != item.id}">
+                                    {{item.title}}</h6>
+                                <p
+                                    [ngClass]="{'text-white': form.filter == item.id, 'text-muted': form.filter != item.id}">
+                                    {{item.description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex mt-3">
+                    <div class="w-auto align-self-center">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input pointer" [value]="1" id="contractTypeFree"
+                                name="type" [(ngModel)]="form.type">
+                            <label class="custom-control-label pointer" for="contractTypeFree">Free</label>
+                        </div>
+                    </div>
+                    <div class="w-auto ml-4 align-self-center">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input pointer" [value]="2"
+                                id="contractTypePremium" name="type" [(ngModel)]="form.type">
+                            <label class="custom-control-label pointer" for="contractTypePremium">Premium</label>
+                        </div>
+                    </div>
+                    <div class="w-50 ml-auto align-self-center">
+                        <span class="ml-5">
+                            <input type="range" min="1" max="30" class="form-control-range" [(ngModel)]="form.expire">
+                        </span>
+                        <span class="badge badge-primary float-right font-weight-lighter p-1">{{form.expire}} days to
+                            expire</span>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="text-left">
+                    <button class="btn btn-primary btn-lg" (click)="reload()">
+                        Find my contract
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="row" *ngIf="!loading">
+            <div class="col-12" *ngIf="results.length == 0">
+                <div class="text-center p-5">
+                    <h5>We are sorry , there is no contracts match with your filters ...</h5>
+
+                    <div class="mt-3">
+                        <button class="btn btn-warning" (click)="notify()">
+                            Notify me if this search has result
+                        </button>
+                        <div class="mt-3" *ngIf="alert"
+                            [ngClass]="{'text-danger': alert.return > 200, 'text-success': alert.return == 200}">
+                            <small>{{alert.message}}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4" *ngFor='let item of results'>
+                <div class="card">
+                    <div class="card-header">
+                        {{item.title}}
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                Type: {{item.type | contractType}}
+                            </li>
+                            <li class="list-group-item">
+                                Reserved: {{item.lockBy | bool}}
+                            </li>
+                            <li class="list-group-item" *ngIf="item.type > 1">
+                                Price: {{item.price}}$
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-footer text-danger">
+                        <span *ngIf="item.days > 0">
+                            expire in <b>{{item.days}}</b> days
+                        </span>
+                        <span *ngIf="item.days == 0">
+                            Expired
+                        </span>
+
+
+                        <a class="btn btn-sm btn-success float-right" [routerLink]='[ "/contract", item.id] '>
+                            Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+</div>

@@ -1,6 +1,57 @@
 <header class="h-auto">
     <div class="container position-relative z-index-1">
-        <app-navigator></app-navigator>
+        <nav class="navbar navbar-expand-lg pt-xl-4 pt-lg-4 pt-md-4 pt-sm-1 pt-0">
+            <a class="navbar-brand text-light" href="#">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-7 col-md-6 col-sm-3 col-5 mt-2">
+                        <img src="assets/images/logo-white.png" class="img-fluid" alt="applyfree">
+                    </div>
+                    <div class="col-xl-6 col-lg-1 col-md-1 col-sm-2 col-2 mt-4 pl-0 pt-2 d-none d-xl-block">
+                        <div class="d-flex">
+                            <span>applyfree</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        
+            <div class="float-right">
+                <!-- <div class="d-xl-none d-lg-none d-md-inline-block d-sm-inline-block d-inline-block">
+                    <button class="btn btn-light text-dark" routerLink="/login">
+                        <span>Log in</span>
+                    </button>
+                </div> -->
+                <button id="collapseBtn" class="navbar-toggler text-light" type="button" (click)="sidebar = true">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        
+            <div class="menu ml-auto" [ngClass]="{'show' : sidebar}">
+                <div class="navbar-nav">
+                    <a class="nav-item text-light nav-link ml-3" routerLink="/landing"
+                        routerLinkActive="font-weight-bolder">Landing</a>
+                    <a class="nav-item text-light nav-link ml-3" routerLinkActive="font-weight-bolder" routerLink="/"
+                        [routerLinkActiveOptions]="{ exact: true }">Programs</a>
+                    <a class="nav-item text-light nav-link ml-3" [routerLink]="['/page', 'contact']"
+                        routerLinkActive="font-weight-bolder">Contact us</a>
+                    <a class="nav-item text-light nav-link ml-3" [routerLink]="['/page', 'about']"
+                        routerLinkActive="font-weight-bolder">About us</a>
+                </div>
+            </div>
+        
+            <div class="d-xl-inline-block d-lg-inline-block d-md-none d-sm-none d-none">
+                <div class="btn-custom">
+                    <button class="btn border-radius-20 px-lg-4 px-md-3 px-sm-5 px-4 position-relative" routerLink="/login">
+                        <span>Log in | Register</span>
+                    </button>
+                    <button class="btn border-radius-full ml-2 position-relative" routerLink="/login">
+                        <span>
+                            <i class="fa fa-arrow-right"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="menu-backdoor" [ngClass]="{'show' : sidebar}" (click)="sidebar = false"></div>
+        </nav>
         <div class="row my-md-4 text-light mt-5 pb-5">
             <div class="col-xl-6 col-lg-5 col-md-6 col-sm-7 col-10 mx-auto order-last my-auto">
                 <p class="text-light">Free education for students</p>
@@ -62,7 +113,7 @@
                             <div class="col text-left">
                                 <button
                                     class="btn btn-xl-lg btn-lg-lg btn-md-lg btn-sm-sm btn-sm btn-success font-weight-lighter border-radius-30 px-xl-5 px-lg-5 px-md-3 px-sm-5 px-2"
-                                    routerLink="/contracts">Join
+                                    routerLink="/">Join
                                     us</button>
                             </div>
                             <div class="col text-right">
@@ -90,7 +141,7 @@
                             <div class="col text-left">
                                 <button
                                     class="btn btn-xl-lg btn-lg-lg btn-md-lg btn-sm-sm btn-sm btn-info font-weight-lighter border-radius-30 px-xl-5 px-lg-5 px-md-2 px-sm-5 px-2 text-uppercase"
-                                    routerLink="/contracts">apply free</button>
+                                    routerLink="/">apply free</button>
                             </div>
                             <div class="col text-right">
                                 <p>apply free</p>
@@ -122,7 +173,7 @@
                         <div class="col text-left">
                             <button
                                 class="btn btn-xl-lg btn-lg-lg btn-md-lg btn-sm-sm btn-sm btn-dark font-weight-lighter border-radius-30 px-xl-5 px-lg-5 px-md-3 px-sm-5 px-2 text-uppercase"
-                                routerLink="/contracts">start now</button>
+                                routerLink="/">start now</button>
                         </div>
                         <div class="col text-right">
                             <p class="text-uppercase">start now</p>
@@ -252,7 +303,7 @@
             </div>
         </div>
         <div class="row d-xl-none d-lg-none d-md-block d-sm-block d-block">
-            <div class="row justify-content-center pt-5">
+            <div class="row justify-content-center mr-1 pt-5">
                 <div class="col-xl-0 col-lg-0 col-md-2 col-sm-10 col-10 text-center">
                     <a class="text-light" [routerLink]="['/page', 'about']">About us</a>
                 </div>
@@ -269,7 +320,7 @@
                     <a class="text-light" [routerLink]="['/page', 'terms']">Terms and conditions</a>
                 </div>
             </div>
-            <div class="row justify-content-center py-4">
+            <div class="row justify-content-center mr-1 py-4">
                 <div class="col-xl-0 col-lg-0 col-md-2 col-sm-2 col-2">
                     <i class="fab fa-instagram text-light fa-2x p-2"></i>
                 </div>

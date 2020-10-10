@@ -1,8 +1,3 @@
-<header class="h-auto">
-    <div class="container position-relative z-index-1">
-        <app-navigator></app-navigator>
-    </div>
-</header>
 <main id="bg-pages">
     <div class="container">
         <div [ngSwitch]="section">
@@ -69,7 +64,7 @@
                 <div class="row">
                     <div class="col-12 mb-xl-4 mb-lg-4 mb-md-3 mb-sm-3 mb-3 pb-2 px-xl-5 px-lg-5 px-md-2 px-sm-2 px-1"
                         *ngFor="let item of faq">
-                        <div class="row mt-2">
+                        <div class="row mr-1 mt-2">
                             <div class="col-xl-1 col-lg-1 col-md-2 col-sm-3 col-3 pr-0 pl-4">
                                 <div class="number border-radius-full text-light text-center pt-1">{{item.number}}</div>
                             </div>
@@ -196,7 +191,7 @@
 
                         </form>
                     </div>
-                    <div class="row justify-content-center my-5 py-4">
+                    <div class="row justify-content-center mx-1 my-5 py-4">
                         <div class="col-10">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque est hic sed ipsa nesciunt
                                 excepturi porro, assumenda totam! Nisi harum ea officiis sit, quidem obcaecati dicta
@@ -214,7 +209,6 @@
                             </p>
                         </div>
                     </div>
-                    <!-- location on map -->
                 </div>
             </ng-template>
             <ng-template [ngSwitchCase]="'terms'">
@@ -397,105 +391,4 @@
             </ng-template>
         </div>
     </div>
-</main>
-<footer class="h-auto">
-    <div class="container position-relative z-index-1">
-        <div class="row text-light d-xl-flex d-lg-flex d-md-none d-sm-none d-none">
-            <div
-                class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
-                <h5>Quick access</h5>
-                <ul class="list-unstyled">
-                    <li class="p-2">About us</li>
-                    <li class="p-2">Contact us</li>
-                    <li class="p-2">Contracts</li>
-                    <li class="p-2" [routerLink]="['/page', 'terms']">Terms and conditions</li>
-                    <li class="p-2" [routerLink]="['/page', 'policy']">Privacy Policy</li>
-                </ul>
-            </div>
-            <div
-                class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
-                <h5>Quick access</h5>
-                <ul class="list-unstyled">
-                    <li class="p-2">About us</li>
-                    <li class="p-2">Contact us</li>
-                    <li class="p-2">Contracts</li>
-                    <li class="p-2">Terms and conditions</li>
-                    <li class="p-2">Privacy Policy</li>
-                </ul>
-            </div>
-            <div
-                class="col-xl-5 col-lg-4 col-md-4 col-sm-5 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
-                <h5>applyfree departments</h5>
-                <ul class="list-unstyled">
-                    <li class="p-2">Lorem ipsum dolor sit aLorem ipsum dolor sit a</li>
-                    <li class="p-2">Lorem ipsum dolor sit aLorem ipsum dolor sit a</li>
-                    <li class="p-2">Lorem ipsum dolor sit aLorem ipsum dolor sit a</li>
-                    <li class="p-2">Lorem ipsum dolor sit aLorem ipsum dolor sit a</li>
-                    <li class="p-2">Lorem ipsum dolor sit aLorem ipsum dolor sit a</li>
-                </ul>
-            </div>
-            <div
-                class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
-                <h5>Quick access</h5>
-                <ul class="list-unstyled">
-                    <li class="p-2">About us</li>
-                    <li class="p-2">Contact us</li>
-                    <li class="p-2">Contracts</li>
-                    <li class="p-2">Terms and conditions</li>
-                    <li class="p-2">Privacy Policy</li>
-                </ul>
-            </div>
-            <div
-                class="col-xl-1 col-lg-1 col-md-1 col-sm-2 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
-                <h5>Social</h5>
-                <i class="fab fa-instagram text-light fa-2x p-2"></i>
-                <i class="fab fa-linkedin text-light fa-2x p-2"></i>
-                <i class="fab fa-twitter text-light fa-2x p-2"></i>
-                <i class="fab fa-facebook text-light fa-2x p-2"></i>
-            </div>
-        </div>
-        <div class="row d-xl-none d-lg-none d-md-block d-sm-block d-block">
-            <div class="row justify-content-center pt-5">
-                <div class="col-xl-0 col-lg-0 col-md-2 col-sm-10 col-10 text-center">
-                    <a class="text-light" [routerLink]="['/page', 'about']">About us</a>
-                </div>
-                <div class="col-xl-0 col-lg-0 col-md-2 col-sm-10 col-10 text-center">
-                    <a class="text-light" [routerLink]="['/page', 'contact']">Contact us</a>
-                </div>
-                <div class="col-xl-0 col-lg-0 col-md-2 col-sm-10 col-10 text-center">
-                    <a class="text-light" [routerLink]="['/']">Contracts</a>
-                </div>
-                <div class="col-xl-0 col-lg-0 col-md-2 col-sm-10 col-10 text-center">
-                    <a class="text-light" [routerLink]="['/page', 'policy']">Privacy Policy</a>
-                </div>
-                <div class="col-xl-0 col-lg-0 col-md-2 col-sm-10 col-10 text-center">
-                    <a class="text-light" [routerLink]="['/page', 'terms']">Terms and conditions</a>
-                </div>
-            </div>
-            <div class="row justify-content-center py-4">
-                <div class="col-xl-0 col-lg-0 col-md-2 col-sm-2 col-2">
-                    <i class="fab fa-instagram text-light fa-2x p-2"></i>
-                </div>
-                <div class="col-xl-0 col-lg-0 col-md-2 col-sm-2 col-2">
-                    <i class="fab fa-linkedin text-light fa-2x p-2"></i>
-                </div>
-                <div class="col-xl-0 col-lg-0 col-md-2 col-sm-2 col-2">
-                    <i class="fab fa-twitter text-light fa-2x p-2"></i>
-                </div>
-                <div class="col-xl-0 col-lg-0 col-md-2 col-sm-2 col-2">
-                    <i class="fab fa-facebook text-light fa-2x p-2"></i>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-6">
-                <h4 class="text-light text-center font-weight-light">Powered by applyfree</h4>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 mx-auto mt-4">
-                <img src="assets/images/building-footer.png" alt="footer applyfree" class="img-fluid">
-            </div>
-        </div>
-    </div>
-</footer>
+</main> 

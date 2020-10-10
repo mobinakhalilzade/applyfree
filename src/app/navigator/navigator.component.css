@@ -20,6 +20,45 @@
 }
 
 .sidebar.show {
-   width: 220px;
+   width: 100%;
  }
+
+ .menu-backdoor {
+     display: none;
+     background-color: rgba(0,0,0,0.5);
+     position: fixed;
+     width: 100%;
+     height: 100%;
+     right: 0;
+     top: 0;
+     z-index: 2;
+ }
+
+ .menu {
+     transition: all 0.5s;
+ }
+
+ @media only screen and (max-width: 425px) {
+    .menu-backdoor.show {
+        display: block;
+    }
+
+  .menu {
+      position: fixed;
+      left: -80%;
+      top: 0;
+      height: 100%;
+      width: 80%;  
+      background-color: #fff;
+      z-index: 3;
+  }
+
+  .menu.show {
+      left: 0;
+  }
+
+  ::ng-deep .z-index-effect {
+      z-index: 1;
+  }
+}
 

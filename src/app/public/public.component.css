@@ -3,6 +3,6 @@ header::before {
 }
 
 header::after {
-    height: 93px;
+    height: 80px;
     top: 48px;
 }

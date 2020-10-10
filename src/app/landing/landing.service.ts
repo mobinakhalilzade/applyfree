@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
     providedIn: 'root',
 })
 
-export class HomeService {
+export class LandingService {
     constructor(private http: Http) { }
 
 }

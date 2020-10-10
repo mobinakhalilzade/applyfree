@@ -1,12 +1,3 @@
-header::before {
-    height: 104px;
-}
-
-header::after {
-    height: 93px;
-    top: 48px;
-}
-
 .number {
     background-color: var(--orangedark);
     width: 35px;

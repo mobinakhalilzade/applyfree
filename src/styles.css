@@ -344,7 +344,6 @@ footer::after {
   }
 
 @media only screen and (min-width: 2560px) {
-   
     header::before,
     header::after,
     footer::before,

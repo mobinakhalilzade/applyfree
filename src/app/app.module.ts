@@ -13,13 +13,14 @@ import { ForgotComponent } from './account/components/forgot/forgot.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PasswordComponent } from './account/components/password/password.component';
 import { ContractsComponent } from './dashboard/components/contracts/contracts.component';
+import { ContractComponent } from './contract/contract.component';
 import { SignaturesComponent } from './dashboard/components/signatures/signatures.component';
 import { BookmarksComponent } from './dashboard/components/bookmarks/bookmarks.component';
 import { PaymentsComponent } from './dashboard/components/payments/payments.component';
 import { SearchComponent } from './search/search.component';
-import { ContractComponent } from './contract/contract.component';
+import { ProgramComponent } from './public/components/program/program.component';
 import { ReportComponent } from './report/report.component';
-import { ContractListComponent } from './contract-list/contract-list.component';
+import { ProgramListComponent } from './public/components/program-list/program-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { StartContractComponent } from './dashboard/components/contracts/components/start-contract/start-contract.component';
 import { UpdateContractComponent } from './dashboard/components/contracts/components/update-contract/update-contract.component';
@@ -29,10 +30,11 @@ import { SignatureComponent } from './dashboard/components/signatures/components
 import { ConfirmComponent } from './dashboard/components/confirm/confirm.component';
 import { ReservedComponent } from './dashboard/components/reserved/reserved.component';
 import { StatusPipe } from './pipes/status.pipe';
-import { HomeComponent } from './home/home.component';
+import { LandingComponent } from './landing/landing.component';
 import { ContractFilterPipe } from './pipes/contract-filter.pipe';
-import { PagesComponent } from './pages/pages.component';
+import { PagesComponent } from './public/components/pages/pages.component';
 import { NavigatorComponent } from './navigator/navigator.component';
+import { PublicComponent } from './public/public.component';
 
 @NgModule({
   declarations: [
@@ -44,13 +46,14 @@ import { NavigatorComponent } from './navigator/navigator.component';
     DashboardComponent,
     PasswordComponent,
     ContractsComponent,
+    ContractComponent,
     SignaturesComponent,
     BookmarksComponent,
     PaymentsComponent,
     SearchComponent,
-    ContractComponent,
+    ProgramComponent,
     ReportComponent,
-    ContractListComponent,
+    ProgramListComponent,
     PageNotFoundComponent,
     StartContractComponent,
     UpdateContractComponent,
@@ -60,10 +63,11 @@ import { NavigatorComponent } from './navigator/navigator.component';
     ConfirmComponent,
     ReservedComponent,
     StatusPipe,
-    HomeComponent,
+    LandingComponent,
     PagesComponent,
     ContractFilterPipe,
-    NavigatorComponent
+    NavigatorComponent,
+    PublicComponent
   ],
   imports: [
     CommonModule,
