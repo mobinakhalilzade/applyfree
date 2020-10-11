@@ -1,51 +1,111 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
-            <div class="filters">
+            <div class="filters px-2">
                 <div class="location mb-5">
                     <label>Location</label>
                     <div id="country" class="my-2">
                         <label class="text-muted">Country</label>
-                        <select class="form-control custom-select">
-                            <option *ngFor="let country of countries">
-                                {{country.name}}
-                            </option>
-                        </select>
+                        <div class="dropdown">
+                            <button class="btn btn-outline-muted dropdown-toggle text-left btn-filter" type="button"
+                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                Choose...
+                            </button>
+                            <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="dropdownMenuButton">
+                                <div class="position-sticky top-0 bg-white py-2">
+                                    <div class="input-group mb-2 px-3">
+                                        <input type="text" class="form-control" placeholder="&#xf002; Search...">
+                                    </div>
+                                </div>
+
+                                <div class="dropdown-item" *ngFor="let country of countries">{{country.name}}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div id="city" class="my-2">
                         <label class="text-muted">City</label>
-                        <select class="form-control custom-select">
-                            <option *ngFor="let country of countries">
-                                {{country.name}}
-                            </option>
-                        </select>
+                        <div class="dropdown">
+                            <button class="btn btn-outline-muted dropdown-toggle text-left btn-filter" type="button"
+                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                Choose...
+                            </button>
+                            <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="dropdownMenuButton">
+                                <div class="position-sticky top-0 bg-white py-2">
+                                    <div class="input-group mb-2 px-3">
+                                        <input type="text" class="form-control" placeholder="&#xf002; Search...">
+                                    </div>
+                                </div>
+
+                                <div class="dropdown-item" *ngFor="let country of countries">{{country.name}}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="about program mb-5">
                     <label>About Program</label>
                     <div id="programCategory" class="my-2">
                         <label class="text-muted">Program Category</label>
-                        <select class="form-control custom-select">
-                            <option *ngFor="let item of category">
-                                {{item.title}}
-                            </option>
-                        </select>
+                        <div class="dropdown">
+                            <button class="btn btn-outline-muted dropdown-toggle text-left btn-filter" type="button"
+                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                Choose...
+                            </button>
+                            <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="dropdownMenuButton">
+                                <div class="position-sticky top-0 bg-white py-2">
+                                    <div class="input-group mb-2 px-3">
+                                        <input type="text" class="form-control" placeholder="&#xf002; Search...">
+                                    </div>
+                                </div>
+
+                                <div class="dropdown-item" *ngFor="let item of category">{{item.title}}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div id="university" class="my-2">
                         <label class="text-muted">University</label>
-                        <select class="form-control custom-select">
-                            <option *ngFor="let university of universities">
-                                {{university.title}}
-                            </option>
-                        </select>
+                        <div class="dropdown">
+                            <button class="btn btn-outline-muted dropdown-toggle text-left btn-filter" type="button"
+                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                Choose...
+                            </button>
+                            <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="dropdownMenuButton">
+                                <div class="position-sticky top-0 bg-white py-2">
+                                    <div class="input-group mb-2 px-3">
+                                        <input type="text" class="form-control" placeholder="&#xf002; Search...">
+                                    </div>
+                                </div>
+
+                                <div class="dropdown-item" *ngFor="let university of universities">{{university.title}}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div id="degree" class="my-2">
                         <label class="text-muted">Degree</label>
-                        <select class="form-control custom-select">
-                            <option *ngFor="let item of degree">
-                                {{item.title}}
-                            </option>
-                        </select>
+                        <div class="dropdown">
+                            <button class="btn btn-outline-muted dropdown-toggle text-left btn-filter" type="button"
+                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                Choose...
+                            </button>
+                            <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="dropdownMenuButton">
+                                <div class="position-sticky top-0 bg-white py-2">
+                                    <div class="input-group mb-2 px-3">
+                                        <input type="text" class="form-control" placeholder="&#xf002; Search...">
+                                    </div>
+                                </div>
+
+                                <div class="dropdown-item" *ngFor="let item of degree">{{item.title}}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="Cost mb-5">
@@ -66,8 +126,9 @@
                     <div id="lenght">
                         <label class="text-muted">Lenght of Program</label>
                         <ul class="list-unstyled">
+
                             <li *ngFor="let item of lenght">
-                                <input type="checkbox">
+                                <input type="checkbox" class="custom-checkbox">
                                 {{item.title}}
                             </li>
                         </ul>
