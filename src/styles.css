@@ -14,10 +14,6 @@ html {
     height: 100%;
 }
 
-input{
-    font-family:Arial, FontAwesome
-}
-
 .border-radius-0 {
     border-radius: 0;
 }
@@ -145,13 +141,9 @@ table tr td {
 }
 
 .dropdown-filter{
-    height: 180px;
+    max-height: 195px;
     overflow-y: scroll;
     overflow-x: hidden;
-}
-
-.btn-filter{
-    width: 100%;
 }
 
 .dropdown-toggle::after {
@@ -265,7 +257,7 @@ footer {
 footer::before {
     background-position: top right;
     height: 300px;
-    bottom: 255px;
+    bottom: 375px;
     right: 0;
 }
 
@@ -380,8 +372,7 @@ footer::after {
     position: -webkit-sticky;
     position: sticky;
     top: 170px;
-    /* top: 130px; */
-    height: 800px;
+    /* height: 800px; */
     overflow-y: scroll;
   }
 

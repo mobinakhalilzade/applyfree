@@ -8,12 +8,14 @@ import * as countries from 'src/assets/countries.json';
   templateUrl: './program-list.component.html',
   styleUrls: ['./program-list.component.css']
 })
+
 export class ProgramListComponent implements OnInit {
   form: any = { in: 'students', filter: 1, type: 1, expire: 30 };
   results: any = [];
   loading: boolean = true;
   alert: any;
   countries = countries['default'];
+  searchInput: string;
   contracts = [
     { id: 1, title: 'students', description: 'I want to find student contract' },
     { id: 2, title: 'schools', description: 'I want to find Schools contract' },
@@ -85,37 +87,39 @@ export class ProgramListComponent implements OnInit {
     { title: 'Tourism, Hospitality and Restaurant Business', value: 1 }
   ];
 
-  degree=[
-    {id:1 ,title:"bachelor"},
-    {id:1 ,title:"PHD"},
-    {id:1 ,title:"BBA"}
+  degree = [
+    { id: 1, title: "bachelor" },
+    { id: 1, title: "PHD" },
+    { id: 1, title: "BBA" }
   ]
 
-  lenght=[
-    {id:1 ,title:"more than 4 years"},
-    {id:1 ,title:"4 years"},
-    {id:1 ,title:"3 years"},
-    {id:1 ,title:"2 years"},
-    {id:1 ,title:"1 year"},
-    {id:1 ,title:"less than 1 year"}
-  ] 
-
-  intakes=[
-    {id:1 ,title:"This Term"},
-    {id:1 ,title:"Next Term"}
+  lenght = [
+    { id: 1, title: "more than 4 years" },
+    { id: 1, title: "4 years" },
+    { id: 1, title: "3 years" },
+    { id: 1, title: "2 years" },
+    { id: 1, title: "1 year" },
+    { id: 1, title: "less than 1 year" }
   ]
 
-  universities=[
-    {id:1,title:"Harvard"},
-    {id:1,title:"Cambridge"},
-    {id:1,title:"Oxford"},
-    {id:1,title:"MIT"}
+  intakes = [
+    { id: 1, title: "This Term" },
+    { id: 1, title: "Next Term" }
+  ]
+
+  universities = [
+    { id: 1, title: "Harvard" },
+    { id: 1, title: "Cambridge" },
+    { id: 1, title: "Oxford" },
+    { id: 1, title: "MIT" }
   ]
 
   constructor(private service: PublicService,
     private routeParams: ActivatedRoute,
     private router: Router) {
   }
+
+  
 
   search() {
     this.service.contracts({ filter: this.form.filter, type: this.form.type, expire: this.form.expire }).subscribe((resposne: any) => {
@@ -170,5 +174,5 @@ export class ProgramListComponent implements OnInit {
 
     this.search();
   }
-  
+
 }

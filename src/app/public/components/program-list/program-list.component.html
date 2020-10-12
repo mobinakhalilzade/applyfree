@@ -19,7 +19,8 @@
                                     </div>
                                 </div>
 
-                                <div class="dropdown-item" *ngFor="let country of countries">{{country.name}}
+                                <div class="dropdown-item pointer" *ngFor="let country of countries">
+                                    {{country.name}}
                                 </div>
                             </div>
                         </div>
@@ -39,7 +40,7 @@
                                     </div>
                                 </div>
 
-                                <div class="dropdown-item" *ngFor="let country of countries">{{country.name}}
+                                <div class="dropdown-item pointer" *ngFor="let country of countries">{{country.name}}
                                 </div>
                             </div>
                         </div>
@@ -58,17 +59,22 @@
                             <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="dropdownMenuButton">
                                 <div class="position-sticky top-0 bg-white py-2">
                                     <div class="input-group mb-2 px-3">
-                                        <input type="text" class="form-control" placeholder="&#xf002; Search...">
+                                        <input type="text" class="form-control" [(ngModel)]="searchInput"
+                                            placeholder="&#xf002; Search...">
                                     </div>
                                 </div>
-
-                                <div class="dropdown-item" *ngFor="let item of category">{{item.title}}
+                                <div class="dropdown-item pointer"
+                                    *ngFor="let item of category | filter :searchInput;">
+                                    {{item.title}}
                                 </div>
+                                <!-- <div class="dropdown-item pointer" *ngFor="let item of category">
+                                    {{item.title}}
+                                </div> -->
                             </div>
                         </div>
                     </div>
-                    <div id="university" class="my-2">
-                        <label class="text-muted">University</label>
+                    <div id="programCategory" class="my-2">
+                        <label class="text-muted">Program Sub Category</label>
                         <div class="dropdown">
                             <button class="btn btn-outline-muted dropdown-toggle text-left btn-filter" type="button"
                                 id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
@@ -82,7 +88,28 @@
                                     </div>
                                 </div>
 
-                                <div class="dropdown-item" *ngFor="let university of universities">{{university.title}}
+                                <div class="dropdown-item pointer" *ngFor="let item of category">{{item.title}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="university" class="my-2">
+                        <label class="text-muted">University</label>
+                        <div class="dropdown">
+                            <button class="btn btn-outline-muted dropdown-toggle text-left w-100" type="button"
+                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                Choose...
+                            </button>
+                            <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="dropdownMenuButton">
+                                <div class="position-sticky top-0 bg-white py-2">
+                                    <div class="input-group mb-2 px-3">
+                                        <input type="text" class="form-control" [(ngModel)]="searchUniversity" placeholder="&#xf002; Search...">
+                                    </div>
+                                </div>
+
+                                <div class="dropdown-item pointer" *ngFor="let university of universities | filter :searchUniversity;">
+                                    {{university.title}}
                                 </div>
                             </div>
                         </div>
@@ -102,11 +129,32 @@
                                     </div>
                                 </div>
 
-                                <div class="dropdown-item" *ngFor="let item of degree">{{item.title}}
+                                <div class="dropdown-item pointer" *ngFor="let item of degree">{{item.title}}
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <div id="opt" class="my-2">
+                        <label class="text-muted">OPT</label>
+                        <div class="input-group px-3">
+                            <div class="mr-5">
+                                <input type="radio">
+                                <span class="pl-2">Yes</span>
+                            </div>
+                            <div class="ml-5">
+                                <input type="radio">
+                                <span class="pl-2">No</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
                 </div>
                 <div class="Cost mb-5">
                     <label>Cost</label>

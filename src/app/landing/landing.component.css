@@ -20,5 +20,51 @@
     background-image: url(src/assets/images/bg-section-4.png);
 }
 
+.bam{
+    background-image: linear-gradient(to left bottom, #eb405e, #ef3d4e, #f23d3d, #f24029, #f0460b);
+    position: relative;
+    top: 30px;
+}
+
+ .menu-backdoor {
+     display: none;
+     background-color: rgba(0,0,0,0.5);
+     position: fixed;
+     width: 100%;
+     height: 100%;
+     right: 0;
+     top: 0;
+     z-index: 2;
+ }
+
+ .menu {
+     transition: all 0.5s;
+ }
+
+ @media only screen and (max-width: 425px) {
+    .menu-backdoor.show {
+        display: block;
+    }
+
+  .menu {
+      position: fixed;
+      left: -80%;
+      top: 0;
+      height: 100%;
+      width: 80%;  
+      background-color:  var(--orangelight);
+      z-index: 3;
+  }
+
+  .menu.show {
+      left: 0;
+  }
+
+  ::ng-deep .z-index-effect {
+      z-index: 0;
+  }
+}
+
+
 
 
