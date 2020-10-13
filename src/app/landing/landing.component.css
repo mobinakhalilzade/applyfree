@@ -1,7 +1,9 @@
 #bg-section-1, #bg-section-2, #bg-section-3 , #bg-section-4{
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
+    max-width: 100%;
+    height: auto;
 }
 
 #bg-section-1 {
@@ -20,10 +22,10 @@
     background-image: url(src/assets/images/bg-section-4.png);
 }
 
-.bam{
+header {
     background-image: linear-gradient(to left bottom, #eb405e, #ef3d4e, #f23d3d, #f24029, #f0460b);
     position: relative;
-    top: 30px;
+    top: 0;
 }
 
  .menu-backdoor {

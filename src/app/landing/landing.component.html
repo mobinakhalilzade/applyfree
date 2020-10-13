@@ -13,18 +13,19 @@
                     </div>
                 </div>
             </a>
-        
+
             <div class="float-right">
                 <div class="d-xl-none d-lg-none d-md-none d-sm-inline-block d-inline-block">
                     <button class="btn btn-sm btn-light text-dark" routerLink="/login">
                         <span>Log in</span>
                     </button>
                 </div>
-                <button class="navbar-toggler text-light d-xl-none d-lg-none d-md-none d-sm-inline-block d-inline-block" type="button" (click)="sidebar = true">
+                <button class="navbar-toggler text-light d-xl-none d-lg-none d-md-none d-sm-inline-block d-inline-block"
+                    type="button" (click)="sidebar = true">
                     <i class="fa fa-bars"></i>
                 </button>
             </div>
-        
+
             <div class="menu ml-auto" [ngClass]="{'show' : sidebar}">
                 <div class="d-xl-none d-lg-none d-md-none d-sm-block d-block border-bottom py-3 px-2">
                     <button type="button" class="close" aria-label="Close" (click)="sidebar=false">
@@ -32,27 +33,31 @@
                     </button>
                     <div><span class="text-uppercase text-orangedark">applyfree</span></div>
                 </div>
-        
+
                 <div class="navbar-nav mr-5">
-                    <a class="nav-item text-light nav-link ml-3" [ngClass]="{'text-dark' : sidebar}" routerLink="/landing"
-                        routerLinkActive="font-weight-bolder">Landing</a>
+                    <a class="nav-item text-light nav-link ml-3" [ngClass]="{'text-dark' : sidebar}"
+                        routerLink="/landing" routerLinkActive="font-weight-bolder">Landing</a>
                     <a class="nav-item text-light nav-link ml-3" routerLinkActive="font-weight-bolder" routerLink="/"
-                        [ngClass]="{'text-dark' : sidebar}" [routerLinkActiveOptions]="{ exact: true }" (click)="sidebar=false">Programs</a>
+                        [ngClass]="{'text-dark' : sidebar}" [routerLinkActiveOptions]="{ exact: true }"
+                        (click)="sidebar=false">Programs</a>
                     <a class="nav-item text-light nav-link ml-3" [routerLink]="['/page', 'contact']"
-                        [ngClass]="{'text-dark' : sidebar}" routerLinkActive="font-weight-bolder" (click)="sidebar=false">Contact us</a>
+                        [ngClass]="{'text-dark' : sidebar}" routerLinkActive="font-weight-bolder"
+                        (click)="sidebar=false">Contact us</a>
                     <a class="nav-item text-light nav-link ml-3" [routerLink]="['/page', 'about']"
-                        [ngClass]="{'text-dark' : sidebar}" routerLinkActive="font-weight-bolder" (click)="sidebar=false">About us</a>
+                        [ngClass]="{'text-dark' : sidebar}" routerLinkActive="font-weight-bolder"
+                        (click)="sidebar=false">About us</a>
                 </div>
-        
+
                 <div
                     class="d-xl-none d-lg-none d-md-none d-sm-block d-block w-100 text-center border-top py-1 position-absolute bottom-0">
                     <small class="text-muted">copyright applyfree</small>
                 </div>
             </div>
-        
+
             <div class="d-xl-inline-block d-lg-inline-block d-md-none d-sm-none d-none">
                 <div class="btn-custom">
-                    <button class="btn border-radius-20 px-lg-4 px-md-3 px-sm-5 px-4 position-relative" routerLink="/login">
+                    <button class="btn border-radius-20 px-lg-4 px-md-3 px-sm-5 px-4 position-relative"
+                        routerLink="/login">
                         <span>Log in | Register</span>
                     </button>
                     <button class="btn border-radius-full ml-2 position-relative" routerLink="/login">
@@ -61,7 +66,7 @@
                         </span>
                     </button>
                 </div>
-             
+
             </div>
             <div class="d-xl-none d-lg-none d-md-block d-sm-none d-none">
                 <button class="btn btn-sm btn-light text-dark" routerLink="/login">
@@ -101,7 +106,8 @@
         </div>
     </div>
 </header>
-<main class="py-5">
+
+<main class="py-1">
     <section id="bg-section-1">
         <div class="container-fluid">
             <div class="row my-3 py-2">
@@ -110,7 +116,7 @@
                 </div>
             </div>
             <div
-                class="row justify-content-center mx-auto my-xl-5 my-lg-5 my-md-5 my-sm-5 my-3 py-xl-4 py-lg-4 py-md-4 py-sm-4 py-1">
+                class="row justify-content-center mx-auto my-xl-1 my-lg-5 my-md-5 my-sm-5 my-3 pt-xl-2 pb-xl-4 py-lg-4 py-md-4 py-sm-4 py-1">
                 <div class="col-xl-6 col-lg-5 col-md-5 col-sm-12 col-12 my-md-auto pr-md-0 my-lg-auto">
                     <img src="assets/images/landing-1.png" alt="landing-1" class="img-fluid">
                 </div>
@@ -130,11 +136,11 @@
                         <div class="row mt-5">
                             <div class="col text-left">
                                 <button
-                                    class="btn btn-xl-lg btn-lg-lg btn-md-lg btn-sm-sm btn-sm btn-success font-weight-lighter border-radius-30 px-xl-5 px-lg-5 px-md-3 px-sm-5 px-2"
+                                    class="btn btn-block btn-lg btn-success font-weight-lighter border-radius-30 px-xl-5 px-lg-5 px-md-3 px-sm-5 px-2"
                                     routerLink="/">Join
                                     us</button>
                             </div>
-                            <div class="col text-right">
+                            <div class="col text-center">
                                 <p>veniam deserunt</p>
                             </div>
                         </div>
@@ -153,23 +159,25 @@
                         <h3 class="py-3">What happens in applyfree?</h3>
                         <p>In applyfree, you can enter a deal, close the contract and export (i.e. print) your version
                             with both parties' signatures on it, all from your home. With your contract in hand, you are
+                            able to seek those signed promises outside. with both parties' signatures on it, all from
+                            your home. With your contract in hand, you are
+                            able to seek those signed promises outside. with both parties' signatures on it, all from
+                            your home. With your contract in hand, you are
                             able to seek those signed promises outside.
                         </p>
                         <div class="row mt-5">
-                            <div class="col text-left">
+                            <div class="col text-center">
                                 <button
-                                    class="btn btn-xl-lg btn-lg-lg btn-md-lg btn-sm-sm btn-sm btn-info font-weight-lighter border-radius-30 px-xl-5 px-lg-5 px-md-2 px-sm-5 px-2 text-uppercase"
+                                    class="btn btn-lg btn-info font-weight-lighter border-radius-30 px-xl-5 px-lg-5 px-md-2 px-sm-5 px-2 text-uppercase"
                                     routerLink="/">apply free</button>
-                            </div>
-                            <div class="col text-right">
-                                <p>apply free</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-5 col-lg-4 col-md-6 col-sm-12 col-12 order-md-first order-first my-md-auto">
+                <div class="col-xl-5 col-lg-4 col-md-6 col-sm-12 col-12 my-md-auto">
                     <img src="assets/images/landing-2.png" alt="landing-3" class="img-fluid">
                 </div>
+               
             </div>
         </div>
     </section>
@@ -190,12 +198,12 @@
                     <div class="row mt-5">
                         <div class="col text-left">
                             <button
-                                class="btn btn-xl-lg btn-lg-lg btn-md-lg btn-sm-sm btn-sm btn-dark font-weight-lighter border-radius-30 px-xl-5 px-lg-5 px-md-3 px-sm-5 px-2 text-uppercase"
+                                class="btn btn-block btn-lg btn-warning font-weight-lighter border-radius-30 px-xl-5 px-lg-5 px-md-3 px-sm-5 px-2 text-uppercase"
                                 routerLink="/">start now</button>
                         </div>
-                        <div class="col text-right">
+                        <!-- <div class="col text-right">
                             <p class="text-uppercase">start now</p>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -222,7 +230,7 @@
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-6 col-md-8 col-sm-8 col-9 text-center">
-                    <h5>why applyfree is best?</h5>
+                    <h5>Why <span class="text-orangedark">applyfree</span>  is best?</h5>
                 </div>
             </div>
             <div
@@ -263,6 +271,11 @@
             </div>
         </div>
     </section>
+    <!-- <section>
+        <div class="gallery">
+            <div></div>
+        </div>
+    </section> -->
 </main>
 <footer class="h-auto">
     <div class="container position-relative z-index-1">
