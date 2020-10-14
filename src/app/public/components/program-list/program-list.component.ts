@@ -10,6 +10,7 @@ import * as countries from 'src/assets/countries.json';
 })
 
 export class ProgramListComponent implements OnInit {
+
   inputes = {
     category: {
       value: '',
@@ -54,7 +55,6 @@ export class ProgramListComponent implements OnInit {
     private router: Router) {
   }
 
-
   category = [
     { name: 'Agriculture and Biology', value: 1 },
     { name: 'Applied Sciences and Professions', value: 2 },
@@ -81,11 +81,6 @@ export class ProgramListComponent implements OnInit {
     {id:1 ,name:"1 year"},
     {id:1 ,name:"less than 1 year"}
   ] 
-
-  intakes=[
-    {id:1 ,name:"This Term"},
-    {id:1 ,name:"Next Term"}
-  ]
 
   university=[
     {id:1,name:"Harvard"},

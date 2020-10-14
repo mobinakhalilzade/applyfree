@@ -3,8 +3,8 @@
         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
             <div class="filters px-2">
                 <div class="program mb-5">
-                    <button class="btn btn-warning w-100" type="button" data-toggle="collapse"
-                        data-target="#collapseProgram" aria-expanded="false" aria-controls="collapseProgram">
+                    <button class="btn btn-warning w-100" type="button" data-toggle="collapse" data-target="#Program"
+                        aria-expanded="false" aria-controls="Program">
                         <span class="text-left mr-5 pr-5">
                             <i class="far fa-file-powerpoint pr-2"></i>
                             Program
@@ -13,25 +13,22 @@
                             <i class="fas fa-angle-down"></i>
                         </span>
                     </button>
-                    <div class="collapse show" id="collapseProgram">
+                    <div class="collapse show" id="Program">
                         <div class="card card-body locationCard">
                             <div id="programCategory" class="my-2">
                                 <label class="text-muted">Program Category</label>
-
                                 <div class="dropdown">
                                     <button class="btn btn-outline-muted dropdown-toggle text-left w-100" type="button"
-                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
+                                        id="category" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span>
                                             {{inputes.category.result ? inputes.category.result.name : 'Choose...'}}
                                         </span>
                                     </button>
-                                    <div class="dropdown-menu dropdown-filter w-100 py-0"
-                                        aria-labelledby="dropdownMenuButton">
+                                    <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="category">
                                         <div class="position-sticky top-0 bg-white py-2">
                                             <div class="input-group mb-2 px-3">
                                                 <input type="text" class="form-control"
-                                                    [(ngModel)]="inputes.category.value" placeholder="Category...">
+                                                    [(ngModel)]="inputes.category.value" placeholder="Category">
                                             </div>
                                         </div>
                                         <div class="dropdown-item pointer" (click)="inputes.category.result=item"
@@ -41,26 +38,23 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="programCategory" class="my-2">
+                            <div id="programSubCategory" class="my-2">
                                 <label class="text-muted">Program Sub Category</label>
                                 <div class="dropdown">
                                     <button class="btn btn-outline-muted dropdown-toggle text-left w-100" type="button"
-                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        id="subCategory" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">
                                         <span>
                                             {{inputes.subCategory.result ? inputes.subCategory.result.name : 'Choose...'}}
                                         </span>
                                     </button>
-                                    <div class="dropdown-menu dropdown-filter w-100 py-0"
-                                        aria-labelledby="dropdownMenuButton">
+                                    <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="subCategory">
                                         <div class="position-sticky top-0 bg-white py-2">
                                             <div class="input-group mb-2 px-3">
                                                 <input type="text" class="form-control"
-                                                    [(ngModel)]="inputes.subCategory.value"
-                                                    placeholder="Sub Category...">
+                                                    [(ngModel)]="inputes.subCategory.value" placeholder="Sub Category">
                                             </div>
                                         </div>
-
                                         <div class="dropdown-item pointer" (click)="inputes.subCategory.result=item"
                                             *ngFor="let item of category | filter : inputes.subCategory.value;">
                                             {{item.name}}
@@ -68,26 +62,22 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div id="degree" class="my-2">
+                            <div id="programDegree" class="my-2">
                                 <label class="text-muted">Degree</label>
                                 <div class="dropdown">
                                     <button class="btn btn-outline-muted dropdown-toggle text-left w-100" type="button"
-                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
+                                        id="degree" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span>
                                             {{inputes.degree.result ? inputes.degree.result.name : 'Choose...'}}
                                         </span>
                                     </button>
-                                    <div class="dropdown-menu dropdown-filter w-100 py-0"
-                                        aria-labelledby="dropdownMenuButton">
+                                    <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="degree">
                                         <div class="position-sticky top-0 bg-white py-2">
                                             <div class="input-group mb-2 px-3">
                                                 <input type="text" class="form-control"
-                                                    [(ngModel)]="inputes.degree.value" placeholder="Degree...">
+                                                    [(ngModel)]="inputes.degree.value" placeholder="Degree">
                                             </div>
                                         </div>
-
                                         <div class="dropdown-item pointer" (click)="inputes.degree.result=item"
                                             *ngFor="let item of degree | filter: inputes.degree.value">
                                             {{item.name}}
@@ -95,14 +85,42 @@
                                     </div>
                                 </div>
                             </div>
+                            <div id="programLength" class="my-2">
+                                <label class="text-muted">Length of program</label>
+                                <div class="dropdown">
+                                    <button class="btn btn-outline-muted dropdown-toggle text-left w-100" type="button"
+                                        id="length" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span>
+                                            {{inputes.length.result ? inputes.length.result.name : 'Choose...'}}
+                                        </span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="length">
+                                        <div class="position-sticky top-0 bg-white py-2">
+                                            <div class="input-group mb-2 px-3">
+                                                <input type="text" class="form-control"
+                                                    [(ngModel)]="inputes.length.value" placeholder="Length">
+                                            </div>
+                                        </div>
+                                        <div class="dropdown-item pointer" (click)="inputes.length.result=item"
+                                            *ngFor="let item of lenght | filter: inputes.length.value">
+                                            {{item.name}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="submissionDeadline" class="my-2">
+                                <div class="form-group">
+                                    <label for="submissionDeadline" class="text-muted">Submission Deadline</label>
+                                    <input type="date" class="form-control" id="submissionDeadline">
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-
                 </div>
+
                 <div class="school mb-5">
-                    <button class="btn btn-warning w-100" type="button" data-toggle="collapse"
-                        data-target="#collapseSchool" aria-expanded="false" aria-controls="collapseSchool">
+                    <button class="btn btn-warning w-100" type="button" data-toggle="collapse" data-target="#school"
+                        aria-expanded="false" aria-controls="school">
                         <span class="text-left mr-5 pr-5">
                             <i class="fas fa-school pr-2"></i>
                             School
@@ -111,20 +129,18 @@
                             <i class="fas fa-angle-down"></i>
                         </span>
                     </button>
-                    <div class="collapse" id="collapseSchool">
-                        <div class="card card-body locationCard">
-                            <div id="country" class="my-2">
+                    <div class="collapse" id="school">
+                        <div class="card card-body">
+                            <div id="schoolCountry" class="my-2">
                                 <label class="text-muted">Country</label>
                                 <div class="dropdown">
                                     <button class="btn btn-outline-muted dropdown-toggle text-left w-100" type="button"
-                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
+                                        id="school" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span>
                                             {{inputes.country.result ? inputes.country.result.name : 'Choose...'}}
                                         </span>
                                     </button>
-                                    <div class="dropdown-menu dropdown-filter w-100 py-0"
-                                        aria-labelledby="dropdownMenuButton">
+                                    <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="school">
                                         <div class="position-sticky top-0 bg-white py-2">
                                             <div class="input-group mb-2 px-3">
                                                 <input type="text" class="form-control"
@@ -139,18 +155,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="city" class="my-2" *ngIf="inputes.country.result">
+                            <div id="schoolCity" class="my-2" *ngIf="inputes.country.result">
                                 <label class="text-muted">City</label>
                                 <div class="dropdown">
                                     <button class="btn btn-outline-muted dropdown-toggle text-left w-100" type="button"
-                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
+                                        id="city" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span>
                                             {{inputes.city.result ? inputes.city.result.name : 'Choose...'}}
                                         </span>
                                     </button>
-                                    <div class="dropdown-menu dropdown-filter w-100 py-0"
-                                        aria-labelledby="dropdownMenuButton">
+                                    <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="city">
                                         <div class="position-sticky top-0 bg-white py-2">
                                             <div class="input-group mb-2 px-3">
                                                 <input type="text" class="form-control" [(ngModel)]="inputes.city.value"
@@ -165,57 +179,47 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="university" class="my-2">
+                            <div id="universityTitle" class="my-2">
                                 <label class="text-muted">University</label>
                                 <div class="dropdown">
                                     <button class="btn btn-outline-muted dropdown-toggle text-left w-100" type="button"
-                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        id="university" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">
                                         <span>
                                             {{inputes.university.result ? inputes.university.result.name : 'Choose...'}}
                                         </span>
                                     </button>
-                                    <div class="dropdown-menu dropdown-filter w-100 py-0"
-                                        aria-labelledby="dropdownMenuButton">
+                                    <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="university">
                                         <div class="position-sticky top-0 bg-white py-2">
                                             <div class="input-group mb-2 px-3">
                                                 <input type="text" class="form-control"
-                                                    [(ngModel)]="inputes.university.value"
-                                                    placeholder="University">
+                                                    [(ngModel)]="inputes.university.value" placeholder="University">
                                             </div>
                                         </div>
-
-                                        <div class="dropdown-item pointer"
-                                            (click)="inputes.university.result=item"
+                                        <div class="dropdown-item pointer" (click)="inputes.university.result=item"
                                             *ngFor="let item of university | filter : inputes.university.value;">
                                             {{item.name}}
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div id="universityName" class="my-2">
+                            <div id="universityType" class="my-2">
                                 <label class="text-muted">University Type</label>
                                 <div class="dropdown">
                                     <button class="btn btn-outline-muted dropdown-toggle text-left w-100" type="button"
-                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
+                                        id="type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span>
                                             {{inputes.type.result ? inputes.type.result.name : 'Choose...'}}
-
                                         </span>
                                     </button>
-                                    <div class="dropdown-menu dropdown-filter w-100 py-0"
-                                        aria-labelledby="dropdownMenuButton">
+                                    <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="type">
                                         <div class="position-sticky top-0 bg-white py-2">
                                             <div class="input-group mb-2 px-3">
-                                                <input type="text" class="form-control"
-                                                    [(ngModel)]="inputes.type.value"
-                                                    placeholder="&#xf002; Search...">
+                                                <input type="text" class="form-control" [(ngModel)]="inputes.type.value"
+                                                    placeholder="Type">
                                             </div>
                                         </div>
-
-                                        <div class="dropdown-item pointer"
-                                            (click)="inputes.type.result=item"
+                                        <div class="dropdown-item pointer" (click)="inputes.type.result=item"
                                             *ngFor="let item of university | filter : inputes.type.value;">
                                             {{item.name}}
                                         </div>
@@ -229,7 +233,7 @@
                                         <input type="checkbox">
                                         <span class="pl-2">Yes</span>
                                     </div>
-                                    <div class="ml-2">
+                                    <div class="ml-4">
                                         <input type="checkbox">
                                         <span class="pl-2">No</span>
                                     </div>
@@ -238,20 +242,32 @@
                         </div>
                     </div>
                 </div>
-
-
-
                 <div class="Cost mb-5">
                     <label>Cost</label>
+
+
+                    <form>
+                        <div class="form-group">
+                          <label for="formControlRange">Example Range input</label>
+                          <input type="range" class="form-control-range" id="formControlRange">
+                        </div>
+                      </form>
+
+
                     <div id="tuition" class="mb-4 mt-2">
-                        <label class="text-muted">Tuition</label>
-                        <input type="range" min="1" max="1000" class="form-control-range">
-                        <span class="badge badge-success float-right font-weight-lighter p-1">Tuition</span>
+                        <div class="form-group">
+                            <label class="text-muted">Tuition</label>
+                            <input type="range" min="1" max="1000" class="form-control-range">
+                            <!-- <span class="badge badge-success float-right font-weight-lighter p-1">Tuition</span> -->
+                        </div>
                     </div>
                     <div id="costOfLiving">
-                        <label class="text-muted">Cost of Living</label>
-                        <input type="range" min="1" max="1000" class="form-control-range">
-                        <span class="badge badge-primary float-right font-weight-lighter p-1">Cost of Living</span>
+                        <div class="form-group">
+                            <label class="text-muted">Cost of Living</label>
+                            <input type="range" min="1" max="1000" class="form-control-range">
+                            <!-- <span class="badge badge-success float-right font-weight-lighter p-1">Cost of Living</span> -->
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -267,7 +283,6 @@
                         </button>
                     </div>
                 </div>
-
                 <div class="mx-2 pr-4">
                     <button class="btn btn-orangedark-outline rounded-pill">
                         admission free
@@ -275,8 +290,6 @@
                     </button>
 
                 </div>
-
-
                 <div>
                     <button class="btn btn-orangedark-outline rounded-pill">
                         application Fee free
@@ -284,7 +297,6 @@
                     </button>
 
                 </div>
-
                 <!-- <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 my-4" *ngFor="let item of programs">
                     <div class="card-deck">
                         <div class="card">
@@ -299,7 +311,6 @@
                         </div>
                     </div>
                 </div> -->
-
             </div>
         </div>
     </div>
@@ -323,110 +334,4 @@
             </ul>
         </nav>
     </div>
-
-
-
-
-    <!-- <div class="row py-5">
-            <div class="col-12 text-center">
-                <h6>What kind of contracts do you want?</h6>
-
-                <div class="d-flex mt-4">
-                    <div class="w-auto mr-2" *ngFor='let item of contracts' (click)="form.filter = item.id">
-                        <div class="card pointer" [ngClass]="{'bg-primary': form.filter == item.id}">
-                            <div class="card-body">
-                                <h6 class="text-capitalize"
-                                    [ngClass]="{'text-white': form.filter == item.id, 'text-primary': form.filter != item.id}">
-                                    {{item.title}}</h6>
-                                <p
-                                    [ngClass]="{'text-white': form.filter == item.id, 'text-muted': form.filter != item.id}">
-                                    {{item.description}}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="d-flex mt-3">
-                    <div class="w-auto align-self-center">
-                        <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input pointer" [value]="1" id="contractTypeFree"
-                                name="type" [(ngModel)]="form.type">
-                            <label class="custom-control-label pointer" for="contractTypeFree">Free</label>
-                        </div>
-                    </div>
-                    <div class="w-auto ml-4 align-self-center">
-                        <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input pointer" [value]="2"
-                                id="contractTypePremium" name="type" [(ngModel)]="form.type">
-                            <label class="custom-control-label pointer" for="contractTypePremium">Premium</label>
-                        </div>
-                    </div>
-                    <div class="w-50 ml-auto align-self-center">
-                        <span class="ml-5">
-                            <input type="range" min="1" max="30" class="form-control-range" [(ngModel)]="form.expire">
-                        </span>
-                        <span class="badge badge-primary float-right font-weight-lighter p-1">{{form.expire}} days to
-                            expire</span>
-                    </div>
-                </div>
-
-                <hr>
-
-                <div class="text-left">
-                    <button class="btn btn-primary btn-lg" (click)="reload()">
-                        Find my contract
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="row" *ngIf="!loading">
-            <div class="col-12" *ngIf="results.length == 0">
-                <div class="text-center p-5">
-                    <h5>We are sorry , there is no contracts match with your filters ...</h5>
-
-                    <div class="mt-3">
-                        <button class="btn btn-warning" (click)="notify()">
-                            Notify me if this search has result
-                        </button>
-                        <div class="mt-3" *ngIf="alert"
-                            [ngClass]="{'text-danger': alert.return > 200, 'text-success': alert.return == 200}">
-                            <small>{{alert.message}}</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4" *ngFor='let item of results'>
-                <div class="card">
-                    <div class="card-header">
-                        {{item.title}}
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                                Type: {{item.type | contractType}}
-                            </li>
-                            <li class="list-group-item">
-                                Reserved: {{item.lockBy | bool}}
-                            </li>
-                            <li class="list-group-item" *ngIf="item.type > 1">
-                                Price: {{item.price}}$
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-footer text-danger">
-                        <span *ngIf="item.days > 0">
-                            expire in <b>{{item.days}}</b> days
-                        </span>
-                        <span *ngIf="item.days == 0">
-                            Expired
-                        </span>
-
-
-                        <a class="btn btn-sm btn-success float-right" [routerLink]='[ "/contract", item.id] '>
-                            Details
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div> -->
 </div>
