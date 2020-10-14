@@ -55,6 +55,22 @@ export class ProgramListComponent implements OnInit {
     private router: Router) {
   }
 
+  program = [
+    { name: 'program', image: 'assets/images/Harvard-University.jpg', description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point' },
+    { name: 'program', image: 'assets/images/Harvard-University.jpg', description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point' },
+    { name: 'program', image: 'assets/images/Harvard-University.jpg', description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point' },
+    { name: 'program', image: 'assets/images/Harvard-University.jpg', description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point' },
+    { name: 'program', image: 'assets/images/Harvard-University.jpg', description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point' },
+    { name: 'program', image: 'assets/images/Harvard-University.jpg', description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point' },
+    { name: 'program', image: 'assets/images/Harvard-University.jpg', description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point' },
+    { name: 'program', image: 'assets/images/Harvard-University.jpg', description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point' },
+    { name: 'program', image: 'assets/images/Harvard-University.jpg', description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point' },
+    { name: 'program', image: 'assets/images/Harvard-University.jpg', description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point' },
+    { name: 'program', image: 'assets/images/Harvard-University.jpg', description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point' },
+    { name: 'program', image: 'assets/images/Harvard-University.jpg', description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point' }
+  ];
+
+
   category = [
     { name: 'Agriculture and Biology', value: 1 },
     { name: 'Applied Sciences and Professions', value: 2 },

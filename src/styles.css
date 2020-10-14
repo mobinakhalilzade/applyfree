@@ -185,6 +185,16 @@ table tr td {
     transform: rotate(-7deg);
 }
 
+.rounded-bottom-0{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.rounded-top-0{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
 .btn-custom .btn,
 .btn-custom .btn:hover,
 .btn-custom .btn:focus {
@@ -243,11 +253,11 @@ header::after,
 footer::before,
 footer::after {
     content: '';
-    background-image: url(src/assets/svg/shadow.svg);
+    /* background-image: url(src/assets/svg/shadow.svg);
     background-repeat: no-repeat;
     background-size: contain;
     width: 100%;
-    position: absolute;
+    position: absolute; */
 }
 
 header::before {
