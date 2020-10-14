@@ -101,6 +101,20 @@ table tr td {
     vertical-align: middle!important;
 }
 
+.btn-orangedark-outline {
+    background-color: var(--white);
+    border-color: var(--orangedark);
+    border-style: dashed;
+    color: var(--black);
+}
+
+.btn-orangedark-outline:hover {
+    background-color: var(--orangedark);
+    border-color: var(--orangedark);
+    border-style: dashed;
+    color: var(--white);
+}
+
 .btn-gray-outline {
     background-color: var(--white);
     border-color: var(--gray);

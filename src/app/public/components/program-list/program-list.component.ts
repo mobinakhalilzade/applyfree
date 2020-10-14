@@ -11,6 +11,22 @@ import * as countries from 'src/assets/countries.json';
 
 export class ProgramListComponent implements OnInit {
   inputes = {
+    category: {
+      value: '',
+      result:  null
+    },
+    subCategory: {
+      value: '',
+      result:  null
+    },
+    degree: {
+      value: '',
+      result:  null
+    },
+    length: {
+      value: '',
+      result:  null
+    },
     country: {
       value: '',
       result: null
@@ -18,9 +34,17 @@ export class ProgramListComponent implements OnInit {
     city: {
       value: '',
       result: null
+    },
+    university: {
+      value: '',
+      result:  null
+    },
+    type: {
+      value: '',
+      result:  null
     }
   }
-  
+
   //-----------
   loading: boolean = true;
   countries = countries['default'];
@@ -29,6 +53,46 @@ export class ProgramListComponent implements OnInit {
     private routeParams: ActivatedRoute,
     private router: Router) {
   }
+
+
+  category = [
+    { name: 'Agriculture and Biology', value: 1 },
+    { name: 'Applied Sciences and Professions', value: 2 },
+    { name: 'Architecture and Building', value: 3 },
+    { name: 'Art, Design and Fashion', value: 4 },
+    { name: 'Business, Management and Finance', value: 5 },
+    { name: 'Computer Science and IT', value: 6 },
+    { name: 'Economics, Accounting and Taxation', value: 7 },
+    { name: 'Education and Training', value: 1 },
+    { name: 'Tourism, Hospitality and Restaurant Business', value: 1 }
+  ];
+
+  degree=[
+    {id:1 ,name:"bachelor"},
+    {id:1 ,name:"PHD"},
+    {id:1 ,name:"BBA"}
+  ]
+
+  lenght=[
+    {id:1 ,name:"more than 4 years"},
+    {id:1 ,name:"4 years"},
+    {id:1 ,name:"3 years"},
+    {id:1 ,name:"2 years"},
+    {id:1 ,name:"1 year"},
+    {id:1 ,name:"less than 1 year"}
+  ] 
+
+  intakes=[
+    {id:1 ,name:"This Term"},
+    {id:1 ,name:"Next Term"}
+  ]
+
+  university=[
+    {id:1,name:"Harvard"},
+    {id:1,name:"Cambridge"},
+    {id:1,name:"Oxford"},
+    {id:1,name:"MIT"}
+  ]
 
   search() {
     // this.service.contracts({ filter: this.form.filter, type: this.form.type, expire: this.form.expire }).subscribe((resposne: any) => {
@@ -54,7 +118,7 @@ export class ProgramListComponent implements OnInit {
 
     //   const findByFilter = this.contracts.find(x => x.id == filter);
     //   if (findByFilter) {
-    //     this.form.in = findByFilter.title;
+    //     this.form.in = findByFilter.name;
     //   }
     // }
 
