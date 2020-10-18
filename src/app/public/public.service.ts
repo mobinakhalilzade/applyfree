@@ -8,6 +8,22 @@ import { Injectable } from '@angular/core';
 export class PublicService {
     constructor(private http: Http) { }
 
+    countries(){
+        return this.http.readApi.get('countries');
+    }
+
+    length(){
+        return this.http.readApi.get('length');
+    }
+
+    programs(){
+        return this.http.readApi.get('programs');
+    }
+
+    categories(){
+        return this.http.readApi.get('categories');
+    }
+
     contracts(data: any) {
         return this.http.readApi.getByParam('contracts/search', data);
     }

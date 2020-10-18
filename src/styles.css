@@ -4,7 +4,8 @@
     --gray: #818181;
     --orangelight: #F7F1EF;
     --orangedark: #f03d4c;
-    --orangepink:#e33838eb
+    --orangepink:#e33838eb;
+    --green:#28a745;
 }
 
 body,
@@ -104,14 +105,14 @@ table tr td {
 .btn-orangedark-outline {
     background-color: var(--white);
     border-color: var(--orangedark);
-    border-style: dashed;
+    border-style: solid;
     color: var(--black);
 }
 
 .btn-orangedark-outline:hover {
     background-color: var(--orangedark);
     border-color: var(--orangedark);
-    border-style: dashed;
+    border-style: solid;
     color: var(--white);
 }
 
@@ -390,14 +391,6 @@ footer::after {
     font-size: 75%;
     transform: translate3d(0, -100%, 0);
     opacity: 1;
-  }
-
-  .filters{
-    position: -webkit-sticky;
-    position: sticky;
-    top: 170px;
-    /* height: 800px; */
-    overflow-y: scroll;
   }
 
   /* scroll style */
