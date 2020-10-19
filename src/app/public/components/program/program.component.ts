@@ -10,59 +10,30 @@ import { ActivatedRoute } from '@angular/router';
 export class ProgramComponent implements OnInit {
   loading: boolean;
   alert: any;
-  data: any;
-  reservedByThisUser: boolean;
-  constructor(private service: PublicService, private route: ActivatedRoute) { }
+  ProgramDetail: any;
+  intakes: any;
+  school: any;
 
-  contract(id: any) {
-    this.service.contract(id).subscribe((response: any) => {
+  constructor(private service: PublicService, 
+    private route: ActivatedRoute) 
+    { }
+
+  ngOnInit(): void {
+
+    const id = this.route.snapshot.paramMap.get('id');
+
+    this.service.programs().subscribe((response: any) => {
+      console.log(response);
       if (response.status == 200) {
         const body = response.body;
         if (body.return == 200) {
-          this.data = body.data;
-          this.reservedByThisUser = body.reservedByThisUser;
+          let detail = body.data;
+          this.ProgramDetail = detail.find(x => x.id == id);
+          this.intakes = this.ProgramDetail.intakes;
+          this.school = this.ProgramDetail.school;
+
         }
       }
-    });
+    })
   }
-
-  confirm() {
-    this.loading = true;
-    const command = {
-      contractId: this.route.snapshot.paramMap.get('id')
-    }
-
-    this.service.sendConfirmEmail(command).subscribe((response: any) => {
-      if (response.status == 200) {
-        const body = response.body;
-        this.alert = body;
-        this.loading = false;
-      }
-    });
-  }
-
-  agreement() {
-    this.loading = true;
-    const command = {
-      contractId: this.route.snapshot.paramMap.get('id')
-    }
-
-    this.service.agreement(command).subscribe((response: any) => {
-      if (response.status == 200) {
-        const body = response.body;
-        this.alert = body;
-        this.loading = false;
-        if(body.return == 200){
-          this.data.secondPartyConfirm = true;
-        }
-      }
-    });
-  }
-
-  ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-
-    this.contract(id);
-  }
-
 }

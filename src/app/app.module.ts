@@ -36,6 +36,7 @@ import { PagesComponent } from './public/components/pages/pages.component';
 import { NavigatorComponent } from './navigator/navigator.component';
 import { PublicComponent } from './public/public.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { DegreePipe } from './pipes/degree.pipe';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     ContractFilterPipe,
     NavigatorComponent,
     PublicComponent,
-    FilterPipe
+    FilterPipe,
+    DegreePipe
   ],
   imports: [
     CommonModule,

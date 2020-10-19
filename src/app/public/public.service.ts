@@ -20,6 +20,10 @@ export class PublicService {
         return this.http.readApi.get('programs');
     }
 
+    programss(data){
+        return this.http.readApi.getByParam('programs',data);
+    }
+
     categories(){
         return this.http.readApi.get('categories');
     }
