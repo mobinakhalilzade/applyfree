@@ -51,20 +51,21 @@ export class ProgramListComponent implements OnInit {
   lengths: any;
   categories: any;
   programs: any;
-  pager: any = {};
-  pagedItems: any[];
 
   constructor(private service: PublicService,
     private routeParams: ActivatedRoute,
     private router: Router) {
   }
 
-  getCountries() {
+  getCountries(then = null) {
     this.service.countries().subscribe((response: any) => {
       if (response.status == 200) {
         const body = response.body;
         if (body.return == 200) {
           this.countries = body.data;
+          if (then != null) {
+            then();
+          }
         }
       }
     });
@@ -104,20 +105,11 @@ export class ProgramListComponent implements OnInit {
     });
   }
 
-  setPage(page: number) {
-
-    if (page < 1 || page > this.programs.pages) {
-      return;
-    }
-
-   
-  }
-
-
   ngOnInit(): void {
+    this.getCountries(() => {
+      this.getLength();
+    });
 
-    this.getCountries();
-    this.getLength();
     this.getCategories();
     this.getPrograms();
 

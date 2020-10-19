@@ -1,28 +1,28 @@
-<div class="row text-right">
+<div class="row text-right align-items-center">
     <div class="col-6">
         <div class="input-group input-group-sm">
-            <input type="text" class="form-control" placeholder="SEARCH YOUR PROGRAM ...">
-            <div class="input-group-append z-index-0">
-                <button class="btn input-group-text">
+            <input type="text" class="form-control border-secondary" placeholder="search...">
+            <div class="input-group-append">
+                <button class="btn btn-secondary">
                     <i class="fa fa-search"></i>
                 </button>
             </div>
         </div>
     </div>
     <div class="col-2">
-        <div class="custom-control custom-checkbox z-index-0">
+        <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="opt">
             <label class="custom-control-label" for="opt">OPT</label>
         </div>
     </div>
     <div class="col-2 pr-4">
-        <div class="custom-control custom-checkbox z-index-0">
+        <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="admissionFree">
             <label class="custom-control-label" for="admissionFree">Admission free</label>
         </div>
     </div>
     <div class="col-2">
-        <div class="custom-control custom-checkbox z-index-0">
+        <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="freeApplications">
             <label class="custom-control-label" for="freeApplications">Free applications</label>
         </div>
@@ -33,87 +33,67 @@
 <div class="row">
     <div class="col-3">
         <div class="dropdown">
-            <button class="btn btn-outline-muted dropdown-toggle btn-block btn-sm text-left" type="button" id="category"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="btn btn-outline-secondary dropdown-toggle btn-block btn-sm text-left" type="button" id="category" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span>
                     {{inputes.category.result ? inputes.category.result.name  : 'Program Category'}}
                 </span>
             </button>
             <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="category">
                 <div class="position-sticky top-0 bg-white">
-                    <input type="text"
-                        class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0"
-                        [(ngModel)]="inputes.category.value" placeholder="search ...">
+                    <input type="text" class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0" [(ngModel)]="inputes.category.value" placeholder="search ...">
                 </div>
-                <div class="dropdown-item pointer text-truncate text-capitalize px-2"
-                    (click)="inputes.category.result=item" [title]="item.name"
-                    *ngFor="let item of categories | filter :inputes.category.value;">
+                <div class="dropdown-item pointer text-truncate text-capitalize px-2" (click)="inputes.category.result=item" [title]="item.name" *ngFor="let item of categories | filter :inputes.category.value;">
                     {{item.name}}
                 </div>
             </div>
         </div>
     </div>
     <div class="col-3">
-        <!-- <div class="dropdown">
-            <button class="btn btn-outline-muted dropdown-toggle text-left btn-block btn-sm" type="button" id="degree"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="dropdown">
+            <button class="btn btn-outline-secondary dropdown-toggle text-left btn-block btn-sm" type="button" id="degree" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span>
                     {{inputes.degree.result ? inputes.degree.result.name : 'Degree'}}
                 </span>
             </button>
             <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="degree">
-                <div class="position-sticky top-0 bg-white">
-                    <input type="text"
-                        class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0"
-                        [(ngModel)]="inputes.degree.value" placeholder="search ...">
-                </div>
-                <div class="dropdown-item pointer text-truncate px-2" (click)="inputes.degree.result=item"
-                    [title]="item.name" *ngFor="let item of degree | filter: inputes.degree.value">
-                    {{item.name}}
+                <div class="dropdown-item pointer text-truncate px-2">
+                    value
                 </div>
             </div>
-        </div> -->
+        </div>
     </div>
     <div class="col-3">
         <div class="dropdown">
-            <button class="btn btn-outline-muted dropdown-toggle text-left btn-block btn-sm" type="button" id="length"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="btn btn-outline-secondary dropdown-toggle text-left btn-block btn-sm" type="button" id="length" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span>
                     {{inputes.length.result ? inputes.length.result.name : 'Length of program'}}
                 </span>
             </button>
             <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="length">
                 <div class="position-sticky top-0 bg-white">
-                    <input type="text"
-                        class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0"
-                        [(ngModel)]="inputes.length.value" placeholder="search ...">
+                    <input type="text" class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0" [(ngModel)]="inputes.length.value" placeholder="search ...">
                 </div>
-                <div class="dropdown-item pointer text-truncate px-2" (click)="inputes.length.result=item"
-                    *ngFor="let item of lengths">
+                <div class="dropdown-item pointer text-truncate px-2" (click)="inputes.length.result=item" *ngFor="let item of lengths">
                     {{item.length}} {{item.type}}
                 </div>
             </div>
         </div>
     </div>
     <div class="col-3">
-        <button type="button" class="btn btn-orangedark btn-sm float-right" data-toggle="modal"
-            data-target="#advanceFilters">Advance filters</button>
+        <button type="button" class="btn btn-orangedark btn-sm float-right" data-toggle="modal" data-target="#advanceFilters">Advance filters</button>
     </div>
 </div>
 
 <div class="row my-3">
     <div class="col-4 px-4">
         <div class="dropdown">
-            <i class="fas fa-sort-amount-up-alt fa-2x text-info dropdown-toggle" id="sort" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false"></i>
+            <i class="fas fa-sort-amount-up-alt fa-2x text-info dropdown-toggle" id="sort" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
             <span class="px-2 text-muted">
                 Sorted by submission Deadline
             </span>
             <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="sort">
                 <div class="position-sticky top-0 bg-white">
-                    <input type="text"
-                        class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0"
-                        placeholder="search ...">
+                    <input type="text" class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0" placeholder="search ...">
                 </div>
                 <div class="dropdown-item pointer text-truncate text-capitalize px-2">
                     <div class="custom-control custom-checkbox">
@@ -143,21 +123,19 @@
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 mb-3" *ngFor="let item of programs">
         <div class="card-deck">
             <a class="card" [routerLink]="['/program', item.id]">
-                <img [src]="item.school.logo" width="100" height="100" class="m-auto"  [alt]="item.title">
+                <img [src]=" 'http://localhost/applyfree/img/logo/' + item.school.logo" width="100" height="100" class="m-auto" [alt]="item.title">
                 <div class="card-body">
-                    <h6 class="card-title text-dark text-truncate-3">{{item.title}}</h6>
+                    <h6 class="card-title text-dark text-truncate text-truncate-3-line">{{item.title}}</h6>
                     <div class="card-text text-primary pb-2">
                         <b>
                             School :
-                        </b>
-                        {{item.school.title}}
+                        </b> {{item.school.title}}
 
                     </div>
                     <div class="card-text text-orangedark pb-2">
                         <b>
                             Application fee :
-                        </b>
-                        {{item.fee}}
+                        </b> {{item.fee}}
                     </div>
                     <div class="card-text text-success pb-2">
                         <b>
@@ -182,7 +160,7 @@
 <div class="row justify-content-center mb-5 pb-5">
     <nav aria-label="Page navigation">
 
-       
+
 
 
         <!-- <ul class="pagination">
@@ -206,8 +184,7 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="advanceFilters" data-backdrop="static" data-keyboard="false" tabindex="-1"
-    aria-labelledby="advanceFiltersLabel" aria-hidden="true">
+<div class="modal fade" id="advanceFilters" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="advanceFiltersLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -229,20 +206,16 @@
                     <div class="col">
                         <label class="text-muted">Country</label>
                         <div class="dropdown">
-                            <button class="btn btn-outline-muted dropdown-toggle text-left w-100" type="button"
-                                id="school" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-outline-secondary dropdown-toggle text-left w-100" type="button" id="school" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span>
                                     {{inputes.country.result ? inputes.country.result.name : 'Choose...'}}
                                 </span>
                             </button>
                             <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="school">
                                 <div class="position-sticky top-0 bg-white">
-                                    <input type="text"
-                                        class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0"
-                                        [(ngModel)]="inputes.country.value" placeholder="Country" autocomplete="off">
+                                    <input type="text" class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0" [(ngModel)]="inputes.country.value" placeholder="Country" autocomplete="off">
                                 </div>
-                                <div class="dropdown-item pointer text-truncate px-2" (click)="inputes.country.result = country"
-                                    *ngFor="let country of countries | filter : inputes.country.value">
+                                <div class="dropdown-item pointer text-truncate px-2" (click)="inputes.country.result = country" *ngFor="let country of countries | filter : inputes.country.value">
                                     {{country.name}}
                                 </div>
                             </div>
@@ -253,20 +226,16 @@
                     <div class="col" *ngIf="inputes.country.result">
                         <label class="text-muted">City</label>
                         <div class="dropdown">
-                            <button class="btn btn-outline-muted dropdown-toggle text-left w-100" type="button"
-                                id="city" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-outline-secondary dropdown-toggle text-left w-100" type="button" id="city" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span>
                                     {{inputes.city.result ? inputes.city.result : 'Choose...'}}
                                 </span>
                             </button>
                             <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="city">
                                 <div class="position-sticky top-0 bg-white">
-                                    <input type="text"
-                                        class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0"
-                                        [(ngModel)]="inputes.city.value" placeholder="City" autocomplete="off">
+                                    <input type="text" class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0" [(ngModel)]="inputes.city.value" placeholder="City" autocomplete="off">
                                 </div>
-                                <div class="dropdown-item pointer text-truncate px-2" *ngFor="let city of inputes.country.result.cities"
-                                    (click)="inputes.city.result = city">
+                                <div class="dropdown-item pointer text-truncate px-2" *ngFor="let city of inputes.country.result.cities" (click)="inputes.city.result = city">
                                     {{city}}
                                 </div>
                             </div>
@@ -278,7 +247,7 @@
                         <div id="universityTitle" class="my-2">
                             <label class="text-muted">University</label>
                             <!-- <div class="dropdown">
-                                <button class="btn btn-outline-muted dropdown-toggle text-left w-100" type="button"
+                                <button class="btn btn-outline-secondary dropdown-toggle text-left w-100" type="button"
                                     id="university" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span>
                                         {{inputes.university.result ? inputes.university.result.name : 'Choose...'}}
@@ -302,7 +271,7 @@
                         <div id="universityType" class="my-2">
                             <label class="text-muted">University Type</label>
                             <!-- <div class="dropdown">
-                                <button class="btn btn-outline-muted dropdown-toggle text-left w-100" type="button"
+                                <button class="btn btn-outline-secondary dropdown-toggle text-left w-100" type="button"
                                     id="type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span>
                                         {{inputes.type.result ? inputes.type.result.name : 'Choose...'}}
