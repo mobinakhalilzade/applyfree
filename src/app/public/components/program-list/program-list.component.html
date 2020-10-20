@@ -31,24 +31,19 @@
     </div>
     <hr>
 
-    <div class="row">
+    <div class="row mb-3">
         <div class="col-3">
             <div class="dropdown">
-                <button class="btn btn-outline-secondary dropdown-toggle btn-block btn-sm text-left" type="button"
-                    id="category" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-outline-secondary dropdown-toggle btn-block btn-sm text-left" type="button" id="category" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span>
                         {{inputes.category.result ? inputes.category.result.name  : 'Program Category'}}
                     </span>
                 </button>
                 <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="category">
                     <div class="position-sticky top-0 bg-white">
-                        <input type="text"
-                            class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0"
-                            [(ngModel)]="inputes.category.value" placeholder="search ...">
+                        <input type="text" class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0" [(ngModel)]="inputes.category.value" placeholder="search ...">
                     </div>
-                    <div class="dropdown-item pointer text-truncate text-capitalize px-2"
-                        (click)="inputes.category.result=item" [title]="item.name"
-                        *ngFor="let item of categories | filter :inputes.category.value;">
+                    <div class="dropdown-item pointer text-truncate text-capitalize px-2" (click)="inputes.category.result=item" [title]="item.name" *ngFor="let item of categories | filter :inputes.category.value;">
                         {{item.name}}
                     </div>
                 </div>
@@ -56,8 +51,7 @@
         </div>
         <div class="col-3">
             <div class="dropdown">
-                <button class="btn btn-outline-secondary dropdown-toggle text-left btn-block btn-sm" type="button"
-                    id="degree" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-outline-secondary dropdown-toggle text-left btn-block btn-sm" type="button" id="degree" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span>
                         {{inputes.degree.result ? inputes.degree.result.name : 'Degree'}}
                     </span>
@@ -89,44 +83,38 @@
         </div>
         <div class="col-3">
             <div class="dropdown">
-                <button class="btn btn-outline-secondary dropdown-toggle text-left btn-block btn-sm" type="button"
-                    id="length" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-outline-secondary dropdown-toggle text-left btn-block btn-sm" type="button" id="length" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span>
                         {{inputes.length.result ? inputes.length.result.name : 'Length of program'}}
                     </span>
                 </button>
                 <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="length">
                     <div class="position-sticky top-0 bg-white">
-                        <input type="text"
-                            class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0"
-                            [(ngModel)]="inputes.length.value" placeholder="search ...">
+                        <input type="text" class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0" [(ngModel)]="inputes.length.value" placeholder="search ...">
                     </div>
-                    <div class="dropdown-item pointer text-truncate px-2" (click)="inputes.length.result=item"
-                        *ngFor="let item of lengths">
+                    <div class="dropdown-item pointer text-truncate px-2" (click)="inputes.length.result=item" *ngFor="let item of lengths">
                         {{item.length}} {{item.type}}
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-3">
-            <button type="button" class="btn btn-orangedark btn-sm float-right" data-toggle="modal"
-                data-target="#advanceFilters">Advance filters</button>
+            <button type="button" class="btn btn-orangedark btn-sm float-right" data-toggle="modal" data-target="#advanceFilters">Advance filters</button>
         </div>
     </div>
 
-    <div class="row my-3">
-        <div class="col-4 px-4">
+    <div class="row mb-5">
+        <div class="col-12">
             <div class="dropdown">
-                <i class="fas fa-sort-amount-up-alt fa-2x text-info dropdown-toggle" id="sort" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false"></i>
+                <button class="btn btn-outline-secondary">
+                    <i class="fas fa-sort-amount-up-alt dropdown-toggle" data-toggle="dropdown"></i>
+                </button>
                 <span class="px-2 text-muted">
                     Sorted by submission Deadline
                 </span>
                 <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="sort">
                     <div class="position-sticky top-0 bg-white">
-                        <input type="text"
-                            class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0"
-                            placeholder="search ...">
+                        <input type="text" class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0" placeholder="search ...">
                     </div>
                     <div class="dropdown-item pointer text-truncate text-capitalize px-2">
                         <div class="custom-control custom-checkbox">
@@ -152,78 +140,84 @@
         </div>
     </div>
 
-    <div class="row py-5 mb-5">
-        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 mb-3" *ngFor="let item of programs">
-            <div class="card-deck mb-5">
-                <a class="card border-radius-20" [routerLink]="['/program', item.id]">
-                    <div class="row">
-                        <div class="col-3 logoCard">
-                            <div class="d-flex">
-                                <img [src]="'http://192.168.3.65/applyfree/img/logo/'+item.school.logo" width="100"
-                                    height="100" [alt]="item.title">
-                            </div>
-                            <div class="d-flex p-4">
-                                <i class="fas fa-school fa-2x text-info"></i>
-                            </div>
-                            <div class="d-block py-3">
-                                <i class="fas fa-city fa-2x px-4 text-dark"></i>
-                                <small class="text-dark pl-4">
-                                    {{item.school.city}}
-                                </small>
-                            </div>
-                            <div class="d-block py-3">
-                                <i class="fas fa-flag-usa text-danger fa-2x px-4"></i>
-                                <small class="text-dark pl-4">
-                                    {{item.school.country}}
-                                </small>
-                            </div>
-                            <!-- <div class="d-flex py-4">
-                            {{item.school.opt}}
-                        </div> -->
+    <div class="row">
+        <div class="col-12 text-center" *ngIf="loading">
+            Loading...
+        </div>
+        <ng-container *ngIf="!loading">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 mb-5" *ngFor="let item of programs">
+                <a class="card shadow h-100" [routerLink]="['/program', item.id]">
+                    <img [src]="'http://192.168.3.65/applyfree/img/logo/'+item.school.logo" class="z-index-1 shadow bg-white border-radius-full" [alt]="item.title">
+                    <div class="row no-gutters h-100">
+                        <div class="col-2 text-center text-muted">
+                            <ul class="nav flex-column h-100 nav-fill">
+                                <li class="nav-item border-bottom pt-4">
+                                    <div>
+                                        <small>{{item.school.type}}</small>
+                                    </div>
+                                </li>
+                                <li class="nav-item border-bottom">
+                                    <i class="fas fa-city"></i>
+                                    <div>
+                                        <small>{{item.school.country}}</small>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    <div>
+                                        <small>{{item.school.city}}</small>
+                                    </div>
+                                </li>
+                                <li class="nav-item border-top" *ngIf="item.school.opt">
+                                    <div>
+                                        <small>OPT</small>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="col-8">
-                            <div class="d-flex py-4">
-                                <span class="text-truncate text-truncate-3-line text-dark">
-                                    {{item.title}}
-                                </span>
+                        <div class="col-10 py-3 text-center border-left" placement="top" ngbTooltip="{{item.title}}">
+                            <div class="mb-3">
+                                <span class="text-truncate text-truncate-2-line text-dark px-3 text-left">
+                                        {{item.title}}
+                                    </span>
                             </div>
-                            <div class="d-flex py-3">
-                                <table>
+                            <div class="mb-3">
+                                <table class="m-auto">
                                     <thead class="border-bottom">
                                         <tr>
-                                            <th class="font-weight-normal p-3">{{item.fee}}</th>
-                                            <th class="font-weight-normal p-3 border-left border-right text-dark">Tuition</th>
-                                            <th class="font-weight-normal p-3">{{item.cost_living_year}}</th>
+                                            <th class="p-3 text-dark text-capitalize">Tuition/year</th>
+                                            <th class="p-3 text-dark border-left text-capitalize">Application fee</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <th class="font-weight-normal p-3 text-dark">fee</th>
-                                            <td class="font-weight-normal p-3 border-left border-right">{{item.tuition_year}}</td>
-                                            <td class="font-weight-normal p-3 text-dark">cost</td>
+                                            <th class="p-3 text-orangedark">{{item.tuition_year | currency}}</th>
+                                            <th class="p-3 border-left">
+                                                <span class="text-orangedark" *ngIf="item.fee > 0">{{item.fee | currency}}</span>
+                                                <span class="text-success" *ngIf="item.fee == 0">Free</span>
+                                            </th>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="d-flex py-4 text-info">
-                                {{item.school.title}}
+                            <div>
+                                <a class="btn btn-orangedark btn-sm text-truncate w-75" [title]="item.school.title">
+                                    {{item.school.title}}
+                                </a>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
-        </div>
-        <div class="row justify-content-center">
-            <ngb-pagination [collectionSize]="110" [(page)]="page" [maxSize]="3" (click)="getPrograms()" [rotate]="true"
-                [boundaryLinks]="true"></ngb-pagination>
-        </div>
+        </ng-container>
+    </div>
+    <div class="row justify-content-center">
+        <ngb-pagination *ngIf="!loading" (pageChange)="filterModel.active ? pageChange(filterModel) : null" [collectionSize]="filterModel.total" [pageSize]="filterModel.pageSize" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" [(page)]="filterModel.pageIndex"
+            [directionLinks]="false"></ngb-pagination>
     </div>
 
-   
-
     <!-- Modal -->
-    <div class="modal fade" id="advanceFilters" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="advanceFiltersLabel" aria-hidden="true">
+    <div class="modal fade" id="advanceFilters" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="advanceFiltersLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -245,22 +239,16 @@
                         <div class="col">
                             <label class="text-muted">Country</label>
                             <div class="dropdown">
-                                <button class="btn btn-outline-secondary dropdown-toggle text-left w-100" type="button"
-                                    id="school" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button class="btn btn-outline-secondary dropdown-toggle text-left w-100" type="button" id="school" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span>
                                         {{inputes.country.result ? inputes.country.result.name : 'Choose...'}}
                                     </span>
                                 </button>
                                 <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="school">
                                     <div class="position-sticky top-0 bg-white">
-                                        <input type="text"
-                                            class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0"
-                                            [(ngModel)]="inputes.country.value" placeholder="Country"
-                                            autocomplete="off">
+                                        <input type="text" class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0" [(ngModel)]="inputes.country.value" placeholder="Country" autocomplete="off">
                                     </div>
-                                    <div class="dropdown-item pointer text-truncate px-2"
-                                        (click)="inputes.country.result = country"
-                                        *ngFor="let country of countries | filter : inputes.country.value">
+                                    <div class="dropdown-item pointer text-truncate px-2" (click)="inputes.country.result = country" *ngFor="let country of countries | filter : inputes.country.value">
                                         {{country.name}}
                                     </div>
                                 </div>
@@ -271,21 +259,16 @@
                         <div class="col" *ngIf="inputes.country.result">
                             <label class="text-muted">City</label>
                             <div class="dropdown">
-                                <button class="btn btn-outline-secondary dropdown-toggle text-left w-100" type="button"
-                                    id="city" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button class="btn btn-outline-secondary dropdown-toggle text-left w-100" type="button" id="city" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span>
                                         {{inputes.city.result ? inputes.city.result : 'Choose...'}}
                                     </span>
                                 </button>
                                 <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="city">
                                     <div class="position-sticky top-0 bg-white">
-                                        <input type="text"
-                                            class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0"
-                                            [(ngModel)]="inputes.city.value" placeholder="City" autocomplete="off">
+                                        <input type="text" class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0" [(ngModel)]="inputes.city.value" placeholder="City" autocomplete="off">
                                     </div>
-                                    <div class="dropdown-item pointer text-truncate px-2"
-                                        *ngFor="let city of inputes.country.result.cities"
-                                        (click)="inputes.city.result = city">
+                                    <div class="dropdown-item pointer text-truncate px-2" *ngFor="let city of inputes.country.result.cities" (click)="inputes.city.result = city">
                                         {{city}}
                                     </div>
                                 </div>

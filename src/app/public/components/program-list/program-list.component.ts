@@ -9,7 +9,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 
 export class ProgramListComponent implements OnInit {
-
   inputes = {
     category: {
       value: '',
@@ -51,10 +50,16 @@ export class ProgramListComponent implements OnInit {
   lengths: any;
   categories: any;
   programs: any;
-  page: number = 1;
+
+  filterModel = {
+    active: false,
+    total: 0,
+    pageSize: 12,
+    pageIndex: 1
+  }
 
   constructor(private service: PublicService,
-    private routeParams: ActivatedRoute,
+    private route: ActivatedRoute,
     private router: Router) {
   }
 
@@ -100,29 +105,47 @@ export class ProgramListComponent implements OnInit {
     });
   }
 
-  getPrograms() {
+  getPrograms(page: any) {
     const params = {
-      page: this.page
+      page: page
     }
 
     this.service.programsByPage(params).subscribe((response: any) => {
-      console.log(response);
       if (response.status == 200) {
         const body = response.body;
         if (body.return == 200) {
           this.programs = body.data;
+          this.filterModel.total = body.pages;
+          this.loading = false;
+          setTimeout(() => {
+            this.filterModel.active = true;
+          }, 100);
         }
       }
     });
   }
 
+  pageChange(model: any) {
+    this.filterModel.active = false;
+    setTimeout(() => {
+      console.log(model.pageIndex)
+      this.router.navigate(['.'], { relativeTo: this.route, queryParams: { page: model.pageIndex } });
+      this.getPrograms(model.pageIndex);
+    }, 100);
+
+  }
+
   ngOnInit() {
+    const queryParams = this.route.snapshot.queryParams;
+
     this.getCountries(() => {
       this.getLength(() => {
-        this.getCategories();
+        this.getCategories(() => {
+          const page = queryParams.page;
+          this.filterModel.pageIndex = page;
+          this.getPrograms(page == undefined ? 1 : page);
+        });
       });
     });
-
-    this.getPrograms();
   }
 }

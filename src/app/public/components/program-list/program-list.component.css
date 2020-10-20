@@ -1,4 +1,19 @@
-.logoCard{
-    position: relative;
-    top: -45px;
+.card>img {
+    position: absolute;
+    top: -23px;
+    width: 50px;
+    left: 4px;
+}
+
+.card table {
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav-item {
+    display: grid;
+    align-content: center;
 }

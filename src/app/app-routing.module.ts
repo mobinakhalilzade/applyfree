@@ -34,23 +34,19 @@ import { LandingComponent } from './landing/landing.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  
   {
     path: '', component: PublicComponent,
     children: [
-      { path: '', redirectTo: '/', pathMatch: 'full' },
-      { path: '', component: ProgramListComponent },
+      { path: '', redirectTo: '/programs', pathMatch: 'full' },
+      //{ path: '', component: ProgramListComponent },
       { path: 'program/:id', component: ProgramComponent },
       { path: 'page/:section', component: PagesComponent },
-
+      { path: 'programs', component: ProgramListComponent },
     ]
   },
-
   { path: 'landing', component: LandingComponent },
-
   { path: 'login', redirectTo: '/account/login' },
   { path: 'register', redirectTo: '/account/signup' },
-
   {
     path: 'dashboard', component: DashboardComponent,
     children: [
@@ -82,7 +78,6 @@ const routes: Routes = [
       { path: 'password/:token', component: PasswordComponent },
     ]
   },
-
   { path: 'contract', component: ContractComponent },
   { path: 'search', component: SearchComponent },
   { path: 'report', component: ReportComponent },
