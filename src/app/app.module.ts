@@ -37,6 +37,7 @@ import { NavigatorComponent } from './navigator/navigator.component';
 import { PublicComponent } from './public/public.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { DegreePipe } from './pipes/degree.pipe';
+import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import { DegreePipe } from './pipes/degree.pipe';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

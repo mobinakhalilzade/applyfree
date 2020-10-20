@@ -51,6 +51,7 @@ export class ProgramListComponent implements OnInit {
   lengths: any;
   categories: any;
   programs: any;
+  page: number = 1;
 
   constructor(private service: PublicService,
     private routeParams: ActivatedRoute,
@@ -71,30 +72,40 @@ export class ProgramListComponent implements OnInit {
     });
   }
 
-  getLength() {
+  getLength(then = null) {
     this.service.length().subscribe((response: any) => {
       if (response.status == 200) {
         const body = response.body;
         if (body.return == 200) {
           this.lengths = body.data;
+          if (then != null) {
+            then();
+          }
         }
       }
     });
   }
 
-  getCategories() {
+  getCategories(then = null) {
     this.service.categories().subscribe((response: any) => {
       if (response.status == 200) {
         const body = response.body;
         if (body.return == 200) {
           this.categories = body.data;
+          if (then != null) {
+            then();
+          }
         }
       }
     });
   }
 
   getPrograms() {
-    this.service.programs().subscribe((response: any) => {
+    const params = {
+      page: this.page
+    }
+
+    this.service.programsByPage(params).subscribe((response: any) => {
       console.log(response);
       if (response.status == 200) {
         const body = response.body;
@@ -105,27 +116,13 @@ export class ProgramListComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.getCountries(() => {
-      this.getLength();
+      this.getLength(() => {
+        this.getCategories();
+      });
     });
 
-    this.getCategories();
     this.getPrograms();
-
-    const params = {
-      page: 1
-    }
-
-    this.service.programss(params).subscribe((response: any) => {
-      console.log(response);
-      if (response.status == 200) {
-        const body = response.body;
-        if (body.return == 200) {
-          this.programs = body.data;
-        }
-      }
-    })
-
   }
 }

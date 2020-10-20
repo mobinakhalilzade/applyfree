@@ -20,7 +20,7 @@ export class PublicService {
         return this.http.readApi.get('programs');
     }
 
-    programss(data){
+    programsByPage(data){
         return this.http.readApi.getByParam('programs',data);
     }
 
