@@ -14,26 +14,22 @@ export class ProgramComponent implements OnInit {
   intakes: any;
   school: any;
 
-  constructor(private service: PublicService, 
-    private route: ActivatedRoute) 
-    { }
+  constructor(private service: PublicService,
+    private route: ActivatedRoute) { }
 
-  ngOnInit(): void {
-
-    const id = this.route.snapshot.paramMap.get('id');
-
-    this.service.programs().subscribe((response: any) => {
-      console.log(response);
+  program(slug: string) {
+    this.service.program(slug).subscribe((response: any) => {
       if (response.status == 200) {
         const body = response.body;
         if (body.return == 200) {
-          let detail = body.data;
-          this.ProgramDetail = detail.find(x => x.id == id);
-          this.intakes = this.ProgramDetail.intakes;
-          this.school = this.ProgramDetail.school;
-
+          console.log(body);
         }
       }
     })
+  }
+
+  ngOnInit(): void {
+    const slug = this.route.snapshot.paramMap.get('slug');
+    this.program(slug);
   }
 }

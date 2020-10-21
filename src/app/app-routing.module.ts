@@ -39,7 +39,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: '/programs', pathMatch: 'full' },
       //{ path: '', component: ProgramListComponent },
-      { path: 'program/:id', component: ProgramComponent },
+      { path: 'program/:slug', component: ProgramComponent },
       { path: 'page/:section', component: PagesComponent },
       { path: 'programs', component: ProgramListComponent },
     ]

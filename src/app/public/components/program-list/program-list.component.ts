@@ -114,7 +114,7 @@ export class ProgramListComponent implements OnInit {
       opt: filter.opt
     }
 
-    this.service.programsByPage(params).subscribe((response: any) => {
+    this.service.programs(params).subscribe((response: any) => {
       if (response.status == 200) {
         const body = response.body;
         if (body.return == 200) {
