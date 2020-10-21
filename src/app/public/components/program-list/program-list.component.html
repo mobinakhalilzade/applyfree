@@ -12,7 +12,7 @@
         </div>
         <div class="col-2">
             <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="opt">
+                <input type="checkbox" class="custom-control-input" id="opt" [(ngModel)]="filterModel.opt" (change)="filter()">
                 <label class="custom-control-label" for="opt">OPT</label>
             </div>
         </div>
@@ -98,8 +98,15 @@
                 </div>
             </div>
         </div>
-        <div class="col-3">
-            <button type="button" class="btn btn-orangedark btn-sm float-right" data-toggle="modal" data-target="#advanceFilters">Advance filters</button>
+        <div class="col-3 text-right">
+            <button type="button" class="btn btn-orangedark btn-sm" data-toggle="modal" data-target="#advanceFilters">Advance filters</button>
+        </div>
+
+        <div class="col-12">
+            <span class="badge badge-dark" *ngIf="filterModel.opt != null">
+                OPT
+                <i class="fa fa-times ml-2" (click)="filterModel.opt = null;filter()"></i>
+            </span>
         </div>
     </div>
 
@@ -146,7 +153,7 @@
         </div>
         <ng-container *ngIf="!loading">
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 mb-5" *ngFor="let item of programs">
-                <a class="card shadow h-100" [routerLink]="['/program', item.id]">
+                <a class="card shadow h-100" [routerLink]="['/program', item.slug]">
                     <img [src]="'http://192.168.3.65/applyfree/img/logo/'+item.school.logo" class="z-index-1 shadow bg-white border-radius-full" [alt]="item.title">
                     <div class="row no-gutters h-100">
                         <div class="col-2 text-center text-muted">
@@ -175,7 +182,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="col-10 py-3 text-center border-left" placement="top" ngbTooltip="{{item.title}}">
+                        <div class="col-10 py-3 text-center border-left" [title]="item.title">
                             <div class="mb-3">
                                 <span class="text-truncate text-truncate-2-line text-dark px-3 text-left">
                                         {{item.title}}
@@ -200,8 +207,8 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <div>
-                                <a class="btn btn-orangedark btn-sm text-truncate w-75" [title]="item.school.title">
+                            <div class="position-relative z-index-1">
+                                <a href="hello" class="btn btn-orangedark btn-sm text-truncate w-75" [title]="item.school.title">
                                     {{item.school.title}}
                                 </a>
                             </div>

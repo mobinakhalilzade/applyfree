@@ -51,11 +51,14 @@ export class ProgramListComponent implements OnInit {
   categories: any;
   programs: any;
 
+  queryParams = this.route.snapshot.queryParams;
+
   filterModel = {
     active: false,
     total: 0,
     pageSize: 12,
-    pageIndex: 1
+    pageIndex: 1,
+    opt: this.queryParams.opt == undefined ? null : JSON.parse(this.queryParams.opt)
   }
 
   constructor(private service: PublicService,
@@ -105,9 +108,10 @@ export class ProgramListComponent implements OnInit {
     });
   }
 
-  getPrograms(page: any) {
+  getPrograms(filter: any) {
     const params = {
-      page: page
+      page: filter.pageIndex,
+      opt: filter.opt
     }
 
     this.service.programsByPage(params).subscribe((response: any) => {
@@ -115,35 +119,48 @@ export class ProgramListComponent implements OnInit {
         const body = response.body;
         if (body.return == 200) {
           this.programs = body.data;
-          this.filterModel.total = body.pages;
-          this.loading = false;
+
           setTimeout(() => {
+            this.filterModel.pageIndex = filter.pageIndex;
+            this.filterModel.total = body.total;
             this.filterModel.active = true;
-          }, 100);
+          }, 500);
+          this.loading = false;
         }
       }
     });
   }
 
   pageChange(model: any) {
+    console.log('run from change')
+    this.loading = true;
     this.filterModel.active = false;
     setTimeout(() => {
-      console.log(model.pageIndex)
-      this.router.navigate(['.'], { relativeTo: this.route, queryParams: { page: model.pageIndex } });
-      this.getPrograms(model.pageIndex);
+      this.router.navigate(['.'], { relativeTo: this.route, queryParams: { page: model.pageIndex, opt: this.filterModel.opt } });
+      this.getPrograms(model);
+    }, 100);
+  }
+
+  filter() {
+    setTimeout(() => {
+      this.router.navigate(['.'], { relativeTo: this.route, queryParams: { page: 1, opt: this.filterModel.opt } });
+      this.getPrograms(this.filterModel);
     }, 100);
 
   }
 
   ngOnInit() {
-    const queryParams = this.route.snapshot.queryParams;
 
     this.getCountries(() => {
       this.getLength(() => {
         this.getCategories(() => {
-          const page = queryParams.page;
-          this.filterModel.pageIndex = page;
-          this.getPrograms(page == undefined ? 1 : page);
+          if (this.queryParams.page == undefined || this.queryParams.page == 'NaN') {
+            console.log('run from int')
+            this.getPrograms(1)
+          } else {
+            this.filterModel.pageIndex = this.queryParams.page;
+            this.pageChange(this.filterModel);
+          }
         });
       });
     });
