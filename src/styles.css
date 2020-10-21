@@ -1,17 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 :root {
-    --orangered: #f0460b;
     --white: #fff;
-    --gray: #818181;
     --orangelight: #F7F1EF;
     --orangedark: #f03d4c;
-    --orangepink: #e33838eb;
-    --green: #28a745;
 }
 
 body,
 html {
-    background-color: #fff;
+    background-color: var(--white);
     min-height: 100%;
     height: 100%;
     font-family: 'Raleway', sans-serif;
@@ -39,6 +35,11 @@ html {
 
 .border-radius-full {
     border-radius: 100%;
+}
+
+.border-radius-x-5 {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .pointer {
@@ -74,31 +75,8 @@ html {
     background-color: var(--white);
 }
 
-.btn-orangedark {
-    background-color: var(--orangedark);
-    border-color: var(--orangedark);
-    color: var(--white);
-}
-
-.btn-outline-orangedark {
-    background-color: var(--white);
-    border-color: solid 1px var(--orangedark);
-    color: var(--black);
-}
-
-.btn-outline-orangedark:hover {
-    background-color: var(--orangedark);
-    border-color: solid 1px var(--orangedark);
-    color: var(--white);
-}
-
-.border-radius-x-5 {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
-
 .dropdown-filter {
-    max-height: 195px;
+    max-height: 200px;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -116,6 +94,10 @@ html {
     z-index: 1;
 }
 
+.z-index-2 {
+    z-index: 2;
+}
+
 .text-orangedark {
     color: var(--orangedark);
 }
@@ -125,6 +107,24 @@ html {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     white-space: inherit;
+}
+
+.btn-orangedark {
+    background-color: var(--orangedark);
+    border-color: var(--orangedark);
+    color: var(--white);
+}
+
+.btn-outline-orangedark {
+    background-color: var(--white);
+    border-color: solid 1px var(--orangedark);
+    color: var(--black);
+}
+
+.btn-outline-orangedark:hover {
+    background-color: var(--orangedark);
+    border-color: solid 1px var(--orangedark);
+    color: var(--white);
 }
 
 .btn-custom .btn,
@@ -172,22 +172,19 @@ html {
     box-shadow: inset 0px 3px 0px 1px var(--orangedark);
 }
 
-header {
-    height: 300px;
+.form-control-placeholder {
+    position: absolute;
+    top: 0;
+    padding: 7px 0 0 13px;
+    transition: all 200ms;
+    opacity: 0.5;
 }
 
-header::after {
-    height: 300px;
-    top: 187px;
-    left: 0;
-    transform: scale(-1);
-}
-
-footer::after {
-    height: 435px;
-    bottom: 220px;
-    left: 0;
-    transform: scale(-1, -2);
+.form-control:focus+.form-control-placeholder,
+.form-control:valid+.form-control-placeholder {
+    font-size: 75%;
+    transform: translate3d(0, -100%, 0);
+    opacity: 1;
 }
 
 .logo {
@@ -274,24 +271,6 @@ footer::after {
     z-index: 2;
 }
 
-.form-control-placeholder {
-    position: absolute;
-    top: 0;
-    padding: 7px 0 0 13px;
-    transition: all 200ms;
-    opacity: 0.5;
-}
-
-.form-control:focus+.form-control-placeholder,
-.form-control:valid+.form-control-placeholder {
-    font-size: 75%;
-    transform: translate3d(0, -100%, 0);
-    opacity: 1;
-}
-
-
-/* scroll style */
-
  ::-webkit-scrollbar {
     width: 5px;
 }
@@ -310,40 +289,48 @@ footer::after {
     background: #BFBFBF;
 }
 
-footer {
-    height: 85vh;
-    padding-top: 121px;
+header {
+    height: 300px;
 }
 
-@media only screen and (min-width: 2560px) {
-    header::before,
-    header::after,
-    footer::before,
-    footer::after {
-        width: 75%;
-    }
+header::after {
+    height: 300px;
+    top: 187px;
+    left: 0;
+    transform: scale(-1);
+}
+
+footer {
+    height: auto;
+    padding-top: 11%;
+}
+
+footer::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url(src/assets/svg/footer.svg);
+    transform: rotate(360deg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 82vh;
+}
+
+@media only screen and (max-width: 2560px) {
+   
 }
 
 @media only screen and (max-width: 1440px) {
-    header::after {
-        height: 265px;
-    }
+  
 }
 
 @media only screen and (max-width: 1024px) {
-    header::before,
-    header::after,
-    footer::before,
-    footer::after {
-        display: none;
-    }
+   
 }
 
 @media only screen and (max-width: 768px) {
-    header::before,
-    header::after,
-    footer::before,
-    footer::after {
-        display: none;
-    }
+   
 }

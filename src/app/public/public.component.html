@@ -1,5 +1,5 @@
 <header>
-    <div class="container position-relative z-index-1">
+    <div class="container position-relative z-index-2">
         <app-navigator></app-navigator>
     </div>
 </header>
@@ -11,50 +11,83 @@
 <footer>
     <div class="container position-relative z-index-1">
         <div class="row text-light d-xl-flex d-lg-flex d-md-none d-sm-none d-none">
-            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
-                <h5>Quick access</h5>
+            <div
+                class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
+                <h5>
+                    <b>
+                        Quick access
+                    </b>
+                </h5>
                 <ul class="list-unstyled">
-                    <li class="p-2" [routerLink]="['/page', 'about']">About us</li>
-                    <li class="p-2" [routerLink]="['/page', 'contact']">Contact us</li>
-                    <li class="p-2">Contracts</li>
-                    <li class="p-2" [routerLink]="['/page', 'terms']">Terms and conditions</li>
-                    <li class="p-2" [routerLink]="['/page', 'policy']">Privacy Policy</li>
+                    <li class="p-2">
+                        <a class="text-light" [routerLink]="['/page', 'terms']">
+                            Terms and conditions
+                        </a>
+                    </li>
+                    <li class="p-2">
+                        <a class="text-light" [routerLink]="['/page', 'policy']">
+                            Privacy Policy
+                        </a>
+                    </li>
                 </ul>
             </div>
-            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
-                <h5>Quick access</h5>
+            <div
+                class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
+                <h5>
+                    <b>
+                        Quick access
+                    </b>
+                </h5>
                 <ul class="list-unstyled">
-                    <li class="p-2">About us</li>
-                    <li class="p-2">Contact us</li>
-                    <li class="p-2">Contracts</li>
-                    <li class="p-2">Terms and conditions</li>
-                    <li class="p-2">Privacy Policy</li>
+                    <li class="p-2">
+                        <a class="text-light" [routerLink]="['/page', 'terms']">
+                            FAQ
+                        </a>
+                    </li>
+                    <li class="p-2">
+                        <a class="text-light" [routerLink]="['/landing']">
+                            Landing
+                        </a>
+                    </li>
                 </ul>
             </div>
-            <div class="col-xl-5 col-lg-4 col-md-4 col-sm-5 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
-                <h5>applyfree departments</h5>
+            <div
+                class="col-xl-5 col-lg-4 col-md-4 col-sm-5 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
+                <h5>
+                    <b>
+                        applyfree departments
+                    </b>
+                </h5>
                 <ul class="list-unstyled">
-                    <li class="p-2">Lorem ipsum dolor sit aLorem ipsum dolor sit a</li>
-                    <li class="p-2">Lorem ipsum dolor sit aLorem ipsum dolor sit a</li>
                     <li class="p-2">Lorem ipsum dolor sit aLorem ipsum dolor sit a</li>
                     <li class="p-2">Lorem ipsum dolor sit aLorem ipsum dolor sit a</li>
                     <li class="p-2">Lorem ipsum dolor sit aLorem ipsum dolor sit a</li>
                 </ul>
             </div>
-            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
-                <h5>Quick access</h5>
+            <div
+                class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
+                <h5>
+                    <b>
+                        Quick access
+                    </b>
+                </h5>
                 <ul class="list-unstyled">
-                    <li class="p-2">About us</li>
-                    <li class="p-2">Contact us</li>
-                    <li class="p-2">Contracts</li>
-                    <li class="p-2">Terms and conditions</li>
-                    <li class="p-2">Privacy Policy</li>
+                    <li class="p-2"><a class="text-light" [routerLink]="['/page', 'about']">About us</a></li>
+                    <li class="p-2"><a class="text-light" [routerLink]="['/page', 'contact']">Contact us</a></li>
+                    <li class="p-2"><a class="text-light" [routerLink]="['/']">Programs</a></li>
                 </ul>
             </div>
-            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-2 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
-                <h5>Social</h5>
+            <div
+                class="col-xl-1 col-lg-1 col-md-1 col-sm-2 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
+                <h5>
+                    <b>
+                        Social
+                    </b>
+                </h5>
                 <i class="fab fa-instagram text-light fa-2x p-2"></i>
-                <i class="fab fa-linkedin text-light fa-2x p-2"></i>
+                <a href="https://www.linkedin.com/company/applyfree/">
+                    <i class="fab fa-linkedin text-light fa-2x p-2"></i>
+                </a>
                 <i class="fab fa-twitter text-light fa-2x p-2"></i>
                 <i class="fab fa-facebook text-light fa-2x p-2"></i>
             </div>
@@ -68,7 +101,7 @@
                     <a class="text-light" [routerLink]="['/page', 'contact']">Contact us</a>
                 </div>
                 <div class="col-xl-0 col-lg-0 col-md-2 col-sm-10 col-10 text-center">
-                    <a class="text-light" [routerLink]="['/']">Contracts</a>
+                    <a class="text-light" [routerLink]="['/']">Programs</a>
                 </div>
                 <div class="col-xl-0 col-lg-0 col-md-2 col-sm-10 col-10 text-center">
                     <a class="text-light" [routerLink]="['/pupage', 'policy']">Privacy Policy</a>
@@ -82,7 +115,9 @@
                     <i class="fab fa-instagram text-light fa-2x p-2"></i>
                 </div>
                 <div class="col-xl-0 col-lg-0 col-md-2 col-sm-2 col-2">
-                    <i class="fab fa-linkedin text-light fa-2x p-2"></i>
+                    <a href="https://www.linkedin.com/company/applyfree/">
+                        <i class="fab fa-linkedin text-light fa-2x p-2"></i>
+                    </a>
                 </div>
                 <div class="col-xl-0 col-lg-0 col-md-2 col-sm-2 col-2">
                     <i class="fab fa-twitter text-light fa-2x p-2"></i>
@@ -98,8 +133,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 mx-auto mt-4">
-                <img src="assets/images/building-footer.png" alt="footer applyfree" class="img-fluid">
+            <div class="col-12 text-center">
+                <img src="assets/images/building-footer.png" alt="applyfree" class="img-fluid">
             </div>
         </div>
     </div>
