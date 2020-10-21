@@ -3,6 +3,7 @@
     --white: #fff;
     --orangelight: #F7F1EF;
     --orangedark: #f03d4c;
+    --ice: #f1f5f9;
 }
 
 body,
@@ -73,6 +74,10 @@ html {
 
 .bg-white {
     background-color: var(--white);
+}
+
+.bg-ice{
+    background-color: var(--ice);
 }
 
 .dropdown-filter {

@@ -38,7 +38,6 @@ import { PublicComponent } from './public/public.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { DegreePipe } from './pipes/degree.pipe';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { SchoolComponent } from './public/components/school/school.component';
 
 @NgModule({
   declarations: [
@@ -73,8 +72,7 @@ import { SchoolComponent } from './public/components/school/school.component';
     NavigatorComponent,
     PublicComponent,
     FilterPipe,
-    DegreePipe,
-    SchoolComponent
+    DegreePipe
   ],
   imports: [
     CommonModule,
