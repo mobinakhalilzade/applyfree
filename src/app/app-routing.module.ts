@@ -21,17 +21,20 @@ import { ConfirmComponent } from './dashboard/components/confirm/confirm.compone
 import { ReservedComponent } from './dashboard/components/reserved/reserved.component';
 
 //public
+import { LandingComponent } from './landing/landing.component';
 import { PublicComponent } from './public/public.component';
 import { PagesComponent } from './public/components/pages/pages.component';
 import { ProgramListComponent } from "./public/components/program-list/program-list.component";
 import { ProgramComponent } from "./public/components/program/program.component";
+import { ContractComponent } from "./public/components/contract/contract.component";
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ReportComponent } from "./report/report.component";
-import { ContractComponent } from "./contract/contract.component";
 import { SearchComponent } from "./search/search.component";
 
-//static pages
-import { LandingComponent } from './landing/landing.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+//payment
+import { PaymentComponent } from "./payment/payment.component";
+import { SuccessComponent } from "./payment/components/success/success.component";
+import { FailureComponent } from "./payment/components/failure/failure.component";
 
 const routes: Routes = [
   {
@@ -42,11 +45,19 @@ const routes: Routes = [
       { path: 'program/:slug', component: ProgramComponent },
       { path: 'page/:section', component: PagesComponent },
       { path: 'programs', component: ProgramListComponent },
+      { path: 'contract/:id', component: ContractComponent }
     ]
   },
   { path: 'landing', component: LandingComponent },
   { path: 'login', redirectTo: '/account/login' },
   { path: 'register', redirectTo: '/account/signup' },
+  {
+    path: 'payment', component: PaymentComponent,
+    children: [
+      { path: 'success', component: SuccessComponent },
+      { path: 'failure', component: FailureComponent }
+    ]
+  },
   {
     path: 'dashboard', component: DashboardComponent,
     children: [

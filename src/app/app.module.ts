@@ -38,6 +38,10 @@ import { PublicComponent } from './public/public.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { DegreePipe } from './pipes/degree.pipe';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { TypePipe } from './pipes/type.pipe';
+import { PaymentComponent } from './payment/payment.component';
+import { SuccessComponent } from './payment/components/success/success.component';
+import { FailureComponent } from './payment/components/failure/failure.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +76,11 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     NavigatorComponent,
     PublicComponent,
     FilterPipe,
-    DegreePipe
+    DegreePipe,
+    TypePipe,
+    PaymentComponent,
+    SuccessComponent,
+    FailureComponent
   ],
   imports: [
     CommonModule,

@@ -4,8 +4,7 @@
 <ng-container *ngIf="!loading && program">
     <div class="container-fluid px-0">
         <div class="img-banner bg-dark w-100">
-            <img [src]="'http://192.168.3.65/applyfree/img/banner/'+program.school.banner" class="banner"
-                [alt]="program.school.title">
+            <div class="banner"></div>
             <div class="container">
                 <div class="header-info">
                     <nav aria-label="breadcrumb">
@@ -15,38 +14,37 @@
                             <li class="breadcrumb-item active text-light" aria-current="page">{{program.title}}</li>
                         </ol>
                     </nav>
-                    <div class="row text-light my-5 ml-3">
-                        <div class="col-1">
+                    <div class="row text-light my-4 mx-3">
+                        <div class="col-1 px-0">
                             <i class="fas fa-university fa-3x"></i>
                         </div>
                         <div class="col-9 pt-1">
-                            <h3>{{program.school.title}}</h3>
-                            <button class="btn btn-sm btn-outline-light mt-2">visit school page</button>
+                            <h3 class="mt-2">{{program.school.title}}</h3>
                         </div>
                     </div>
 
-                    <div class="row text-light py-4 ml-3">
+                    <div class="row text-light mx-3">
                         <div class="col-1">
-                            <i class="fas fa-map-marker-alt fa-3x"></i>
+                            <i class="fas fa-map-marker-alt fa-2x"></i>
                         </div>
                         <div class="col-9 pt-1">
-                            <h5>
+                            <h6>
                                 {{program.school.country}}
-                                <i class="fas fa-angle-double-right"></i>
+                                ,
                                 {{program.school.state}}
-                                <i class="fas fa-angle-double-right"></i>
+                                ,
                                 {{program.school.city}}
-                            </h5>
-                            <button class="btn btn-sm btn-outline-light mt-2">see on googlemap</button>
+                            </h6>
+                            <a class="btn btn-sm btn-outline-light mt-2">see on googlemap</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container mt-5">
         <div class="row my-4">
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-10 col-10 order-xl-first order-lg-first order-md-first order-sm-last order-last">
                 <div class="row">
                     <div class="col-12">
                         <div class="card shadow border-0 border-radius-20">
@@ -60,17 +58,17 @@
                                     <p>{{program.school.address}}</p>
                                 </li>
                                 <li class="list-group-item py-4 text-success" *ngIf="program.school.opt==false">
-                                    <i class="fas fa-briefcase"></i>
-                                    <span class="h4">
+                                    <i class="fas fa-briefcase mr-2"></i>
+                                    <span>
                                         OPT
                                     </span>
                                 </li>
                                 <li class="list-group-item py-4 text-danger font-weight-bold">
-                                    <i class="far fa-clock"></i>
-                                    {{program.school.type}}
+                                    <i class="far fa-clock mr-2"></i>
+                                    {{program.school.type | type }}
                                 </li>
                                 <li class="list-group-item py-4 rounded-pill">
-                                    <i class="fas fa-phone-alt"></i>
+                                    <i class="fas fa-phone-alt mr-2"></i>
                                     +123456789
                                 </li>
                             </ul>
@@ -78,7 +76,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-9 col-lg-9 col-md-9 col-sm-6 col-6 pl-5">
+            <div class="col-xl-9 col-lg-9 col-md-8 col-sm-10 col-10 order-xl-last order-lg-last order-md-last order-sm-first order-first pl-5">
                 <div class="row">
                     <div class="col mb-4">
                         <h3>Program Information</h3>
@@ -86,7 +84,7 @@
 
                     <div class="col-3 text-right mb-4">
                         <button class="btn btn-outline-danger btn-block">
-                            <i class="far fa-heart"></i>
+                            <i class="far fa-heart pr-2"></i>
                             Bookmark
                         </button>
                     </div>
@@ -94,7 +92,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="py-3">
-                            <fieldset class="border p-5">
+                            <fieldset class="border p-2">
                                 <legend class="text-orangedark w-auto">
                                     <b class="mx-4">
                                         Intakes
@@ -118,7 +116,7 @@
                                                     class="far fa-question-circle text-warning" data-toggle="tooltip"
                                                     data-placement="top" title="Unknown"></i></td>
                                             <td *ngIf="item.start_date!==null">
-                                                <button class="btn btn-orangedark">apply</button>
+                                                <a class="btn btn-orangedark" [routerLink]="['/contract', item.id]">apply</a>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -126,7 +124,7 @@
                             </fieldset>
                         </div>
                         <div class="py-3">
-                            <fieldset class="border p-5">
+                            <fieldset class="border p-2">
                                 <legend class="text-orangedark w-auto">
                                     <b class="mx-4">
                                         Cost
@@ -158,32 +156,31 @@
                         </div>
                         <div class="py-4 px-3">
                             <div class="row">
-                                <div class="col-12 text-dark">
-                                    <h4>
-                                        Specification
-                                    </h4>
-                                </div>
-                            </div>
-                            <div class="row justify-content-center px-1">
-                                <div class="col-3 bg-ice p-4 mr-3 my-3 border-radius-10">
-                                    Degree
-                                </div>
-                                <div class="col-8 bg-ice p-4 ml-3 my-3 border-radius-10">
-                                    Bachelor
-                                </div>
-                                <div class="col-3 bg-ice p-4 mr-3 border-radius-10">
-                                    Length of program
-                                </div>
-                                <div class="col-8 bg-ice p-4 ml-3 border-radius-10">
-                                    {{program.length}} Month
+                                <div class="col px-0">
+                                    <fieldset class="border p-2">
+                                        <legend class="text-orangedark w-auto">
+                                            <b class="mx-4">
+                                                Specification
+                                            </b>
+                                        </legend>
+                                        <div class="row justify-content-center px-1">
+                                            <div class="col-4 bg-ice p-4 mr-3 my-3 border-radius-10">
+                                                Degree
+                                            </div>
+                                            <div class="col-7 bg-ice p-4 ml-3 my-3 border-radius-10">
+                                                Bachelor
+                                            </div>
+                                            <div class="col-4 bg-ice p-4 mr-3 border-radius-10">
+                                                Length of program
+                                            </div>
+                                            <div class="col-7 bg-ice p-4 ml-3 border-radius-10">
+                                                {{program.length}} Month
+                                            </div>
+                                        </div>
+                                    </fieldset>
                                 </div>
                             </div>
                         </div>
-                        <button class="btn btn-block btn-orangedark my-5">
-                            <b>
-                                apply free
-                            </b>
-                        </button>
                     </div>
                 </div>
             </div>

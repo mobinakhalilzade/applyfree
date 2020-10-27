@@ -1,3 +1,23 @@
+header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 363px;
+    top: -902px;
+    height: 185vh;
+    background-image: url(src/assets/svg/header-full.svg);
+    transform: rotate(360deg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    z-index: 0;
+}
+
+main{
+    position: relative;
+    top: 500px;
+}
+
 #bg-section-1, #bg-section-2, #bg-section-3 , #bg-section-4{
     background-position: center;
     background-repeat: no-repeat;
@@ -22,11 +42,11 @@
     background-image: url(src/assets/images/bg-section-4.png);
 }
 
-header {
-    background-image: linear-gradient(to left bottom, #eb405e, #ef3d4e, #f23d3d, #f24029, #f0460b);
-    position: relative;
-    top: 0;
+footer {
+    padding-top: 30%;
 }
+
+
 
  .menu-backdoor {
      display: none;
