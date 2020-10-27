@@ -42,6 +42,7 @@ import { TypePipe } from './pipes/type.pipe';
 import { PaymentComponent } from './payment/payment.component';
 import { SuccessComponent } from './payment/components/success/success.component';
 import { FailureComponent } from './payment/components/failure/failure.component';
+import { CheckoutComponent } from './payment/components/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import { FailureComponent } from './payment/components/failure/failure.component
     TypePipe,
     PaymentComponent,
     SuccessComponent,
-    FailureComponent
+    FailureComponent,
+    CheckoutComponent
   ],
   imports: [
     CommonModule,

@@ -35,6 +35,7 @@ import { SearchComponent } from "./search/search.component";
 import { PaymentComponent } from "./payment/payment.component";
 import { SuccessComponent } from "./payment/components/success/success.component";
 import { FailureComponent } from "./payment/components/failure/failure.component";
+import { CheckoutComponent } from "./payment/components/checkout/checkout.component";
 
 const routes: Routes = [
   {
@@ -54,6 +55,7 @@ const routes: Routes = [
   {
     path: 'payment', component: PaymentComponent,
     children: [
+      { path: 'checkout', component: CheckoutComponent },
       { path: 'success', component: SuccessComponent },
       { path: 'failure', component: FailureComponent }
     ]
