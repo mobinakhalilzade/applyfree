@@ -10,18 +10,18 @@ import { ActivatedRoute } from '@angular/router';
 export class ProgramComponent implements OnInit {
   loading: boolean;
   alert: any;
-  ProgramDetail: any;
-  intakes: any;
-  school: any;
+  program: any;
 
   constructor(private service: PublicService,
     private route: ActivatedRoute) { }
 
-  program(slug: string) {
+  getProgram(slug: string) {
     this.service.program(slug).subscribe((response: any) => {
       if (response.status == 200) {
         const body = response.body;
         if (body.return == 200) {
+          this.program=body.data;
+
           console.log(body);
         }
       }
@@ -30,6 +30,6 @@ export class ProgramComponent implements OnInit {
 
   ngOnInit(): void {
     const slug = this.route.snapshot.paramMap.get('slug');
-    this.program(slug);
+    this.getProgram(slug);
   }
 }

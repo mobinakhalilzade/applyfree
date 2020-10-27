@@ -1,113 +1,192 @@
-<!-- <div class="container mt-4">
-    <div>
-        <img [src]="'http://192.168.3.65/applyfree/img/banner/'+school.banner" class="img-fluid" alt="">
-    </div>
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb bg-transparent">
-            <li class="breadcrumb-item"><a href="#">Contracts</a></li>
-            <li class="breadcrumb-item"><a href="#">U.s Programs</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{ProgramDetail.title}}</li>
-        </ol>
-    </nav>
-
-    <div class="card border-0">
-       
-        <div class="card-body">
-            <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="bg-light">
-                               
-                            </div>
+<div *ngIf="loading" class="text-center my-5 py-5">
+    <i class="fas fa-sync fa-spin fa-6x text-muted"></i>
+</div>
+<ng-container *ngIf="!loading && program">
+    <div class="container-fluid px-0">
+        <div class="img-banner bg-dark w-100">
+            <img [src]="'http://192.168.3.65/applyfree/img/banner/'+program.school.banner" class="banner"
+                [alt]="program.school.title">
+            <div class="container">
+                <div class="header-info">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb bg-transparent">
+                            <li class="breadcrumb-item"><a [routerLink]="['/program']" class="text-light">Programs</a>
+                            </li>
+                            <li class="breadcrumb-item active text-light" aria-current="page">{{program.title}}</li>
+                        </ol>
+                    </nav>
+                    <div class="row text-light my-5 ml-3">
+                        <div class="col-1">
+                            <i class="fas fa-university fa-3x"></i>
+                        </div>
+                        <div class="col-9 pt-1">
+                            <h3>{{program.school.title}}</h3>
+                            <button class="btn btn-sm btn-outline-light mt-2">visit school page</button>
                         </div>
                     </div>
-                    <div class="row mt-3">
-                        <div class="col-12">
-                            <div class="card">
-                                <img class="card-img-top" [src]="'http://192.168.3.65/applyfree/img/logo/'+school.logo">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{school.title}}</h5>
-                                  
-                                </div>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Cras justo odio</li>
-                                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                                    <li class="list-group-item">Vestibulum at eros</li>
-                                </ul>
-                                <div class="card-body">
-                                    <a href="#" class="card-link">Card link</a>
-                                    <a href="#" class="card-link">Another link</a>
-                                </div>
-                            </div>
+
+                    <div class="row text-light py-4 ml-3">
+                        <div class="col-1">
+                            <i class="fas fa-map-marker-alt fa-3x"></i>
                         </div>
-                    </div>
-                </div>
-                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-6 col-6 pl-5">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="bg-light">
-
-
-                                <div class="card">
-                                    <div class="card-header">
-                                        Featured
-                                    </div>
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item" *ngFor="let item of intakes">
-                                            {{item.start_date | date}}
-                                            {{item.submission | date}}
-                                        </li>
-                                    </ul>
-                                </div>
-
-
-
-                                <div class="card">
-                                    <div class="card-header">
-                                        Featured
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Special title treatment</h5>
-                                        <p class="card-text">With supporting text below as a natural lead-in to
-                                            additional
-                                            content.
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem
-                                            et
-                                            laudantium
-                                            beatae impedit rerum? Earum laboriosam quos, architecto corrupti
-                                            possimus
-                                            pariatur cum
-                                            repellat numquam, sed dolorum optio quia cumque assumenda.
-                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum
-                                            praesentium fuga
-                                            magni,
-                                            maxime sunt aliquam consectetur amet, nihil eum iste ducimus optio
-                                            suscipit
-                                            architecto
-                                            vero eos, assumenda deserunt odit? Consectetur!
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non illum
-                                            consequatur,
-                                            voluptates autem debitis odio. Ducimus est officiis fuga reiciendis eius
-                                            quidem
-                                            aspernatur expedita quo maiores ut quibusdam, voluptas mollitia!Loremlo
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, saepe?
-                                            Laboriosam,
-                                            molestiae blanditiis. Dignissimos sapiente quod reprehenderit placeat?
-                                            Neque
-                                            enim
-                                            blanditiis expedita repellat assumenda voluptatem nam minima obcaecati
-                                            inventore
-                                            voluptatum.
-                                        </p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="col-9 pt-1">
+                            <h5>
+                                {{program.school.country}}
+                                <i class="fas fa-angle-double-right"></i>
+                                {{program.school.state}}
+                                <i class="fas fa-angle-double-right"></i>
+                                {{program.school.city}}
+                            </h5>
+                            <button class="btn btn-sm btn-outline-light mt-2">see on googlemap</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div> -->
+    <div class="container">
+        <div class="row my-4">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card shadow border-0 border-radius-20">
+                            <img class="img-fluid"
+                                [src]="'http://192.168.3.65/applyfree/img/logo/'+program.school.logo">
+                            <div class="card-body">
+                                <button class="btn btn-success btn-block">Accredition : Yes</button>
+                            </div>
+                            <ul class="list-group list-group-flush text-center">
+                                <li class="list-group-item text-left py-4">
+                                    <p>{{program.school.address}}</p>
+                                </li>
+                                <li class="list-group-item py-4 text-success" *ngIf="program.school.opt==false">
+                                    <i class="fas fa-briefcase"></i>
+                                    <span class="h4">
+                                        OPT
+                                    </span>
+                                </li>
+                                <li class="list-group-item py-4 text-danger font-weight-bold">
+                                    <i class="far fa-clock"></i>
+                                    {{program.school.type}}
+                                </li>
+                                <li class="list-group-item py-4 rounded-pill">
+                                    <i class="fas fa-phone-alt"></i>
+                                    +123456789
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-9 col-sm-6 col-6 pl-5">
+                <div class="row">
+                    <div class="col mb-4">
+                        <h3>Program Information</h3>
+                    </div>
+
+                    <div class="col-3 text-right mb-4">
+                        <button class="btn btn-outline-danger btn-block">
+                            <i class="far fa-heart"></i>
+                            Bookmark
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="py-3">
+                            <fieldset class="border p-5">
+                                <legend class="text-orangedark w-auto">
+                                    <b class="mx-4">
+                                        Intakes
+                                    </b>
+                                </legend>
+                                <table class="table table-hover text-center">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-top-0 border-bottom-0">Start date</th>
+                                            <th class="border-top-0 border-bottom-0">Submission date</th>
+                                            <th class="border-top-0 border-bottom-0">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of program.intakes">
+                                            <td class="py-3" *ngIf="item.start_date!==null">{{item.start_date | date}}
+                                            </td>
+                                            <td class="py-3" *ngIf="item.submission!==null">{{item.submission | date}}
+                                            </td>
+                                            <td class="py-3" *ngIf="item.submission==null"><i
+                                                    class="far fa-question-circle text-warning" data-toggle="tooltip"
+                                                    data-placement="top" title="Unknown"></i></td>
+                                            <td *ngIf="item.start_date!==null">
+                                                <button class="btn btn-orangedark">apply</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </fieldset>
+                        </div>
+                        <div class="py-3">
+                            <fieldset class="border p-5">
+                                <legend class="text-orangedark w-auto">
+                                    <b class="mx-4">
+                                        Cost
+                                    </b>
+                                </legend>
+                                <table class="table table-hover text-center">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-top-0 border-bottom-0">Tuition</th>
+                                            <th class="border-top-0 border-bottom-0">fee</th>
+                                            <th class="border-top-0 border-bottom-0">Cost of living</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="py-3 text-primary" *ngIf="program.tuition_year!==null">
+                                                {{program.tuition_year | currency}}
+                                            </td>
+                                            <td class="py-3 text-primary" *ngIf="program.fee!==null">
+                                                {{program.fee | currency}}
+                                            </td>
+                                            <td class="py-3 text-primary" *ngIf="program.cost_living_year!==null">
+                                                {{program.cost_living_year | currency}}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </fieldset>
+                        </div>
+                        <div class="py-4 px-3">
+                            <div class="row">
+                                <div class="col-12 text-dark">
+                                    <h4>
+                                        Specification
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center px-1">
+                                <div class="col-3 bg-ice p-4 mr-3 my-3 border-radius-10">
+                                    Degree
+                                </div>
+                                <div class="col-8 bg-ice p-4 ml-3 my-3 border-radius-10">
+                                    Bachelor
+                                </div>
+                                <div class="col-3 bg-ice p-4 mr-3 border-radius-10">
+                                    Length of program
+                                </div>
+                                <div class="col-8 bg-ice p-4 ml-3 border-radius-10">
+                                    {{program.length}} Month
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-block btn-orangedark my-5">
+                            <b>
+                                apply free
+                            </b>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
