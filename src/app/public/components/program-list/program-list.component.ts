@@ -41,6 +41,14 @@ export class ProgramListComponent implements OnInit {
     type: {
       value: '',
       result: null
+    },
+    tuition: {
+      min: 0,
+      max: 0
+    },
+    costInYear: {
+      min: 0,
+      max: 0
     }
   }
 
@@ -57,8 +65,11 @@ export class ProgramListComponent implements OnInit {
     active: false,
     total: 0,
     pageSize: 12,
-    pageIndex: 1,
-    opt: this.queryParams.opt == undefined ? null : JSON.parse(this.queryParams.opt)
+    pageIndex: this.queryParams.page == undefined ? 1 : this.queryParams.page,
+    free: this.queryParams.free == undefined ? null : JSON.parse(this.queryParams.free),
+    opt: this.queryParams.opt == undefined ? null : JSON.parse(this.queryParams.opt),
+    tuition: null,
+    living: null
   }
 
   constructor(private service: PublicService,
@@ -86,9 +97,37 @@ export class ProgramListComponent implements OnInit {
         const body = response.body;
         if (body.return == 200) {
           this.lengths = body.data;
+          this.inputes.length.result = this.queryParams.length == undefined ? null : this.queryParams.length;
+
           if (then != null) {
             then();
           }
+        }
+      }
+    });
+  }
+
+  getTuition() {
+    this.service.tuition().subscribe((response: any) => {
+      if (response.status == 200) {
+        const body = response.body;
+        if (body.return == 200) {
+          const data = body.data;
+          this.inputes.tuition.min = data.min;
+          this.inputes.tuition.max = data.max;
+        }
+      }
+    });
+  }
+
+  getCostInYear() {
+    this.service.costInYear().subscribe((response: any) => {
+      if (response.status == 200) {
+        const body = response.body;
+        if (body.return == 200) {
+          const data = body.data;
+          this.inputes.costInYear.min = data.min;
+          this.inputes.costInYear.max = data.max;
         }
       }
     });
@@ -100,6 +139,8 @@ export class ProgramListComponent implements OnInit {
         const body = response.body;
         if (body.return == 200) {
           this.categories = body.data;
+          this.inputes.category.result = this.queryParams.category == undefined ? this.categories[0]['name'] : this.queryParams.category;
+          this.inputes.degree.result = this.queryParams.degree == undefined ? null : this.queryParams.degree;
           if (then != null) {
             then();
           }
@@ -110,8 +151,14 @@ export class ProgramListComponent implements OnInit {
 
   getPrograms(filter: any) {
     const params = {
+      category: this.inputes.category.result,
+      degree: this.inputes.degree.result,
+      length: this.inputes.length.result,
       page: filter.pageIndex,
-      opt: filter.opt
+      opt: filter.opt,
+      free: filter.free,
+      living: filter.living,
+      tuition: filter.tuition
     }
 
     this.service.programs(params).subscribe((response: any) => {
@@ -119,48 +166,81 @@ export class ProgramListComponent implements OnInit {
         const body = response.body;
         if (body.return == 200) {
           this.programs = body.data;
-
           setTimeout(() => {
             this.filterModel.pageIndex = filter.pageIndex;
             this.filterModel.total = body.total;
             this.filterModel.active = true;
-          }, 500);
-          this.loading = false;
+            this.loading = false;
+          }, 1000);
+
         }
       }
     });
   }
 
-  pageChange(model: any) {
-    console.log('run from change')
-    this.loading = true;
-    this.filterModel.active = false;
+  pageChange(filter: any) {
     setTimeout(() => {
-      this.router.navigate(['.'], { relativeTo: this.route, queryParams: { page: model.pageIndex, opt: this.filterModel.opt } });
-      this.getPrograms(model);
+      if (this.queryParams.page != filter.pageIndex) {
+        this.loading = true;
+        this.filterModel.active = false;
+        this.router.navigate(['.'], {
+          relativeTo: this.route, queryParams: {
+            page: filter.pageIndex,
+            opt: filter.opt,
+            free: filter.free,
+            tuition: filter.tuition,
+            living: filter.living,
+            category: this.inputes.category.result,
+            degree: this.inputes.degree.result,
+            length: this.inputes.length.result
+          }
+        });
+        this.getPrograms(filter);
+      }
     }, 100);
   }
 
   filter() {
-    setTimeout(() => {
-      this.router.navigate(['.'], { relativeTo: this.route, queryParams: { page: 1, opt: this.filterModel.opt } });
-      this.getPrograms(this.filterModel);
-    }, 100);
+    this.loading = true;
 
+    let queryParams = {
+      page: 1,
+      category: this.inputes.category.result,
+      degree: this.inputes.degree.result,
+      length: this.inputes.length.result
+    };
+
+    if (this.filterModel.tuition != null) {
+      queryParams['tuition'] = this.filterModel.tuition;
+    }
+
+    if (this.filterModel.living != null) {
+      queryParams['living'] = this.filterModel.living;
+    }
+
+    if (this.filterModel.opt != null) {
+      queryParams['opt'] = this.filterModel.opt;
+    }
+
+    if (this.filterModel.free != null) {
+      queryParams['free'] = this.filterModel.free;
+    }
+
+    this.router.navigate(['.'], {
+      relativeTo: this.route, queryParams: queryParams
+    });
+
+    this.filterModel.pageIndex = queryParams.page;
+    this.getPrograms(this.filterModel);
   }
 
   ngOnInit() {
-
     this.getCountries(() => {
       this.getLength(() => {
         this.getCategories(() => {
-          if (this.queryParams.page == undefined || this.queryParams.page == 'NaN') {
-            console.log('run from int')
-            this.getPrograms(1)
-          } else {
-            this.filterModel.pageIndex = this.queryParams.page;
-            this.pageChange(this.filterModel);
-          }
+          this.getPrograms(this.filterModel);
+          this.getTuition();
+          this.getCostInYear();
         });
       });
     });

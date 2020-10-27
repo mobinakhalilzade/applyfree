@@ -28,6 +28,14 @@ export class PublicService {
         return this.http.readApi.get('categories');
     }
 
+    tuition() {
+        return this.http.readApi.get('tuition');
+    }
+
+    costInYear() {
+        return this.http.readApi.get('costInYear');
+    }
+
     contracts(data: any) {
         return this.http.readApi.getByParam('contracts/search', data);
     }
