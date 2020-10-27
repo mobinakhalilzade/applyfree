@@ -10,21 +10,15 @@
                 </div>
             </div>
         </div>
-        <div class="col-2">
+        <div class="col-2 ml-auto">
             <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" id="opt" [(ngModel)]="filterModel.opt" (change)="filter()">
                 <label class="custom-control-label" for="opt">OPT</label>
             </div>
         </div>
-        <div class="col-2 pr-4">
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="admissionFree">
-                <label class="custom-control-label" for="admissionFree">Admission free</label>
-            </div>
-        </div>
         <div class="col-2">
             <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="freeApplications">
+                <input type="checkbox" class="custom-control-input" id="freeApplications" [(ngModel)]="filterModel.free" (change)="filter()">
                 <label class="custom-control-label" for="freeApplications">Free applications</label>
             </div>
         </div>
@@ -36,15 +30,22 @@
             <div class="dropdown">
                 <button class="btn btn-outline-secondary dropdown-toggle btn-block btn-sm text-left" type="button" id="category" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span>
-                        {{inputes.category.result ? inputes.category.result.name  : 'Program Category'}}
+                        {{inputes.category.result ? inputes.category.result  : 'Program Category'}}
                     </span>
                 </button>
                 <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="category">
                     <div class="position-sticky top-0 bg-white">
                         <input type="text" class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0" [(ngModel)]="inputes.category.value" placeholder="search ...">
                     </div>
-                    <div class="dropdown-item pointer text-truncate text-capitalize px-2" (click)="inputes.category.result=item" [title]="item.name" *ngFor="let item of categories | filter :inputes.category.value;">
-                        {{item.name}}
+                    <div class="dropdown-item pointer text-truncate text-capitalize px-2" [title]="category.name" *ngFor="let category of categories">
+                        <div (click)="inputes.category.result = category.name;filter()">
+                            {{category.name}}
+                        </div>
+                        <ul *ngIf="category.categories.length > 0" class="bg-dark border-radius-5 list-unstyled m-0 pl-3 py-3">
+                            <li *ngFor="let subcategory of category.categories | filter :inputes.category.value;" class="text-truncate" [title]="category.name + ' - ' + subcategory.name" (click)="inputes.category.result = subcategory.name;filter()">
+                                {{subcategory.name}}
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -52,30 +53,31 @@
         <div class="col-3">
             <div class="dropdown">
                 <button class="btn btn-outline-secondary dropdown-toggle text-left btn-block btn-sm" type="button" id="degree" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span>
-                        {{inputes.degree.result ? inputes.degree.result.name : 'Degree'}}
+                    <span class="text-truncate">
+                        <span *ngIf="inputes.degree.result">{{inputes.degree.result | degree}}</span>
+                        <span *ngIf="!inputes.degree.result">Degree</span>
                     </span>
                 </button>
                 <div class="dropdown-menu dropdown-filter w-100 py-2" aria-labelledby="degree">
-                    <div class="dropdown-item pointer text-truncate px-2">
+                    <div class="dropdown-item pointer text-truncate px-2" (click)="inputes.degree.result = 1;filter()">
                         <span>English as Second Language (ESL)</span>
                     </div>
-                    <div class="dropdown-item pointer text-truncate px-2">
-                        <span>1Year Post-Secondary Certificate</span>
+                    <div class="dropdown-item pointer text-truncate px-2" (click)="inputes.degree.result = 2;filter()">
+                        <span>1 Year Post-Secondary Certificate</span>
                     </div>
-                    <div class="dropdown-item pointer text-truncate px-2">
-                        <span>2-Year Undergraduate Diploma</span>
+                    <div class="dropdown-item pointer text-truncate px-2" (click)="inputes.degree.result = 3;filter()">
+                        <span>2 Year Undergraduate Diploma</span>
                     </div>
-                    <div class="dropdown-item pointer text-truncate px-2">
-                        <span>3-Year Undergraduate Advanced Diploma</span>
+                    <div class="dropdown-item pointer text-truncate px-2" (click)="inputes.degree.result = 4;filter()">
+                        <span>3 Year Undergraduate Advanced Diploma</span>
                     </div>
-                    <div class="dropdown-item pointer text-truncate px-2">
-                        <span>3-Year Bachelor's Degree</span>
+                    <div class="dropdown-item pointer text-truncate px-2" (click)="inputes.degree.result = 5;filter()">
+                        <span>3 Year Bachelor's Degree</span>
                     </div>
-                    <div class="dropdown-item pointer text-truncate px-2">
-                        <span>4-Year Bachelor's Degree</span>
+                    <div class="dropdown-item pointer text-truncate px-2" (click)="inputes.degree.result = 6;filter()">
+                        <span>4 Year Bachelor's Degree</span>
                     </div>
-                    <div class="dropdown-item pointer text-truncate px-2">
+                    <div class="dropdown-item pointer text-truncate px-2" (click)="inputes.degree.result = 7;filter()">
                         <span>PostGraduate Certificate / Master's Degree</span>
                     </div>
                 </div>
@@ -85,14 +87,14 @@
             <div class="dropdown">
                 <button class="btn btn-outline-secondary dropdown-toggle text-left btn-block btn-sm" type="button" id="length" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span>
-                        {{inputes.length.result ? inputes.length.result.name : 'Length of program'}}
+                        {{inputes.length.result ? inputes.length.result + 'month' : 'Program length'}}
                     </span>
                 </button>
                 <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="length">
                     <div class="position-sticky top-0 bg-white">
                         <input type="text" class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0" [(ngModel)]="inputes.length.value" placeholder="search ...">
                     </div>
-                    <div class="dropdown-item pointer text-truncate px-2" (click)="inputes.length.result=item" *ngFor="let item of lengths">
+                    <div class="dropdown-item pointer text-truncate px-2" (click)="inputes.length.result = item.months;filter()" *ngFor="let item of lengths">
                         {{item.length}} {{item.type}}
                     </div>
                 </div>
@@ -102,90 +104,125 @@
             <button type="button" class="btn btn-orangedark btn-sm" data-toggle="modal" data-target="#advanceFilters">Advance filters</button>
         </div>
 
-        <div class="col-12">
-            <span class="badge badge-dark" *ngIf="filterModel.opt != null">
-                OPT
-                <i class="fa fa-times ml-2" (click)="filterModel.opt = null;filter()"></i>
+        <!-- conditions -->
+        <div class="col-12 mt-3">
+            <span class="badge badge-secondary font-weight-light pointer" *ngIf="inputes.category.result != null">
+                search in <span class="text-warning font-italic">{{inputes.category.result}} </span> category
+            </span>
+
+            <small *ngIf="filterModel.opt != null"> WHERE </small>
+
+            <span class="badge badge-secondary font-weight-light pointer" title="click to clear this filter" *ngIf="filterModel.opt != null" (click)="filterModel.opt = null;filter()">
+                <i class="fa fa-times mr-2"></i>
+                schools <span class="text-warning font-italic">{{filterModel.opt ? 'has': 'has not'}} </span> OPT option
+            </span>
+
+            <small *ngIf="filterModel.free != null"> AND </small>
+
+            <span class="badge badge-secondary font-weight-light pointer" title="click to clear this filter" *ngIf="filterModel.free != null" (click)="filterModel.free = null;filter()">
+                <i class="fa fa-times mr-2"></i>
+                <span *ngIf="filterModel.opt == null">find</span> <span class="text-warning font-italic">{{filterModel.free ? 'Free': 'Primary'}} </span> programs
+            </span>
+
+            <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="inputes.degree.result != null" (click)="inputes.degree.result = null;filter()">
+                <i class="fa fa-times mr-2"></i>
+                degree: <span class="text-warning font-italic">{{inputes.degree.result | degree}} </span>
+            </span>
+
+            <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="inputes.length.result != null" (click)="inputes.length.result = null;filter()">
+                <i class="fa fa-times mr-2"></i>
+                length: <span class="text-warning font-italic">{{inputes.length.result}} month</span>
             </span>
         </div>
     </div>
 
-    <div class="row mb-5">
+
+    <div class="row" *ngIf="loading">
+        <div class="col-12 text-center">
+            Loading...
+        </div>
+    </div>
+
+    <div class="row" *ngIf="!loading && filterModel.total == 0">
         <div class="col-12">
-            <div class="dropdown">
-                <button class="btn btn-outline-secondary">
+            <div class="alert alert-primary">
+                We are sorry, there is no result with your filter; please customize filters again
+            </div>
+        </div>
+    </div>
+
+    <ng-container *ngIf="!loading && filterModel.total > 0">
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-outline-secondary">
                     <i class="fas fa-sort-amount-up-alt dropdown-toggle" data-toggle="dropdown"></i>
                 </button>
-                <span class="px-2 text-muted">
+                    <span class="px-2 text-muted">
                     Sorted by submission Deadline
                 </span>
-                <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="sort">
-                    <div class="position-sticky top-0 bg-white">
-                        <input type="text" class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0" placeholder="search ...">
-                    </div>
-                    <div class="dropdown-item pointer text-truncate text-capitalize px-2">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="submissionSort">
-                            <label class="custom-control-label" for="submissionSort"> sorted by submission
+                    <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="sort">
+                        <div class="position-sticky top-0 bg-white">
+                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0" placeholder="search ...">
+                        </div>
+                        <div class="dropdown-item pointer text-truncate text-capitalize px-2">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="submissionSort">
+                                <label class="custom-control-label" for="submissionSort"> sorted by submission
                                 Deadline</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="dropdown-item pointer text-truncate text-capitalize px-2">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="tuitionSort">
-                            <label class="custom-control-label" for="tuitionSort">sorted by Tuition</label>
+                        <div class="dropdown-item pointer text-truncate text-capitalize px-2">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="tuitionSort">
+                                <label class="custom-control-label" for="tuitionSort">sorted by Tuition</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="dropdown-item pointer text-truncate text-capitalize px-2">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="costSort">
-                            <label class="custom-control-label" for="costSort">sorted by cost of living</label>
+                        <div class="dropdown-item pointer text-truncate text-capitalize px-2">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="costSort">
+                                <label class="custom-control-label" for="costSort">sorted by cost of living</label>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="row">
-        <div class="col-12 text-center" *ngIf="loading">
-            Loading...
-        </div>
-        <ng-container *ngIf="!loading">
+        <div class="row">
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 mb-5" *ngFor="let item of programs">
-                <a class="card shadow h-100" [routerLink]="['/program', item.slug]">
-                    <img [src]="'http://192.168.3.65/applyfree/img/logo/'+item.school.logo" class="z-index-1 shadow bg-white border-radius-full" [alt]="item.title">
+                <a class="card shadow h-100" [routerLink]="['/program', item.program.slug]">
+                    <img [src]="'http://192.168.3.65/applyfree/img/logo/'+item.program.school.logo" class="z-index-1 shadow bg-white border-radius-full" [alt]="item.program.school.title">
                     <div class="row no-gutters h-100">
                         <div class="col-2 text-center text-muted">
                             <ul class="nav flex-column h-100 nav-fill">
                                 <li class="nav-item border-bottom pt-4">
                                     <div>
-                                        <small>{{item.school.type}}</small>
+                                        <small>{{item.program.school.type}}</small>
                                     </div>
                                 </li>
                                 <li class="nav-item border-bottom">
                                     <i class="fas fa-city"></i>
                                     <div>
-                                        <small>{{item.school.country}}</small>
+                                        <small>{{item.program.school.country}}</small>
                                     </div>
                                 </li>
                                 <li class="nav-item">
                                     <i class="fas fa-dollar-sign"></i>
                                     <div>
-                                        <small>{{item.school.city}}</small>
+                                        <small>{{item.program.school.city}}</small>
                                     </div>
                                 </li>
-                                <li class="nav-item border-top" *ngIf="item.school.opt">
+                                <li class="nav-item border-top" *ngIf="item.program.school.opt">
                                     <div>
                                         <small>OPT</small>
                                     </div>
                                 </li>
                             </ul>
                         </div>
-                        <div class="col-10 py-3 text-center border-left" [title]="item.title">
+                        <div class="col-10 py-3 text-center border-left" [title]="item.program.title">
                             <div class="mb-3">
                                 <span class="text-truncate text-truncate-2-line text-dark px-3 text-left">
-                                        {{item.title}}
+                                        {{item.program.title}}
                                     </span>
                             </div>
                             <div class="mb-3">
@@ -198,30 +235,30 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <th class="p-3 text-orangedark">{{item.tuition_year | currency}}</th>
+                                            <th class="p-3 text-orangedark">{{item.program.tuition_year | currency}}</th>
                                             <th class="p-3 border-left">
-                                                <span class="text-orangedark" *ngIf="item.fee > 0">{{item.fee | currency}}</span>
-                                                <span class="text-success" *ngIf="item.fee == 0">Free</span>
+                                                <span class="text-orangedark" *ngIf="item.program.fee > 0">{{item.program.fee | currency}}</span>
+                                                <span class="text-success" *ngIf="item.program.fee == 0">Free</span>
                                             </th>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                             <div class="position-relative z-index-1">
-                                <a href="hello" class="btn btn-orangedark btn-sm text-truncate w-75" [title]="item.school.title">
-                                    {{item.school.title}}
+                                <a href="hello" class="btn btn-orangedark btn-sm text-truncate w-75" [title]="item.program.school.title">
+                                    {{item.program.school.title}}
                                 </a>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
-        </ng-container>
-    </div>
-    <div class="row justify-content-center">
-        <ngb-pagination *ngIf="!loading" (pageChange)="filterModel.active ? pageChange(filterModel) : null" [collectionSize]="filterModel.total" [pageSize]="filterModel.pageSize" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" [(page)]="filterModel.pageIndex"
-            [directionLinks]="false"></ngb-pagination>
-    </div>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination *ngIf="!loading" (pageChange)="filterModel.active ? pageChange(filterModel) : null" [collectionSize]="filterModel.total" [pageSize]="filterModel.pageSize" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" [(page)]="filterModel.pageIndex"
+                [directionLinks]="false"></ngb-pagination>
+        </div>
+    </ng-container>
 
     <!-- Modal -->
     <div class="modal fade" id="advanceFilters" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="advanceFiltersLabel" aria-hidden="true">
@@ -335,18 +372,18 @@
                     <form>
                         <div class="row my-2">
                             <div class="col">
-                                <div class="form-group">
+                                <div class="form-group" *ngIf="inputes.tuition.max > 0">
                                     <label for="formControlRange" class="text-muted">Tuition</label>
-                                    <input type="range" class="form-control-range" id="formControlRange">
-                                    <span class="badge badge-success float-right font-weight-lighter p-1">Tuition</span>
+                                    <input type="range" class="form-control-range" id="formControlRange" [min]="inputes.tuition.min" [max]="inputes.tuition.max" [(ngModel)]="filterModel.tuition" [ngModelOptions]="{standalone: true}">
+                                    <span class="badge badge-success float-right font-weight-lighter p-1">Tuition {{inputes.tuition.min}} '<=' {{filterModel.tuition}} </span>
                                 </div>
                             </div>
                             <div class="col">
-                                <div class="form-group">
+                                <div class="form-group" *ngIf="inputes.costInYear.max > 0">
                                     <label for="formControlRangee" class="text-muted">Cost of Living</label>
-                                    <input type="range" class="form-control-range" id="formControlRangee">
+                                    <input type="range" class="form-control-range" id="formControlRangee" [min]="inputes.costInYear.min" [max]="inputes.costInYear.max" [(ngModel)]="filterModel.living" [ngModelOptions]="{standalone: true}">
                                     <span class="badge badge-success float-right font-weight-lighter p-1">Cost of
-                                        Living</span>
+                                        Living {{inputes.costInYear.min}} '<=' {{filterModel.living}}</span>
                                 </div>
                             </div>
                         </div>
@@ -354,7 +391,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Apply filters</button>
+                    <button type="button" class="btn btn-primary" (click)="filter()">Apply filters</button>
                 </div>
             </div>
         </div>

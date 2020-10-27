@@ -17,3 +17,14 @@ a {
     display: grid;
     align-content: center;
 }
+
+.dropdown-item,
+.dropdown-item:active,
+.dropdown-item:hover {
+    background-color: var(--secondary);
+    color: #fff;
+}
+
+.dropdown-item ul li:hover {
+    color: var(--gray);
+}
