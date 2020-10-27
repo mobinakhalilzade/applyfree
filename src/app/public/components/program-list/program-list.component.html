@@ -33,16 +33,16 @@
                         {{inputes.category.result ? inputes.category.result  : 'Program Category'}}
                     </span>
                 </button>
-                <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="category">
+                <div class="dropdown-menu dropdown-filter w-100 py-0 border-radius-10" aria-labelledby="category">
                     <div class="position-sticky top-0 bg-white">
                         <input type="text" class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0" [(ngModel)]="inputes.category.value" placeholder="search ...">
                     </div>
-                    <div class="dropdown-item pointer text-truncate text-capitalize px-2" [title]="category.name" *ngFor="let category of categories">
-                        <div (click)="inputes.category.result = category.name;filter()">
+                    <div class="dropdown-item pointer text-truncate text-capitalize bg-ice px-2" [title]="category.name" *ngFor="let category of categories">
+                        <div (click)="inputes.category.result = category.name;filter()" class="bg-secondary border-radius-10 letter-space-3 text-center text-light mb-2 py-1">
                             {{category.name}}
                         </div>
-                        <ul *ngIf="category.categories.length > 0" class="bg-dark border-radius-5 list-unstyled m-0 pl-3 py-3">
-                            <li *ngFor="let subcategory of category.categories | filter :inputes.category.value;" class="text-truncate" [title]="category.name + ' - ' + subcategory.name" (click)="inputes.category.result = subcategory.name;filter()">
+                        <ul *ngIf="category.categories.length > 0" class="border-radius-5 list-unstyled m-0 px-3 py-2">
+                            <li *ngFor="let subcategory of category.categories | filter :inputes.category.value;" class="text-truncate py-1" [title]="category.name + ' - ' + subcategory.name" (click)="inputes.category.result = subcategory.name;filter()">
                                 {{subcategory.name}}
                             </li>
                         </ul>
@@ -58,26 +58,26 @@
                         <span *ngIf="!inputes.degree.result">Degree</span>
                     </span>
                 </button>
-                <div class="dropdown-menu dropdown-filter w-100 py-2" aria-labelledby="degree">
-                    <div class="dropdown-item pointer text-truncate px-2" (click)="inputes.degree.result = 1;filter()">
+                <div class="dropdown-menu dropdown-filter w-100 border-radius-10 bg-ice" aria-labelledby="degree">
+                    <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 1;filter()">
                         <span>English as Second Language (ESL)</span>
                     </div>
-                    <div class="dropdown-item pointer text-truncate px-2" (click)="inputes.degree.result = 2;filter()">
+                    <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 2;filter()">
                         <span>1 Year Post-Secondary Certificate</span>
                     </div>
-                    <div class="dropdown-item pointer text-truncate px-2" (click)="inputes.degree.result = 3;filter()">
+                    <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 3;filter()">
                         <span>2 Year Undergraduate Diploma</span>
                     </div>
-                    <div class="dropdown-item pointer text-truncate px-2" (click)="inputes.degree.result = 4;filter()">
+                    <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 4;filter()">
                         <span>3 Year Undergraduate Advanced Diploma</span>
                     </div>
-                    <div class="dropdown-item pointer text-truncate px-2" (click)="inputes.degree.result = 5;filter()">
+                    <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 5;filter()">
                         <span>3 Year Bachelor's Degree</span>
                     </div>
-                    <div class="dropdown-item pointer text-truncate px-2" (click)="inputes.degree.result = 6;filter()">
+                    <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 6;filter()">
                         <span>4 Year Bachelor's Degree</span>
                     </div>
-                    <div class="dropdown-item pointer text-truncate px-2" (click)="inputes.degree.result = 7;filter()">
+                    <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 7;filter()">
                         <span>PostGraduate Certificate / Master's Degree</span>
                     </div>
                 </div>
@@ -90,11 +90,11 @@
                         {{inputes.length.result ? inputes.length.result + 'month' : 'Program length'}}
                     </span>
                 </button>
-                <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="length">
+                <div class="dropdown-menu dropdown-filter w-100 py-0 border-radius-10 bg-ice" aria-labelledby="length">
                     <div class="position-sticky top-0 bg-white">
                         <input type="text" class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0" [(ngModel)]="inputes.length.value" placeholder="search ...">
                     </div>
-                    <div class="dropdown-item pointer text-truncate px-2" (click)="inputes.length.result = item.months;filter()" *ngFor="let item of lengths">
+                    <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.length.result = item.months;filter()" *ngFor="let item of lengths">
                         {{item.length}} {{item.type}}
                     </div>
                 </div>
@@ -288,11 +288,11 @@
                                         {{inputes.country.result ? inputes.country.result.name : 'Choose...'}}
                                     </span>
                                 </button>
-                                <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="school">
+                                <div class="dropdown-menu dropdown-filter w-100 py-0 border-radius-10 bg-ice" aria-labelledby="school">
                                     <div class="position-sticky top-0 bg-white">
                                         <input type="text" class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0" [(ngModel)]="inputes.country.value" placeholder="Country" autocomplete="off">
                                     </div>
-                                    <div class="dropdown-item pointer text-truncate px-2" (click)="inputes.country.result = country" *ngFor="let country of countries | filter : inputes.country.value">
+                                    <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.country.result = country" *ngFor="let country of countries | filter : inputes.country.value">
                                         {{country.name}}
                                     </div>
                                 </div>
@@ -308,11 +308,11 @@
                                         {{inputes.city.result ? inputes.city.result : 'Choose...'}}
                                     </span>
                                 </button>
-                                <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="city">
+                                <div class="dropdown-menu dropdown-filter w-100 py-0 border-radius-10 bg-ice" aria-labelledby="city">
                                     <div class="position-sticky top-0 bg-white">
                                         <input type="text" class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0" [(ngModel)]="inputes.city.value" placeholder="City" autocomplete="off">
                                     </div>
-                                    <div class="dropdown-item pointer text-truncate px-2" *ngFor="let city of inputes.country.result.cities" (click)="inputes.city.result = city">
+                                    <div class="dropdown-item pointer text-truncate px-3 py-2" *ngFor="let city of inputes.country.result.cities" (click)="inputes.city.result = city">
                                         {{city}}
                                     </div>
                                 </div>
@@ -375,7 +375,7 @@
                                 <div class="form-group" *ngIf="inputes.tuition.max > 0">
                                     <label for="formControlRange" class="text-muted">Tuition</label>
                                     <input type="range" class="form-control-range" id="formControlRange" [min]="inputes.tuition.min" [max]="inputes.tuition.max" [(ngModel)]="filterModel.tuition" [ngModelOptions]="{standalone: true}">
-                                    <span class="badge badge-success float-right font-weight-lighter p-1">Tuition {{inputes.tuition.min}} '<=' {{filterModel.tuition}} </span>
+                                    <span class="badge badge-success float-right font-weight-lighter p-1">Tuition {{inputes.tuition.min}} <i class="fas fa-less-than-equal px-1"></i> {{filterModel.tuition}} </span>
                                 </div>
                             </div>
                             <div class="col">
@@ -383,7 +383,7 @@
                                     <label for="formControlRangee" class="text-muted">Cost of Living</label>
                                     <input type="range" class="form-control-range" id="formControlRangee" [min]="inputes.costInYear.min" [max]="inputes.costInYear.max" [(ngModel)]="filterModel.living" [ngModelOptions]="{standalone: true}">
                                     <span class="badge badge-success float-right font-weight-lighter p-1">Cost of
-                                        Living {{inputes.costInYear.min}} '<=' {{filterModel.living}}</span>
+                                        Living {{inputes.costInYear.min}} <i class="fas fa-less-than-equal px-1"></i> {{filterModel.living}}</span>
                                 </div>
                             </div>
                         </div>

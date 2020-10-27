@@ -18,13 +18,13 @@ a {
     align-content: center;
 }
 
-.dropdown-item,
 .dropdown-item:active,
 .dropdown-item:hover {
-    background-color: var(--secondary);
+    background-color: var(--dark);
     color: #fff;
 }
 
 .dropdown-item ul li:hover {
     color: var(--gray);
 }
+
