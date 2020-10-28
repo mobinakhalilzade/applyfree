@@ -4,30 +4,8 @@
         "data": [
             {
                 "id": 1,
-                "link": "/dashboard/contracts",
-                "name": "My contracts",
-                "menus": [
-                    {
-                        "title": "test",
-                        "link": "/dashboard/contracts/test"
-                    }
-                ]
-            },
-            {
-                "id": 2,
-                "link": "/dashboard/reserved",
-                "name": "My reserved contracts",
-                "menus": [
-                    {
-                        "title": "lorem",
-                        "link": "/dashboard/reserved/lorem"
-                    }
-                ]
-            },
-            {
-                "id": 3,
                 "link": "/dashboard/signatures",
-                "name": "My signatures",
+                "name": "My programs",
                 "menus": [
                     {
                         "title": "ipsum",
@@ -36,7 +14,7 @@
                 ]
             },
             {
-                "id": 4,
+                "id": 2,
                 "link": "/dashboard/bookmarks",
                 "name": "My bookmarks",
                 "menus": [
@@ -47,7 +25,7 @@
                 ]
             },
             {
-                "id": 5,
+                "id": 3,
                 "link": "/dashboard/payments",
                 "name": "My payments",
                 "menus": [
