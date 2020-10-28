@@ -201,6 +201,8 @@ export class ProgramListComponent implements OnInit {
   }
 
   filter() {
+
+
     this.loading = true;
 
     let queryParams = {

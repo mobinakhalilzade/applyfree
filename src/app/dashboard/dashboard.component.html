@@ -1,17 +1,14 @@
 <div class="container-fluid h-100" *ngIf="user">
     <div class="row">
-        <div class="col-12 px-0 bg-orangedark">
-            <nav class="container navbar navbar-expand-lg pt-4 pb-0">
-                <!-- <a class="navbar-brand text-light" href="#">
-                    <img src="assets/images/logo-header.png" width="70" height="70" alt="applyfree">
-                </a> -->
+        <div class="col-12 px-0 pt-2 bg-orangedark">
+            <nav class="container navbar navbar-expand-lg pb-0">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mt-2 mt-lg-0">
-                        <li class="nav-item mr-2" *ngFor="let item of menus">
+                        <li class="nav-item mr-4" *ngFor="let item of menus">
                             <a class="nav-link py-3 border-radius-x-5"
                                 routerLinkActive="active" [routerLink]="item.link" (click)="subMenus = item.menus">
                                 {{item.name}}
@@ -29,7 +26,7 @@
         </div>
     </div>
 
-    <div class="row shadow">
+    <!-- <div class="row shadow">
         <div class="col-12 px-0 bg-white">
             <nav class="container navbar navbar-expand-lg">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -41,7 +38,7 @@
                 </ul>
             </nav>
         </div>
-    </div>
+    </div> -->
 
     <div class="container">
         <router-outlet></router-outlet>
