@@ -268,7 +268,6 @@ export class ProgramListComponent implements OnInit {
 
   filter() {
 
-
     this.loading = true;
     console.log(this.inputes.city)
     let queryParams = {

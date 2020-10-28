@@ -44,12 +44,16 @@
     </div>
     <div class="container mt-5">
         <div class="row my-4">
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-10 col-10 order-xl-first order-lg-first order-md-first order-sm-last order-last">
+            <div
+                class="col-xl-3 col-lg-3 col-md-4 col-sm-10 col-10 order-xl-first order-lg-first order-md-first order-sm-last order-last">
                 <div class="row">
                     <div class="col-12">
                         <div class="card shadow border-0 border-radius-20">
-                            <img class="img-fluid mx-auto w-75"
-                                [src]="'http://192.168.3.65/applyfree/img/logo/'+program.school.logo">
+                            <img *ngIf="program.school.logo"
+                                [src]="'http://192.168.3.65/applyfree/img/logo/'+program.school.logo"
+                                class="img-fluid mx-auto w-75" [alt]="program.school.title">
+                            <img *ngIf="!program.school.logo" src="assets/images/new.png" class="img-fluid mx-auto w-75"
+                                [alt]="program.school.title">
                             <div class="card-body">
                                 <button class="btn btn-success btn-block">Accredition : Yes</button>
                             </div>
@@ -76,7 +80,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-9 col-lg-9 col-md-8 col-sm-10 col-10 order-xl-last order-lg-last order-md-last order-sm-first order-first pl-5">
+            <div
+                class="col-xl-9 col-lg-9 col-md-8 col-sm-10 col-10 order-xl-last order-lg-last order-md-last order-sm-first order-first pl-5">
                 <div class="row">
                     <div class="col mb-4">
                         <h3>Program Information</h3>
@@ -116,7 +121,8 @@
                                                     class="far fa-question-circle text-warning" data-toggle="tooltip"
                                                     data-placement="top" title="Unknown"></i></td>
                                             <td *ngIf="item.start_date!==null">
-                                                <a class="btn btn-orangedark" [routerLink]="['/contract', item.id]">apply</a>
+                                                <a class="btn btn-orangedark"
+                                                    [routerLink]="['/contract', item.id]">apply</a>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -164,16 +170,20 @@
                                             </b>
                                         </legend>
                                         <div class="row justify-content-center px-1">
-                                            <div class="col-4 d-flex bg-ice py-3 mr-3 my-3 align-self-center border-radius-10">
+                                            <div
+                                                class="col-4 d-flex bg-ice py-3 mr-3 my-3 align-self-center border-radius-10">
                                                 Degree
                                             </div>
-                                            <div class="col-7 d-flex py-3 align-self-center bg-ice ml-3 my-3 border-radius-10">
-                                               {{program.degree | degree}}
+                                            <div
+                                                class="col-7 d-flex py-3 align-self-center bg-ice ml-3 my-3 border-radius-10">
+                                                {{program.degree | degree}}
                                             </div>
-                                            <div class="col-4 d-flex py-3 align-self-center bg-ice mr-3 mb-3 border-radius-10">
+                                            <div
+                                                class="col-4 d-flex py-3 align-self-center bg-ice mr-3 mb-3 border-radius-10">
                                                 Length of program
                                             </div>
-                                            <div class="col-7 d-flex py-3 align-self-center bg-ice ml-3 mb-3 border-radius-10">
+                                            <div
+                                                class="col-7 d-flex py-3 align-self-center bg-ice ml-3 mb-3 border-radius-10">
                                                 {{program.length}} Month
                                             </div>
                                         </div>
