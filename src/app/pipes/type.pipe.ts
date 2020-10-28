@@ -5,9 +5,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class TypePipe implements PipeTransform {
 
-  transform(value: number): string {
-    switch (value) {
-
+  transform(value: any): string {
+    const x = parseInt(value);
+    switch (x) {
       case 1:
         return "University";
 

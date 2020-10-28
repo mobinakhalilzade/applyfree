@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PublicService } from '../../public.service';
 import { ActivatedRoute, Router } from '@angular/router';
-
+declare var $: any;
 @Component({
   selector: 'app-program-list',
   templateUrl: './program-list.component.html',
@@ -57,6 +57,8 @@ export class ProgramListComponent implements OnInit {
   countries: any;
   lengths: any;
   categories: any;
+  schools: any;
+  schoolsType: any;
   programs: any;
 
   queryParams = this.route.snapshot.queryParams;
@@ -68,13 +70,20 @@ export class ProgramListComponent implements OnInit {
     pageIndex: this.queryParams.page == undefined ? 1 : this.queryParams.page,
     free: this.queryParams.free == undefined ? null : JSON.parse(this.queryParams.free),
     opt: this.queryParams.opt == undefined ? null : JSON.parse(this.queryParams.opt),
-    tuition: null,
-    living: null
+    tuition: this.queryParams.tuition == undefined ? null : this.queryParams.tuition,
+    living: this.queryParams.living == undefined ? null : this.queryParams.living,
+    search: this.queryParams.search == undefined ? null : this.queryParams.search
   }
 
   constructor(private service: PublicService,
     private route: ActivatedRoute,
     private router: Router) {
+  }
+
+  search() {
+    this.router.navigate(['.'], {
+      relativeTo: this.route, queryParams: { search: this.filterModel.search }
+    });
   }
 
   getCountries(then = null) {
@@ -83,6 +92,17 @@ export class ProgramListComponent implements OnInit {
         const body = response.body;
         if (body.return == 200) {
           this.countries = body.data;
+          if (this.queryParams.country != undefined) {
+            const findCountry = this.countries.find(x => x.name == this.queryParams.country);
+            if (findCountry) {
+              this.inputes.country.result = findCountry;
+
+              if (this.queryParams.city != undefined) {
+                const findCity = findCountry.cities.find(x => x == this.queryParams.city);
+                this.inputes.city.result = findCity;
+              }
+            }
+          }
           if (then != null) {
             then();
           }
@@ -107,7 +127,7 @@ export class ProgramListComponent implements OnInit {
     });
   }
 
-  getTuition() {
+  getTuition(then = null) {
     this.service.tuition().subscribe((response: any) => {
       if (response.status == 200) {
         const body = response.body;
@@ -115,12 +135,15 @@ export class ProgramListComponent implements OnInit {
           const data = body.data;
           this.inputes.tuition.min = data.min;
           this.inputes.tuition.max = data.max;
+          if (then != null) {
+            then();
+          }
         }
       }
     });
   }
 
-  getCostInYear() {
+  getCostInYear(then = null) {
     this.service.costInYear().subscribe((response: any) => {
       if (response.status == 200) {
         const body = response.body;
@@ -128,6 +151,41 @@ export class ProgramListComponent implements OnInit {
           const data = body.data;
           this.inputes.costInYear.min = data.min;
           this.inputes.costInYear.max = data.max;
+          if (then != null) {
+            then();
+          }
+        }
+      }
+    });
+  }
+
+  getSchools(then = null) {
+    this.service.schools().subscribe((response: any) => {
+      if (response.status == 200) {
+        const body = response.body;
+        if (body.return == 200) {
+          const data = body.data;
+          this.schools = data;
+          this.inputes.university.result = this.queryParams.school == undefined ? null : this.queryParams.school;
+          if (then != null) {
+            then();
+          }
+        }
+      }
+    });
+  }
+
+  getSchoolsType(then = null) {
+    this.service.schoolsType().subscribe((response: any) => {
+      if (response.status == 200) {
+        const body = response.body;
+        if (body.return == 200) {
+          const data = body.data;
+          this.schoolsType = data;
+          this.inputes.type.result = this.queryParams.type == undefined ? null : this.queryParams.type;
+          if (then != null) {
+            then();
+          }
         }
       }
     });
@@ -154,6 +212,10 @@ export class ProgramListComponent implements OnInit {
       category: this.inputes.category.result,
       degree: this.inputes.degree.result,
       length: this.inputes.length.result,
+      school: this.inputes.university.result,
+      type: this.inputes.type.result,
+      country: this.inputes.country.result != null ? this.inputes.country.result.name : null,
+      city: this.inputes.city.result != null ? this.inputes.city.result : null,
       page: filter.pageIndex,
       opt: filter.opt,
       free: filter.free,
@@ -192,7 +254,11 @@ export class ProgramListComponent implements OnInit {
             living: filter.living,
             category: this.inputes.category.result,
             degree: this.inputes.degree.result,
-            length: this.inputes.length.result
+            length: this.inputes.length.result,
+            school: this.inputes.university.result,
+            country: this.inputes.country.result != null ? this.inputes.country.result.name : null,
+            city: this.inputes.city.result != null ? this.inputes.city.result : null,
+            type: this.inputes.type.result
           }
         });
         this.getPrograms(filter);
@@ -202,12 +268,16 @@ export class ProgramListComponent implements OnInit {
 
   filter() {
     this.loading = true;
-
+    console.log(this.inputes.city)
     let queryParams = {
       page: 1,
       category: this.inputes.category.result,
       degree: this.inputes.degree.result,
-      length: this.inputes.length.result
+      length: this.inputes.length.result,
+      school: this.inputes.university.result,
+      country: this.inputes.country.result != null ? this.inputes.country.result.name : null,
+      city: this.inputes.city.result != null ? this.inputes.city.result : null,
+      type: this.inputes.type.result,
     };
 
     if (this.filterModel.tuition != null) {
@@ -232,15 +302,22 @@ export class ProgramListComponent implements OnInit {
 
     this.filterModel.pageIndex = queryParams.page;
     this.getPrograms(this.filterModel);
+    $('#advanceFilters').modal('hide');
   }
 
   ngOnInit() {
     this.getCountries(() => {
       this.getLength(() => {
         this.getCategories(() => {
-          this.getPrograms(this.filterModel);
-          this.getTuition();
-          this.getCostInYear();
+          this.getSchools(() => {
+            this.getSchoolsType(() => {
+              this.getTuition(() => {
+                this.getCostInYear(() => {
+                  this.getPrograms(this.filterModel);
+                });
+              });
+            });
+          });
         });
       });
     });

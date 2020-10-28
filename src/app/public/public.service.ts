@@ -28,6 +28,14 @@ export class PublicService {
         return this.http.readApi.get('categories');
     }
 
+    schools() {
+        return this.http.readApi.get('schools');
+    }
+
+    schoolsType() {
+        return this.http.readApi.get('schools/type');
+    }
+
     tuition() {
         return this.http.readApi.get('tuition');
     }
