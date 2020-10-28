@@ -8,6 +8,18 @@ import { Injectable } from '@angular/core';
 export class PublicService {
     constructor(private http: Http) { }
 
+    programBookmark(data: any) {
+        return this.http.readApi.getById('program/bookmark', data);
+    }
+
+    removeBookmark(data:any){
+        return this.http.writeApi.post('bookmark/delete',data);
+    }
+
+    addBookmark(data: any) {
+        return this.http.writeApi.post('bookmark/add', data);
+    }
+
     countries() {
         return this.http.readApi.get('countries');
     }

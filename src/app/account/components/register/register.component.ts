@@ -54,7 +54,7 @@ export class RegisterComponent implements OnInit {
         const body = response.body;
         if (body.return == 200) {
           localStorage.setItem('token', body.token);
-          window.location.href = "/dashboard";
+          window.location.href = "/dashboard/signatures";
         }
 
         if (body.return == 300) {

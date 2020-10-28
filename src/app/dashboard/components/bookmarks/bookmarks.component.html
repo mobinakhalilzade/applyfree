@@ -1,1 +1,16 @@
-<p>bookmarks works!</p>
+<div class="row h-100 mt-5 pt-5">
+    <div class="col-12 h-100">
+        <div class="row">
+            <div class="col-12">
+                    <div class="card mb-4" *ngFor="let item of bookmark">
+                      <!-- <img class="card-img-top" [src]="'http://192.168.3.65/applyfree/img/banner/'+item.program.school.banner" alt="Card image cap"> -->
+                      <div class="card-body">
+                        <h5 class="card-title">{{item.program.title}}</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>

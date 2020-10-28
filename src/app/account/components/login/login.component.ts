@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
       if (response.status == 200) {
         const data = response.body;
         if (data.return == 200) {
-          window.location.href = "/dashboard";
+          window.location.href = "/dashboard/signatures";
         }
       }
     });
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
         const data = response.body;
         if (data.return == 200) {
           localStorage.setItem('token', data.data.token);
-          window.location.href = "/dashboard";
+          window.location.href = "/dashboard/signatures";
         }
 
         if (data.return == 300) {

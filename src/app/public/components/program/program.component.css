@@ -1,14 +1,14 @@
-.container-fluid{
+.container-fluid {
     height: 32vh;
 }
 
-.img-banner{
+.img-banner {
     position: relative;
     top: -180px;
     height: 50vh;
 }
 
-.banner{
+.banner {
     width: 100%;
     height: inherit;
     position: absolute;
@@ -17,13 +17,18 @@
     opacity: 32%;
 }
 
-.container> div.header-info{
+.container>div.header-info {
     position: absolute;
-    top:170px;
+    top: 170px;
 }
 
 .banner {
     background-image: var(--bg-image);
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.bookmarked {
+    background-color: var(--danger);
+    color: var(--white);
 }

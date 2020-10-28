@@ -10,7 +10,7 @@
                     <ul class="navbar-nav mt-2 mt-lg-0">
                         <li class="nav-item mr-4" *ngFor="let item of menus">
                             <a class="nav-link py-3 border-radius-x-5"
-                                routerLinkActive="active" [routerLink]="item.link" (click)="subMenus = item.menus">
+                                routerLinkActive="active" [routerLink]="item.link">
                                 {{item.name}}
                             </a>
                         </li>
@@ -26,21 +26,7 @@
         </div>
     </div>
 
-    <!-- <div class="row shadow">
-        <div class="col-12 px-0 bg-white">
-            <nav class="container navbar navbar-expand-lg">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item mr-2" *ngFor="let item of subMenus">
-                        <a class="nav-link text-dark border-radius-5 active" [routerLink]="item.link">
-                            {{item.title}}
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </div> -->
-
-    <div class="container">
+    <div class="container h-100">
         <router-outlet></router-outlet>
     </div>
 

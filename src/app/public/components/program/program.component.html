@@ -88,7 +88,8 @@
                     </div>
 
                     <div class="col-3 text-right mb-4">
-                        <button class="btn btn-outline-danger btn-block">
+                        <button class="btn btn-outline-danger btn-block" (click)="bookmark()"
+                            [ngClass]="{'bookmarked':bookmarked && bookmarked.status}">
                             <i class="far fa-heart pr-2"></i>
                             Bookmark
                         </button>

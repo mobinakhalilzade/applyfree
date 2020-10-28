@@ -5,35 +5,22 @@
             {
                 "id": 1,
                 "link": "/dashboard/signatures",
-                "name": "My programs",
-                "menus": [
-                    {
-                        "title": "ipsum",
-                        "link": "/dashboard/signatures/ipsum"
-                    }
-                ]
+                "name": "My signature"
             },
             {
                 "id": 2,
-                "link": "/dashboard/bookmarks",
-                "name": "My bookmarks",
-                "menus": [
-                    {
-                        "title": "angular",
-                        "link": "/dashboard/bookmarks/angular"
-                    }
-                ]
+                "link": "/dashboard/programs",
+                "name": "My programs"
             },
             {
                 "id": 3,
                 "link": "/dashboard/payments",
-                "name": "My payments",
-                "menus": [
-                    {
-                        "title": "temp",
-                        "link": "/dashboard/payments/temp"
-                    }
-                ]
+                "name": "My payments"
+            },
+            {
+                "id": 4,
+                "link": "/dashboard/bookmarks",
+                "name": "My bookmarks"
             }
         ]
     },

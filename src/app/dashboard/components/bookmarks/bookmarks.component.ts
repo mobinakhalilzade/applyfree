@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DashboardService } from '../../dashboard.service';
 
 @Component({
   selector: 'app-bookmarks',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookmarksComponent implements OnInit {
 
-  constructor() { }
+  bookmark: any;
 
-  ngOnInit(): void {
+  constructor(
+    private service: DashboardService
+  ) { }
+
+  bookmarks() {
+    this.service.bookmarks().subscribe((response: any) => {
+      console.log(response);
+      if (response.status == 200) {
+        const body = response.body;
+        if (body.return = 200) {
+          this.bookmark = body.data;
+        }
+      }
+    });
   }
 
+  ngOnInit(): void {
+    this.bookmarks();
+
+  }
 }
