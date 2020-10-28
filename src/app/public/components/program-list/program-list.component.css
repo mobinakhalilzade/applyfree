@@ -19,7 +19,7 @@ a {
 }
 
 .dropdown-item:active,
-.dropdown-item:hover {
+.dropdown-item:hover  {
     background-color: var(--dark);
     color: #fff;
 }
