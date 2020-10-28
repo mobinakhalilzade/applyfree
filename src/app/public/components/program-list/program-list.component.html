@@ -1,14 +1,16 @@
 <div class="container my-5 pb-4">
     <div class="row text-right align-items-center">
         <div class="col-6">
-            <div class="input-group input-group-sm">
-                <input type="text" class="form-control border-secondary" placeholder="search..." [(ngModel)]="filterModel.search">
-                <div class="input-group-append">
-                    <button class="btn btn-secondary" (click)="search()">
+            <form (ngSubmit)="search()">
+                <div class="input-group input-group-sm">
+                    <input type="text" class="form-control border-secondary" placeholder="search..." [(ngModel)]="filterModel.search" [ngModelOptions]="{standalone: true}">
+                    <div class="input-group-append">
+                        <button class="btn btn-secondary">
                         <i class="fa fa-search"></i>
                     </button>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
         <div class="col-2 ml-auto">
             <div class="custom-control custom-checkbox">
@@ -128,7 +130,11 @@
 
         <!-- conditions -->
         <div class="col-12 mt-3">
-            <span class="badge badge-secondary font-weight-light pointer" *ngIf="inputes.category.result != null">
+            <span class="badge badge-secondary font-weight-light pointer" *ngIf="filterModel.search == null">
+                find <span class="text-warning font-italic">{{filterModel.search}} </span> in programs
+            </span>
+
+            <span class="badge badge-secondary font-weight-light pointer" *ngIf="inputes.category.result != null && filterModel.search == null">
                 search in <span class="text-warning font-italic">{{inputes.category.result}} </span> category
             </span>
 

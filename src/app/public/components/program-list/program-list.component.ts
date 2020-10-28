@@ -84,6 +84,7 @@ export class ProgramListComponent implements OnInit {
     this.router.navigate(['.'], {
       relativeTo: this.route, queryParams: { search: this.filterModel.search }
     });
+    this.getPrograms(this.filterModel);
   }
 
   getCountries(then = null) {
@@ -220,7 +221,8 @@ export class ProgramListComponent implements OnInit {
       opt: filter.opt,
       free: filter.free,
       living: filter.living,
-      tuition: filter.tuition
+      tuition: filter.tuition,
+      search: filter.search
     }
 
     this.service.programs(params).subscribe((response: any) => {
