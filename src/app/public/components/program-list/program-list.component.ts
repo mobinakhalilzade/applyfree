@@ -198,6 +198,7 @@ export class ProgramListComponent implements OnInit {
         const body = response.body;
         if (body.return == 200) {
           this.categories = body.data;
+          console.log(this.categories);
           this.inputes.category.result = this.queryParams.category == undefined ? this.categories[0]['name'] : this.queryParams.category;
           this.inputes.degree.result = this.queryParams.degree == undefined ? null : this.queryParams.degree;
           if (then != null) {
@@ -271,7 +272,6 @@ export class ProgramListComponent implements OnInit {
   filter() {
 
     this.loading = true;
-    console.log(this.inputes.city)
     let queryParams = {
       page: 1,
       category: this.inputes.category.result,
