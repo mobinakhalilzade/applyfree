@@ -132,6 +132,11 @@
                 <i class="fa fa-times mr-2"></i>
                 city: <span class="text-warning font-italic">{{inputes.city.result}}</span>
             </span>
+
+            <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="filterModel.sort != null" (click)="filterModel.sort = null;filter()">
+                <i class="fa fa-times mr-2"></i>
+                sort by: <span class="text-warning font-italic">{{filterModel.sort}}</span>
+            </span>
         </div>
     </div>
 
@@ -163,8 +168,29 @@
                         Sort by {{filterModel.sort != null ? filterModel.sort : '...'}}
                     </span>
                     <div class="dropdown-menu dropdown-filter py-0" aria-labelledby="sort">
-                        <div class="dropdown-item pointer px-2" (click)="filterModel.sort = 'length';filter()">
-                            Length
+                        <div class="dropdown-item pointer px-2" (click)="filterModel.sort = 'fee';filterModel.direction='desc';filter()">
+                            Application fee (Most to least)
+                        </div>
+                        <div class="dropdown-item pointer px-2" (click)="filterModel.sort = 'fee';filterModel.direction='asc';filter()">
+                            Application fee (least to Most)
+                        </div>
+                        <div class="dropdown-item pointer px-2" (click)="filterModel.sort = 'length';filterModel.direction='desc';filter()">
+                            Length (Most to least)
+                        </div>
+                        <div class="dropdown-item pointer px-2" (click)="filterModel.sort = 'length';filterModel.direction='asc';filter()">
+                            Length (least to Most)
+                        </div>
+                        <div class="dropdown-item pointer px-2" (click)="filterModel.sort = 'tuition_year';filterModel.direction='desc';filter()">
+                            Tuition year (Most to least)
+                        </div>
+                        <div class="dropdown-item pointer px-2" (click)="filterModel.sort = 'tuition_year';filterModel.direction='asc';filter()">
+                            Tuition year (least to Most)
+                        </div>
+                        <div class="dropdown-item pointer px-2" (click)="filterModel.sort = 'cost_living_year';filterModel.direction='desc';filter()">
+                            Cost living year (Most to least)
+                        </div>
+                        <div class="dropdown-item pointer px-2" (click)="filterModel.sort = 'cost_living_year';filterModel.direction='asc';filter()">
+                            Cost living year (least to Most)
                         </div>
                     </div>
                 </div>
@@ -203,29 +229,57 @@
                         </div>
                         <div class="col-9 py-3 border-left" [title]="item.program.title">
                             <div class="mb-3">
-                                <span class="text-truncate text-truncate-2-line text-dark px-3 text-left">
+                                <span class="text-truncate text-truncate-2-line text-dark px-4 text-left">
                                     {{item.program.title}}
                                 </span>
                             </div>
                             <div class="mb-3 text-center">
-                                <table class="m-auto">
-                                    <thead class="border-bottom">
-                                        <tr>
-                                            <th class="p-3 text-dark text-capitalize">Tuition/year</th>
-                                            <th class="p-3 text-dark border-left text-capitalize">Application fee</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th class="p-3 text-orangedark">{{item.program.tuition_year | currency}}
-                                            </th>
-                                            <th class="p-3 border-left">
-                                                <span class="text-orangedark" *ngIf="item.program.fee > 0">{{item.program.fee | currency}}</span>
-                                                <span class="text-success" *ngIf="item.program.fee == 0">Free</span>
-                                            </th>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <div class="my-3 text-left">
+                                    <fieldset class="px-4">
+                                        <legend class="h6 text-dark">
+                                            <small>
+                                                <b>Application fee</b>
+                                            </small>
+                                        </legend>
+                                        <small class="d-block" [ngClass]="{'bg-warning text-dark': filterModel.sort == 'fee'}">
+                                            <span class="text-primary" *ngIf="item.program.fee > 0">{{item.program.fee | currency}}</span>
+                                            <span class="text-success" *ngIf="item.program.fee == 0">Free</span>
+                                        </small>
+                                    </fieldset>
+                                </div>
+
+                                <div class="my-3 text-left">
+                                    <fieldset class="px-4">
+                                        <legend class="h6 text-dark">
+                                            <small>
+                                                <b>Tuition / Year</b>
+                                            </small>
+                                        </legend>
+                                        <small [ngClass]="{'bg-warning text-dark': filterModel.sort == 'tuition_year'}" class="d-block text-primary">{{item.program.tuition_year | currency}}</small>
+                                    </fieldset>
+                                </div>
+
+                                <div class="my-3 text-left">
+                                    <fieldset class="px-4">
+                                        <legend class="h6 text-dark">
+                                            <small>
+                                                <b>Cost living / Year</b>
+                                            </small>
+                                        </legend>
+                                        <small [ngClass]="{'bg-warning text-dark': filterModel.sort == 'cost_living_year'}" class="d-block text-primary">{{item.program.cost_living_year | currency}}</small>
+                                    </fieldset>
+                                </div>
+
+                                <div class="my-3 text-left">
+                                    <fieldset class="px-4">
+                                        <legend class="h6 text-dark">
+                                            <small>
+                                                <b>Length</b>
+                                            </small>
+                                        </legend>
+                                        <small [ngClass]="{'bg-warning text-dark': filterModel.sort == 'length'}" class="d-block text-muted text-truncate">{{item.program.length_description}}</small>
+                                    </fieldset>
+                                </div>
                             </div>
                         </div>
                     </div>
