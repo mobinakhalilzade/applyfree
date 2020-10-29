@@ -12,7 +12,7 @@ export class ProgramComponent implements OnInit {
   loading: boolean;
   alert: any;
   program: any;
-  bookmarked = { status: false, id: null };
+  bookmarked: boolean;
 
   constructor(private service: PublicService,
     private route: ActivatedRoute) { }
@@ -23,7 +23,7 @@ export class ProgramComponent implements OnInit {
       if (response.status == 200) {
         const body = response.body;
         if (body.return == 200) {
-          this.bookmarked = body;
+          this.bookmarked = body.status;
         }
       }
     });
@@ -34,27 +34,30 @@ export class ProgramComponent implements OnInit {
       program_id: this.program.id
     }
 
-    if (this.bookmarked.status) {
-      this.service.removeBookmark({ id: this.bookmarked.id }).subscribe((response: any) => {
-        console.log(response);
+    if (this.bookmarked) {
+      this.service.removeBookmark(command).subscribe((response: any) => {
+        if (response.status == 200) {
+          const body = response.body;
+          if (body.return == 200) {
+            this.bookmarked = false;
+          }
+        }
       });
     }
     else {
       this.service.addBookmark(command).subscribe((response: any) => {
-        console.log(response);
         if (response.status == 200) {
           const body = response.body;
           if (body.return == 200) {
-            // this.message = body.message;
-            this.bookmarked.status = true;
+            this.bookmarked = true;
           }
         }
       });
     }
   }
 
-  getProgram(slug: string) {
-    this.service.program(slug).subscribe((response: any) => {
+  getProgram(id: string, slug: string) {
+    this.service.program({ id: id, slug: slug }).subscribe((response: any) => {
       if (response.status == 200) {
         const body = response.body;
         if (body.return == 200) {
@@ -62,8 +65,8 @@ export class ProgramComponent implements OnInit {
           this.programBookmark(data.id);
           this.program = data;
           this.program.school.banner = this.program.school.banner;
-          $('head').append('<style  id="sh">:root {--bg-image: url("http://192.168.3.65/applyfree/img/banner/' + this.program.school.banner + '")}</style>')
-          console.log(body);
+          // $('head').append('<style  id="sh">:root {--bg-image: url("http://192.168.3.65/applyfree/img/banner/' + this.program.school.banner + '")}</style>')
+          // console.log(body);
         }
       }
     })
@@ -71,6 +74,7 @@ export class ProgramComponent implements OnInit {
 
   ngOnInit(): void {
     const slug = this.route.snapshot.paramMap.get('slug');
-    this.getProgram(slug);
+    const id = this.route.snapshot.paramMap.get('id');
+    this.getProgram(id, slug);
   }
 }

@@ -22,10 +22,6 @@ export class ProgramListComponent implements OnInit {
       value: '',
       result: null
     },
-    length: {
-      value: '',
-      result: null
-    },
     country: {
       value: '',
       result: null
@@ -55,14 +51,14 @@ export class ProgramListComponent implements OnInit {
   //-----------
   loading: boolean = true;
   countries: any;
-  lengths: any;
   categories: any;
   schools: any;
   schoolsType: any;
   programs: any;
+  maxDate = new Date().toISOString().split("T")[0];
 
   queryParams = this.route.snapshot.queryParams;
-
+  currentPage: any;
   filterModel = {
     active: false,
     total: 0,
@@ -72,19 +68,18 @@ export class ProgramListComponent implements OnInit {
     opt: this.queryParams.opt == undefined ? null : JSON.parse(this.queryParams.opt),
     tuition: this.queryParams.tuition == undefined ? null : this.queryParams.tuition,
     living: this.queryParams.living == undefined ? null : this.queryParams.living,
-    search: this.queryParams.search == undefined ? null : this.queryParams.search
+    search: this.queryParams.search == undefined || this.queryParams.search == "" ? null : this.queryParams.search,
+    onSearch: this.queryParams.search == undefined || this.queryParams.search == "" ? null : this.queryParams.search,
+    submission: this.queryParams.submission == undefined || this.queryParams.submission == "" ? null : this.queryParams.submission,
+    sort: this.queryParams.sort == undefined ? null : this.queryParams.sort
   }
 
   constructor(private service: PublicService,
     private route: ActivatedRoute,
     private router: Router) {
-  }
-
-  search() {
-    this.router.navigate(['.'], {
-      relativeTo: this.route, queryParams: { search: this.filterModel.search }
-    });
-    this.getPrograms(this.filterModel);
+    route.queryParams.subscribe((response: any) => {
+      this.currentPage = response.page
+    })
   }
 
   getCountries(then = null) {
@@ -104,22 +99,6 @@ export class ProgramListComponent implements OnInit {
               }
             }
           }
-          if (then != null) {
-            then();
-          }
-        }
-      }
-    });
-  }
-
-  getLength(then = null) {
-    this.service.length().subscribe((response: any) => {
-      if (response.status == 200) {
-        const body = response.body;
-        if (body.return == 200) {
-          this.lengths = body.data;
-          this.inputes.length.result = this.queryParams.length == undefined ? null : this.queryParams.length;
-
           if (then != null) {
             then();
           }
@@ -210,20 +189,58 @@ export class ProgramListComponent implements OnInit {
   }
 
   getPrograms(filter: any) {
-    const params = {
-      category: this.inputes.category.result,
-      degree: this.inputes.degree.result,
-      length: this.inputes.length.result,
-      school: this.inputes.university.result,
-      type: this.inputes.type.result,
-      country: this.inputes.country.result != null ? this.inputes.country.result.name : null,
-      city: this.inputes.city.result != null ? this.inputes.city.result : null,
-      page: filter.pageIndex,
-      opt: filter.opt,
-      free: filter.free,
-      living: filter.living,
-      tuition: filter.tuition,
-      search: filter.search
+    let params = {
+      page: filter.pageIndex
+    };
+
+    if (filter.search != null && filter.search != "") {
+      params['search'] = filter.search;
+    } else {
+      params['category'] = this.inputes.category.result;
+
+      if (filter.submission != null && filter.submission != "") {
+        params['submission'] = filter.submission;
+      }
+
+      if (filter.free != null) {
+        params['free'] = filter.free;
+      }
+
+      if (filter.opt != null) {
+        params['opt'] = filter.opt;
+      }
+
+      if (this.inputes.degree.result != null) {
+        params['degree'] = this.inputes.degree.result;
+      }
+
+      if (this.inputes.city.result != null) {
+        params['city'] = this.inputes.city.result;
+      }
+
+      if (this.inputes.country.result != null) {
+        params['country'] = this.inputes.country.result.name;
+      }
+
+      if (this.inputes.type.result != null) {
+        params['type'] = this.inputes.type.result;
+      }
+
+      if (this.inputes.university.result != null) {
+        params['school'] = this.inputes.university.result;
+      }
+
+      if (filter.tuition != null) {
+        params['tuition'] = filter.tuition;
+      }
+
+      if (filter.living != null) {
+        params['living'] = filter.living;
+      }
+
+      if (filter.sort != null) {
+        params['sort'] = filter.sort;
+      }
     }
 
     this.service.programs(params).subscribe((response: any) => {
@@ -236,6 +253,7 @@ export class ProgramListComponent implements OnInit {
             this.filterModel.total = body.total;
             this.filterModel.active = true;
             this.loading = false;
+            this.progress = 12.5 * 8;
           }, 1000);
 
         }
@@ -245,58 +263,142 @@ export class ProgramListComponent implements OnInit {
 
   pageChange(filter: any) {
     setTimeout(() => {
-      if (this.queryParams.page != filter.pageIndex) {
+      if (filter.pageIndex != this.currentPage) {
         this.loading = true;
         this.filterModel.active = false;
-        this.router.navigate(['.'], {
-          relativeTo: this.route, queryParams: {
-            page: filter.pageIndex,
-            opt: filter.opt,
-            free: filter.free,
-            tuition: filter.tuition,
-            living: filter.living,
-            category: this.inputes.category.result,
-            degree: this.inputes.degree.result,
-            length: this.inputes.length.result,
-            school: this.inputes.university.result,
-            country: this.inputes.country.result != null ? this.inputes.country.result.name : null,
-            city: this.inputes.city.result != null ? this.inputes.city.result : null,
-            type: this.inputes.type.result
+        let queryParams = {
+          page: filter.pageIndex,
+        };
+
+        if (filter.search != null && filter.search != "") {
+          queryParams['search'] = filter.search;
+        } else {
+          queryParams['category'] = this.inputes.category.result;
+
+          if (filter.submission != null && filter.submission != "") {
+            queryParams['submission'] = filter.submission;
           }
-        });
+
+          if (filter.free != null) {
+            queryParams['free'] = filter.free;
+          }
+
+          if (filter.opt != null) {
+            queryParams['opt'] = filter.opt;
+          }
+
+          if (this.inputes.degree.result != null) {
+            queryParams['degree'] = this.inputes.degree.result;
+          }
+
+          if (this.inputes.city.result != null) {
+            queryParams['city'] = this.inputes.city.result;
+          }
+
+          if (this.inputes.country.result != null) {
+            queryParams['country'] = this.inputes.country.result.name;
+          }
+
+          if (this.inputes.type.result != null) {
+            queryParams['type'] = this.inputes.type.result;
+          }
+
+          if (this.inputes.university.result != null) {
+            queryParams['school'] = this.inputes.university.result;
+          }
+
+          if (filter.tuition != null) {
+            queryParams['tuition'] = filter.tuition;
+          }
+
+          if (filter.living != null) {
+            queryParams['living'] = filter.living;
+          }
+
+          if (filter.sort != null) {
+            queryParams['sort'] = filter.sort;
+          }
+        }
+
+        this.router.navigate(['.'], { relativeTo: this.route, queryParams: queryParams, queryParamsHandling: 'merge' });
         this.getPrograms(filter);
       }
-    }, 100);
+    }, 50);
   }
 
   filter() {
-
     this.loading = true;
     let queryParams = {
-      page: 1,
-      category: this.inputes.category.result,
-      degree: this.inputes.degree.result,
-      length: this.inputes.length.result,
-      school: this.inputes.university.result,
-      country: this.inputes.country.result != null ? this.inputes.country.result.name : null,
-      city: this.inputes.city.result != null ? this.inputes.city.result : null,
-      type: this.inputes.type.result,
+      page: 1
     };
 
-    if (this.filterModel.tuition != null) {
-      queryParams['tuition'] = this.filterModel.tuition;
-    }
+    if (this.filterModel.search != null && this.filterModel.search != "") {
+      //-----set null
+      this.inputes.degree.result = null;
+      this.inputes.university.result = null;
+      this.inputes.country.result = null;
+      this.inputes.city.result = null;
+      this.inputes.type.result = null;
+      this.filterModel.tuition = null;
+      this.filterModel.living = null;
+      this.filterModel.opt = null;
+      this.filterModel.free = null;
+      this.filterModel.submission = null;
+      //-----
+      queryParams['search'] = this.filterModel.search;
+      this.filterModel.onSearch = this.filterModel.search;
+    } else {
+      //-----set null
+      this.filterModel.onSearch = null;
+      this.filterModel.search = null;
+      //-----
+      if (this.inputes.category.result != null) {
+        queryParams['category'] = this.inputes.category.result;
+      }
 
-    if (this.filterModel.living != null) {
-      queryParams['living'] = this.filterModel.living;
-    }
+      if (this.filterModel.submission != null && this.filterModel.submission != "") {
+        queryParams['submission'] = this.filterModel.submission;
+      }
 
-    if (this.filterModel.opt != null) {
-      queryParams['opt'] = this.filterModel.opt;
-    }
+      if (this.filterModel.free != null) {
+        queryParams['free'] = this.filterModel.free;
+      }
 
-    if (this.filterModel.free != null) {
-      queryParams['free'] = this.filterModel.free;
+      if (this.filterModel.opt != null) {
+        queryParams['opt'] = this.filterModel.opt;
+      }
+
+      if (this.inputes.degree.result != null) {
+        queryParams['degree'] = this.inputes.degree.result;
+      }
+
+      if (this.inputes.country.result != null) {
+        queryParams['country'] = this.inputes.country.result.name;
+      }
+
+      if (this.inputes.city.result != null) {
+        queryParams['city'] = this.inputes.city.result;
+      }
+
+      if (this.inputes.type.result != null) {
+        queryParams['type'] = this.inputes.type.result;
+      }
+
+      if (this.inputes.university.result != null) {
+        queryParams['school'] = this.inputes.university.result;
+      }
+
+      if (this.filterModel.tuition != null) {
+        queryParams['tuition'] = this.filterModel.tuition;
+      }
+
+      if (this.filterModel.living != null) {
+        queryParams['living'] = this.filterModel.living;
+      }
+
+      if (this.filterModel.sort != null) {
+        queryParams['sort'] = this.filterModel.sort;
+      }
     }
 
     this.router.navigate(['.'], {
@@ -308,16 +410,22 @@ export class ProgramListComponent implements OnInit {
     $('#advanceFilters').modal('hide');
   }
 
+  progress: number = 0;
   ngOnInit() {
     this.getCountries(() => {
-      this.getLength(() => {
-        this.getCategories(() => {
-          this.getSchools(() => {
-            this.getSchoolsType(() => {
-              this.getTuition(() => {
-                this.getCostInYear(() => {
-                  this.getPrograms(this.filterModel);
-                });
+      this.progress = 12.5;
+      this.progress = 12.5 * 2;
+      this.getCategories(() => {
+        this.progress = 12.5 * 3;
+        this.getSchools(() => {
+          this.progress = 12.5 * 4;
+          this.getSchoolsType(() => {
+            this.progress = 12.5 * 5;
+            this.getTuition(() => {
+              this.progress = 12.5 * 6;
+              this.getCostInYear(() => {
+                this.progress = 12.5 * 7;
+                this.getPrograms(this.filterModel);
               });
             });
           });
