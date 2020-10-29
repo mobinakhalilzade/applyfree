@@ -33,7 +33,7 @@ export class PublicService {
     }
 
     program(data: any) {
-        return this.http.readApi.getById('programs', data);
+        return this.http.readApi.getByParam('program', data);
     }
 
     categories() {

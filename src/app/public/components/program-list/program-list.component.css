@@ -2,7 +2,8 @@
     position: absolute;
     top: -23px;
     width: 50px;
-    left: 4px;
+    left: 19px;
+    border: solid 2px #ccc;
 }
 
 .card table {
@@ -19,7 +20,7 @@ a {
 }
 
 .dropdown-item:active,
-.dropdown-item:hover  {
+.dropdown-item:hover {
     background-color: var(--dark);
     color: #fff;
 }
@@ -27,4 +28,3 @@ a {
 .dropdown-item ul li:hover {
     color: var(--gray);
 }
-
