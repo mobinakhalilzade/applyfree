@@ -71,7 +71,8 @@ export class ProgramListComponent implements OnInit {
     search: this.queryParams.search == undefined || this.queryParams.search == "" ? null : this.queryParams.search,
     onSearch: this.queryParams.search == undefined || this.queryParams.search == "" ? null : this.queryParams.search,
     submission: this.queryParams.submission == undefined || this.queryParams.submission == "" ? null : this.queryParams.submission,
-    sort: this.queryParams.sort == undefined ? null : this.queryParams.sort
+    sort: this.queryParams.sort == undefined ? null : this.queryParams.sort,
+    direction: this.queryParams.direction == undefined ? null : this.queryParams.direction
   }
 
   constructor(private service: PublicService,
@@ -240,6 +241,7 @@ export class ProgramListComponent implements OnInit {
 
       if (filter.sort != null) {
         params['sort'] = filter.sort;
+        params['direction'] = filter.direction;
       }
     }
 
@@ -317,6 +319,7 @@ export class ProgramListComponent implements OnInit {
 
           if (filter.sort != null) {
             queryParams['sort'] = filter.sort;
+            queryParams['direction'] = filter.direction;
           }
         }
 
@@ -398,6 +401,7 @@ export class ProgramListComponent implements OnInit {
 
       if (this.filterModel.sort != null) {
         queryParams['sort'] = this.filterModel.sort;
+        queryParams['direction'] = this.filterModel.direction;
       }
     }
 
