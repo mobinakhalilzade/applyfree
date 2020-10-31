@@ -1,10 +1,10 @@
 <div class="row">
     <div class="col-6" *ngFor="let item of bookmark">
-        <a class="card mb-4 border-radius-10 shadow" [routerLink]="['/program', item.program.slug]">
+        <a class="card mb-4 border-radius-10 shadow" [routerLink]="['/program', item.id, item.program.slug]">
             <div class="row card-body">
                 <div class="col-3 my-auto">
                     <img class="banner rounded img-fluid"
-                        [src]="'http://192.168.3.65/applyfree/img/logo/'+item.program.school.logo"
+                        [src]="'http://192.168.3.65/applyfree/img/logo/'+item.id+'.png'"
                         [alt]="item.program.school.title">
                 </div>
                 <div class="col-9">
@@ -12,9 +12,11 @@
                     <p class="card-text text-dark text-truncate mt-3 mb-2">{{item.program.school.title}}</p>
                     <p class="card-text text-dark text-truncate">{{item.program.school.city}} /
                         {{item.program.school.country}}</p>
-                    <button class="btn btn-danger float-right">Go to program
+                    <a class="btn btn-danger float-right" [routerLink]="['/program', item.id,item.program.slug]">Go
+                        to
+                        program
                         <i class="far fa-arrow-alt-circle-right pl-2"></i>
-                    </button>
+                    </a>
                 </div>
             </div>
         </a>
