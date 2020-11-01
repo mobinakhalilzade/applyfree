@@ -108,6 +108,7 @@
                                     <tbody>
                                         <tr *ngFor="let item of program.intakes">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                             <td class="py-3" *ngIf="item.start_date!==null">
                                                 <time [attr.datetime]="item.start_date">
                                                     <h3 class="h6 mb-0">
@@ -129,6 +130,15 @@
                                             <td *ngIf="item.start_date!==null">
                                                 <a class="btn btn-orangedark"
                                                     [routerLink]="['/contract', item.id]">apply</a>
+=======
+                                            <td class="py-3" *ngIf="item.start_date != null">{{item.start_date | date}}
+                                            </td>
+                                            <td class="py-3" *ngIf="item.submission != null">{{item.submission | date}}
+                                            </td>
+                                            <td class="py-3" *ngIf="item.submission == null"><i class="far fa-question-circle text-warning" data-toggle="tooltip" data-placement="top" title="Unknown"></i></td>
+                                            <td *ngIf="item.start_date != null">
+                                                <a class="btn btn-orangedark" [routerLink]="['/contract', item.id, program.id, program.slug]">apply</a>
+>>>>>>> bd2a2ce809dbc50e924866d2ce62a88f6c643f76
 =======
                                             <td class="py-3" *ngIf="item.start_date != null">{{item.start_date | date}}
                                             </td>
