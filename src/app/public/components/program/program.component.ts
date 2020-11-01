@@ -76,20 +76,11 @@ export class ProgramComponent implements OnInit {
     this.bookmarked ? this.removeBookmark(command) : this.signBookmark(command);
   }
 
-  async map() {
-  
-  }
-
   ngOnInit(): void {
     const slug = this.route.snapshot.paramMap.get('slug');
     const id = this.route.snapshot.paramMap.get('id');
     this.getProgram(id, slug, () => {
       this.userBookmark(id);
-      setTimeout(() => {
-          this.map();
-      }, 1000);
     });
-
-
   }
 }

@@ -24,7 +24,6 @@ export class PasswordComponent implements OnInit {
       password:form.password
     }
     this.service.newPassword(command).subscribe((response:any)=>{
-      console.log(response);
     })
   }
 

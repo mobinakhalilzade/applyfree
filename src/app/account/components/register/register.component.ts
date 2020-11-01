@@ -64,7 +64,6 @@ export class RegisterComponent implements OnInit {
       return
     }
     this.service.register(command).subscribe((response: any) => {
-      console.log(response);
       if (response.status == 200) {
         const body = response.body;
         if (body.return == 200) {

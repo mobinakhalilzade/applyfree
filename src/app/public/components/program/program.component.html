@@ -130,8 +130,7 @@
                                                     data-toggle="tooltip" data-placement="top" title="Unknown"></button>
                                             </td>
                                             <td *ngIf="item.start_date!==null">
-                                                <a class="btn btn-orangedark"
-                                                    [routerLink]="['/contract', item.id]">apply</a>
+                                                <a class="btn btn-orangedark" [routerLink]="['/contract', item.id, program.id, program.slug]">apply</a>
                                             </td>
                                         </tr>
                                     </tbody>
