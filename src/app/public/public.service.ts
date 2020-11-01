@@ -12,6 +12,10 @@ export class PublicService {
         return this.http.readApi.getById('program/bookmark', data);
     }
 
+    intake(data: any) {
+        return this.http.readApi.getById('program/intake', data);
+    }
+
     removeBookmark(data: any) {
         return this.http.writeApi.post('bookmark/delete', data);
     }

@@ -32,39 +32,30 @@
         </div>
 
         <div class="navbar-nav mr-5">
-            <a class="nav-item text-light nav-link ml-3" [ngClass]="{'text-dark' : sidebar}" routerLink="/landing"
-                routerLinkActive="font-weight-bolder">Landing</a>
-            <a class="nav-item text-light nav-link ml-3" routerLinkActive="font-weight-bolder" routerLink="/"
-                [ngClass]="{'text-dark' : sidebar}" [routerLinkActiveOptions]="{ exact: true }" (click)="sidebar=false">Programs</a>
-            <a class="nav-item text-light nav-link ml-3" [routerLink]="['/page', 'contact']"
-                [ngClass]="{'text-dark' : sidebar}" routerLinkActive="font-weight-bolder" (click)="sidebar=false">Contact us</a>
-            <a class="nav-item text-light nav-link ml-3" [routerLink]="['/page', 'about']"
-                [ngClass]="{'text-dark' : sidebar}" routerLinkActive="font-weight-bolder" (click)="sidebar=false">About us</a>
+            <a class="nav-item text-light nav-link ml-3" [ngClass]="{'text-dark' : sidebar}" routerLink="/landing" routerLinkActive="font-weight-bolder">Landing</a>
+            <a class="nav-item text-light nav-link ml-3" routerLinkActive="font-weight-bolder" routerLink="/" [ngClass]="{'text-dark' : sidebar}" [routerLinkActiveOptions]="{ exact: true }" (click)="sidebar=false">Programs</a>
+            <a class="nav-item text-light nav-link ml-3" [routerLink]="['/page', 'contact']" [ngClass]="{'text-dark' : sidebar}" routerLinkActive="font-weight-bolder" (click)="sidebar=false">Contact us</a>
+            <a class="nav-item text-light nav-link ml-3" [routerLink]="['/page', 'about']" [ngClass]="{'text-dark' : sidebar}" routerLinkActive="font-weight-bolder" (click)="sidebar=false">About us</a>
         </div>
 
-        <div
-            class="d-xl-none d-lg-none d-md-none d-sm-block d-block w-100 text-center border-top py-1 position-absolute bottom-0">
+        <div class="d-xl-none d-lg-none d-md-none d-sm-block d-block w-100 text-center border-top py-1 position-absolute bottom-0">
             <small class="text-muted">copyright applyfree</small>
         </div>
     </div>
 
     <div class="d-xl-inline-block d-lg-inline-block d-md-none d-sm-none d-none">
-        <div class="btn-custom">
-            <button class="btn border-radius-20 px-lg-4 px-md-3 px-sm-5 px-4 position-relative" routerLink="/login">
-                <span>Log in | Register</span>
-            </button>
-            <button class="btn border-radius-full ml-2 position-relative" routerLink="/login">
+        <a class="btn-custom" [routerLink]="!user ? '/login' : '/dashboard'">
+            <div class="btn border-radius-20 px-lg-4 px-md-3 px-sm-5 px-4 position-relative">
+                <span *ngIf="!user">Log in | Register</span>
+                <span *ngIf="user">{{user.firstName}}</span>
+            </div>
+            <div class="btn border-radius-full ml-2 position-relative">
                 <span>
-                    <i class="fa fa-arrow-right"></i>
+                    <i class="fa" [ngClass]="{'fa-spin fa-spinner': loading, 'fa-arrow-right': !loading}"></i>
                 </span>
-            </button>
-        </div>
-     
+            </div>
+        </a>
     </div>
-    <div class="d-xl-none d-lg-none d-md-block d-sm-none d-none">
-        <button class="btn btn-sm btn-light text-dark" routerLink="/login">
-            <span>Log in</span>
-        </button>
-    </div>
+
     <div class="menu-backdoor" [ngClass]="{'show' : sidebar}" (click)="sidebar = false"></div>
 </nav>

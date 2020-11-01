@@ -178,7 +178,6 @@ export class ProgramListComponent implements OnInit {
         const body = response.body;
         if (body.return == 200) {
           this.categories = body.data;
-          console.log(this.categories);
           this.inputes.category.result = this.queryParams.category == undefined ? this.categories[0]['name'] : this.queryParams.category;
           this.inputes.degree.result = this.queryParams.degree == undefined ? null : this.queryParams.degree;
           if (then != null) {
@@ -412,6 +411,7 @@ export class ProgramListComponent implements OnInit {
     this.filterModel.pageIndex = queryParams.page;
     this.getPrograms(this.filterModel);
     $('#advanceFilters').modal('hide');
+    $('#categories').modal('hide');
   }
 
   progress = {

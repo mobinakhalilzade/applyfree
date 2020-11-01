@@ -42,7 +42,6 @@ export class SignaturesComponent implements OnInit {
   remove() {
     this.removeLoad = true;
     this.service.removeSignature({ id: this.selectedId }).subscribe((response: any) => {
-      console.log(response)
       if (response.status == 200) {
         const body = response.body;
         if (body.return == 200) {

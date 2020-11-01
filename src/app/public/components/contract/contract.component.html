@@ -1,13 +1,24 @@
 <div class="container">
-    <div class="row">
-        <div class="col-12 text-center mb-4">
-            <h2 class="text-orangedark">
-                Program Contract
+    <div class="row" *ngIf="!loading && program">
+        <div class="col-12 text-left mb-4">
+            <h2 class="text-orangedark text-capitalize">
+                {{program.title}}
             </h2>
+            <h6>
+                {{program.school.title}}
+            </h6>
+            <ng-container *ngIf="intake">
+                <h6>
+                    <span class="text-primary"> Start date: {{intake.start_date | date}} </span>
+                </h6>
+                <h6>
+                    <span class="text-danger d-block"> Submission deadline: {{intake.submission | date}} </span>
+                </h6>
+            </ng-container>
         </div>
     </div>
     <div class="row align-items-center">
-        <div class="col-12">
+        <div class="col-12" *ngIf="!loading">
             <div class="card">
                 <div class="card-body px-4">
                     <div class="contractTerms">
@@ -32,7 +43,7 @@
                         </p> -->
                     </div>
                     <ng-container *ngIf="program">
-                        <div class="jumbotron pt-1 mt-5">
+                        <div class="jumbotron mt-5">
                             <i class="fas fa-signature text-orangedark fa-3x my-3"></i>
                             <h2 class="text-orangedark">Dear <span *ngIf="user">{{user.firstName}} {{user.lastName}}</span> <span *ngIf="!user">User</span></h2>
                             <p class="lead" *ngIf="program.fee > 0">After you sign the contract, you should pay
@@ -42,13 +53,27 @@
                             <p *ngIf="!user">
                                 <i class="fas fa-quote-left px-2"></i> If you didn't log in applyfree , you will redirect to login page.
                             </p>
-                            <a class="btn btn-orangedark float-right" (click)="sign()">
-                            Sign the contract
-                        </a>
+
+                            <div class="input-group mt-5">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-success" type="button" id="sign-button" (click)="sign()">
+                                        Sign the contract
+                                    </button>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Your agent code" aria-label="agent code" aria-describedby="sign-button" [(ngModel)]="form.code">
+                            </div>
                         </div>
                     </ng-container>
                 </div>
             </div>
+        </div>
+
+        <div class="col-12 text-center" *ngIf="loading">
+            <div class="d-flex">
+                <span class="ml-auto text-muted py-3">{{progress.description}}</span>
+            </div>
+            <ngb-progressbar type="danger" [value]="progress.loading" [striped]="true" [animated]="true">
+                <i>{{progress.loading}}%</i></ngb-progressbar>
         </div>
     </div>
 </div>
