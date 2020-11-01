@@ -12,8 +12,8 @@ export class PublicService {
         return this.http.readApi.getById('program/bookmark', data);
     }
 
-    removeBookmark(data:any){
-        return this.http.writeApi.post('bookmark/delete',data);
+    removeBookmark(data: any) {
+        return this.http.writeApi.post('bookmark/delete', data);
     }
 
     addBookmark(data: any) {
@@ -56,6 +56,12 @@ export class PublicService {
         return this.http.readApi.get('costInYear');
     }
 
+    sign(data: any) {
+        return this.http.writeApi.post('contract/sign', data);
+    }
+
+    //-----
+
     contracts(data: any) {
         return this.http.readApi.getByParam('contracts/search', data);
     }
@@ -72,11 +78,13 @@ export class PublicService {
         return this.http.writeApi.post('contract/confirm', data);
     }
 
-    sign(data: any) {
-        return this.http.writeApi.post('contract/sign', data);
-    }
+
 
     agreement(data: any) {
         return this.http.writeApi.post('contract/secondPartyAgreement', data);
+    }
+
+    profile() {
+        return this.http.readApi.get('profile');
     }
 }

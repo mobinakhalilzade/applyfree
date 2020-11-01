@@ -3,7 +3,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +14,7 @@ import { NavigatorComponent } from './navigator/navigator.component';
 import { PublicComponent } from './public/public.component';
 import { ProgramComponent } from './public/components/program/program.component';
 import { ProgramListComponent } from './public/components/program-list/program-list.component';
+import { ContractComponent } from './public/components/contract/contract.component';
 import { PagesComponent } from './public/components/pages/pages.component';
 
 import { AccountComponent } from './account/account.component';
@@ -41,8 +42,7 @@ import { StatusPipe } from './pipes/status.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { DegreePipe } from './pipes/degree.pipe';
 import { TypePipe } from './pipes/type.pipe';
-
-
+import { SafePipe } from './pipes/safe.pipe';
 
 @NgModule({
   declarations: [
@@ -59,6 +59,7 @@ import { TypePipe } from './pipes/type.pipe';
     ProgramComponent,
     ReportComponent,
     ProgramListComponent,
+    ContractComponent,
     PageNotFoundComponent,
     BoolPipe,
     StatusPipe,
@@ -73,7 +74,8 @@ import { TypePipe } from './pipes/type.pipe';
     SuccessComponent,
     FailureComponent,
     CheckoutComponent,
-    ProgramsComponent
+    ProgramsComponent,
+    SafePipe
   ],
   imports: [
     CommonModule,
@@ -84,7 +86,7 @@ import { TypePipe } from './pipes/type.pipe';
     HttpClientModule,
     NgbModule
   ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })

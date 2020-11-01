@@ -40,7 +40,7 @@ const routes: Routes = [
       { path: 'program/:id/:slug', component: ProgramComponent },
       { path: 'page/:section', component: PagesComponent },
       { path: 'programs', component: ProgramListComponent },
-      { path: 'contract/:id', component: ContractComponent }
+      { path: 'contract/:intakeId/:id/:slug', component: ContractComponent }
     ]
   },
   { path: 'landing', component: LandingComponent },

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PublicService } from '../../public.service';
 
 @Component({
   selector: 'app-contract',
@@ -7,22 +8,70 @@ import { Router } from '@angular/router';
   styleUrls: ['./contract.component.css']
 })
 export class ContractComponent implements OnInit {
+  loading: boolean;
+  program: any;
+  user: any;
 
   constructor(
-    private router: Router
+    private service: PublicService,
+    private router: Router,
+    private route: ActivatedRoute
   ) { }
 
-  signContract() {
-    let logedIn = localStorage.getItem('token');
-    if (logedIn) {
-      // do something
+  profile() {
+    this.service.profile().subscribe((response: any) => {
+      if (response.status == 200) {
+        const body = response.body;
+        if (body.return == 200) {
+          this.user = body.data
+        }
+      }
+    });
+  }
+
+  getProgram(id: string, slug: string) {
+    this.service.program({ id: id, slug: slug }).subscribe((response: any) => {
+      if (response.status == 200) {
+        const body = response.body;
+        if (body.return == 200) {
+          const data = body.data;
+          this.program = data;
+          console.log(data)
+        }
+      }
+    })
+  }
+
+  sign() {
+    const intakeId = this.route.snapshot.paramMap.get('intakeId');
+
+    const command = {
+      intake_id: intakeId,
+      code: null
     }
-    else {
-      this.router.navigate(['/account/login']);
-    }
+
+    this.service.sign(command).subscribe((response: any) => {
+      if (response.status == 200) {
+        const body = response.body;
+        if (body.return == 200) {
+          console.log(response)
+        }
+      }
+    })
+    // let logedIn = localStorage.getItem('token');
+    // if (logedIn) {
+
+    // } else {
+    //   this.router.navigate(['/account/login']);
+    // }
   }
 
   ngOnInit(): void {
+    const slug = this.route.snapshot.paramMap.get('slug');
+    const id = this.route.snapshot.paramMap.get('id');
+    const intakeId = this.route.snapshot.paramMap.get('intakeId');
+    this.getProgram(id, slug);
+    this.profile();
   }
 
 }

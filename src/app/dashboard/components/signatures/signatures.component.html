@@ -1,4 +1,6 @@
 <div class="mt-5">
+    <router-outlet></router-outlet>
+
     <ng-container *ngIf="this.router.url == '/dashboard/signatures'">
         <div *ngIf="loading" class="text-center text-muted">
             <div>
@@ -11,31 +13,14 @@
 
         <ng-container *ngIf="!loading && data">
             <ng-container *ngIf="data.length == 0">
-                <div class="text-center text-muted" *ngIf="!addSignature">
+                <div class="text-center text-muted">
                     <h5>You do not have any signature!</h5>
-                    <button class="btn btn-primary mt-2" (click)="addSignature = true">
+
+                    <a routerLink="/dashboard/signatures/new" class="btn btn-primary mt-2">
                         Add your first signature
-                    </button>
+                    </a>
                 </div>
             </ng-container>
-
-            <ng-container *ngIf="addSignature">
-                <form *ngIf="data.length == 0">
-                    <div class="form-group">
-                        <div class="custom-file" (click)="upload()">
-                            <input type="file" class="custom-file-input" #fileUpload id="fileUpload" name="fileUpload"
-                                accept="image/*" required>
-                            <label class="custom-file-label" for="customFile">Choose file</label>
-                        </div>
-                    </div>
-                    <div class="alert alert-info" role="alert" *ngIf="alert">
-                        {{alert}}
-                    </div>
-                </form>
-            </ng-container>
-
-
-
             <ng-container *ngIf="data.length > 0">
                 <a routerLink="/dashboard/signatures/new" class="btn btn-primary mb-2">
                     New signature

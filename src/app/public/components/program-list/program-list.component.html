@@ -1,153 +1,155 @@
 <div class="container my-5 pb-4">
-    <div class="row text-right align-items-center">
-        <div class="col-6">
-            <form (ngSubmit)="filter()">
-                <div class="input-group input-group-sm">
-                    <input type="search" class="form-control border-secondary" placeholder="search..." [(ngModel)]="filterModel.search" [ngModelOptions]="{standalone: true}">
-                    <div class="input-group-append">
-                        <button class="btn btn-secondary">
-                        <i class="fa fa-search"></i>
-                    </button>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div class="col-2 ml-auto">
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="opt" [(ngModel)]="filterModel.opt" (change)="filter()">
-                <label class="custom-control-label" for="opt">OPT</label>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="freeApplications" [(ngModel)]="filterModel.free" (change)="filter()">
-                <label class="custom-control-label" for="freeApplications">Free applications</label>
-            </div>
-        </div>
-    </div>
-    <hr>
-
-    <div class="row mb-3">
-        <div class="col-3">
-            <input type="date" class="form-control form-control-sm border-dark" [min]="maxDate" id="submissionDeadline" [(ngModel)]="filterModel.submission" (change)="filter()">
-        </div>
-        <div class="col-3">
-            <div class="dropdown">
-                <button class="btn btn-outline-secondary dropdown-toggle text-left btn-block btn-sm" type="button" id="degree" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="text-truncate">
-                        <span *ngIf="inputes.degree.result">{{inputes.degree.result | degree}}</span>
-                        <span *ngIf="!inputes.degree.result">Degree</span>
-                    </span>
-                </button>
-                <div class="dropdown-menu dropdown-filter w-100 border-radius-10 bg-ice" aria-labelledby="degree">
-                    <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 1;filter()">
-                        <span>English as Second Language (ESL)</span>
-                    </div>
-                    <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 2;filter()">
-                        <span>1 Year Post-Secondary Certificate</span>
-                    </div>
-                    <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 3;filter()">
-                        <span>2 Year Undergraduate Diploma</span>
-                    </div>
-                    <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 4;filter()">
-                        <span>3 Year Undergraduate Advanced Diploma</span>
-                    </div>
-                    <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 5;filter()">
-                        <span>3 Year Bachelor's Degree</span>
-                    </div>
-                    <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 6;filter()">
-                        <span>4 Year Bachelor's Degree</span>
-                    </div>
-                    <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 7;filter()">
-                        <span>PostGraduate Certificate / Master's Degree</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 text-right">
-            <button type="button" class="btn btn-orangedark btn-sm" data-toggle="modal" data-target="#advanceFilters">Advance filters</button>
-        </div>
-
-        <!-- conditions -->
-        <div class="col-12 mt-3">
-            <span class="badge badge-secondary font-weight-light pointer" title="click to clear this filter" *ngIf="filterModel.submission != null" (click)="filterModel.submission = null;filter()">
-                <i class="fa fa-times mr-2"></i>
-                find program submission deadline <span class="text-warning font-italic"> {{filterModel.submission}} </span>
-            </span>
-
-            <span class="badge badge-secondary font-weight-light pointer" title="click to clear this filter" *ngIf="filterModel.onSearch != null" (click)="filterModel.search = null;filter()">
-                <i class="fa fa-times mr-2"></i>
-                find <span class="text-warning font-italic">{{filterModel.onSearch}} </span> in programs
-            </span>
-
-            <span class="badge badge-secondary font-weight-light pointer" *ngIf="inputes.category.result != null && filterModel.onSearch == null && filterModel.submission == null">
-                search in <span class="text-warning font-italic">{{inputes.category.result}} </span> category
-            </span>
-
-            <small *ngIf="filterModel.opt != null"> WHERE </small>
-
-            <span class="badge badge-secondary font-weight-light pointer" title="click to clear this filter" *ngIf="filterModel.opt != null" (click)="filterModel.opt = null;filter()">
-                <i class="fa fa-times mr-2"></i>
-                schools <span class="text-warning font-italic">{{filterModel.opt ? 'has': 'has not'}} </span> OPT option
-            </span>
-
-            <small *ngIf="filterModel.free != null"> AND </small>
-
-            <span class="badge badge-secondary font-weight-light pointer" title="click to clear this filter" *ngIf="filterModel.free != null" (click)="filterModel.free = null;filter()">
-                <i class="fa fa-times mr-2"></i>
-                <span *ngIf="filterModel.opt == null">find</span> <span class="text-warning font-italic">{{filterModel.free ? 'Free': 'Primary'}} </span> programs
-            </span>
-
-            <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="inputes.degree.result != null" (click)="inputes.degree.result = null;filter()">
-                <i class="fa fa-times mr-2"></i>
-                degree: <span class="text-warning font-italic">{{inputes.degree.result | degree}} </span>
-            </span>
-
-            <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="filterModel.tuition != null" (click)="filterModel.tuition = null;filter()">
-                <i class="fa fa-times mr-2"></i>
-                Tuition: <span class="text-warning font-italic">{{filterModel.tuition | currency}}</span>
-            </span>
-
-            <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="filterModel.living != null" (click)="filterModel.living = null;filter()">
-                <i class="fa fa-times mr-2"></i>
-                Cost of living: <span class="text-warning font-italic">{{filterModel.living | currency}}</span>
-            </span>
-
-            <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="inputes.university.result != null" (click)="inputes.university.result = null;filter()">
-                <i class="fa fa-times mr-2"></i>
-                school name: <span class="text-warning font-italic">{{inputes.university.result}}</span>
-            </span>
-
-            <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="inputes.type.result != null" (click)="inputes.type.result = null;filter()">
-                <i class="fa fa-times mr-2"></i>
-                school type: <span class="text-warning font-italic">{{inputes.type.result | type}}</span>
-            </span>
-
-            <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="inputes.country.result != null" (click)="inputes.country.result = null;filter()">
-                <i class="fa fa-times mr-2"></i>
-                country: <span class="text-warning font-italic">{{inputes.country.result.name}}</span>
-            </span>
-
-            <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="inputes.city.result != null" (click)="inputes.city.result = null;filter()">
-                <i class="fa fa-times mr-2"></i>
-                city: <span class="text-warning font-italic">{{inputes.city.result}}</span>
-            </span>
-
-            <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="filterModel.sort != null" (click)="filterModel.sort = null;filter()">
-                <i class="fa fa-times mr-2"></i>
-                sort by: <span class="text-warning font-italic">{{filterModel.sort}}</span>
-            </span>
-        </div>
-    </div>
-
-
     <div class="row" *ngIf="loading">
         <div class="col-12 text-center">
-            <div class="progress" style="height: 5px;">
-                <div class="progress-bar" role="progressbar" [ngStyle]="{'width': progress + '%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="d-flex">
+                <span class="ml-auto text-muted py-3">{{progress.description}}</span>
             </div>
+            <ngb-progressbar type="danger" [value]="progress.loading" [striped]="true" [animated]="true"><i>{{progress.loading}}%</i></ngb-progressbar>
         </div>
     </div>
+
+    <ng-container *ngIf="!loading">
+        <div class="row text-right align-items-center">
+            <div class="col-6">
+                <form (ngSubmit)="filter()">
+                    <div class="input-group input-group-sm">
+                        <input type="search" class="form-control border-secondary" placeholder="search..." [(ngModel)]="filterModel.search" [ngModelOptions]="{standalone: true}">
+                        <div class="input-group-append">
+                            <button class="btn btn-secondary">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-2 ml-auto">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="opt" [(ngModel)]="filterModel.opt" (change)="filter()">
+                    <label class="custom-control-label" for="opt">OPT</label>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="freeApplications" [(ngModel)]="filterModel.free" (change)="filter()">
+                    <label class="custom-control-label" for="freeApplications">Free applications</label>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <div class="row mb-3">
+            <div class="col-3">
+                <input type="date" class="form-control form-control-sm border-dark" [min]="maxDate" id="submissionDeadline" [(ngModel)]="filterModel.submission" (change)="filter()">
+            </div>
+            <div class="col-3">
+                <div class="dropdown">
+                    <button class="btn btn-outline-secondary dropdown-toggle text-left btn-block btn-sm" type="button" id="degree" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="text-truncate">
+                            <span *ngIf="inputes.degree.result">{{inputes.degree.result | degree}}</span>
+                            <span *ngIf="!inputes.degree.result">Degree</span>
+                        </span>
+                    </button>
+                    <div class="dropdown-menu dropdown-filter w-100 border-radius-10 bg-ice" aria-labelledby="degree">
+                        <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 1;filter()">
+                            <span>English as Second Language (ESL)</span>
+                        </div>
+                        <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 2;filter()">
+                            <span>1 Year Post-Secondary Certificate</span>
+                        </div>
+                        <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 3;filter()">
+                            <span>2 Year Undergraduate Diploma</span>
+                        </div>
+                        <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 4;filter()">
+                            <span>3 Year Undergraduate Advanced Diploma</span>
+                        </div>
+                        <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 5;filter()">
+                            <span>3 Year Bachelor's Degree</span>
+                        </div>
+                        <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 6;filter()">
+                            <span>4 Year Bachelor's Degree</span>
+                        </div>
+                        <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 7;filter()">
+                            <span>PostGraduate Certificate / Master's Degree</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 text-right">
+                <button type="button" class="btn btn-orangedark btn-sm" data-toggle="modal" data-target="#advanceFilters">Advance filters</button>
+            </div>
+
+            <!-- conditions -->
+            <div class="col-12 mt-3">
+                <span class="badge badge-secondary font-weight-light pointer" title="click to clear this filter" *ngIf="filterModel.submission != null" (click)="filterModel.submission = null;filter()">
+                    <i class="fa fa-times mr-2"></i>
+                    find program submission deadline <span class="text-warning font-italic"> {{filterModel.submission}} </span>
+                </span>
+
+                <span class="badge badge-secondary font-weight-light pointer" title="click to clear this filter" *ngIf="filterModel.onSearch != null" (click)="filterModel.search = null;filter()">
+                    <i class="fa fa-times mr-2"></i>
+                    find <span class="text-warning font-italic">{{filterModel.onSearch}} </span> in programs
+                </span>
+
+                <span class="badge badge-secondary font-weight-light pointer" *ngIf="inputes.category.result != null && filterModel.onSearch == null && filterModel.submission == null">
+                    search in <span class="text-warning font-italic">{{inputes.category.result}} </span> category
+                </span>
+
+                <small *ngIf="filterModel.opt != null"> WHERE </small>
+
+                <span class="badge badge-secondary font-weight-light pointer" title="click to clear this filter" *ngIf="filterModel.opt != null" (click)="filterModel.opt = null;filter()">
+                    <i class="fa fa-times mr-2"></i>
+                    schools <span class="text-warning font-italic">{{filterModel.opt ? 'has': 'has not'}} </span> OPT option
+                </span>
+
+                <small *ngIf="filterModel.free != null"> AND </small>
+
+                <span class="badge badge-secondary font-weight-light pointer" title="click to clear this filter" *ngIf="filterModel.free != null" (click)="filterModel.free = null;filter()">
+                    <i class="fa fa-times mr-2"></i>
+                    <span *ngIf="filterModel.opt == null">find</span> <span class="text-warning font-italic">{{filterModel.free ? 'Free': 'Primary'}} </span> programs
+                </span>
+
+                <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="inputes.degree.result != null" (click)="inputes.degree.result = null;filter()">
+                    <i class="fa fa-times mr-2"></i>
+                    degree: <span class="text-warning font-italic">{{inputes.degree.result | degree}} </span>
+                </span>
+
+                <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="filterModel.tuition != null" (click)="filterModel.tuition = null;filter()">
+                    <i class="fa fa-times mr-2"></i>
+                    Tuition: <span class="text-warning font-italic">{{filterModel.tuition | currency}}</span>
+                </span>
+
+                <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="filterModel.living != null" (click)="filterModel.living = null;filter()">
+                    <i class="fa fa-times mr-2"></i>
+                    Cost of living: <span class="text-warning font-italic">{{filterModel.living | currency}}</span>
+                </span>
+
+                <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="inputes.university.result != null" (click)="inputes.university.result = null;filter()">
+                    <i class="fa fa-times mr-2"></i>
+                    school name: <span class="text-warning font-italic">{{inputes.university.result}}</span>
+                </span>
+
+                <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="inputes.type.result != null" (click)="inputes.type.result = null;filter()">
+                    <i class="fa fa-times mr-2"></i>
+                    school type: <span class="text-warning font-italic">{{inputes.type.result | type}}</span>
+                </span>
+
+                <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="inputes.country.result != null" (click)="inputes.country.result = null;filter()">
+                    <i class="fa fa-times mr-2"></i>
+                    country: <span class="text-warning font-italic">{{inputes.country.result.name}}</span>
+                </span>
+
+                <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="inputes.city.result != null" (click)="inputes.city.result = null;filter()">
+                    <i class="fa fa-times mr-2"></i>
+                    city: <span class="text-warning font-italic">{{inputes.city.result}}</span>
+                </span>
+
+                <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="filterModel.sort != null" (click)="filterModel.sort = null;filter()">
+                    <i class="fa fa-times mr-2"></i>
+                    sort by: <span class="text-warning font-italic">{{filterModel.sort}}</span>
+                </span>
+            </div>
+        </div>
+    </ng-container>
 
     <div class="row" *ngIf="!loading && filterModel.total == 0">
         <div class="col-12">
@@ -220,7 +222,7 @@
                                         <small>{{item.program.school.city}}</small>
                                     </div>
                                 </li>
-                                <li class="nav-item border-top" *ngIf="item.program.school.opt">
+                                <li class="nav-item border-top" *ngIf="item.program.school.opt" title="Optional Practical Training">
                                     <div>
                                         <small>OPT</small>
                                     </div>
