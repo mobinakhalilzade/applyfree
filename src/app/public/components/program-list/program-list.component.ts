@@ -255,9 +255,9 @@ export class ProgramListComponent implements OnInit {
             this.filterModel.total = body.total;
             this.filterModel.active = true;
             this.loading = false;
-            this.progress = 12.5 * 8;
-          }, 1000);
+            this.progress['loading'] = 12.5 * 8;
 
+          }, 1000);
         }
       }
     });
@@ -414,21 +414,37 @@ export class ProgramListComponent implements OnInit {
     $('#advanceFilters').modal('hide');
   }
 
-  progress: number = 0;
+  progress = {
+    description: 'loading...',
+    loading: 0
+  };
   ngOnInit() {
+    this.progress = {
+      description: 'loading countries...',
+      loading: 12.5
+    };
+    this.progress['loading'] = 12.5;
     this.getCountries(() => {
-      this.progress = 12.5;
-      this.progress = 12.5 * 2;
+      this.progress = {
+        description: 'loading categories...',
+        loading: 12.5 * 2
+      };
       this.getCategories(() => {
-        this.progress = 12.5 * 3;
+        this.progress = {
+          description: 'loading schools...',
+          loading: 12.5 * 3
+        };
         this.getSchools(() => {
-          this.progress = 12.5 * 4;
+          this.progress['loading'] = 12.5 * 4;
           this.getSchoolsType(() => {
-            this.progress = 12.5 * 5;
+            this.progress['loading'] = 12.5 * 5;
             this.getTuition(() => {
-              this.progress = 12.5 * 6;
+              this.progress['loading'] = 12.5 * 6;
               this.getCostInYear(() => {
-                this.progress = 12.5 * 7;
+                this.progress = {
+                  description: 'loading programs...',
+                  loading: 12.5 * 7
+                };
                 this.getPrograms(this.filterModel);
               });
             });

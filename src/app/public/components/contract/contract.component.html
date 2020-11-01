@@ -18,42 +18,35 @@
                         </div>
                         <ul>
                             <li>
-                                The Student must know it is a condition of
-                                the contract that any information given with or
-                                in relation to the Student’s application is true, genuine, correct, and complete.
+                                The Student must know it is a condition of the contract that any information given with or in relation to the Student’s application is true, genuine, correct, and complete.
                             </li>
                             <li class="py-4">
-                                The Student is bound to
-                            act as a responsible member of the
-                            University’s community, including treating other
-                            members of the community and the public with courtesy and respect.
+                                The Student is bound to act as a responsible member of the University’s community, including treating other members of the community and the public with courtesy and respect.
                             </li>
                             <li>
-                                The Student is bound to
-                                progress his/her own academic studies. This
-                                will include giving work when required to
-                                do so, meeting deadlines, and attending tutorials, classes, and lectures.
+                                The Student is bound to progress his/her own academic studies. This will include giving work when required to do so, meeting deadlines, and attending tutorials, classes, and lectures.
                             </li>
                         </ul>
                         <!-- <p>
                             <i class="fas fa-circle text-danger px-1"></i> 
                         </p> -->
                     </div>
-                    <div class="jumbotron pt-1 mt-5">
-                        <i class="fas fa-signature text-orangedark fa-3x my-3"></i>
-                        <h2 class="text-orangedark">Dear Mobina!</h2>
-                        <p class="lead">After you sign the contract, you should pay <span class="data font-weight-bold">
-                                $12000
-                            </span> for apply this program.</p>
-                        <hr class="my-4">
-                        <p>
-                            <i class="fas fa-quote-left px-2"></i>
-                            If you didn't log in applyfree , you will redirect to login page.
-                        </p>
-                        <a class="btn btn-orangedark float-right" (click)="signContract()">
+                    <ng-container *ngIf="program">
+                        <div class="jumbotron pt-1 mt-5">
+                            <i class="fas fa-signature text-orangedark fa-3x my-3"></i>
+                            <h2 class="text-orangedark">Dear <span *ngIf="user">{{user.firstName}} {{user.lastName}}</span> <span *ngIf="!user">User</span></h2>
+                            <p class="lead" *ngIf="program.fee > 0">After you sign the contract, you should pay
+                                <b>{{program.fee | currency}}</b> for apply this program.</p>
+                            <p class="lead" *ngIf="program.fee == 0">This program is <b class="text-success">free</b> And After you sign the contract you will get it</p>
+                            <hr class="my-4" *ngIf="!user">
+                            <p *ngIf="!user">
+                                <i class="fas fa-quote-left px-2"></i> If you didn't log in applyfree , you will redirect to login page.
+                            </p>
+                            <a class="btn btn-orangedark float-right" (click)="sign()">
                             Sign the contract
                         </a>
-                    </div>
+                        </div>
+                    </ng-container>
                 </div>
             </div>
         </div>

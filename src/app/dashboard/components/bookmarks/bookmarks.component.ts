@@ -17,7 +17,6 @@ export class BookmarksComponent implements OnInit {
 
   bookmarks() {
     this.service.bookmarks().subscribe((response: any) => {
-      console.log(response);
       if (response.status == 200) {
         const body = response.body;
         this.loading = false;
