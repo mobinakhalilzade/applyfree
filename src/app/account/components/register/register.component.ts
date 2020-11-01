@@ -9,7 +9,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
   form: FormGroup;
-  roleId: number = 1;
+  role: any = {
+    active: false,
+    id: 1
+  }
   alert: any = {
     message: null,
     return: null
@@ -17,6 +20,7 @@ export class RegisterComponent implements OnInit {
   errors: any = [];
   submited: boolean;
   loading: boolean;
+  selectedRole: boolean;
 
   constructor(
     private service: AccountService,
@@ -24,7 +28,8 @@ export class RegisterComponent implements OnInit {
   }
 
   setRole(id: any) {
-    this.roleId = id;
+    this.role.active = true;
+    this.role.id = id;
   }
 
   getError() {
@@ -50,7 +55,7 @@ export class RegisterComponent implements OnInit {
       password: form.password,
       firstName: form.firstName,
       lastName: form.lastName,
-      role: this.roleId,
+      role: this.role.id,
       image: "avatar.jpg"
     };
 
@@ -82,7 +87,7 @@ export class RegisterComponent implements OnInit {
       password: [null, [Validators.required, Validators.minLength(6)]],
       confirmPassword: [null, [Validators.required, Validators.minLength(6)]],
       username: [null, [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
-      phone: [null, [Validators.required, Validators.pattern("^[0-9]*$")]],
+      phone: [null, [Validators.required, Validators.pattern("^\\+[0-9]*$")]],
       terms: [true, [Validators.required]],
     });
 

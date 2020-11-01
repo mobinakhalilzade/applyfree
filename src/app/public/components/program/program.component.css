@@ -32,3 +32,9 @@
     background-color: var(--danger);
     color: var(--white);
 }
+
+.container >div.btn-header-map{
+    position: relative;
+    top: 250px;
+    left: 88%;
+}

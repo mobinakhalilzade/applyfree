@@ -72,12 +72,6 @@ span.as-shadow::after {
     transform: translate(-50%, 0%);
 }
 
-.userRole:hover{
-    -ms-transform: scale(1.5);
-    -webkit-transform: scale(1.5);
-    transform: scale(1.1);
-}
-
 @media only screen and (max-width: 2560px) {
     span.as-shadow::after,
     span.as-shadow::before {

@@ -11,6 +11,7 @@ import { PasswordComponent } from "./account/components/password/password.compon
 //dashboard
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SignaturesComponent } from "./dashboard/components/signatures/signatures.component";
+import { SignatureComponent } from "./dashboard/components/signatures/components/signature/signature.component";
 import { ProgramsComponent } from "./dashboard/components/programs/programs.component";
 import { BookmarksComponent } from "./dashboard/components/bookmarks/bookmarks.component";
 import { PaymentsComponent } from "./dashboard/components/payments/payments.component";
@@ -57,7 +58,12 @@ const routes: Routes = [
   {
     path: 'dashboard', component: DashboardComponent,
     children: [
-      { path: 'signatures', component: SignaturesComponent },
+      {
+        path: 'signatures', component: SignaturesComponent,
+        children: [
+          { path: 'new', component: SignatureComponent },
+        ]
+      },
       { path: 'programs', component: ProgramsComponent },
       { path: 'bookmarks', component: BookmarksComponent },
       { path: 'payments', component: PaymentsComponent },

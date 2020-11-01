@@ -9,8 +9,12 @@ import { AccountService } from '../../account.service';
 })
 export class LoginComponent implements OnInit {
   form: any;
-  alert: any;
+  alert: any = {
+    message: null,
+    return: null
+  };
   loading: boolean;
+  submited: boolean;
   constructor(
     private service: AccountService,
     private formBuilder: FormBuilder) {
@@ -40,7 +44,6 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('token', data.data.token);
           window.location.href = "/dashboard/signatures";
         }
-
         if (data.return == 300) {
           this.loading = false;
           this.alert = data;

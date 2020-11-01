@@ -12,6 +12,7 @@ export class ProgramComponent implements OnInit {
   alert: any;
   program: any;
   bookmarked: boolean;
+  successBookmarked: any;
 
   constructor(private service: PublicService,
     private route: ActivatedRoute) { }
@@ -58,6 +59,10 @@ export class ProgramComponent implements OnInit {
         const body = response.body;
         if (body.return == 200) {
           this.bookmarked = true;
+          this.successBookmarked = body;
+          setTimeout(() => {
+            this.successBookmarked=null;
+          }, 3000);
         }
       }
     });

@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { DashboardService } from 'src/app/dashboard/dashboard.service';
 import { Router } from '@angular/router';
 import { UploadService } from '../../../../../helper/upload.service';
 
@@ -11,15 +10,21 @@ import { UploadService } from '../../../../../helper/upload.service';
 export class SignatureComponent implements OnInit {
   @ViewChild("fileUpload", { static: false })
   fileUpload: ElementRef;
-  file = {};
+  file = {
+    data: null,
+    inProgress: false,
+    progress: 0,
+  };
   loading: boolean;
   alert: any;
   form = {
     image: null
   }
+  error: boolean;
+
   constructor(
     private uploadService: UploadService,
-    private service: DashboardService, private router: Router) { }
+    private router: Router) { }
 
   upload() {
     const fileUpload = this.fileUpload.nativeElement;
@@ -35,7 +40,8 @@ export class SignatureComponent implements OnInit {
           }
 
           if (body.return == 300) {
-            this.alert = body;
+            this.error = true;
+            this.alert = body.message;
           }
         }
       })

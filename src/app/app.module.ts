@@ -28,6 +28,7 @@ import { ProgramsComponent } from './dashboard/components/programs/programs.comp
 import { SignaturesComponent } from './dashboard/components/signatures/signatures.component';
 import { BookmarksComponent } from './dashboard/components/bookmarks/bookmarks.component';
 import { PaymentsComponent } from './dashboard/components/payments/payments.component';
+import { SignatureComponent } from './dashboard/components/signatures/components/signature/signature.component';
 
 import { PaymentComponent } from './payment/payment.component';
 import { SuccessComponent } from './payment/components/success/success.component';
@@ -75,7 +76,8 @@ import { SafePipe } from './pipes/safe.pipe';
     FailureComponent,
     CheckoutComponent,
     ProgramsComponent,
-    SafePipe
+    SafePipe,
+    SignatureComponent
   ],
   imports: [
     CommonModule,

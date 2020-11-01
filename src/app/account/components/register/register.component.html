@@ -1,32 +1,41 @@
-<div class="row h-100 align-content-center bg-white">
-    <div class="col-xl-4 col-lg-5 col-md-8 col-sm-8 col-10 shadow-lg p-5 bg-light mx-auto border-radius-30 bg-duplicate">
+<div class="row h-100 align-content-center justify-content-around bg-white">
+    <div class="col-3">
+        <div class="alert alert-info" role="alert">
+            <h4 class="alert-heading">Student!</h4>
+            <p>Student account is useful for those who want to apply to a higher degree themselves. This type of account
+                is limited to one person use only.</p>
+        </div>
+    </div>
+
+    <div
+        class="col-xl-4 col-lg-5 col-md-8 col-sm-8 col-10 shadow-lg px-5 pt-5 pb-4 bg-light border-radius-30 bg-duplicate">
         <span class="as-shadow d-xl-block d-lg-block d-md-none d-sm-none d-none"></span>
         <div class="row">
             <div class="col-12 ">
-                <!-- <div class="row mb-4">
+                <div class="row mb-4">
                     <div class="col-xl-6 col-lg-6 col-md-4 col-sm-4 col-4 mx-auto text-center">
-                        <div class="logo">
-                            <span class="number"></span>
-                            <span class="line"></span>
-                        </div>
-                    </div>
-                </div> -->
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-4 col-sm-4 col-4 mx-auto text-center">
-                        <img src="assets/images/logo.png" class="img-fluid" alt="applyfree">
+                        <a routerLink="/programs">
+                            <img src="assets/images/logo.png" class="img-fluid" alt="applyfree">
+                        </a>
                     </div>
                 </div>
                 <form [formGroup]="form" (ngSubmit)="register(form.value)">
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                             <div class="form-group">
-                                <input formControlName="firstName" id="firstName" class="form-control bg-transparent border-right-0 border-left-0 border-top-0" type="text" autocomplete="off" [ngClass]="{'is-invalid' : submited && form.controls.firstName.invalid}" required />
+                                <input formControlName="firstName" id="firstName"
+                                    class="form-control bg-transparent border-right-0 border-left-0 border-top-0"
+                                    type="text" autocomplete="off"
+                                    [ngClass]="{'is-invalid' : submited && form.controls.firstName.invalid}" required />
                                 <label for="firstName" class="form-control-placeholder">First Name</label>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                             <div class="form-group">
-                                <input formControlName="lastName" id="lastName" class="form-control bg-transparent border-right-0 border-left-0 border-top-0" type="text" autocomplete="off" [ngClass]="{'is-invalid' : submited && form.controls.lastName.invalid}" required />
+                                <input formControlName="lastName" id="lastName"
+                                    class="form-control bg-transparent border-right-0 border-left-0 border-top-0"
+                                    type="text" autocomplete="off"
+                                    [ngClass]="{'is-invalid' : submited && form.controls.lastName.invalid}" required />
                                 <label for="lastName" class="form-control-placeholder">Last Name</label>
                             </div>
                         </div>
@@ -36,15 +45,21 @@
                     <div class="row mt-3">
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                             <div class="form-group">
-                                <input formControlName="password" id="password" minlength=6 class="form-control bg-transparent border-right-0 border-left-0 border-top-0" type="password" [ngClass]="{'is-invalid' : submited && form.controls.password.invalid}" autocomplete="off" required
-                                />
+                                <input formControlName="password" id="password" minlength=6
+                                    class="form-control bg-transparent border-right-0 border-left-0 border-top-0"
+                                    type="password"
+                                    [ngClass]="{'is-invalid' : submited && form.controls.password.invalid}"
+                                    autocomplete="off" required />
                                 <label for="password" class="form-control-placeholder">Password</label>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                             <div class="form-group">
-                                <input formControlName="confirmPassword" id="confirmPassword" minlength=6 class="form-control bg-transparent border-right-0 border-left-0 border-top-0" type="password" [ngClass]="{'is-invalid' : submited && form.controls.confirmPassword.invalid}" autocomplete="off"
-                                    required />
+                                <input formControlName="confirmPassword" id="confirmPassword" minlength=6
+                                    class="form-control bg-transparent border-right-0 border-left-0 border-top-0"
+                                    type="password"
+                                    [ngClass]="{'is-invalid' : submited && form.controls.confirmPassword.invalid}"
+                                    autocomplete="off" required />
                                 <label for="confirmPassword" class="form-control-placeholder">Confirm Password</label>
                             </div>
                         </div>
@@ -53,7 +68,10 @@
                     <div class="row mt-3">
                         <div class="col-6">
                             <div class="form-group">
-                                <input formControlName="username" id="username" class="form-control bg-transparent border-right-0 border-left-0 border-top-0" type="email" autocomplete="off" [ngClass]="{'is-invalid' : submited && form.controls.username.invalid}" required />
+                                <input formControlName="username" id="username"
+                                    class="form-control bg-transparent border-right-0 border-left-0 border-top-0"
+                                    type="email" autocomplete="off"
+                                    [ngClass]="{'is-invalid' : submited && form.controls.username.invalid}" required />
                                 <label for="username" class="form-control-placeholder">
                                     <i class="far fa-envelope"></i>
                                     Email</label>
@@ -61,12 +79,15 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <input formControlName="phone" id="phone" class="form-control bg-transparent border-right-0 border-left-0 border-top-0" type="tel" autocomplete="off" [ngClass]="{'is-invalid' : submited && form.controls.phone.invalid}" required />
+                                <input formControlName="phone" id="phone"
+                                    class="form-control bg-transparent border-right-0 border-left-0 border-top-0"
+                                    type="tel" autocomplete="off"
+                                    [ngClass]="{'is-invalid' : submited && form.controls.phone.invalid}" required />
                                 <label for="phone" class="form-control-placeholder">
                                     <i class="fas fa-mobile-alt"></i>
                                     Phone</label>
                                 <small class="text-muted ml-2">
-                                    Will be only used for important updates.
+                                    Will be only used for notifications.
                                 </small>
                             </div>
                         </div>
@@ -74,19 +95,18 @@
 
                     <div class="row mt-3">
                         <div class="col-6 text-center">
-                            <div class="form-group pointer userRole" (click)="setRole(1)">
+                            <div class="form-group pointer" (click)="setRole(1)">
                                 <i class="fas fa-user-graduate fa-3x text-orangedark"></i>
-                                <span class="d-block mt-2">I'm Student</span>
+                                <button class="btn d-block mt-2 mx-auto">I'm Student</button>
                             </div>
                         </div>
                         <div class="col-6 text-center">
-                            <div class="form-group pointer userRole" (click)="setRole(2)">
+                            <div class="form-group pointer" (click)="setRole(2)">
                                 <i class="fas fa-user-tie fa-3x text-orangedark"></i>
-                                <span class="d-block mt-2">I'm Agent</span>
+                                <button class="btn d-block mt-2 mx-auto">I'm Advisor</button>
                             </div>
                         </div>
                     </div>
-
 
                     <div class="form-group">
                         <div class="dropdown">
@@ -104,23 +124,36 @@
                         </label>
                     </div>
                     <div class="row">
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-12 text-xl-left text-lg-left text-md-left text-sm-left text-center">
+                        <div
+                            class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-12 text-xl-left text-lg-left text-md-left text-sm-left text-center">
                             <a routerLink="/login" class="btn btn-link text-muted text-truncate">I'm already member</a>
                         </div>
-                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-7 col-12 text-xl-right text-lg-right text-md-right text-sm-right text-center
+                        <div
+                            class="col-xl-8 col-lg-8 col-md-8 col-sm-7 col-12 text-xl-right text-lg-right text-md-right text-sm-right text-center
                                  mb-xl-0 mb-lg-0 mb-md-0 mb-sm-0 mb-3 order-xl-last order-lg-last order-md-last order-sm-last order-first">
                             <div class="float-right btn-custom reverse d-block">
-                                <button [disabled]="loading" class="btn border-radius-20 position-relative text-light px-xl-4 px-lg-2 px-md-4 px-sm-5 px-1">
+                                <button [disabled]="loading"
+                                    class="btn border-radius-20 position-relative text-light px-xl-4 px-lg-2 px-md-4 px-sm-5 px-1">
                                     <span *ngIf="loading">
                                         <i class="fa fa-spin fa-spinner"></i>
                                     </span>
                                     <span *ngIf="!loading">Register</span>
                                 </button>
-                                <button class="btn border-radius-full text-light ml-2 position-relative" (click)="register(form.value)">
+                                <button class="btn border-radius-full text-light ml-2 position-relative"
+                                    (click)="register(form.value)">
                                     <i class="fa fa-arrow-right"></i>
                                 </button>
                             </div>
 
+                        </div>
+                    </div>
+                    <div class="d-block text-center mt-4">
+                        <div>
+                            <a routerLink="/programs">
+                                <small class="text-muted">
+                                    back to Homepage
+                                </small>
+                            </a>
                         </div>
                     </div>
                     <div class="d-block text-center mt-4">
@@ -139,6 +172,19 @@
                     </div>
                 </form>
             </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="alert alert-info" role="alert">
+            <h4 class="alert-heading">Advisor!</h4>
+            <p>Advisor account is for applyfree advisors who have passed the selection process or those who want to
+                register a student immediatley.
+                <a>
+                   <b>
+                    Read more about applyfree advisors here.
+                   </b>
+                </a>
+            </p>
         </div>
     </div>
 </div>

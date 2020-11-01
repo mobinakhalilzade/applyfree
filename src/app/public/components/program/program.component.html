@@ -4,10 +4,11 @@
 <ng-container *ngIf="!loading && program">
     <div class="container-fluid px-0">
         <div class="img-banner bg-dark w-100">
-            <div class="banner" [ngStyle]="{'background-image': 'url(http://192.168.3.65/applyfree/img/banner/'+program.school.id+'.jpg)'}">
+            <div class="banner"
+                [ngStyle]="{'background-image': 'url(http://192.168.3.65/applyfree/img/banner/'+program.school.id+'.jpg)'}">
             </div>
             <div class="container">
-                <div class="header-info w-50">
+                <div class="header-info w-50 d-inline">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb bg-transparent">
                             <li class="breadcrumb-item"><a [routerLink]="['/programs']" class="text-light">Programs</a>
@@ -33,20 +34,26 @@
                             <h6>
                                 {{program.school.country}} , {{program.school.state}} , {{program.school.city}}
                             </h6>
-                            <a class="btn btn-sm btn-outline-light mt-2" *ngIf="program.school" target="_blank" [href]="program.school.googleMap">see on googlemap</a>
+                           
                         </div>
                     </div>
+                </div>
+                <div class="d-inline btn-header-map">
+                    <a class="btn btn-sm btn-outline-light mt-2" *ngIf="program.school" target="_blank"
+                    [href]="program.school.googleMap">see on googlemap</a>
                 </div>
             </div>
         </div>
     </div>
     <div class="container mt-5">
         <div class="row my-4">
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-10 col-10 order-xl-first order-lg-first order-md-first order-sm-last order-last">
+            <div
+                class="col-xl-3 col-lg-3 col-md-4 col-sm-10 col-10 order-xl-first order-lg-first order-md-first order-sm-last order-last">
                 <div class="row">
                     <div class="col-12">
                         <div class="card shadow border-0 border-radius-20">
-                            <img [src]="'http://192.168.3.65/applyfree/img/logo/'+program.school.id+'.png'" class="img-fluid mx-auto w-75" [alt]="program.school.title">
+                            <img [src]="'http://192.168.3.65/applyfree/img/logo/'+program.school.id+'.png'"
+                                class="img-fluid mx-auto w-75" [alt]="program.school.title">
                             <div class="card-body">
                                 <ul class="list-group list-group-flush text-center py-0">
                                     <li class="list-group-item text-left py-4">
@@ -70,14 +77,16 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-9 col-lg-9 col-md-8 col-sm-10 col-10 order-xl-last order-lg-last order-md-last order-sm-first order-first pl-5">
+            <div
+                class="col-xl-9 col-lg-9 col-md-8 col-sm-10 col-10 order-xl-last order-lg-last order-md-last order-sm-first order-first pl-5">
                 <div class="row">
                     <div class="col mb-4">
                         <h3>Information</h3>
                     </div>
 
                     <div class="col-3 text-right mb-4">
-                        <button class="btn btn-outline-danger btn-block" (click)="bookmark()" [ngClass]="{'bookmarked':bookmarked}">
+                        <button class="btn btn-outline-danger btn-block" (click)="bookmark()"
+                            [ngClass]="{'bookmarked':bookmarked}">
                             <i class="far fa-heart pr-2"></i>
                             Bookmark
                         </button>
@@ -116,10 +125,13 @@
                                                     </h3>
                                                 </time>
                                             </td>
-                                            <td class="py-3" *ngIf="item.submission==null"><button class="btn far fa-question-circle text-warning" data-toggle="tooltip" data-placement="top" title="Unknown"></button>
+                                            <td class="py-3" *ngIf="item.submission==null"><button
+                                                    class="btn far fa-question-circle text-warning"
+                                                    data-toggle="tooltip" data-placement="top" title="Unknown"></button>
                                             </td>
                                             <td *ngIf="item.start_date!==null">
-                                                <a class="btn btn-orangedark" [routerLink]="['/contract', item.id]">apply</a>
+                                                <a class="btn btn-orangedark"
+                                                    [routerLink]="['/contract', item.id]">apply</a>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -172,16 +184,20 @@
                                             </b>
                                         </legend>
                                         <div class="row justify-content-center px-1">
-                                            <div class="col-4 d-flex bg-ice py-3 mr-3 my-3 align-self-center border-radius-10">
+                                            <div
+                                                class="col-4 d-flex bg-ice py-3 mr-3 my-3 align-self-center border-radius-10">
                                                 Degree
                                             </div>
-                                            <div class="col-7 d-flex py-3 align-self-center bg-ice ml-3 my-3 border-radius-10">
+                                            <div
+                                                class="col-7 d-flex py-3 align-self-center bg-ice ml-3 my-3 border-radius-10">
                                                 {{program.degree | degree}}
                                             </div>
-                                            <div class="col-4 d-flex py-3 align-self-center bg-ice mr-3 mb-3 border-radius-10">
+                                            <div
+                                                class="col-4 d-flex py-3 align-self-center bg-ice mr-3 mb-3 border-radius-10">
                                                 Length of program
                                             </div>
-                                            <div class="col-7 d-flex py-3 align-self-center bg-ice ml-3 mb-3 border-radius-10">
+                                            <div
+                                                class="col-7 d-flex py-3 align-self-center bg-ice ml-3 mb-3 border-radius-10">
                                                 {{program.length}} Month
                                             </div>
                                         </div>
@@ -192,6 +208,14 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="successBookmarked && successBookmarked.message">
+    <div class="notif-alert w-25 mx-2">
+        <div class="alert alert-success" role="alert">
+            {{successBookmarked.message}}
         </div>
     </div>
 </ng-container>
