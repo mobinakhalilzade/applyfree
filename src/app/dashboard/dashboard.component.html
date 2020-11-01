@@ -8,6 +8,12 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mt-2 mt-lg-0">
+                        <li class="nav-item mr-4">
+                            <a class="nav-link py-3 border-radius-x-5" routerLinkActive="active"
+                                routerLink="/programs">
+                                Programs
+                            </a>
+                        </li>
                         <li class="nav-item mr-4" *ngFor="let item of menus">
                             <a class="nav-link py-3 border-radius-x-5" routerLinkActive="active"
                                 [routerLink]="item.link">
@@ -16,10 +22,10 @@
                         </li>
                     </ul>
                     <div class="text-light ml-auto">
-                        <i class="fa fa-envelope"></i>
-                        <i class="fa fa-sign-out-alt ml-3" alt="logout" (click)="logout()"></i>
-                        <i class="fa fa-user mx-3 mb-2"></i>
                         <a class="text-light" routerLink="/dashboard">Hi {{user.firstName}} {{user.lastName}}</a>
+                        <button class="btn ml-2" (click)="logout()" data-toggle="tooltip" data-placement="top" title="Logout">
+                            <i class="fa fa-sign-out-alt text-light"></i>
+                        </button>
                     </div>
                 </div>
             </nav>
@@ -28,30 +34,30 @@
 
     <div class="container h-100">
         <div class="row h-100 mt-5 pt-5">
-        <div class="col-12 h-100">
-            <router-outlet></router-outlet>
+            <div class="col-12 h-100">
+                <router-outlet></router-outlet>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="footer shadow">
-    <div class="container">
-        <div class="mt-2 py-1">
-            <span class="float-left text-muted">
-                2020 applyfree
-            </span>
-            <span class="float-right text-muted">
-                <span class="border-right border-dark px-2">
-                    About
+    <div class="footer shadow">
+        <div class="container">
+            <div class="mt-2 py-1">
+                <a class="float-left text-muted" routerLink="/programs">
+                    2020 applyfree
+                </a>
+                <span class="float-right text-muted">
+                    <a class="border-right border-dark px-2" routeLink="/page/about">
+                        About
+                    </a>
+                    <a class="border-right border-dark ml-2 px-2" routeLink="/page/about">
+                        Team
+                    </a>
+                    <a class="ml-2 pl-1" routeLink="/page/contact">
+                        Contact
+                    </a>
                 </span>
-                <span class="border-right border-dark ml-2 px-2">
-                    Team
-                </span>
-                <span class="ml-2 pl-1">
-                    Contact
-                </span>
-            </span>
+            </div>
         </div>
     </div>
-</div>
 </div>

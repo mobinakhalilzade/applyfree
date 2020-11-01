@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AccountService } from '../../account.service';
 
 @Component({
   selector: 'app-forgot',
@@ -7,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForgotComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup;
+  loading: boolean;
+  submited: boolean;
 
-  ngOnInit(): void {
+  constructor(
+    private service: AccountService,
+    private formBuilder: FormBuilder
+  ) { }
+
+  forgot(form:any){
+    const command={
+      username:form.username
+    }
+    console.log(form);
+    this.service.forgot(command).subscribe((response:any)=>{
+      console.log(response);
+    })
+  }
+
+  ngOnInit() {
+    this.form = this.formBuilder.group({
+      username: [null, [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+    });
   }
 
 }

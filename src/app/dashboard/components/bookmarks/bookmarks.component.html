@@ -1,4 +1,18 @@
-<div class="row">
+<ng-container *ngIf="loading">
+    <div class="text-center text-muted">
+        Please wait ...
+        <i class="fa fa-sync fa-spin"></i>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="bookmark.length == 0">
+    <div class="text-center">
+        <h5 class="my-2">You do not have any bookmark yet!</h5>
+        <a class="text-muted pointer" routerLink="/programs">go to programs</a>
+    </div>
+</ng-container>
+
+<div class="row text-center">
     <div class="col-6" *ngFor="let item of bookmark">
         <a class="card mb-4 border-radius-10 shadow" [routerLink]="['/program', item.id, item.program.slug]">
             <div class="row card-body">

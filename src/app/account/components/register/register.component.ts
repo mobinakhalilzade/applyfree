@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RegisterService } from './register.service';
+import { AccountService } from '../../account.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
   loading: boolean;
 
   constructor(
-    private service: RegisterService,
+    private service: AccountService,
     private formBuilder: FormBuilder) {
   }
 

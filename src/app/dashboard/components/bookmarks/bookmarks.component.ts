@@ -9,6 +9,7 @@ import { DashboardService } from '../../dashboard.service';
 export class BookmarksComponent implements OnInit {
 
   bookmark: any;
+  loading: boolean = true;
 
   constructor(
     private service: DashboardService
@@ -19,6 +20,7 @@ export class BookmarksComponent implements OnInit {
       console.log(response);
       if (response.status == 200) {
         const body = response.body;
+        this.loading = false;
         if (body.return = 200) {
           this.bookmark = body.data;
         }

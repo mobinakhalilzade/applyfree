@@ -3,24 +3,27 @@
         <div class="col-6">
             <form (ngSubmit)="filter()">
                 <div class="input-group input-group-sm">
-                    <input type="search" class="form-control border-secondary" placeholder="search..." [(ngModel)]="filterModel.search" [ngModelOptions]="{standalone: true}">
+                    <input type="search" class="form-control border-secondary" placeholder="search..."
+                        [(ngModel)]="filterModel.search" [ngModelOptions]="{standalone: true}">
                     <div class="input-group-append">
                         <button class="btn btn-secondary">
-                        <i class="fa fa-search"></i>
-                    </button>
+                            <i class="fa fa-search"></i>
+                        </button>
                     </div>
                 </div>
             </form>
         </div>
         <div class="col-2 ml-auto">
             <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="opt" [(ngModel)]="filterModel.opt" (change)="filter()">
+                <input type="checkbox" class="custom-control-input" id="opt" [(ngModel)]="filterModel.opt"
+                    (change)="filter()">
                 <label class="custom-control-label" for="opt">OPT</label>
             </div>
         </div>
         <div class="col-2">
             <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="freeApplications" [(ngModel)]="filterModel.free" (change)="filter()">
+                <input type="checkbox" class="custom-control-input" id="freeApplications" [(ngModel)]="filterModel.free"
+                    (change)="filter()">
                 <label class="custom-control-label" for="freeApplications">Free applications</label>
             </div>
         </div>
@@ -29,111 +32,143 @@
 
     <div class="row mb-3">
         <div class="col-3">
-            <input type="date" class="form-control form-control-sm border-dark" [min]="maxDate" id="submissionDeadline" [(ngModel)]="filterModel.submission" (change)="filter()">
+            <input type="date" class="form-control form-control-sm border-dark" [min]="maxDate" id="submissionDeadline"
+                [(ngModel)]="filterModel.submission" (change)="filter()">
         </div>
         <div class="col-3">
             <div class="dropdown">
-                <button class="btn btn-outline-secondary dropdown-toggle text-left btn-block btn-sm" type="button" id="degree" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-outline-secondary dropdown-toggle text-left btn-block btn-sm" type="button"
+                    id="degree" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="text-truncate">
                         <span *ngIf="inputes.degree.result">{{inputes.degree.result | degree}}</span>
                         <span *ngIf="!inputes.degree.result">Degree</span>
                     </span>
                 </button>
                 <div class="dropdown-menu dropdown-filter w-100 border-radius-10 bg-ice" aria-labelledby="degree">
-                    <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 1;filter()">
+                    <div class="dropdown-item pointer text-truncate px-3 py-2"
+                        (click)="inputes.degree.result = 1;filter()">
                         <span>English as Second Language (ESL)</span>
                     </div>
-                    <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 2;filter()">
+                    <div class="dropdown-item pointer text-truncate px-3 py-2"
+                        (click)="inputes.degree.result = 2;filter()">
                         <span>1 Year Post-Secondary Certificate</span>
                     </div>
-                    <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 3;filter()">
+                    <div class="dropdown-item pointer text-truncate px-3 py-2"
+                        (click)="inputes.degree.result = 3;filter()">
                         <span>2 Year Undergraduate Diploma</span>
                     </div>
-                    <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 4;filter()">
+                    <div class="dropdown-item pointer text-truncate px-3 py-2"
+                        (click)="inputes.degree.result = 4;filter()">
                         <span>3 Year Undergraduate Advanced Diploma</span>
                     </div>
-                    <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 5;filter()">
+                    <div class="dropdown-item pointer text-truncate px-3 py-2"
+                        (click)="inputes.degree.result = 5;filter()">
                         <span>3 Year Bachelor's Degree</span>
                     </div>
-                    <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 6;filter()">
+                    <div class="dropdown-item pointer text-truncate px-3 py-2"
+                        (click)="inputes.degree.result = 6;filter()">
                         <span>4 Year Bachelor's Degree</span>
                     </div>
-                    <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 7;filter()">
+                    <div class="dropdown-item pointer text-truncate px-3 py-2"
+                        (click)="inputes.degree.result = 7;filter()">
                         <span>PostGraduate Certificate / Master's Degree</span>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-6 text-right">
-            <button type="button" class="btn btn-orangedark btn-sm" data-toggle="modal" data-target="#advanceFilters">Advance filters</button>
+
+        <div class="col-3">
+            <button type="button" class="btn btn-outline-secondary btn-block btn-sm text-left" data-toggle="modal"
+                data-target="#categories">Category</button>
+        </div>
+
+
+        <div class="col-3 text-right">
+            <button type="button" class="btn btn-orangedark btn-sm" data-toggle="modal"
+                data-target="#advanceFilters">Advance filters</button>
         </div>
 
         <!-- conditions -->
         <div class="col-12 mt-3">
-            <span class="badge badge-secondary font-weight-light pointer" title="click to clear this filter" *ngIf="filterModel.submission != null" (click)="filterModel.submission = null;filter()">
+            <span class="badge badge-secondary font-weight-light pointer" title="click to clear this filter"
+                *ngIf="filterModel.submission != null" (click)="filterModel.submission = null;filter()">
                 <i class="fa fa-times mr-2"></i>
-                find program submission deadline <span class="text-warning font-italic"> {{filterModel.submission}} </span>
+                find program submission deadline <span class="text-warning font-italic"> {{filterModel.submission}}
+                </span>
             </span>
 
-            <span class="badge badge-secondary font-weight-light pointer" title="click to clear this filter" *ngIf="filterModel.onSearch != null" (click)="filterModel.search = null;filter()">
+            <span class="badge badge-secondary font-weight-light pointer" title="click to clear this filter"
+                *ngIf="filterModel.onSearch != null" (click)="filterModel.search = null;filter()">
                 <i class="fa fa-times mr-2"></i>
                 find <span class="text-warning font-italic">{{filterModel.onSearch}} </span> in programs
             </span>
 
-            <span class="badge badge-secondary font-weight-light pointer" *ngIf="inputes.category.result != null && filterModel.onSearch == null && filterModel.submission == null">
+            <span class="badge badge-secondary font-weight-light pointer"
+                *ngIf="inputes.category.result != null && filterModel.onSearch == null && filterModel.submission == null">
                 search in <span class="text-warning font-italic">{{inputes.category.result}} </span> category
             </span>
 
             <small *ngIf="filterModel.opt != null"> WHERE </small>
 
-            <span class="badge badge-secondary font-weight-light pointer" title="click to clear this filter" *ngIf="filterModel.opt != null" (click)="filterModel.opt = null;filter()">
+            <span class="badge badge-secondary font-weight-light pointer" title="click to clear this filter"
+                *ngIf="filterModel.opt != null" (click)="filterModel.opt = null;filter()">
                 <i class="fa fa-times mr-2"></i>
                 schools <span class="text-warning font-italic">{{filterModel.opt ? 'has': 'has not'}} </span> OPT option
             </span>
 
             <small *ngIf="filterModel.free != null"> AND </small>
 
-            <span class="badge badge-secondary font-weight-light pointer" title="click to clear this filter" *ngIf="filterModel.free != null" (click)="filterModel.free = null;filter()">
+            <span class="badge badge-secondary font-weight-light pointer" title="click to clear this filter"
+                *ngIf="filterModel.free != null" (click)="filterModel.free = null;filter()">
                 <i class="fa fa-times mr-2"></i>
-                <span *ngIf="filterModel.opt == null">find</span> <span class="text-warning font-italic">{{filterModel.free ? 'Free': 'Primary'}} </span> programs
+                <span *ngIf="filterModel.opt == null">find</span> <span
+                    class="text-warning font-italic">{{filterModel.free ? 'Free': 'Primary'}} </span> programs
             </span>
 
-            <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="inputes.degree.result != null" (click)="inputes.degree.result = null;filter()">
+            <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter"
+                *ngIf="inputes.degree.result != null" (click)="inputes.degree.result = null;filter()">
                 <i class="fa fa-times mr-2"></i>
                 degree: <span class="text-warning font-italic">{{inputes.degree.result | degree}} </span>
             </span>
 
-            <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="filterModel.tuition != null" (click)="filterModel.tuition = null;filter()">
+            <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter"
+                *ngIf="filterModel.tuition != null" (click)="filterModel.tuition = null;filter()">
                 <i class="fa fa-times mr-2"></i>
                 Tuition: <span class="text-warning font-italic">{{filterModel.tuition | currency}}</span>
             </span>
 
-            <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="filterModel.living != null" (click)="filterModel.living = null;filter()">
+            <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter"
+                *ngIf="filterModel.living != null" (click)="filterModel.living = null;filter()">
                 <i class="fa fa-times mr-2"></i>
                 Cost of living: <span class="text-warning font-italic">{{filterModel.living | currency}}</span>
             </span>
 
-            <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="inputes.university.result != null" (click)="inputes.university.result = null;filter()">
+            <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter"
+                *ngIf="inputes.university.result != null" (click)="inputes.university.result = null;filter()">
                 <i class="fa fa-times mr-2"></i>
                 school name: <span class="text-warning font-italic">{{inputes.university.result}}</span>
             </span>
 
-            <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="inputes.type.result != null" (click)="inputes.type.result = null;filter()">
+            <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter"
+                *ngIf="inputes.type.result != null" (click)="inputes.type.result = null;filter()">
                 <i class="fa fa-times mr-2"></i>
                 school type: <span class="text-warning font-italic">{{inputes.type.result | type}}</span>
             </span>
 
-            <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="inputes.country.result != null" (click)="inputes.country.result = null;filter()">
+            <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter"
+                *ngIf="inputes.country.result != null" (click)="inputes.country.result = null;filter()">
                 <i class="fa fa-times mr-2"></i>
                 country: <span class="text-warning font-italic">{{inputes.country.result.name}}</span>
             </span>
 
-            <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="inputes.city.result != null" (click)="inputes.city.result = null;filter()">
+            <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter"
+                *ngIf="inputes.city.result != null" (click)="inputes.city.result = null;filter()">
                 <i class="fa fa-times mr-2"></i>
                 city: <span class="text-warning font-italic">{{inputes.city.result}}</span>
             </span>
 
-            <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="filterModel.sort != null" (click)="filterModel.sort = null;filter()">
+            <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter"
+                *ngIf="filterModel.sort != null" (click)="filterModel.sort = null;filter()">
                 <i class="fa fa-times mr-2"></i>
                 sort by: <span class="text-warning font-italic">{{filterModel.sort}}</span>
             </span>
@@ -144,7 +179,8 @@
     <div class="row" *ngIf="loading">
         <div class="col-12 text-center">
             <div class="progress" style="height: 5px;">
-                <div class="progress-bar" role="progressbar" [ngStyle]="{'width': progress + '%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" [ngStyle]="{'width': progress + '%'}" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100"></div>
             </div>
         </div>
     </div>
@@ -168,28 +204,36 @@
                         Sort by {{filterModel.sort != null ? filterModel.sort : '...'}}
                     </span>
                     <div class="dropdown-menu dropdown-filter py-0" aria-labelledby="sort">
-                        <div class="dropdown-item pointer px-2" (click)="filterModel.sort = 'fee';filterModel.direction='desc';filter()">
+                        <div class="dropdown-item pointer px-2"
+                            (click)="filterModel.sort = 'fee';filterModel.direction='desc';filter()">
                             Application fee (Most to least)
                         </div>
-                        <div class="dropdown-item pointer px-2" (click)="filterModel.sort = 'fee';filterModel.direction='asc';filter()">
+                        <div class="dropdown-item pointer px-2"
+                            (click)="filterModel.sort = 'fee';filterModel.direction='asc';filter()">
                             Application fee (least to Most)
                         </div>
-                        <div class="dropdown-item pointer px-2" (click)="filterModel.sort = 'length';filterModel.direction='desc';filter()">
+                        <div class="dropdown-item pointer px-2"
+                            (click)="filterModel.sort = 'length';filterModel.direction='desc';filter()">
                             Length (Most to least)
                         </div>
-                        <div class="dropdown-item pointer px-2" (click)="filterModel.sort = 'length';filterModel.direction='asc';filter()">
+                        <div class="dropdown-item pointer px-2"
+                            (click)="filterModel.sort = 'length';filterModel.direction='asc';filter()">
                             Length (least to Most)
                         </div>
-                        <div class="dropdown-item pointer px-2" (click)="filterModel.sort = 'tuition_year';filterModel.direction='desc';filter()">
+                        <div class="dropdown-item pointer px-2"
+                            (click)="filterModel.sort = 'tuition_year';filterModel.direction='desc';filter()">
                             Tuition year (Most to least)
                         </div>
-                        <div class="dropdown-item pointer px-2" (click)="filterModel.sort = 'tuition_year';filterModel.direction='asc';filter()">
+                        <div class="dropdown-item pointer px-2"
+                            (click)="filterModel.sort = 'tuition_year';filterModel.direction='asc';filter()">
                             Tuition year (least to Most)
                         </div>
-                        <div class="dropdown-item pointer px-2" (click)="filterModel.sort = 'cost_living_year';filterModel.direction='desc';filter()">
+                        <div class="dropdown-item pointer px-2"
+                            (click)="filterModel.sort = 'cost_living_year';filterModel.direction='desc';filter()">
                             Cost living year (Most to least)
                         </div>
-                        <div class="dropdown-item pointer px-2" (click)="filterModel.sort = 'cost_living_year';filterModel.direction='asc';filter()">
+                        <div class="dropdown-item pointer px-2"
+                            (click)="filterModel.sort = 'cost_living_year';filterModel.direction='asc';filter()">
                             Cost living year (least to Most)
                         </div>
                     </div>
@@ -199,7 +243,8 @@
         <div class="row">
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 mb-5" *ngFor="let item of programs">
                 <a class="card shadow h-100" [routerLink]="['/program', item.program.id, item.program.slug]">
-                    <img [src]="'http://192.168.3.65/applyfree/img/logo/'+item.program.school.id+'.png'" class="z-index-1 bg-white border-radius-full" [alt]="item.program.school.title">
+                    <img [src]="'http://192.168.3.65/applyfree/img/logo/'+item.program.school.id+'.png'"
+                        class="z-index-1 bg-white border-radius-full" [alt]="item.program.school.title">
                     <div class="row no-gutters h-100">
                         <div class="col-3 text-center text-muted">
                             <ul class="nav flex-column h-100 nav-fill">
@@ -241,8 +286,10 @@
                                                 <b>Application fee</b>
                                             </small>
                                         </legend>
-                                        <small class="d-block" [ngClass]="{'bg-warning text-dark': filterModel.sort == 'fee'}">
-                                            <span class="text-primary" *ngIf="item.program.fee > 0">{{item.program.fee | currency}}</span>
+                                        <small class="d-block"
+                                            [ngClass]="{'bg-warning text-dark': filterModel.sort == 'fee'}">
+                                            <span class="text-primary"
+                                                *ngIf="item.program.fee > 0">{{item.program.fee | currency}}</span>
                                             <span class="text-success" *ngIf="item.program.fee == 0">Free</span>
                                         </small>
                                     </fieldset>
@@ -255,7 +302,8 @@
                                                 <b>Tuition / Year</b>
                                             </small>
                                         </legend>
-                                        <small [ngClass]="{'bg-warning text-dark': filterModel.sort == 'tuition_year'}" class="d-block text-primary">{{item.program.tuition_year | currency}}</small>
+                                        <small [ngClass]="{'bg-warning text-dark': filterModel.sort == 'tuition_year'}"
+                                            class="d-block text-primary">{{item.program.tuition_year | currency}}</small>
                                     </fieldset>
                                 </div>
 
@@ -266,7 +314,9 @@
                                                 <b>Cost living / Year</b>
                                             </small>
                                         </legend>
-                                        <small [ngClass]="{'bg-warning text-dark': filterModel.sort == 'cost_living_year'}" class="d-block text-primary">{{item.program.cost_living_year | currency}}</small>
+                                        <small
+                                            [ngClass]="{'bg-warning text-dark': filterModel.sort == 'cost_living_year'}"
+                                            class="d-block text-primary">{{item.program.cost_living_year | currency}}</small>
                                     </fieldset>
                                 </div>
 
@@ -277,7 +327,8 @@
                                                 <b>Length</b>
                                             </small>
                                         </legend>
-                                        <small [ngClass]="{'bg-warning text-dark': filterModel.sort == 'length'}" class="d-block text-muted text-truncate">{{item.program.length_description}}</small>
+                                        <small [ngClass]="{'bg-warning text-dark': filterModel.sort == 'length'}"
+                                            class="d-block text-muted text-truncate">{{item.program.length_description}}</small>
                                     </fieldset>
                                 </div>
                             </div>
@@ -287,17 +338,19 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <ngb-pagination *ngIf="!loading" (pageChange)="filterModel.active ? pageChange(filterModel) : null" [collectionSize]="filterModel.total" [pageSize]="filterModel.pageSize" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" [(page)]="filterModel.pageIndex"
-                [directionLinks]="false"></ngb-pagination>
+            <ngb-pagination *ngIf="!loading" (pageChange)="filterModel.active ? pageChange(filterModel) : null"
+                [collectionSize]="filterModel.total" [pageSize]="filterModel.pageSize" [maxSize]="5" [rotate]="true"
+                [boundaryLinks]="true" [(page)]="filterModel.pageIndex" [directionLinks]="false"></ngb-pagination>
         </div>
     </ng-container>
 
-    <!-- Modal -->
-    <div class="modal fade" id="advanceFilters" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="advanceFiltersLabel" aria-hidden="true">
+    <!--Categories Modal -->
+    <div class="modal fade" id="categories" data-backdrop="static" data-keyboard="false" tabindex="-2"
+        aria-labelledby="categoriesLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="advanceFiltersLabel">Advance filters</h5>
+                    <h5 class="modal-title" id="categoriesLabel">Category filters</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -305,114 +358,186 @@
                 <div class="modal-body">
                     <div class="row my-2">
                         <div class="col">
-                            <label class="text-muted">Country</label>
-                            <div class="dropdown">
-                                <button class="btn btn-outline-secondary dropdown-toggle text-left w-100" type="button" id="school" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span>
-                                        {{inputes.country.result ? inputes.country.result.name : 'Choose...'}}
-                                    </span>
-                                </button>
-                                <div class="dropdown-menu dropdown-filter w-100 py-0 border-radius-10 bg-ice" aria-labelledby="school">
-                                    <div class="position-sticky top-0 bg-white">
-                                        <input type="text" class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0" [(ngModel)]="inputes.country.value" placeholder="Country" autocomplete="off">
-                                    </div>
-                                    <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.country.result = country" *ngFor="let country of countries | filter : inputes.country.value">
-                                        {{country.name}}
+                            <form class="mb-3">
+                                <div class="input-group">
+                                    <input type="search" class="form-control border-secondary" placeholder="search your category...">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-secondary">
+                                            <i class="fa fa-search"></i>
+                                        </button>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-
-
-                        <div class="col" *ngIf="inputes.country.result">
-                            <label class="text-muted">City</label>
-                            <div class="dropdown">
-                                <button class="btn btn-outline-secondary dropdown-toggle text-left w-100" type="button" id="city" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span>
-                                        {{inputes.city.result ? inputes.city.result : 'Choose...'}}
-                                    </span>
-                                </button>
-                                <div class="dropdown-menu dropdown-filter w-100 py-0 border-radius-10 bg-ice" aria-labelledby="city">
-                                    <div class="position-sticky top-0 bg-white">
-                                        <input type="text" class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0" [(ngModel)]="inputes.city.value" placeholder="City" autocomplete="off">
-                                    </div>
-                                    <div class="dropdown-item pointer text-truncate px-3 py-2" *ngFor="let city of inputes.country.result.cities" (click)="inputes.city.result = city">
-                                        {{city}}
-                                    </div>
+                            </form>
+                            <div class="my-2">
+                                <div class="mb-3" *ngFor="let category of categories">
+                                    <button class="btn btn-secondary d-block m-1">{{category.name}}</button>
+                                    <button class="btn btn-sm btn-info m-2" *ngFor="let subcategory of category.categories">
+                                        {{subcategory.name}}
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col my-2" *ngIf="schools">
-                            <div id="universityTitle" class="my-2">
-                                <label class="text-muted">School</label>
-                                <div class="dropdown">
-                                    <button class="btn btn-outline-secondary dropdown-toggle text-left w-100" type="button" id="university" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span>
-                                        {{inputes.university.result ? inputes.university.result : 'Choose...'}}
-                                    </span>
-                                </button>
-                                    <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="university">
-                                        <div class="position-sticky top-0 bg-white">
-                                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0" [(ngModel)]="inputes.university.value" placeholder="University">
-                                        </div>
-                                        <div class="dropdown-item pointer text-truncate px-2" (click)="inputes.university.result = item.slug" *ngFor="let item of schools | filter : inputes.university.value : 'title';">
-                                            {{item.title}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col my-2">
-                            <div id="universityType" class="my-2">
-                                <label class="text-muted">School Type</label>
-                                <div class="dropdown">
-                                    <button class="btn btn-outline-secondary dropdown-toggle text-left w-100" type="button" id="type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span *ngIf="inputes.type.result">
-                                        {{inputes.type.result | type}}
-                                    </span>
-                                    <span *ngIf="!inputes.type.result">
-                                        School Type
-                                    </span>
-                                </button>
-                                    <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="type">
-                                        <div class="dropdown-item pointer text-truncate px-2" (click)="inputes.type.result = item.type" *ngFor="let item of schoolsType">
-                                            {{item.type | type}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
-                    <form>
+                </div>
+            </div>
+        </div>
+
+        <!--Filter Modal -->
+        <div class="modal fade" id="advanceFilters" data-backdrop="static" data-keyboard="false" tabindex="-1"
+            aria-labelledby="advanceFiltersLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="advanceFiltersLabel">Advance filters</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
                         <div class="row my-2">
                             <div class="col">
-                                <div class="form-group" *ngIf="inputes.tuition.max > 0">
-                                    <label for="formControlRange" class="text-muted">Tuition</label>
-                                    <input type="range" class="form-control-range" id="formControlRange" [min]="inputes.tuition.min" [max]="inputes.tuition.max" [(ngModel)]="filterModel.tuition" [ngModelOptions]="{standalone: true}">
-                                    <span class="badge badge-success float-right font-weight-lighter p-1">Tuition
-                                        {{inputes.tuition.min}} <i class="fas fa-less-than-equal px-1"></i>
-                                        {{filterModel.tuition}} </span>
+                                <label class="text-muted">Country</label>
+                                <div class="dropdown">
+                                    <button class="btn btn-outline-secondary dropdown-toggle text-left w-100"
+                                        type="button" id="school" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        <span>
+                                            {{inputes.country.result ? inputes.country.result.name : 'Choose...'}}
+                                        </span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-filter w-100 py-0 border-radius-10 bg-ice"
+                                        aria-labelledby="school">
+                                        <div class="position-sticky top-0 bg-white">
+                                            <input type="text"
+                                                class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0"
+                                                [(ngModel)]="inputes.country.value" placeholder="Country"
+                                                autocomplete="off">
+                                        </div>
+                                        <div class="dropdown-item pointer text-truncate px-3 py-2"
+                                            (click)="inputes.country.result = country"
+                                            *ngFor="let country of countries | filter : inputes.country.value">
+                                            {{country.name}}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col">
-                                <div class="form-group" *ngIf="inputes.costInYear.max > 0">
-                                    <label for="formControlRangee" class="text-muted">Cost of Living</label>
-                                    <input type="range" class="form-control-range" id="formControlRangee" [min]="inputes.costInYear.min" [max]="inputes.costInYear.max" [(ngModel)]="filterModel.living" [ngModelOptions]="{standalone: true}">
-                                    <span class="badge badge-success float-right font-weight-lighter p-1">Cost of
-                                        Living {{inputes.costInYear.min}} <i class="fas fa-less-than-equal px-1"></i>
-                                        {{filterModel.living}}</span>
+
+
+                            <div class="col" *ngIf="inputes.country.result">
+                                <label class="text-muted">City</label>
+                                <div class="dropdown">
+                                    <button class="btn btn-outline-secondary dropdown-toggle text-left w-100"
+                                        type="button" id="city" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        <span>
+                                            {{inputes.city.result ? inputes.city.result : 'Choose...'}}
+                                        </span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-filter w-100 py-0 border-radius-10 bg-ice"
+                                        aria-labelledby="city">
+                                        <div class="position-sticky top-0 bg-white">
+                                            <input type="text"
+                                                class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0"
+                                                [(ngModel)]="inputes.city.value" placeholder="City" autocomplete="off">
+                                        </div>
+                                        <div class="dropdown-item pointer text-truncate px-3 py-2"
+                                            *ngFor="let city of inputes.country.result.cities"
+                                            (click)="inputes.city.result = city">
+                                            {{city}}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" (click)="filter()">Apply filters</button>
+                        <div class="row">
+                            <div class="col my-2" *ngIf="schools">
+                                <div id="universityTitle" class="my-2">
+                                    <label class="text-muted">School</label>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle text-left w-100"
+                                            type="button" id="university" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <span>
+                                                {{inputes.university.result ? inputes.university.result : 'Choose...'}}
+                                            </span>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-filter w-100 py-0"
+                                            aria-labelledby="university">
+                                            <div class="position-sticky top-0 bg-white">
+                                                <input type="text"
+                                                    class="form-control border-top-0 border-left-0 border-right-0 border-bottom border-radius-0"
+                                                    [(ngModel)]="inputes.university.value" placeholder="University">
+                                            </div>
+                                            <div class="dropdown-item pointer text-truncate px-2"
+                                                (click)="inputes.university.result = item.slug"
+                                                *ngFor="let item of schools | filter : inputes.university.value : 'title';">
+                                                {{item.title}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col my-2">
+                                <div id="universityType" class="my-2">
+                                    <label class="text-muted">School Type</label>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle text-left w-100"
+                                            type="button" id="type" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <span *ngIf="inputes.type.result">
+                                                {{inputes.type.result | type}}
+                                            </span>
+                                            <span *ngIf="!inputes.type.result">
+                                                School Type
+                                            </span>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-filter w-100 py-0" aria-labelledby="type">
+                                            <div class="dropdown-item pointer text-truncate px-2"
+                                                (click)="inputes.type.result = item.type"
+                                                *ngFor="let item of schoolsType">
+                                                {{item.type | type}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <form>
+                            <div class="row my-2">
+                                <div class="col">
+                                    <div class="form-group" *ngIf="inputes.tuition.max > 0">
+                                        <label for="formControlRange" class="text-muted">Tuition</label>
+                                        <input type="range" class="form-control-range" id="formControlRange"
+                                            [min]="inputes.tuition.min" [max]="inputes.tuition.max"
+                                            [(ngModel)]="filterModel.tuition" [ngModelOptions]="{standalone: true}">
+                                        <span class="badge badge-success float-right font-weight-lighter p-1">Tuition
+                                            {{inputes.tuition.min}} <i class="fas fa-less-than-equal px-1"></i>
+                                            {{filterModel.tuition}} </span>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group" *ngIf="inputes.costInYear.max > 0">
+                                        <label for="formControlRangee" class="text-muted">Cost of Living</label>
+                                        <input type="range" class="form-control-range" id="formControlRangee"
+                                            [min]="inputes.costInYear.min" [max]="inputes.costInYear.max"
+                                            [(ngModel)]="filterModel.living" [ngModelOptions]="{standalone: true}">
+                                        <span class="badge badge-success float-right font-weight-lighter p-1">Cost of
+                                            Living {{inputes.costInYear.min}} <i
+                                                class="fas fa-less-than-equal px-1"></i>
+                                            {{filterModel.living}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" (click)="filter()">Apply filters</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>

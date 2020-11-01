@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { LoginService } from './login.service';
+import { AccountService } from '../../account.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   alert: any;
   loading: boolean;
   constructor(
-    private service: LoginService,
+    private service: AccountService,
     private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
       username: null,
