@@ -71,9 +71,11 @@ export class ContractComponent implements OnInit {
       if (response.status == 200) {
         const body = response.body;
         if (body.return == 200) {
-          if (body.message) {
+            this.toast.show('Contract', body.message, { classname: 'bg-success text-light' })
+        }
+
+        if (body.return == 300) {
             this.toast.show('Contract', body.message, { classname: 'bg-danger text-light' })
-          }
         }
 
         if (body.return == 401) {

@@ -7,7 +7,7 @@
 </div>
 
 <div class="toast-position">
-    <ngb-toast *ngFor="let toast of toasts; index as index" [class]="toast.classname" [autohide]="true" [delay]="toast.delay || 3000" (hide)="remove(toast)">
+    <ngb-toast *ngFor="let toast of toasts; index as index" [class]="toast.classname" [autohide]="true" [delay]="toast.delay || 5000" (hide)="remove(toast)">
         {{toast.body}}
     </ngb-toast>
 </div>
