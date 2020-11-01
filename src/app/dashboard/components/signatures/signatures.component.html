@@ -1,69 +1,67 @@
-<div class="mt-5">
-    <router-outlet></router-outlet>
-    <ng-container *ngIf="this.router.url == '/dashboard/signatures'">
-        <div *ngIf="loading" class="text-center text-muted">
-            <div>
-                <i class="fa fa-sync fa-spin"></i>
-            </div>
-            <div>
-                Please wait ...
-            </div>
+<router-outlet></router-outlet>
+<ng-container *ngIf="this.router.url == '/dashboard/signatures'">
+    <div *ngIf="loading" class="text-center text-muted">
+        <div>
+            <i class="fa fa-sync fa-spin"></i>
         </div>
+        <div>
+            Please wait ...
+        </div>
+    </div>
 
-        <ng-container *ngIf="!loading && data">
-            <ng-container *ngIf="data.length == 0">
-                <div class="text-center text-muted">
-                    <h5>You do not have any signature!</h5>
+    <ng-container *ngIf="!loading && data">
+        <ng-container *ngIf="data.length == 0">
+            <div class="text-center text-muted">
+                <h5>You do not have any signature!</h5>
 
-                    <a routerLink="/dashboard/signatures/new" class="btn btn-primary mt-2">
-                        Add your first signature
-                    </a>
-                </div>
-            </ng-container>
-            <ng-container *ngIf="data.length > 0">
-                <a routerLink="/dashboard/signatures/new" class="btn btn-primary mb-2">
-                    New signature
+                <a routerLink="/dashboard/signatures/new" class="btn btn-primary mt-2">
+                    Add your first signature
                 </a>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="data.length > 0">
+            <a routerLink="/dashboard/signatures/new" class="btn btn-primary mb-2">
+                New signature
+            </a>
 
-                <div class="table-responsive">
-                    <table class="table table-bordered table-striped">
-                        <thead>
-                            <tr class="table-warning">
-                                <th class="th-number"></th>
-                                <th class="text-center">Signature</th>
-                                <th class="text-center th-bool">Verify</th>
-                                <th class="text-center th-action">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="text-center" *ngFor="let item of data;index as i">
-                                <td>{{i + 1}}</td>
-                                <td>
-                                    <img [src]="urls.url + '/uploads/signatures/' + item.image"
-                                        class="img-thumbnail w-25" />
-                                </td>
-                                <td>{{item.verify | bool}}</td>
-                                <td>
-                                    <button class="btn btn-danger btn-sm" [disabled]="item.verify"
-                                        [hidden]="inlineModal && selectedId == item.id" (click)="confirm(item.id)">
-                                        Remove
-                                    </button>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr class="table-warning">
+                            <th class="th-number"></th>
+                            <th class="text-center">Signature</th>
+                            <th class="text-center th-bool">Verify</th>
+                            <th class="text-center th-action">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="text-center" *ngFor="let item of data;index as i">
+                            <td>{{i + 1}}</td>
+                            <td>
+                                <img [src]="urls.url + '/uploads/signatures/' + item.image"
+                                    class="img-thumbnail w-25" />
+                            </td>
+                            <td>{{item.verify | bool}}</td>
+                            <td>
+                                <button class="btn btn-danger btn-sm" [disabled]="item.verify"
+                                    [hidden]="inlineModal && selectedId == item.id" (click)="confirm(item.id)">
+                                    Remove
+                                </button>
 
-                                    <ng-container *ngIf="inlineModal && selectedId == item.id">
-                                        <ng-container *ngTemplateOutlet="delete"></ng-container>
-                                    </ng-container>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <small class="text-muted">
-                    Please wait until your signature verify
-                </small>
-            </ng-container>
+                                <ng-container *ngIf="inlineModal && selectedId == item.id">
+                                    <ng-container *ngTemplateOutlet="delete"></ng-container>
+                                </ng-container>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <small class="text-muted">
+                Please wait until your signature verify
+            </small>
         </ng-container>
     </ng-container>
-</div>
+</ng-container>
 
 <ng-template #delete>
     Are you sure ?

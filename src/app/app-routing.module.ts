@@ -13,6 +13,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SignaturesComponent } from "./dashboard/components/signatures/signatures.component";
 import { SignatureComponent } from "./dashboard/components/signatures/components/signature/signature.component";
 import { ProgramsComponent } from "./dashboard/components/programs/programs.component";
+import { ContractDetailComponent } from "./dashboard/components/programs/components/contract-detail/contract-detail.component";
 import { BookmarksComponent } from "./dashboard/components/bookmarks/bookmarks.component";
 import { PaymentsComponent } from "./dashboard/components/payments/payments.component";
 
@@ -64,7 +65,12 @@ const routes: Routes = [
           { path: 'new', component: SignatureComponent },
         ]
       },
-      { path: 'programs', component: ProgramsComponent },
+      {
+        path: 'programs', component: ProgramsComponent,
+        children: [
+          { path: 'contract-detail/:id', component: ContractDetailComponent },
+        ]
+      },
       { path: 'bookmarks', component: BookmarksComponent },
       { path: 'payments', component: PaymentsComponent },
     ]

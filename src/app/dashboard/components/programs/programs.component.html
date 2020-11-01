@@ -1,1 +1,52 @@
-<p>programs works!</p>
+<router-outlet></router-outlet>
+<ng-container *ngIf="this.router.url == '/dashboard/programs'">
+    <ng-container *ngIf="loading">
+        <div class="text-center text-muted">
+            <div>
+                <i class="fa fa-sync fa-spin"></i>
+            </div>
+            <div>
+                Please wait ...
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="!loading && programs">
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-hover text-center table-striped">
+                    <thead>
+                        <tr>
+                            <th class="border-top-0 border-bottom-0">Program</th>
+                            <th class="border-top-0 border-bottom-0">Student</th>
+                            <th class="border-top-0 border-bottom-0">Status</th>
+                            <th class="border-top-0 border-bottom-0">Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of programs">
+                            <td class="py-3">
+                                {{item.intake.program.title}}
+                                <div>
+                                    <small>
+                                        {{item.intake.program.school.title}}
+                                    </small>
+                                </div>
+                            </td>
+                            <td class="py-3">
+                                {{item.user.firstName}} {{item.user.lastName}}
+                            </td>
+                            <td class="py-3">
+                                {{item.status | status}}
+                            </td>
+                            <td>
+                                <a class="btn btn-orangedark"
+                                    [routerLink]="['/dashboard/programs/contract-detail' , item.id]">show
+                                    details</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </ng-container>
+</ng-container>

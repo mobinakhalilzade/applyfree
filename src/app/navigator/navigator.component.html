@@ -47,7 +47,7 @@
     </div>
 
     <div class="d-xl-inline-block d-lg-inline-block d-md-none d-sm-none d-none">
-        <a class="btn-custom" [routerLink]="!user ? '/login' : '/dashboard'">
+        <a class="btn-custom" [routerLink]="!user ? '/login' : '/dashboard/signatures'">
             <div class="btn border-radius-20 px-lg-4 px-md-3 px-sm-5 px-4 position-relative">
                 <span *ngIf="!user">Log in | Register</span>
                 <span *ngIf="user">{{user.firstName}}</span>

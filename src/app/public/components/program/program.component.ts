@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PublicService } from '../../public.service';
 import { ActivatedRoute } from '@angular/router';
+import { PublicService } from '../../public.service';
+import { ToastService } from '../../../helper/toast.service';
 
 @Component({
   selector: 'app-program',
@@ -14,8 +15,10 @@ export class ProgramComponent implements OnInit {
   bookmarked: boolean;
   successBookmarked: any;
 
-  constructor(private service: PublicService,
-    private route: ActivatedRoute) { }
+  constructor(
+    private service: PublicService,
+    private route: ActivatedRoute,
+    private toast: ToastService,) { }
 
   getProgram(id: string, slug: string, then: any) {
     this.service.program({ id: id, slug: slug }).subscribe((response: any) => {
@@ -59,10 +62,10 @@ export class ProgramComponent implements OnInit {
         const body = response.body;
         if (body.return == 200) {
           this.bookmarked = true;
-          this.successBookmarked = body;
-          setTimeout(() => {
-            this.successBookmarked=null;
-          }, 3000);
+          this.toast.show('Program', body.message, { classname: 'bg-success text-light' })
+        }
+        if (body.return == 300) {
+          this.toast.show('Program', body.message, { classname: 'bg-danger text-light' })
         }
       }
     });

@@ -64,7 +64,7 @@ export class ContractComponent implements OnInit {
 
     const command = {
       intake_id: intakeId,
-      code: null
+      code: this.form.code
     }
 
     this.service.sign(command).subscribe((response: any) => {
