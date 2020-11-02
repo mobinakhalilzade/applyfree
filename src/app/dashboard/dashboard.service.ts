@@ -8,6 +8,14 @@ import { Injectable } from '@angular/core';
 export class DashboardService {
     constructor(private http: Http) { }
 
+    intake(data: any) {
+        return this.http.readApi.getById('program/intake', data);
+    }
+
+    program(data: any) {
+        return this.http.readApi.getByParam('program', data);
+    }
+
     programs(){
        return this.http.readApi.get('user/programs');
     }

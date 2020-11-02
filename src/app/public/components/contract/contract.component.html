@@ -49,17 +49,10 @@
                         <div class="jumbotron mt-5 pt-3">
                             <i class="fas fa-signature text-orangedark fa-3x my-3"></i>
                             <h2 class="text-orangedark">Dear <span *ngIf="user">{{user.firstName}} {{user.lastName}}</span> <span *ngIf="!user">User</span></h2>
-                            <p class="lead" *ngIf="program.fee > 0">
-                                After you sign the contract, you should pay
-                                <b>{{program.fee | currency}}</b> for apply this program.
-                            </p>
-                            <p class="lead" *ngIf="program.fee == 0">
-                                This program is
-                                <b class="text-success">free</b> And After you sign the contract you will get it
-                            </p>
-
+                            <p class="lead" *ngIf="program.fee > 0">After you sign the contract, you should pay
+                                <b>{{program.fee | currency}}</b> for apply this program.</p>
+                            <p class="lead" *ngIf="program.fee == 0">This program is <b class="text-success">free</b> And After you sign the contract you will get it</p>
                             <hr class="my-4" *ngIf="!user">
-
                             <p *ngIf="!user">
                                 <i class="fas fa-quote-left px-2"></i> If you didn't log in applyfree , you will redirect to login page.
                             </p>
@@ -85,7 +78,9 @@
                                         <input *ngIf="user && user.role == 1" type="text" class="form-control" placeholder="Adviser code" aria-label="agent code" aria-describedby="sign-button" [(ngModel)]="form.code">
                                     </ng-container>
                                 </div>
+                                <input type="text" class="form-control" placeholder="Your agent code" aria-label="agent code" aria-describedby="sign-button" [(ngModel)]="form.code">
                             </ng-container>
+
                             <div class="text-success" *ngIf="contract">
                                 <a>Track your contract</a>
                             </div>

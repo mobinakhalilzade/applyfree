@@ -1,0 +1,38 @@
+<div class="container">
+    <ng-container *ngIf="!loading">
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="text-orangedark text-center mt-3 mb-5">aplyyfree advisers</h3>
+                        <table class="table table-striped text-center">
+                            <thead>
+                                <tr>
+                                    <th >Group Code</th>
+                                    <th >Limitations</th>
+                                    <th >Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="text-dark" *ngFor="let item of agents">
+                                    <td>{{item.code}}</td>
+                                    <td>{{item.limitations}}</td>
+                                    <td>
+                                        <button class="btn btn-orangedark" (click)="join(item.code)">Join</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <div class="col-12 text-center" *ngIf="loading">
+        <div class="d-flex">
+            <span class="ml-auto text-muted py-3">{{progress.description}}</span>
+        </div>
+        <ngb-progressbar type="danger" [value]="progress.loading" [striped]="true" [animated]="true">
+            <i>{{progress.loading}}%</i></ngb-progressbar>
+    </div>
+</div>

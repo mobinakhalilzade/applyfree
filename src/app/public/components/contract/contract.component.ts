@@ -108,7 +108,6 @@ export class ContractComponent implements OnInit {
         if (body.return == 200) {
           const data = body.data;
           this.group = data;
-          console.log(data)
         }
       }
     })
