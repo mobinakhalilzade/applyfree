@@ -37,6 +37,7 @@
         <div class="navbar-nav mr-5">
             <a class="nav-item text-light nav-link ml-3" [ngClass]="{'text-dark' : sidebar}" routerLink="/landing" routerLinkActive="font-weight-bolder">Landing</a>
             <a class="nav-item text-light nav-link ml-3" routerLinkActive="font-weight-bolder" routerLink="/" [ngClass]="{'text-dark' : sidebar}" [routerLinkActiveOptions]="{ exact: true }" (click)="sidebar=false">Programs</a>
+            <a class="nav-item text-light nav-link ml-3" routerLinkActive="font-weight-bolder" routerLink="/advisers" [ngClass]="{'text-dark' : sidebar}" (click)="sidebar=false">Our advisers</a>
             <a class="nav-item text-light nav-link ml-3" [routerLink]="['/page', 'contact']" [ngClass]="{'text-dark' : sidebar}" routerLinkActive="font-weight-bolder" (click)="sidebar=false">Contact us</a>
             <a class="nav-item text-light nav-link ml-3" [routerLink]="['/page', 'about']" [ngClass]="{'text-dark' : sidebar}" routerLinkActive="font-weight-bolder" (click)="sidebar=false">About us</a>
         </div>

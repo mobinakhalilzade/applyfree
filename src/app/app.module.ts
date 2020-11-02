@@ -15,6 +15,7 @@ import { PublicComponent } from './public/public.component';
 import { ProgramComponent } from './public/components/program/program.component';
 import { ProgramListComponent } from './public/components/program-list/program-list.component';
 import { ContractComponent } from './public/components/contract/contract.component';
+import { AgentsComponent } from './public/components/agents/agents.component';
 import { PagesComponent } from './public/components/pages/pages.component';
 
 import { AccountComponent } from './account/account.component';
@@ -79,7 +80,8 @@ import { ContractDetailComponent } from './dashboard/components/programs/compone
     ProgramsComponent,
     SafePipe,
     SignatureComponent,
-    ContractDetailComponent
+    ContractDetailComponent,
+    AgentsComponent
   ],
   imports: [
     CommonModule,

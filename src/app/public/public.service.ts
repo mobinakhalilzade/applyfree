@@ -8,6 +8,14 @@ import { Injectable } from '@angular/core';
 export class PublicService {
     constructor(private http: Http) { }
 
+    join(data: any) {
+        return this.http.writeApi.post('group/join', data)
+    }
+
+    agents() {
+        return this.http.readApi.get('agents');
+    }
+
     programBookmark(data: any) {
         return this.http.readApi.getById('program/bookmark', data);
     }

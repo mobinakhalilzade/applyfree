@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PaymentService } from '../../payment.service';
-import dropin from 'braintree-web-drop-in';
+// import dropin from 'braintree-web-drop-in';
 
 declare var braintree: any;
 @Component({
@@ -26,33 +26,33 @@ export class CheckoutComponent implements OnInit {
     const self = this;
     var submitButton = document.querySelector('#submit-button');
 
-    this.service.token().subscribe((data: any) => {
-      if (data.status == 200) {
-        const token = data.body;
-        dropin.create({
-          authorization: token,
-          container: '#dropin-container'
-        }, (err: any, dropinInstance: any) => {
-          if (err) {
-            // Handle any errors that might've occurred when creating Drop-in
-            console.error(err);
-            return;
-          }
-          submitButton.addEventListener('click', function () {
-            dropinInstance.requestPaymentMethod((err: any, payload: any) => {
-              if (err) {
-                // Handle errors in requesting payment method
-                console.log(err)
-              }
+    // this.service.token().subscribe((data: any) => {
+    //   if (data.status == 200) {
+    //     const token = data.body;
+    //     dropin.create({
+    //       authorization: token,
+    //       container: '#dropin-container'
+    //     }, (err: any, dropinInstance: any) => {
+    //       if (err) {
+    //         // Handle any errors that might've occurred when creating Drop-in
+    //         console.error(err);
+    //         return;
+    //       }
+    //       submitButton.addEventListener('click', function () {
+    //         dropinInstance.requestPaymentMethod((err: any, payload: any) => {
+    //           if (err) {
+    //             // Handle errors in requesting payment method
+    //             console.log(err)
+    //           }
 
-              self.payment(payload.nonce)
+    //           self.payment(payload.nonce)
 
-              // Send payload.nonce to your server
-            });
-          });
-        });
-      }
-    });
+    //           // Send payload.nonce to your server
+    //         });
+    //       });
+    //     });
+    //   }
+    // });
 
   }
 

@@ -24,6 +24,7 @@ import { PagesComponent } from './public/components/pages/pages.component';
 import { ProgramListComponent } from "./public/components/program-list/program-list.component";
 import { ProgramComponent } from "./public/components/program/program.component";
 import { ContractComponent } from "./public/components/contract/contract.component";
+import { AgentsComponent } from "./public/components/agents/agents.component";
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ReportComponent } from "./report/report.component";
 
@@ -42,7 +43,8 @@ const routes: Routes = [
       { path: 'program/:id/:slug', component: ProgramComponent },
       { path: 'page/:section', component: PagesComponent },
       { path: 'programs', component: ProgramListComponent },
-      { path: 'contract/:intakeId/:id/:slug', component: ContractComponent }
+      { path: 'contract/:intakeId/:id/:slug', component: ContractComponent },
+      { path: 'advisers', component: AgentsComponent }
     ]
   },
   { path: 'landing', component: LandingComponent },
@@ -68,7 +70,7 @@ const routes: Routes = [
       {
         path: 'programs', component: ProgramsComponent,
         children: [
-          { path: 'contract-detail/:id', component: ContractDetailComponent },
+          { path: 'contract-detail/:intakeId/:id/:slug', component: ContractDetailComponent },
         ]
       },
       { path: 'bookmarks', component: BookmarksComponent },
