@@ -9,47 +9,25 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
   form: FormGroup;
-  role: any = {
-    id: 1
-  }
+
   roles = [
-    {
-      id: 1,
-      active: true,
-      name: "I'm student"
-    }, {
-      id: 2,
-      active: false,
-      name: "I'm adviser"
-    }
+    { id: 1, active: true, name: "I'm student" },
+    { id: 2, active: false, name: "I'm adviser" }
   ]
 
   alert: any = {
     message: null,
     return: null
   };
+
   errors: any = [];
   submited: boolean;
   loading: boolean;
-  selectedRole: boolean;
 
   constructor(
     private service: AccountService,
     private formBuilder: FormBuilder) {
-  }
 
-  setRole(id: any) {
-
-    let Selected = this.roles.find(x => x.id == id);
-    let notSelected = this.roles.find(x => x.id !== id);
-
-    if (Selected.active) {
-      notSelected.active = false;
-    }
-    if (notSelected.active) {
-      notSelected.active = false;
-    }
-    this.role.id = id;
   }
 
   getError() {
@@ -65,7 +43,6 @@ export class RegisterComponent implements OnInit {
     if (this.form.controls.username.errors !== null) {
       this.errors.push("Not a valid email address");
     }
-    // return this.form.controls;
   }
 
   register(form: any) {
@@ -75,7 +52,7 @@ export class RegisterComponent implements OnInit {
       password: form.password,
       firstName: form.firstName,
       lastName: form.lastName,
-      role: this.role.id,
+      role: form.id,
       image: "avatar.jpg"
     };
 
@@ -99,7 +76,6 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     this.form = this.formBuilder.group({
       firstName: [null, [Validators.required]],
       lastName: [null, [Validators.required]],
@@ -108,8 +84,7 @@ export class RegisterComponent implements OnInit {
       username: [null, [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
       phone: [null, [Validators.required, Validators.pattern("^\\+[0-9]*$")]],
       terms: [true, [Validators.required]],
+      role: [1]
     });
-
-
   }
 }

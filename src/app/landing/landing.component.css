@@ -2,23 +2,26 @@ header::after {
     content: "";
     position: absolute;
     left: 0;
-    right: 363px;
-    top: -902px;
-    height: 185vh;
+    right: 0;
+    top: 0;
+    height: 100vh;
     background-image: url(src/assets/svg/header-full.svg);
-    transform: rotate(360deg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: bottom;
     width: 100%;
     z-index: 0;
 }
 
-main{
+main {
     position: relative;
     top: 500px;
 }
 
-#bg-section-1, #bg-section-2, #bg-section-3 , #bg-section-4{
+#bg-section-1,
+#bg-section-2,
+#bg-section-3,
+#bg-section-4 {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -46,47 +49,38 @@ footer {
     padding-top: 30%;
 }
 
+.menu-backdoor {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    z-index: 2;
+}
 
+.menu {
+    transition: all 0.5s;
+}
 
- .menu-backdoor {
-     display: none;
-     background-color: rgba(0,0,0,0.5);
-     position: fixed;
-     width: 100%;
-     height: 100%;
-     right: 0;
-     top: 0;
-     z-index: 2;
- }
-
- .menu {
-     transition: all 0.5s;
- }
-
- @media only screen and (max-width: 425px) {
+@media only screen and (max-width: 425px) {
     .menu-backdoor.show {
         display: block;
     }
-
-  .menu {
-      position: fixed;
-      left: -80%;
-      top: 0;
-      height: 100%;
-      width: 80%;  
-      background-color:  var(--orangelight);
-      z-index: 3;
-  }
-
-  .menu.show {
-      left: 0;
-  }
-
-  ::ng-deep .z-index-effect {
-      z-index: 0;
-  }
+    .menu {
+        position: fixed;
+        left: -80%;
+        top: 0;
+        height: 100%;
+        width: 80%;
+        background-color: var(--orangelight);
+        z-index: 3;
+    }
+    .menu.show {
+        left: 0;
+    }
+     ::ng-deep .z-index-effect {
+        z-index: 0;
+    }
 }
-
-
-
-
