@@ -46,7 +46,7 @@
                         </p> -->
                     </div>
                     <ng-container *ngIf="program">
-                        <div class="jumbotron mt-5">
+                        <div class="jumbotron mt-5 pt-3">
                             <i class="fas fa-signature text-orangedark fa-3x my-3"></i>
                             <h2 class="text-orangedark">Dear <span *ngIf="user">{{user.firstName}} {{user.lastName}}</span> <span *ngIf="!user">User</span></h2>
                             <p class="lead" *ngIf="program.fee > 0">After you sign the contract, you should pay

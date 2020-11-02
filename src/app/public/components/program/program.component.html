@@ -8,40 +8,45 @@
                 [ngStyle]="{'background-image': 'url(http://192.168.3.65/applyfree/img/banner/'+program.school.id+'.jpg)'}">
             </div>
             <div class="container">
-                <div class="header-info w-50 d-inline">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb bg-transparent">
-                            <li class="breadcrumb-item"><a [routerLink]="['/programs']" class="text-light">Programs</a>
-                            </li>
-                            <li class="breadcrumb-item active text-light" aria-current="page">{{program.title}}</li>
-                        </ol>
-                    </nav>
-                    <div class="row text-light my-4 mx-3">
-                        <div class="col-1 px-0">
-                            <i class="fas fa-university fa-3x"></i>
+                <div class="row header-info w-75">
+                    <div class="col-9">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb bg-transparent">
+                                <li class="breadcrumb-item"><a [routerLink]="['/programs']"
+                                        class="text-light">Programs</a>
+                                </li>
+                                <li class="breadcrumb-item active text-light" aria-current="page">{{program.title}}</li>
+                            </ol>
+                        </nav>
+                        <div class="row text-light my-4 mx-3">
+                            <div class="col-1 px-0">
+                                <i class="fas fa-university fa-3x"></i>
+                            </div>
+                            <div class="col pt-1">
+                                <h1 class="mt-2 h4">{{program.title}}</h1>
+                                <h5 class="mt-2">{{program.school.title}}</h5>
+                            </div>
                         </div>
-                        <div class="col d-inline pt-1">
-                            <h1 class="mt-2 h4">{{program.title}}</h1>
-                            <h5 class="mt-2">{{program.school.title}}</h5>
-                        </div>
-                    </div>
 
-                    <div class="row text-light mx-3">
-                        <div class="col-1">
-                            <i class="fas fa-map-marker-alt fa-2x"></i>
-                        </div>
-                        <div class="col-9 pt-1">
-                            <h6>
-                                {{program.school.country}} , {{program.school.state}} , {{program.school.city}}
-                            </h6>
-                           
+                        <div class="row text-light mx-3">
+                            <div class="col-1">
+                                <i class="fas fa-map-marker-alt fa-2x"></i>
+                            </div>
+                            <div class="col-9 pt-1">
+                                <h6>
+                                    {{program.school.country}} , {{program.school.state}} , {{program.school.city}}
+                                </h6>
+
+                            </div>
                         </div>
                     </div>
+                    <div class="col-3 my-auto float-right">
+                        <a class="btn btn-sm btn-outline-light mt-2" *ngIf="program.school" target="_blank"
+                            [href]="program.school.googleMap">see on googlemap</a>
+                    </div>
                 </div>
-                <div class="d-inline btn-header-map">
-                    <a class="btn btn-sm btn-outline-light mt-2" *ngIf="program.school" target="_blank"
-                    [href]="program.school.googleMap">see on googlemap</a>
-                </div>
+
+
             </div>
         </div>
     </div>
@@ -59,11 +64,20 @@
                                     <li class="list-group-item text-left py-4">
                                         <p>{{program.school.address}}</p>
                                     </li>
+                                    <li class="list-group-item py-4 text-success" *ngIf="program.school.free_admission">
+                                        <i class="fas fa-check mr-2"></i>
+                                        <span>
+                                            Free admission
+                                        </span>
+                                    </li>
                                     <li class="list-group-item py-4 text-success" *ngIf="program.school.opt">
                                         <i class="fas fa-briefcase mr-2"></i>
                                         <span>
                                             OPT
                                         </span>
+                                        <div>
+                                            <small class="text-muted">(Optional practical training)</small>
+                                        </div>
                                     </li>
                                     <li class="list-group-item py-4">
                                         <b>{{program.school.type | type }}</b>
@@ -130,7 +144,8 @@
                                                     data-toggle="tooltip" data-placement="top" title="Unknown"></button>
                                             </td>
                                             <td *ngIf="item.start_date!==null">
-                                                <a class="btn btn-orangedark" [routerLink]="['/contract', item.id, program.id, program.slug]">apply</a>
+                                                <a class="btn btn-orangedark"
+                                                    [routerLink]="['/contract', item.id, program.id, program.slug]">apply</a>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -207,14 +222,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</ng-container>
-
-<ng-container *ngIf="successBookmarked && successBookmarked.message">
-    <div class="notif-alert w-25 mx-2">
-        <div class="alert alert-success" role="alert">
-            {{successBookmarked.message}}
         </div>
     </div>
 </ng-container>

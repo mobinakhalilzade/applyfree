@@ -9,8 +9,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mt-2 mt-lg-0">
                         <li class="nav-item mr-4">
-                            <a class="nav-link py-3 border-radius-x-5" routerLinkActive="active"
-                                routerLink="/programs">
+                            <a class="nav-link py-3 border-radius-x-5" routerLinkActive="active" routerLink="/programs">
                                 Programs
                             </a>
                         </li>
@@ -22,8 +21,10 @@
                         </li>
                     </ul>
                     <div class="text-light ml-auto">
+
                         <a class="text-light" routerLink="/dashboard">Hi {{user.firstName}} {{user.lastName}}</a>
-                        <button class="btn ml-2" (click)="logout()" data-toggle="tooltip" data-placement="top" title="Logout">
+                        <button class="btn ml-2" (click)="logout()" data-toggle="tooltip" data-placement="top"
+                            title="Logout">
                             <i class="fa fa-sign-out-alt text-light"></i>
                         </button>
                     </div>
@@ -33,7 +34,15 @@
     </div>
 
     <div class="container h-100">
-        <div class="row h-100 mt-5 pt-5">
+        <div class="text-center py-5 px-2" *ngIf="user.role==2">
+            <span class="text-primary">
+                Your advisor code :
+                <b class="h4">
+                    {{user.code}}
+                </b>
+            </span>
+        </div>
+        <div class="row h-100 p-4 border shadow-sm" [ngClass]="{'mt-5':user.role==1}">
             <div class="col-12 h-100">
                 <router-outlet></router-outlet>
             </div>

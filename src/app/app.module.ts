@@ -44,6 +44,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { DegreePipe } from './pipes/degree.pipe';
 import { TypePipe } from './pipes/type.pipe';
 import { SafePipe } from './pipes/safe.pipe';
+import { ContractDetailComponent } from './dashboard/components/programs/components/contract-detail/contract-detail.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,8 @@ import { SafePipe } from './pipes/safe.pipe';
     CheckoutComponent,
     ProgramsComponent,
     SafePipe,
-    SignatureComponent
+    SignatureComponent,
+    ContractDetailComponent
   ],
   imports: [
     CommonModule,
