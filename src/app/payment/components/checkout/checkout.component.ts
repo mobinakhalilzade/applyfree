@@ -9,7 +9,7 @@ declare var braintree: any;
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent implements OnInit {
-
+  loading: boolean = true;
   constructor(
     private service: PaymentService
   ) { }
@@ -38,6 +38,9 @@ export class CheckoutComponent implements OnInit {
             console.error(err);
             return;
           }
+
+          self.loading = false;
+
           submitButton.addEventListener('click', function () {
             dropinInstance.requestPaymentMethod((err: any, payload: any) => {
               if (err) {

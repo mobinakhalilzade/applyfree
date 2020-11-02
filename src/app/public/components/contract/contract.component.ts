@@ -14,13 +14,15 @@ export class ContractComponent implements OnInit {
   program: any;
   intake: any;
   contract: any;
+  group: any;
   user: any = null;
   progress = {
     description: 'loading contract ...',
     loading: 0
   }
   form = {
-    code: null
+    code: null,
+    student: 0
   }
   constructor(
     private toast: ToastService,
@@ -85,6 +87,7 @@ export class ContractComponent implements OnInit {
         if (body.return == 200) {
           this.toast.show('Contract', body.message, { classname: 'bg-success text-light' });
           this.getContract(intakeId);
+          window.location.href = `/payment/checkout?intake=${intakeId}`
         }
 
         if (body.return == 300) {
@@ -93,6 +96,19 @@ export class ContractComponent implements OnInit {
 
         if (body.return == 401) {
           window.location.href = '/account/login'
+        }
+      }
+    })
+  }
+
+  getGroup() {
+    this.service.group().subscribe((response: any) => {
+      if (response.status == 200) {
+        const body = response.body;
+        if (body.return == 200) {
+          const data = body.data;
+          this.group = data;
+          console.log(data)
         }
       }
     })
@@ -110,6 +126,7 @@ export class ContractComponent implements OnInit {
           this.user = $request.data;
           this.progress['description'] = 'loading intake ...';
           this.progress['loading'] = 90;
+          this.getGroup();
         }
       });
 

@@ -1,96 +1,23 @@
-<div class="container my-5">
-    <div class="row">
-        <div class="col-4 m-auto">
-            <div class="card">
-                <div class="card-body">
-                    <form>
-                        <div id="dropin-container"></div>
-
-                        <button class="btn btn-primary" id="submit-button">submit</button>
-                    </form>
+<div class="container-fluid h-100 pl-0">
+    <div class="row h-100 p-0">
+        <div class="col">
+            <div class="text-center mt-5 pt-5" *ngIf="loading">
+                <div>
+                    <i class="fa fa-spin fa-spinner"></i>
                 </div>
+
+                <small class="text-muted">loading ...</small>
+            </div>
+            <form class="p-4">
+                <div id="dropin-container"></div>
+
+                <button *ngIf="!loading" class="btn btn-primary" id="submit-button">Purchase</button>
+            </form>
+        </div>
+        <div class="col-9 bg-orangedark">
+            <div class="">
+                <h1>Purchase</h1>
             </div>
         </div>
     </div>
 </div>
-
-
-<!-- <div class="container h-100">
-    <div class="row h-100 align-content-around ">
-        <div class="col-12">
-            <div class="row justify-content-center">
-                <div class="col-12">
-                    <form class="shadow border pt-3 px-5 pb-5 bg-light border-radius-20" (ngSubmit)="pay()"> 
-                        <div class="row">
-                            <div class="col-12 text-center text-danger pt-3 pb-5">
-                                <h3>
-                                    Payment
-                                </h3>
-                            </div>
-                        </div>
-                        <div class="row text-center mb-3 pb-5">
-                            <div class="col-4">
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" class="custom-control-input" id="creditCard"
-                                        name="creditCard" required>
-                                    <label class="custom-control-label" for="creditCard">Credit card</label>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" class="custom-control-input" id="debitCard" name="debitCard"
-                                        required>
-                                    <label class="custom-control-label" for="debitCard">Debit card</label>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" class="custom-control-input" id="paypal" name="rpaypal"
-                                        required>
-                                    <label class="custom-control-label" for="paypal">Paypal</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <label for="cardName">Name on card</label>
-                                    <input type="text" class="form-control" id="cardName"
-                                        aria-describedby="emailHelp" placeholder="Name on card">
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <label for="cardNumber">Card number</label>
-                                    <input type="number" class="form-control" id="cardNumber"
-                                        placeholder="123-456-123">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <label for="expiration">Expiration</label>
-                                    <input type="password" class="form-control" id="expiration"
-                                        placeholder="Expiration">
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <label for="cvv">Cvv</label>
-                                    <input type="number" class="form-control" id="cvv"
-                                        placeholder="Cvv">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-danger float-right mt-4">Submit</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
