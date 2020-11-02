@@ -8,7 +8,7 @@ export class PaymentService {
   constructor(private http: Http) { }
 
   payment(data: any) {
-    return this.http.writeApi.post('payment', data);
+    return this.http.writeApi.post('purchase', data);
   }
 
   token() {
