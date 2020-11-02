@@ -10,7 +10,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class RegisterComponent implements OnInit {
   form: FormGroup;
   role: any = {
-    active: false,
     id: 1
   }
   roles = [
@@ -41,8 +40,16 @@ export class RegisterComponent implements OnInit {
 
   setRole(id: any) {
 
-    // this.role.active = true;
-    // this.role.id = id;
+    let Selected = this.roles.find(x => x.id == id);
+    let notSelected = this.roles.find(x => x.id !== id);
+
+    if (Selected.active) {
+      notSelected.active = false;
+    }
+    if (notSelected.active) {
+      notSelected.active = false;
+    }
+    this.role.id = id;
   }
 
   getError() {
