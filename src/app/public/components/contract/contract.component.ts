@@ -13,6 +13,7 @@ export class ContractComponent implements OnInit {
   loading: boolean = true;
   program: any;
   intake: any;
+  contract: any;
   user: any = null;
   progress = {
     description: 'loading contract ...',
@@ -28,7 +29,6 @@ export class ContractComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute
   ) { }
-
 
 
   getProgram(id: string, slug: string, then: any) {
@@ -59,23 +59,36 @@ export class ContractComponent implements OnInit {
     })
   }
 
+  getContract(intakeId: any) {
+    this.service.contract(intakeId).subscribe((response: any) => {
+      if (response.status == 200) {
+        const body = response.body;
+        if (body.return == 200) {
+          const data = body.data;
+          this.contract = data;
+        }
+      }
+    })
+  }
+
   sign() {
     const intakeId = this.route.snapshot.paramMap.get('intakeId');
 
     const command = {
       intake_id: intakeId,
-      code: null
+      code: this.form.code
     }
 
     this.service.sign(command).subscribe((response: any) => {
       if (response.status == 200) {
         const body = response.body;
         if (body.return == 200) {
-            this.toast.show('Contract', body.message, { classname: 'bg-success text-light' })
+          this.toast.show('Contract', body.message, { classname: 'bg-success text-light' });
+          this.getContract(intakeId);
         }
 
         if (body.return == 300) {
-            this.toast.show('Contract', body.message, { classname: 'bg-danger text-light' })
+          this.toast.show('Contract', body.message, { classname: 'bg-danger text-light' })
         }
 
         if (body.return == 401) {
@@ -97,7 +110,6 @@ export class ContractComponent implements OnInit {
           this.user = $request.data;
           this.progress['description'] = 'loading intake ...';
           this.progress['loading'] = 90;
-          this.getIntake(intakeId);
         }
       });
 
@@ -108,6 +120,9 @@ export class ContractComponent implements OnInit {
           clearInterval(profile);
         }
       }, 2000);
+
+      this.getIntake(intakeId);
+      this.getContract(intakeId);
     });
   }
 

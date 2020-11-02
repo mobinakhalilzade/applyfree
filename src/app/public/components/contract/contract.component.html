@@ -15,6 +15,9 @@
                     <span class="text-danger d-block"> Submission deadline: {{intake.submission | date}} </span>
                 </h6>
             </ng-container>
+            <h6 class="text-success" *ngIf="contract">
+                Signed in {{contract.creationDate | date}}
+            </h6>
         </div>
     </div>
     <div class="row align-items-center">
@@ -54,13 +57,17 @@
                                 <i class="fas fa-quote-left px-2"></i> If you didn't log in applyfree , you will redirect to login page.
                             </p>
 
-                            <div class="input-group mt-5">
+                            <div class="input-group mt-5" *ngIf="!contract">
                                 <div class="input-group-prepend">
                                     <button class="btn btn-success" type="button" id="sign-button" (click)="sign()">
                                         Sign the contract
                                     </button>
                                 </div>
                                 <input type="text" class="form-control" placeholder="Your agent code" aria-label="agent code" aria-describedby="sign-button" [(ngModel)]="form.code">
+                            </div>
+
+                            <div class="text-success" *ngIf="contract">
+                                <a>Track your contract</a>
                             </div>
                         </div>
                     </ng-container>
