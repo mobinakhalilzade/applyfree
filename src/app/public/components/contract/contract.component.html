@@ -78,7 +78,7 @@
                                     <ng-container *ngIf="user && user.role == 2">
                                         <select class="form-control" [(ngModel)]="form.student">
                                             <option value="0">Select student</option>
-                                            <option *ngFor="let item of group" [value]="item.id">{{item.student.firstName}} {{item.student.lastName}}</option>
+                                            <option *ngFor="let item of group" [value]="item.user.id">{{item.user.firstName}} {{item.user.lastName}}</option>
                                         </select>
                                     </ng-container>
                                     <ng-container *ngIf="user && user.role == 1">

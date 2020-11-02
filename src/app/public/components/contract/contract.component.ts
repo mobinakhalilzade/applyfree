@@ -78,7 +78,8 @@ export class ContractComponent implements OnInit {
 
     const command = {
       intake_id: intakeId,
-      code: this.form.code
+      code: this.form.code,
+      student: this.form.student
     }
 
     this.service.sign(command).subscribe((response: any) => {
@@ -86,7 +87,6 @@ export class ContractComponent implements OnInit {
         const body = response.body;
         if (body.return == 200) {
           this.toast.show('Contract', body.message, { classname: 'bg-success text-light' });
-          this.getContract(intakeId);
           window.location.href = `/payment/checkout?intake=${intakeId}`
         }
 
@@ -127,6 +127,9 @@ export class ContractComponent implements OnInit {
           this.progress['description'] = 'loading intake ...';
           this.progress['loading'] = 90;
           this.getGroup();
+          if (this.user.role == 1) {
+            this.getContract(intakeId);
+          }
         }
       });
 
@@ -139,7 +142,6 @@ export class ContractComponent implements OnInit {
       }, 2000);
 
       this.getIntake(intakeId);
-      this.getContract(intakeId);
     });
   }
 
