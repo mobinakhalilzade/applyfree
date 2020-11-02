@@ -94,12 +94,13 @@
                     </div>
 
                     <div class="row mt-3">
-                        <!-- <div class="col-6 text-center" *ngFor="let role of roles">
-                            <div class="form-group pointer" (click)="">
-                                <a class="btn d-block mt-2 mx-auto border-danger" [ngClass]="{'border-danger': role.active , 'border-light':!role.active}">{{role.name}}</a>
+                        <div class="col-6 text-center" *ngFor="let role of roles">
+                            <div class="form-group pointer" (click)="setRole(role.id); role.active=!role.active">
+                                <a class="btn d-block mt-2 mx-auto border-danger"
+                                    [ngClass]="{'btn-danger': role.active }">{{role.name}}</a>
                             </div>
-                        </div> -->
-                        <div class="col-6 text-center" ngFor="let role of roles">
+                        </div>
+                        <!-- <div class="col-6 text-center" ngFor="let role of roles">
                             <div class="form-group pointer" (click)="setRole(1);role.active=true">
                                 <i class="fas fa-user-graduate fa-3x text-orangedark"></i>
                                 <button class="btn d-block mt-2 mx-auto" [ngClass]="{'border-danger': role.active}">I'm Student</button>
@@ -110,7 +111,7 @@
                                 <i class="fas fa-user-tie fa-3x text-orangedark"></i>
                                 <button class="btn d-block mt-2 mx-auto" [ngClass]="{'border-danger': role.active}">I'm Advisor</button>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="form-group">
@@ -185,9 +186,9 @@
             <p>Advisor account is for applyfree advisors who have passed the selection process or those who want to
                 register a student immediatley.
                 <a>
-                   <b>
-                    Read more about applyfree advisors here.
-                   </b>
+                    <b>
+                        Read more about applyfree advisors here.
+                    </b>
                 </a>
             </p>
         </div>

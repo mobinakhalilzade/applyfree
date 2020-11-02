@@ -13,6 +13,18 @@ export class RegisterComponent implements OnInit {
     active: false,
     id: 1
   }
+  roles = [
+    {
+      id: 1,
+      active: true,
+      name: "I'm student"
+    }, {
+      id: 2,
+      active: false,
+      name: "I'm adviser"
+    }
+  ]
+
   alert: any = {
     message: null,
     return: null
@@ -28,8 +40,9 @@ export class RegisterComponent implements OnInit {
   }
 
   setRole(id: any) {
-    this.role.active = true;
-    this.role.id = id;
+
+    // this.role.active = true;
+    // this.role.id = id;
   }
 
   getError() {

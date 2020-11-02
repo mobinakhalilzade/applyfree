@@ -16,6 +16,9 @@ export class ContractComponent implements OnInit {
   contract: any;
   group: any;
   user: any = null;
+  programSlug: string;
+  programId: string;
+  intakeId: string;
   progress = {
     description: 'loading contract ...',
     loading: 0
@@ -117,6 +120,11 @@ export class ContractComponent implements OnInit {
     const slug = this.route.snapshot.paramMap.get('slug');
     const id = this.route.snapshot.paramMap.get('id');
     const intakeId = this.route.snapshot.paramMap.get('intakeId');
+
+    this.programSlug = slug;
+    this.programId = id;
+    this.intake = intakeId;
+
     this.progress['loading'] = 50;
     this.getProgram(id, slug, () => {
       this.event.listener.subscribe(() => {

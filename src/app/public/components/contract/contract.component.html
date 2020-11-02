@@ -81,7 +81,7 @@
                             </ng-container>
 
                             <div class="text-success" *ngIf="contract">
-                                <a>Track your contract</a>
+                                <a [routerLink]="['/dashboard/programs/contract-detail', intakeId, programId, programSlug]">Track your contract</a>
                             </div>
                         </div>
                     </ng-container>
