@@ -79,4 +79,8 @@ export class PublicService {
     profile() {
         return this.http.readApi.get('profile');
     }
+
+    group() {
+        return this.http.readApi.get('group');
+    }
 }
