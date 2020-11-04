@@ -2,11 +2,11 @@
     <a class="navbar-brand text-light" href="#">
         <div class="row">
             <div class="col-xl-6 col-lg-7 col-md-6 col-sm-3 col-5">
-                <a routerLink="/programs">
+                <a routerLink="/">
                     <img src="assets/images/logo-white.png" class="img-fluid" alt="applyfree">
                 </a>
             </div>
-            <div class="col-xl-6 col-lg-1 col-md-1 col-sm-2 col-2 mt-4 pl-0 pt-2 d-none d-xl-block">
+            <div class="col-xl-6 col-lg-1 col-md-1 col-sm-2 col-2 mt-3 pl-0 pt-2 d-none d-xl-block">
                 <div class="d-flex">
                     <span>applyfree</span>
                 </div>
@@ -20,7 +20,8 @@
                 <span>Log in</span>
             </a>
         </div>
-        <button class="navbar-toggler text-light d-xl-none d-lg-none d-md-none d-sm-inline-block d-inline-block" type="button" (click)="sidebar = true">
+        <button class="navbar-toggler text-light d-xl-none d-lg-none d-md-none d-sm-inline-block d-inline-block"
+            type="button" (click)="sidebar = true">
             <i class="fa fa-bars"></i>
         </button>
     </div>
@@ -34,14 +35,22 @@
         </div>
 
         <div class="navbar-nav mr-5">
-            <a class="nav-item text-light nav-link ml-3" [ngClass]="{'text-dark' : sidebar}" routerLink="/landing" routerLinkActive="font-weight-bolder">Landing</a>
-            <a class="nav-item text-light nav-link ml-3" routerLinkActive="font-weight-bolder" routerLink="/" [ngClass]="{'text-dark' : sidebar}" [routerLinkActiveOptions]="{ exact: true }" (click)="sidebar=false">Programs</a>
-            <a class="nav-item text-light nav-link ml-3" routerLinkActive="font-weight-bolder" routerLink="/advisers" [ngClass]="{'text-dark' : sidebar}" (click)="sidebar=false">Our advisers</a>
-            <a class="nav-item text-light nav-link ml-3" [routerLink]="['/page', 'contact']" [ngClass]="{'text-dark' : sidebar}" routerLinkActive="font-weight-bolder" (click)="sidebar=false">Contact us</a>
-            <a class="nav-item text-light nav-link ml-3" [routerLink]="['/page', 'about']" [ngClass]="{'text-dark' : sidebar}" routerLinkActive="font-weight-bolder" (click)="sidebar=false">About us</a>
+            <a class="nav-item text-light nav-link ml-3" routerLinkActive="font-weight-bolder"
+                routerLink="/public/programs" [ngClass]="{'text-dark' : sidebar}"
+                [routerLinkActiveOptions]="{ exact: true }" (click)="sidebar=false">Programs</a>
+            <a class="nav-item text-light nav-link ml-3 position-relative" routerLinkActive="font-weight-bolder"
+                routerLink="/public/advisors" [ngClass]="{'text-dark' : sidebar}" (click)="sidebar=false">Advisors group
+            </a>
+            <a class="nav-item text-light nav-link ml-3" [routerLink]="['/public/page', 'contact']"
+                [ngClass]="{'text-dark' : sidebar}" routerLinkActive="font-weight-bolder"
+                (click)="sidebar=false">Contact us</a>
+            <a class="nav-item text-light nav-link ml-3" [routerLink]="['/public/page', 'about']"
+                [ngClass]="{'text-dark' : sidebar}" routerLinkActive="font-weight-bolder" (click)="sidebar=false">About
+                us</a>
         </div>
 
-        <div class="d-xl-none d-lg-none d-md-none d-sm-block d-block w-100 text-center border-top py-1 position-absolute bottom-0">
+        <div
+            class="d-xl-none d-lg-none d-md-none d-sm-block d-block w-100 text-center border-top py-1 position-absolute bottom-0">
             <small class="text-muted">copyright applyfree</small>
         </div>
     </div>

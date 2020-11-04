@@ -1,92 +1,38 @@
 <header>
     <div class="container position-relative z-index-1">
-        <nav class="navbar navbar-expand-md pt-xl-4 pt-lg-4 pt-md-4 pt-sm-1">
-            <a class="navbar-brand text-light" href="#">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-7 col-md-6 col-sm-3 col-5">
-                        <img src="assets/images/logo-white.png" class="img-fluid" alt="applyfree">
-                    </div>
-                    <div class="col-xl-6 col-lg-1 col-md-1 col-sm-2 col-2 mt-4 pl-0 pt-2 d-none d-xl-block">
-                        <div class="d-flex">
-                            <span>applyfree</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <div class="float-right">
-                <div class="d-xl-none d-lg-none d-md-none d-sm-inline-block d-inline-block">
-                    <button class="btn btn-sm btn-light text-dark" routerLink="/login">
-                        <span>Log in</span>
-                    </button>
-                </div>
-                <button class="navbar-toggler text-light d-xl-none d-lg-none d-md-none d-sm-inline-block d-inline-block" type="button" (click)="sidebar = true">
-                    <i class="fa fa-bars"></i>
-                </button>
-            </div>
-
-            <div class="menu ml-auto" [ngClass]="{'show' : sidebar}">
-                <div class="d-xl-none d-lg-none d-md-none d-sm-block d-block border-bottom py-3 px-2">
-                    <button type="button" class="close" aria-label="Close" (click)="sidebar=false">
-                        <i class="fas fa-times text-orangepink" aria-hidden="true"></i>
-                    </button>
-                    <div><span class="text-uppercase text-orangedark">applyfree</span></div>
-                </div>
-
-                <div class="navbar-nav mr-5">
-                    <a class="nav-item text-light nav-link ml-3" [ngClass]="{'text-dark' : sidebar}" routerLink="/landing" routerLinkActive="font-weight-bolder">Landing</a>
-                    <a class="nav-item text-light nav-link ml-3" routerLinkActive="font-weight-bolder" routerLink="/" [ngClass]="{'text-dark' : sidebar}" [routerLinkActiveOptions]="{ exact: true }" (click)="sidebar=false">Programs</a>
-                    <a class="nav-item text-light nav-link ml-3" [routerLink]="['/page', 'contact']" [ngClass]="{'text-dark' : sidebar}" routerLinkActive="font-weight-bolder" (click)="sidebar=false">Contact us</a>
-                    <a class="nav-item text-light nav-link ml-3" [routerLink]="['/page', 'about']" [ngClass]="{'text-dark' : sidebar}" routerLinkActive="font-weight-bolder" (click)="sidebar=false">About us</a>
-                </div>
-
-                <div class="d-xl-none d-lg-none d-md-none d-sm-block d-block w-100 text-center border-top py-1 position-absolute bottom-0">
-                    <small class="text-muted">copyright applyfree</small>
-                </div>
-            </div>
-
-            <div class="d-xl-inline-block d-lg-inline-block d-md-none d-sm-none d-none">
-                <div class="btn-custom">
-                    <button class="btn border-radius-20 px-lg-4 px-md-3 px-sm-5 px-4 position-relative" routerLink="/login">
-                        <span>Log in | Register</span>
-                    </button>
-                    <button class="btn border-radius-full ml-2 position-relative" routerLink="/login">
-                        <span>
-                            <i class="fa fa-arrow-right"></i>
-                        </span>
-                    </button>
-                </div>
-
-            </div>
-            <div class="d-xl-none d-lg-none d-md-block d-sm-none d-none">
-                <button class="btn btn-sm btn-light text-dark" routerLink="/login">
-                    <span>Log in</span>
-                </button>
-            </div>
-            <div class="menu-backdoor" [ngClass]="{'show' : sidebar}" (click)="sidebar = false"></div>
-        </nav>
+        <app-navigator></app-navigator>
         <div class="row my-md-4 text-light mt-5 pb-5">
             <div class="col-xl-6 col-lg-5 col-md-6 col-sm-7 col-10 mx-auto order-last my-auto text-light">
-                <b>All in one platform, no multiple accounts, complete service for free</b>
-                <p class="my-2">
-                    Applyfree is a free and all in one platform for finding, being assisted for, applied to and get admitted to your desired higher education choice and to finish it successfully free of any additional charge other than schools’ charges.
-                </p>
-                <b>Technology in help of efficiency</b>
+                <div class="mt-5 mb-4">
+                    <h3>All in one platform, no multiple accounts, complete service for free</h3>
+                    <p class="my-2">
+                        Applyfree is a free and all in one platform for finding, being assisted for, applied to and get
+                        admitted to your desired higher education choice and to finish it successfully free of any
+                        additional charge other than schools’ charges.
+                    </p>
+                </div>
+                <!-- <b>Technology in help of efficiency</b>
                 <p>
                     Applyfree uses advanced search and ranking technology to make all this process as most efficient as possible. Our applyscore™ algorithm predicts the chance of success for every student-school pair and helps you select programs and schools that have been
                     doing better in students’ success.
-                </p>
-                <b>Step by Step human help</b>
-                <p>
-                    Although we use advanced technology to maximize the chance of student’s success, we believe that one-on-one human help is required for every student to make it till the end. Therefore, applyfree LLC is committed to provide this help by hiring a caring
-                    and knowledgeable advisor for every student. For those students who already have an advisor with whom they like to continue, we provide technological help and financial incentives to make the existing relationship persistent and more
-                    efficient.
-                </p>
-                <div class="d-flex mt-md-0 mt-5 align-items-center mt-xl-4">
-                    <div class="w-50">
-                        <button class="btn btn-xl-lg btn-lg-lg btn-sm text-uppercase btn-dark font-weight-lighter border-radius-30 px-xl-5 px-lg-5 px-md-5 px-sm-5 px-2" routerLink="/contracts">Get
-                            start</button>
-                    </div>
+                </p> -->
+                <div>
+                    <h3>Step by Step human help</h3>
+                    <p>
+                        Although we use advanced technology to maximize the chance of student’s success, we believe that
+                        one-on-one human help is required for every student to make it till the end. Therefore,
+                        applyfree
+                        LLC is committed to provide this help by hiring a caring
+                        and knowledgeable advisor for every student. For those students who already have an advisor with
+                        whom they like to continue, we provide technological help and financial incentives to make the
+                        existing relationship persistent and more
+                        efficient.
+                    </p>
+                </div>
+                <div class="d-flex mt-5 justify-content-center">
+                    <button
+                        class="btn text-uppercase btn-dark font-weight-lighter border-radius-30 px-xl-5 px-lg-5 px-md-5 px-sm-5 px-2"
+                        routerLink="/advisors">Browse applyfree advisors</button>
                 </div>
             </div>
             <div class="col-xl-5 col-lg-6 col-md-6 col-sm-6 col-10 order-md-last ml-xl-auto my-md-auto">
@@ -104,23 +50,32 @@
                     <h4>Work with <span class="text-orangered">applyfree</span></h4>
                 </div>
             </div>
-            <div class="row justify-content-center mx-auto my-xl-1 my-lg-5 my-md-5 my-sm-5 my-3 pt-xl-2 pb-xl-4 py-lg-4 py-md-4 py-sm-4 py-1">
+            <div
+                class="row justify-content-center mx-auto my-xl-1 my-lg-5 my-md-5 my-sm-5 my-3 pt-xl-2 pb-xl-4 py-lg-4 py-md-4 py-sm-4 py-1">
                 <div class="col-xl-6 col-lg-5 col-md-5 col-sm-12 col-12 my-md-auto pr-md-0 my-lg-auto">
                     <img src="assets/images/landing-1.png" alt="landing-1" class="img-fluid">
                 </div>
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 my-auto">
-                    <div class="mt-xl-5 mt-lg-5 mt-md-3 mt-sm-5 mt-2 pt-xl-5 pt-lg-5 pt-md-3 pt-sm-5 pt-2 px-xl-5 px-lg-5 px-md-2 px-sm-5 px-3">
+                    <div
+                        class="mt-xl-5 mt-lg-5 mt-md-3 mt-sm-5 mt-2 pt-xl-5 pt-lg-5 pt-md-3 pt-sm-5 pt-2 px-xl-5 px-lg-5 px-md-2 px-sm-5 px-3">
                         <h3 class="py-3">Join us if you believe in our mission</h3>
                         <p class="text-justify">
-                            We believe in the power of people. Regardless of how powerful a computer algorithm can be, a human being has unique and irreplaceable characteristics with which the algorithm works better. Therefore, we’re not going to move forward with the help of technology
-                            alone. We need partners to come along students and applyfree in this long journey. Failure in finishing an education program has measurable and unmeasurable loss for students and their family. Applyfree asks help from every
-                            individual or company who is working in the industry as well as those who think they owe their successful career and life to education. We ask your help if you are a caring parent, a school advisor, a teacher, a tutor, a successful
+                            We believe in the power of people. Regardless of how powerful a computer algorithm can be, a
+                            human being has unique and irreplaceable characteristics with which the algorithm works
+                            better. Therefore, we’re not going to move forward with the help of technology
+                            alone. We need partners to come along students and applyfree in this long journey. Failure
+                            in finishing an education program has measurable and unmeasurable loss for students and
+                            their family. Applyfree asks help from every
+                            individual or company who is working in the industry as well as those who think they owe
+                            their successful career and life to education. We ask your help if you are a caring parent,
+                            a school advisor, a teacher, a tutor, a successful
                             student or a registered recruiter to become part of our team.
                         </p>
                         <div class="row mt-5">
                             <div class="col text-left">
-                                <button class="btn btn-block btn-lg btn-success font-weight-lighter border-radius-30 px-xl-5 px-lg-5 px-md-3 px-sm-5 px-2" routerLink="/">Join
-                                    us</button>
+                                <button
+                                    class="btn btn-block btn-lg btn-success font-weight-lighter border-radius-30 px-xl-5 px-lg-5 px-md-3 px-sm-5 px-2"
+                                    routerLink="/page/about">Read more about us</button>
                             </div>
                         </div>
                     </div>
@@ -130,16 +85,22 @@
     </section>
     <section id="bg-section-2">
         <div class="container-fluid my-2 py-3">
-            <div class="row mx-5 justify-content-center my-xl-5 my-lg-5 my-md-5 my-sm-5 my-5 py-xl-4 py-lg-4 py-md-4 py-sm-4 py-1">
+            <div
+                class="row mx-5 justify-content-center my-xl-5 my-lg-5 my-md-5 my-sm-5 my-5 py-xl-4 py-lg-4 py-md-4 py-sm-4 py-1">
                 <div class="col-xl-4 col-lg-6 col-md-5 col-sm-12 col-12">
-                    <div class="mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-2 my-auto pl-lg-0 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-2 px-xl-5 px-lg-5 px-md-2 px-sm-5 px-1">
+                    <div
+                        class="mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-2 my-auto pl-lg-0 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-2 px-xl-5 px-lg-5 px-md-2 px-sm-5 px-1">
                         <h3 class="py-3">Create wealth by collaboration</h3>
-                        <p>We are not a charity by the way. We charge schools for the service and we compensate every help that is proved to be effective. Our goal is efficient education and we praise who is committed to this purpose by the wealth that will
+                        <p>We are not a charity by the way. We charge schools for the service and we compensate every
+                            help that is proved to be effective. Our goal is efficient education and we praise who is
+                            committed to this purpose by the wealth that will
                             be created by that efficiency.
                         </p>
                         <div class="row mt-5">
                             <div class="col text-center">
-                                <button class="btn btn-lg btn-info font-weight-lighter border-radius-30 px-xl-5 px-lg-5 px-md-2 px-sm-5 px-2 text-uppercase" routerLink="/">apply free</button>
+                                <button
+                                    class="btn btn-lg btn-info font-weight-lighter border-radius-30 px-xl-5 px-lg-5 px-md-2 px-sm-5 px-2 text-uppercase"
+                                    routerLink="/">apply free</button>
                             </div>
                         </div>
                     </div>
@@ -153,18 +114,25 @@
     </section>
     <section id="bg-section-3">
         <div class="container-fluid my-3 py-3">
-            <div class="row mx-5 justify-content-center my-xl-5 my-lg-5 my-md-5 my-sm-5 my-3 py-xl-4 py-lg-4 py-md-4 py-sm-4 py-1">
+            <div
+                class="row mx-5 justify-content-center my-xl-5 my-lg-5 my-md-5 my-sm-5 my-3 py-xl-4 py-lg-4 py-md-4 py-sm-4 py-1">
                 <div class="col-xl-5 col-lg-4 col-md-5 col-sm-12 col-12 my-lg-auto my-md-auto">
                     <img src="assets/images/landing-3.png" alt="landing-3" class="img-fluid">
                 </div>
-                <div class="col-xl-4 col-lg-7 col-md-6 col-sm-12 col-12 pr-lg-0 my-auto px-xl-5 px-lg-5 px-md-3 px-sm-3 px-1">
+                <div
+                    class="col-xl-4 col-lg-7 col-md-6 col-sm-12 col-12 pr-lg-0 my-auto px-xl-5 px-lg-5 px-md-3 px-sm-3 px-1">
                     <h3 class="py-3">Long term benefits and Students first approach</h3>
-                    <p>We are committed to make the process as less risky as possible for students. That’s why we provide the entire service for them for free. However, as the student moves forward and approaches success, all of us will consequently benefit
-                        from that success. The process is simple and has been designed solely based on students’ success.
+                    <p>We are committed to make the process as less risky as possible for students. That’s why we
+                        provide the entire service for them for free. However, as the student moves forward and
+                        approaches success, all of us will consequently benefit
+                        from that success. The process is simple and has been designed solely based on students’
+                        success.
                     </p>
                     <div class="row mt-5">
                         <div class="col text-left">
-                            <button class="btn btn-block btn-lg btn-warning font-weight-lighter border-radius-30 px-xl-5 px-lg-5 px-md-3 px-sm-5 px-2 text-uppercase" routerLink="/">start now</button>
+                            <button
+                                class="btn btn-block btn-lg btn-warning font-weight-lighter border-radius-30 px-xl-5 px-lg-5 px-md-3 px-sm-5 px-2 text-uppercase"
+                                routerLink="/">start now</button>
                         </div>
                     </div>
                 </div>
@@ -173,15 +141,22 @@
     </section>
     <section id="bg-section-4">
         <div class="container-fluid my-3 py-3">
-            <div class="row mx-5 justify-content-center my-xl-5 my-lg-5 my-md-4 my-sm-5 my-3 py-xl-4 py-lg-4 py-md-4 py-sm-4 py-1">
+            <div
+                class="row mx-5 justify-content-center my-xl-5 my-lg-5 my-md-4 my-sm-5 my-3 py-xl-4 py-lg-4 py-md-4 py-sm-4 py-1">
                 <div class="col-xl-12 col-lg-12 col-md-10 col-sm-12 col-12 text-center">
                     <img src="assets/images/landing-4.png" alt="landing-3" class="img-fluid">
                 </div>
-                <div class="col-xl-8 col-lg-10 col-md-12 col-sm-12 col-12 my-lg-auto mx-auto px-xl-5 px-lg-5 px-md-2 px-sm-5 px-1 pt-5">
-                    <h3 class="py-3 text-center">Join now</h3>
-                    <p>In order to join applyfree, two possible methods are available. First method – the easiest method – is to ask a student to introduce you to us as her/his advisor. We then immediately contact you and inform you of how to finalize the
-                        contract. The second method is to fill up the following form. Our experts will analyze the information and will guide you on how you can become part of applyfree’s team.
+                <div
+                    class="col-xl-8 col-lg-10 col-md-12 col-sm-12 col-12 my-lg-auto mx-auto px-xl-5 px-lg-5 px-md-2 px-sm-5 px-1 pt-5 text-center">
+                    <h3 class="py-3">Join now</h3>
+                    <p>In order to join applyfree, two possible methods are available. First method – the easiest method
+                        – is to ask a student to introduce you to us as her/his advisor. We then immediately contact you
+                        and inform you of how to finalize the
+                        contract. The second method is to fill up the following form. Our experts will analyze the
+                        information and will guide you on how you can become part of applyfree’s team.
+                        anyway contact us if you have any questions. we will be more than glad to talk.
                     </p>
+                    <a class="btn btn-primary btn-lg rounded-pill w-50" routerLink="/register">Join us</a>
                 </div>
             </div>
         </div>
@@ -193,8 +168,10 @@
                     <h5>Why <span class="text-orangedark">applyfree</span> is best?</h5>
                 </div>
             </div>
-            <div class="row justify-content-center mx-xl-5 mx-lg-5 mx-md-3 mx-sm-5 mx-2 my-xl-5 my-lg-5 my-md-5 my-sm-5 my-1 py-xl-4 py-lg-4 py-md-4 py-sm-4 py-1">
-                <div class="col-xl-2 col-lg-2 col-md-3 col-sm-2 col-12 text-center my-xl-0 my-lg-0 my-md-1 my-sm-2 my-2 mr-xl-5 mr-lg-5 mr-md-3 mr-sm-5 mx-auto">
+            <div
+                class="row justify-content-center mx-xl-5 mx-lg-5 mx-md-3 mx-sm-5 mx-2 my-xl-5 my-lg-5 my-md-5 my-sm-5 my-1 py-xl-4 py-lg-4 py-md-4 py-sm-4 py-1">
+                <div
+                    class="col-xl-2 col-lg-2 col-md-3 col-sm-2 col-12 text-center my-xl-0 my-lg-0 my-md-1 my-sm-2 my-2 mr-xl-5 mr-lg-5 mr-md-3 mr-sm-5 mx-auto">
                     <img src="assets/images/applyfree-small.png" class="img-fluid d-block mx-auto pb-3" alt="applyfree">
                     <img src="assets/images/free.png" alt="landing-3" class="img-fluid">
                     <div class="my-3">
@@ -204,7 +181,8 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-xl-2 col-lg-2 col-md-3 col-sm-2 col-12 text-center my-xl-0 my-lg-0 my-md-1 my-sm-2 my-4 mx-xl-5 mx-lg-5 mx-md-3 mx-sm-5 mx-auto">
+                <div
+                    class="col-xl-2 col-lg-2 col-md-3 col-sm-2 col-12 text-center my-xl-0 my-lg-0 my-md-1 my-sm-2 my-4 mx-xl-5 mx-lg-5 mx-md-3 mx-sm-5 mx-auto">
                     <img src="assets/images/applyfree-small.png" class="img-fluid d-block mx-auto pb-3" alt="applyfree">
                     <img src="assets/images/diamond.png" alt="landing-3" class="img-fluid">
                     <div class="my-3">
@@ -232,20 +210,24 @@
 <footer>
     <div class="container position-relative z-index-1">
         <div class="row text-light d-xl-flex d-lg-flex d-md-none d-sm-none d-none justify-content-center">
-            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-2 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
+            <div
+                class="col-xl-1 col-lg-1 col-md-1 col-sm-2 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
                 <h5>
                     <b>
                         Social
                     </b>
                 </h5>
-                <i class="fab fa-instagram text-light fa-2x p-2"></i>
+                <a rel="nofollow" href="https://www.instagram.com/applyfree.us/">
+                    <i class="fab fa-instagram text-light fa-2x p-2"></i>
+                </a>
                 <a rel="nofollow" href="https://www.linkedin.com/company/applyfree/">
                     <i class="fab fa-linkedin text-light fa-2x p-2"></i>
                 </a>
                 <i class="fab fa-twitter text-light fa-2x p-2"></i>
                 <i class="fab fa-facebook text-light fa-2x p-2"></i>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-2 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
+            <div
+                class="col-xl-3 col-lg-3 col-md-3 col-sm-2 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
                 <h5>
                     <b>
                         Quick access
@@ -253,18 +235,19 @@
                 </h5>
                 <ul class="list-unstyled">
                     <li class="p-2">
-                        <a class="text-light" [routerLink]="['/page', 'terms']">
+                        <a class="text-light" [routerLink]="['/public/page', 'terms']">
                             Terms and conditions
                         </a>
                     </li>
                     <li class="p-2">
-                        <a class="text-light" [routerLink]="['/page', 'policy']">
+                        <a class="text-light" [routerLink]="['/public/page', 'policy']">
                             Privacy Policy
                         </a>
                     </li>
                 </ul>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-2 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
+            <div
+                class="col-xl-3 col-lg-3 col-md-3 col-sm-2 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
                 <h5>
                     <b>
                         Quick access
@@ -272,27 +255,28 @@
                 </h5>
                 <ul class="list-unstyled">
                     <li class="p-2">
-                        <a class="text-light" [routerLink]="['/page', 'terms']">
+                        <a class="text-light" [routerLink]="['/public/page', 'terms']">
                             FAQ
                         </a>
                     </li>
                     <li class="p-2">
-                        <a class="text-light" [routerLink]="['/landing']">
-                            Landing
+                        <a class="text-light" [routerLink]="['/']">
+                            Home
                         </a>
                     </li>
                 </ul>
             </div>
-            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
+            <div
+                class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0 text-center">
                 <h5>
                     <b>
                         Quick access
                     </b>
                 </h5>
                 <ul class="list-unstyled">
-                    <li class="p-2"><a class="text-light" [routerLink]="['/page', 'about']">About us</a></li>
-                    <li class="p-2"><a class="text-light" [routerLink]="['/page', 'contact']">Contact us</a></li>
-                    <li class="p-2"><a class="text-light" [routerLink]="['/']">Programs</a></li>
+                    <li class="p-2"><a class="text-light" [routerLink]="['/public/page', 'about']">About us</a></li>
+                    <li class="p-2"><a class="text-light" [routerLink]="['/public/page', 'contact']">Contact us</a></li>
+                    <li class="p-2"><a class="text-light" [routerLink]="['/public/programs']">Programs</a></li>
                 </ul>
             </div>
 
@@ -300,24 +284,26 @@
         <div class="row d-xl-none d-lg-none d-md-block d-sm-block d-block">
             <div class="row justify-content-center mr-1 pt-5">
                 <div class="col-xl-0 col-lg-0 col-md-2 col-sm-10 col-10 text-center">
-                    <a class="text-light" [routerLink]="['/page', 'about']">About us</a>
+                    <a class="text-light" [routerLink]="['/public/page', 'about']">About us</a>
                 </div>
                 <div class="col-xl-0 col-lg-0 col-md-2 col-sm-10 col-10 text-center">
-                    <a class="text-light" [routerLink]="['/page', 'contact']">Contact us</a>
+                    <a class="text-light" [routerLink]="['/public/page', 'contact']">Contact us</a>
                 </div>
                 <div class="col-xl-0 col-lg-0 col-md-2 col-sm-10 col-10 text-center">
-                    <a class="text-light" [routerLink]="['/']">Programs</a>
+                    <a class="text-light" [routerLink]="['/public/programs']">Programs</a>
                 </div>
                 <div class="col-xl-0 col-lg-0 col-md-2 col-sm-10 col-10 text-center">
-                    <a class="text-light" [routerLink]="['/pupage', 'policy']">Privacy Policy</a>
+                    <a class="text-light" [routerLink]="['/public/page', 'policy']">Privacy Policy</a>
                 </div>
                 <div class="col-xl-0 col-lg-0 col-md-2 col-sm-10 col-10 text-center">
-                    <a class="text-light" [routerLink]="['/page', 'terms']">Terms and conditions</a>
+                    <a class="text-light" [routerLink]="['/public/page', 'terms']">Terms and conditions</a>
                 </div>
             </div>
             <div class="row justify-content-center mr-1 py-4">
                 <div class="col-xl-0 col-lg-0 col-md-2 col-sm-2 col-2">
-                    <i class="fab fa-instagram text-light fa-2x p-2"></i>
+                    <a rel="nofollow" href="https://www.instagram.com/applyfree.us/">
+                        <i class="fab fa-instagram text-light fa-2x p-2"></i>
+                    </a>
                 </div>
                 <div class="col-xl-0 col-lg-0 col-md-2 col-sm-2 col-2">
                     <a rel="nofollow" href="https://www.linkedin.com/company/applyfree/">
@@ -334,7 +320,8 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-6">
-                <h4 class="text-light text-center font-weight-light">Powered by applyfree</h4>
+                <h4 class="text-light text-center font-weight-light">Copyright <i class="far fa-copyright"></i>
+                    applyfree 2020</h4>
             </div>
         </div>
         <div class="row">
@@ -344,3 +331,28 @@
         </div>
     </div>
 </footer>
+
+<!-- Modal Beta -->
+<div class="modal fade" id="info" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="infoLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="infoLabel">
+                    <i class="fas fa-info text-warning mr-2"></i>
+                    Attention
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeModal()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                This website is a beta version of the final product and is intended to be used for test purposes. Don't
+                use it for any other purpose.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeModal()">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>

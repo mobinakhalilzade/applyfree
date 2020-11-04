@@ -26,6 +26,7 @@ import { PasswordComponent } from './account/components/password/password.compon
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgramsComponent } from './dashboard/components/programs/programs.component';
+import { ContractDetailComponent } from './dashboard/components/programs/components/contract-detail/contract-detail.component';
 import { SignaturesComponent } from './dashboard/components/signatures/signatures.component';
 import { BookmarksComponent } from './dashboard/components/bookmarks/bookmarks.component';
 import { PaymentsComponent } from './dashboard/components/payments/payments.component';
@@ -45,7 +46,6 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { DegreePipe } from './pipes/degree.pipe';
 import { TypePipe } from './pipes/type.pipe';
 import { SafePipe } from './pipes/safe.pipe';
-import { ContractDetailComponent } from './dashboard/components/programs/components/contract-detail/contract-detail.component';
 
 @NgModule({
   declarations: [

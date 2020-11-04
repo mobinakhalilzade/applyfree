@@ -24,7 +24,7 @@ export class AccountService {
         return this.http.writeApi.post('forgot', data);
     }
 
-    newPassword(data: any) {
+    password(data: any) {
         return this.http.writeApi.post('password', data);
     }
 }

@@ -1,6 +1,16 @@
-<div *ngIf="loading" class="text-center my-5 py-5">
-    <i class="fas fa-sync fa-spin fa-6x text-muted"></i>
-</div>
+<ng-container *ngIf="loading">
+    <div class="container my-5 py-5">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="d-flex">
+                    <span class="ml-auto text-muted py-3">{{progress.description}}</span>
+                </div>
+                <ngb-progressbar type="danger" [value]="progress.loading" [striped]="true" [animated]="true">
+                    <i>{{progress.loading}}%</i></ngb-progressbar>
+            </div>
+        </div>
+    </div>
+</ng-container>
 <ng-container *ngIf="!loading && program">
     <div class="container-fluid px-0">
         <div class="img-banner bg-dark w-100">
@@ -12,7 +22,7 @@
                     <div class="col-9">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb bg-transparent">
-                                <li class="breadcrumb-item"><a [routerLink]="['/programs']"
+                                <li class="breadcrumb-item"><a [routerLink]="['/public/programs']"
                                         class="text-light">Programs</a>
                                 </li>
                                 <li class="breadcrumb-item active text-light" aria-current="page">{{program.title}}</li>
@@ -145,7 +155,7 @@
                                             </td>
                                             <td *ngIf="item.start_date!==null">
                                                 <a class="btn btn-orangedark"
-                                                    [routerLink]="['/contract', item.id, program.id, program.slug]">apply</a>
+                                                    [routerLink]="['/public/contract', item.id, program.id, program.slug]">apply</a>
                                             </td>
                                         </tr>
                                     </tbody>

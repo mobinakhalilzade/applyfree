@@ -9,21 +9,23 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mt-2 mt-lg-0">
                         <li class="nav-item mr-4">
-                            <a class="nav-link py-3 border-radius-x-5" routerLinkActive="active" routerLink="/programs">
+                            <a class="nav-link py-3 border-radius-top-5" routerLinkActive="active" routerLink="/public/programs">
                                 Programs
                             </a>
                         </li>
                         <li class="nav-item mr-4" *ngFor="let item of menus">
-                            <a class="nav-link py-3 border-radius-x-5" routerLinkActive="active"
+                            <a class="nav-link py-3 border-radius-top-5" routerLinkActive="active"
                                 [routerLink]="item.link">
                                 {{item.name}}
                             </a>
                         </li>
                     </ul>
                     <div class="text-light ml-auto">
-
-                        <a class="text-light" routerLink="/dashboard">Hi {{user.firstName}} {{user.lastName}}</a>
-                        <button class="btn ml-2" (click)="logout()" data-toggle="tooltip" data-placement="top"
+                        <a class="text-light" routerLink="/dashboard/signatures">Hi {{user.firstName}} {{user.lastName}}</a>
+                        <button *ngIf="user.role==2" type="button" class="btn btn-sm btn-light ml-3" placement="bottom" ngbTooltip="Your code" tooltipClass="bg-tooltip">
+                            {{user.code}}
+                          </button>
+                        <button class="btn ml-2" (click)="logout()"placement="bottom" ngbTooltip="Logout" tooltipClass="bg-tooltip"
                             title="Logout">
                             <i class="fa fa-sign-out-alt text-light"></i>
                         </button>
@@ -34,15 +36,7 @@
     </div>
 
     <div class="container h-100">
-        <div class="text-center py-5 px-2" *ngIf="user.role==2">
-            <span class="text-primary">
-                Your advisor code :
-                <b class="h4">
-                    {{user.code}}
-                </b>
-            </span>
-        </div>
-        <div class="row h-100 p-4 border shadow-sm" [ngClass]="{'mt-5':user.role==1}">
+        <div class="row h-100 mt-5">
             <div class="col-12 h-100">
                 <router-outlet></router-outlet>
             </div>
@@ -52,17 +46,17 @@
     <div class="footer shadow">
         <div class="container">
             <div class="mt-2 py-1">
-                <a class="float-left text-muted" routerLink="/programs">
-                    2020 applyfree
+                <a class="float-left text-muted" routerLink="/">
+                    Copyright <i class="far fa-copyright"></i> applyfree 2020
                 </a>
                 <span class="float-right text-muted">
-                    <a class="border-right border-dark px-2" routeLink="/page/about">
+                    <a class="border-right border-dark px-2" routeLink="/public/page/about">
                         About
                     </a>
-                    <a class="border-right border-dark ml-2 px-2" routeLink="/page/about">
+                    <a class="border-right border-dark ml-2 px-2" routeLink="/public/page/about">
                         Team
                     </a>
-                    <a class="ml-2 pl-1" routeLink="/page/contact">
+                    <a class="ml-2 pl-1" routeLink="/public/page/contact">
                         Contact
                     </a>
                 </span>

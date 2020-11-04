@@ -11,42 +11,60 @@
         </div>
     </ng-container>
     <ng-container *ngIf="!loading && programs">
-        <div class="row">
-            <div class="col-12">
-                <table class="table table-hover text-center table-striped">
-                    <thead>
-                        <tr>
-                            <th class="border-top-0 border-bottom-0">Program</th>
-                            <th class="border-top-0 border-bottom-0">Student</th>
-                            <th class="border-top-0 border-bottom-0">Status</th>
-                            <th class="border-top-0 border-bottom-0">Details</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let item of programs">
-                            <td class="py-3">
-                                {{item.intake.program.title}}
-                                <div>
-                                    <small>
-                                        {{item.intake.program.school.title}}
-                                    </small>
-                                </div>
-                            </td>
-                            <td class="py-3">
-                                {{item.user.firstName}} {{item.user.lastName}}
-                            </td>
-                            <td class="py-3">
-                                {{item.status | status}}
-                            </td>
-                            <td>
-                                <a class="btn btn-orangedark"
-                                    [routerLink]="['/dashboard/programs/contract-detail' ,item.intake.id ,item.intake.program.id,item.intake.program.slug]">show
-                                    details</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+        <ng-container *ngIf="programs.length == 0">
+            <div class="text-center text-muted">
+                <h5>You do not have any application!</h5>
+                <a routerLink="/public/programs" class="btn btn-orangedark mt-2">
+                    Go to programs
+                </a>
             </div>
-        </div>
+        </ng-container>
+        <ng-container *ngIf="programs.length > 0">
+            <div class="row">
+                <div class="col-12">
+                    <h6 class="text-muted mb-2">
+                        <i class="fab fa-product-hunt text-primary"></i>
+                        Programs to which you have applied
+                    </h6>
+                    <div class="table-responsive mt-4">
+                        <table class="table table-hover text-center table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="th-number"></th>
+                                    <th>Program</th>
+                                    <th>Student</th>
+                                    <th>Status</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of programs;index as i">
+                                    <td>{{i + 1}}</td>
+                                    <td class="py-3">
+                                        {{item.intake.program.title}}
+                                        <div>
+                                            <small>
+                                                {{item.intake.program.school.title}}
+                                            </small>
+                                        </div>
+                                    </td>
+                                    <td class="py-3">
+                                        {{item.user.firstName}} {{item.user.lastName}}
+                                    </td>
+                                    <td class="py-3">
+                                        {{item.status | status}}
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-orangedark"
+                                            [routerLink]="['/dashboard/programs/contract-detail' ,item.intake.id ,item.intake.program.id,item.intake.program.slug]">show
+                                            details</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
     </ng-container>
 </ng-container>

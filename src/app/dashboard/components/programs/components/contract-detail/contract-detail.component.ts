@@ -15,7 +15,7 @@ export class ContractDetailComponent implements OnInit {
   user: any;
   intake: any;
   contract: any;
-  loading: boolean;
+  loading: boolean =true;
 
   constructor(
     private service: DashboardService,
@@ -30,6 +30,7 @@ export class ContractDetailComponent implements OnInit {
         if (body.return == 200) {
           const data = body.data;
           this.program = data;
+          this.loading = false;
           then();
         }
       }
@@ -43,7 +44,7 @@ export class ContractDetailComponent implements OnInit {
         if (body.return == 200) {
           const data = body.data;
           this.intake = data;
-          // this.loading = false;
+          this.loading = false;
         }
       }
     })
@@ -56,6 +57,7 @@ export class ContractDetailComponent implements OnInit {
         if (body.return == 200) {
           const data = body.data;
           this.contract = data;
+          this.loading = false;
         }
       }
     })

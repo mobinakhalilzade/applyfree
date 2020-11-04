@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var $: any;
 
 @Component({
   selector: 'app-landing',
@@ -10,7 +11,12 @@ export class LandingComponent implements OnInit {
 
   constructor() { }
 
+  closeModal(){
+    $('#info').modal('hide');
+  }
+
   ngOnInit(): void {
+    $('#info').modal('show');
   }
 
 }

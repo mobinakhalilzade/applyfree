@@ -12,14 +12,15 @@ export class AgentsComponent implements OnInit {
   agents: any;
   loading: boolean = true;
   progress = {
-    description: 'loading advisers ...',
+    description: 'loading advisors ...',
     loading: 0
   }
 
   constructor(
     private service: PublicService,
-    private toast: ToastService,
-  ) { }
+    private toast: ToastService
+  ) {
+  }
 
   join(code: any) {
     const command = {

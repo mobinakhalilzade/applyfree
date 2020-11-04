@@ -35,21 +35,21 @@ import { FailureComponent } from "./payment/components/failure/failure.component
 import { CheckoutComponent } from "./payment/components/checkout/checkout.component";
 
 const routes: Routes = [
+  { path: '', component: LandingComponent, pathMatch: 'full' },
+  { path: 'login', redirectTo: '/account/login' },
+  { path: 'register', redirectTo: '/account/signup' },
+
   {
-    path: '', component: PublicComponent,
+    path: 'public', component: PublicComponent,
     children: [
-      { path: '', redirectTo: '/programs', pathMatch: 'full' },
-      //{ path: '', component: ProgramListComponent },
       { path: 'program/:id/:slug', component: ProgramComponent },
       { path: 'page/:section', component: PagesComponent },
       { path: 'programs', component: ProgramListComponent },
       { path: 'contract/:intakeId/:id/:slug', component: ContractComponent },
-      { path: 'advisers', component: AgentsComponent }
+      { path: 'advisors', component: AgentsComponent }
     ]
   },
-  { path: 'landing', component: LandingComponent },
-  { path: 'login', redirectTo: '/account/login' },
-  { path: 'register', redirectTo: '/account/signup' },
+
   {
     path: 'payment', component: PaymentComponent,
     children: [

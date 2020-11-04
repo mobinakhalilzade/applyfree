@@ -1,28 +1,30 @@
-<a routerLink="/dashboard/signatures" class="btn btn-secondary">
-    <i class="fa fa-chevron-left"></i>
-    Back
-</a>
-<form class="my-2 p-3">
-    <div class="form-group">
-        <h3 class="px-2 py-4 text-center">Upload your signatures</h3>
-        <div class="custom-file" (click)="upload()">
-            <input type="file" class="custom-file-input" #fileUpload id="fileUpload" name="fileUpload" accept="image/*"
-                required>
-            <label class="custom-file-label" for="customFile">Choose file</label>
-        </div>
+<ng-container>
+    <a routerLink="/dashboard/signatures" class="btn btn-secondary">
+        <i class="fa fa-chevron-left"></i>
+        Back
+    </a>
+    <form class="my-2 p-3">
+        <div class="form-group">
+            <h3 class="px-2 py-4 text-center">Upload your signatures</h3>
+            <div class="custom-file" (click)="upload()">
+                <input type="file" class="custom-file-input" #fileUpload id="fileUpload" name="fileUpload"
+                    accept="image/*" required>
+                <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>
 
-        <div class="progress" style="height: 5px;">
-            <div class="progress-bar" role="progressbar" [ngStyle]="{'width': file.progress + '%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
+            <div class="progress" style="height: 5px;">
+                <div class="progress-bar" role="progressbar" [ngStyle]="{'width': file.progress + '%'}"
+                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
 
-        <small class="form-text">
-            You will return to signatures after upload file
-        </small>
-    </div>
-    <div class="my-4" *ngIf="error">
-        <div class="alert alert-danger" role="alert">
-            {{alert}}
+            <small class="form-text">
+                You will return to signatures after upload file
+            </small>
         </div>
-    </div>
-</form>
-
+        <div class="my-4" *ngIf="error">
+            <div class="alert alert-danger" role="alert">
+                {{alert}}
+            </div>
+        </div>
+    </form>
+</ng-container>

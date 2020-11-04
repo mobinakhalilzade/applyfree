@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { AccountService } from '../../account.service';
 
 @Component({
@@ -16,27 +17,33 @@ export class PasswordComponent implements OnInit {
 
   constructor(
     private service: AccountService,
+    private route: ActivatedRoute,
     private formBuilder: FormBuilder
   ) { }
 
-  newPassword(form:any){
-    const command={
-      password:form.password
+  setPassword(form: any) {
+    const token = this.route.snapshot.paramMap.get('token');
+    const command = {
+      token: token,
+      password: form.password
     }
-    this.service.newPassword(command).subscribe((response:any)=>{
+    this.service.password(command).subscribe((response: any) => {
+      if (response.status == 200) {
+        const body = response.body;
+        if (body.return == 200) {
+          const data = body.data;
+          localStorage.setItem('token', data.token);
+          window.location.href = "/dashboard/signatures";
+        }
+      }
     })
   }
 
   ngOnInit() {
 
     this.form = this.formBuilder.group({
-      firstName: [null, [Validators.required]],
-      lastName: [null, [Validators.required]],
       password: [null, [Validators.required, Validators.minLength(6)]],
-      confirmPassword: [null, [Validators.required, Validators.minLength(6)]],
-      username: [null, [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
-      phone: [null, [Validators.required, Validators.pattern("^[0-9]*$")]],
-      terms: [true, [Validators.required]],
+      confirmPassword: [null, [Validators.required, Validators.minLength(6)]]
     });
 
   }

@@ -4,30 +4,31 @@
             <div class="col-12">
                 <div class="row">
                     <div class="col">
-                        <h3 class="text-orangedark text-center mt-3 mb-5">aplyyfree advisers</h3>
+                        <h3 class="text-orangedark text-center mt-3 mb-5">applyfree advisors</h3>
                         <div class="input-group mx-auto">
-                            <input type="search" class="border-0 form-control" placeholder="Search...">
-                            <!-- <div class="input-group-append">
-                                <button class="btn btn-secondary">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </div> -->
+                            <input type="search" id="search"
+                                class="border-top-0 border-right-0 border-left-0 form-control" placeholder="Search ...">
                         </div>
-                        <table class="table table-striped text-center">
+                        <table class="table table-hover text-center table-striped">
                             <thead>
                                 <tr>
-                                    <th >Group Code</th>
-                                    <th >Limitations</th>
-                                    <th >Action</th>
+                                    <th class="border-top-0 border-bottom-0">Group Code</th>
+                                    <th class="border-top-0 border-bottom-0">Limitations</th>
+                                    <th class="border-top-0 border-bottom-0">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="text-dark" *ngFor="let item of agents">
-                                    <td>{{item.code}}</td>
-                                    <td>{{item.limitations}}</td>
+                                <tr *ngFor="let item of agents">
+                                    <td class="py-3">
+                                        {{item.code}}
+                                    </td>
+                                    <td class="py-3">
+                                        {{item.limitations}}
+                                    </td>
                                     <td>
                                         <button class="btn btn-orangedark" (click)="join(item.code)">Join</button>
                                     </td>
+
                                 </tr>
                             </tbody>
                         </table>

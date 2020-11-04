@@ -207,7 +207,7 @@
         </div>
         <div class="row">
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 mb-5" *ngFor="let item of programs">
-                <a class="card shadow h-100" [routerLink]="['/program', item.program.id, item.program.slug]">
+                <a class="card shadow h-100" [routerLink]="['/public/program', item.program.id, item.program.slug]">
                     <img [src]="'http://192.168.3.65/applyfree/img/logo/'+item.program.school.id+'.png'" class="z-index-1 bg-white border-radius-full" [alt]="item.program.school.title">
                     <div class="row no-gutters h-100">
                         <div class="col-3 text-center text-muted">

@@ -1,34 +1,105 @@
-<a routerLink="/dashboard/programs" class="btn btn-secondary">
-    <i class="fa fa-chevron-left"></i>
-    Back
-</a>
-<form class="my-2 p-3">
-    <div class="form-group">
-        <h3 class="px-2 py-4 text-center">Contract detail</h3>
-
-        <div>
-            <!-- Program name : {{}} -->
+<ng-container>
+    <ng-container *ngIf="loading">
+        <div class="text-center text-muted">
+            <div>
+                <i class="fa fa-sync fa-spin"></i>
+            </div>
+            <div>
+                Please wait ...
+            </div>
         </div>
+    </ng-container>
+    <ng-container *ngIf="!loading && program && intake">
+        <div class="row">
+            <div class="col-12">
+                <a routerLink="/dashboard/programs" class="btn btn-secondary">
+                    <i class="fa fa-chevron-left"></i>
+                    Back
+                </a>
+                <div class="card mt-3">
+                    <div class="card-header text-orangedark text-center">
+                        Contract detail
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <h5 class="card-title">Program : {{program.title}}</h5>
+                            <div class="row card-text text-center">
+                                <div class="col">
+                                    School : {{program.school.title}}
+                                </div>
+                                <div class="col">
+                                    Degree : {{program.degree}}
+                                </div>
+                                <div class="col">
+                                    Length : {{program.length_description}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="mb-3">
+                                        <table class="m-auto">
+                                            <thead class="border-bottom">
+                                                <tr>
+                                                    <th class="p-3 text-dark text-capitalize">Tuition/year</th>
+                                                    <th class="p-3 text-dark border-left text-capitalize">Application
+                                                        fee
+                                                    </th>
+                                                    <th class="p-3 text-dark border-left text-capitalize">Cost of living
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th class="p-3 text-orangedark">{{program.tuition_year | currency}}
+                                                    </th>
+                                                    <th class="p-3 border-left">
+                                                        <span class="text-orangedark"
+                                                            *ngIf="program.fee > 0">{{program.fee | currency}}</span>
+                                                        <span class="text-success" *ngIf="program.fee == 0">Free</span>
+                                                    </th>
+                                                    <th class="p-3 border-left text-orangedark">
+                                                        {{program.cost_living_year | currency}}
+                                                    </th>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h5 class="card-title">Intakes</h5>
+                            <div class="card-text">
+                                <table class="m-auto">
+                                    <thead class="border-bottom">
+                                        <tr>
+                                            <th class="p-3 text-dark text-capitalize">Start date</th>
+                                            <th class="p-3 text-dark border-left text-capitalize">Submission
+                                            </th>
+                                            <th class="p-3 text-dark border-left text-capitalize">Status
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th class="p-3 text-primary">
+                                                {{intake.start_date | date}}
+                                            </th>
+                                            <th class="p-3 border-left text-primary">
+                                                {{intake.submission | currency}}
+                                            </th>
+                                            <th class="p-3 border-left text-info">
+                                                {{intake.status | status}}
+                                            </th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
 
-        <div>
-            Intakes : {{intake.start_date}} until {{intake.submission}}
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div>
-           Status : {{intake.status}}
-        </div>
-
-        <div>
-            Program name : bachelor of science - geology - environmental earth science
-        </div>
-
-        <div>
-            Program name : bachelor of science - geology - environmental earth science
-        </div>
-
-        <small class="form-text">
-            You will return to signatures after upload file
-        </small>
-    </div>
-
-</form>
+    </ng-container>
+</ng-container>

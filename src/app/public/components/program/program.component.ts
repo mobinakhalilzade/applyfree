@@ -9,11 +9,15 @@ import { ToastService } from '../../../helper/toast.service';
   styleUrls: ['./program.component.css']
 })
 export class ProgramComponent implements OnInit {
-  loading: boolean;
+  loading: boolean = true;
   alert: any;
   program: any;
   bookmarked: boolean;
   successBookmarked: any;
+  progress = {
+    description: "Loading program",
+    loading: 0
+  }
 
   constructor(
     private service: PublicService,
@@ -28,6 +32,7 @@ export class ProgramComponent implements OnInit {
           const data = body.data;
           data.school.googleMap = 'https://www.google.com/maps/search/?api=1&query=' + data.school.address;
           this.program = data;
+          this.loading = false;
           then();
         }
       }
@@ -80,10 +85,18 @@ export class ProgramComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.progress = {
+      description: "Loading program",
+      loading: 50
+    }
     const slug = this.route.snapshot.paramMap.get('slug');
     const id = this.route.snapshot.paramMap.get('id');
     this.getProgram(id, slug, () => {
       this.userBookmark(id);
+      this.progress = {
+        description: "Loading program",
+        loading: 50 * 2
+      }
     });
   }
 }

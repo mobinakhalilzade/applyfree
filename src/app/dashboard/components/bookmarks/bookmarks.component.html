@@ -1,35 +1,52 @@
-<ng-container *ngIf="loading">
-    <div class="text-center text-muted">
-        Please wait ...
-        <i class="fa fa-sync fa-spin"></i>
-    </div>
-</ng-container>
+<ng-container>
+    <ng-container *ngIf="loading">
+        <div class="text-center text-muted">
+            Please wait ...
+            <i class="fa fa-sync fa-spin"></i>
+        </div>
+    </ng-container>
 
-<ng-container *ngIf="bookmark.length == 0">
-    <div class="text-center">
-        <h5 class="my-2">You do not have any bookmark yet!</h5>
-        <a class="text-muted pointer" routerLink="/programs">go to programs</a>
-    </div>
-</ng-container>
-
-<div class="row text-center">
-    <div class="col-6" *ngFor="let item of bookmark">
-        <a class="card mb-4 border-radius-10 shadow" [routerLink]="['/program', item.program_id, item.program.slug]">
-            <div class="row card-body">
-                <div class="col-3 my-auto">
-                    <img class="banner rounded img-fluid" [src]="'http://192.168.3.65/applyfree/img/logo/'+item.id+'.png'" [alt]="item.program.school.title">
-                </div>
-                <div class="col-9">
-                    <h5 class="card-title">{{item.program.title}}</h5>
-                    <p class="card-text text-dark text-truncate mt-3 mb-2">{{item.program.school.title}}</p>
-                    <p class="card-text text-dark text-truncate">{{item.program.school.city}} / {{item.program.school.country}}
-                    </p>
-                    <button class="btn btn-danger float-right">
-                        Go to program
-                        <i class="far fa-arrow-alt-circle-right pl-2"></i>
-                    </button>
-                </div>
+    <ng-container *ngIf="bookmark.length == 0">
+        <div class="text-center">
+            <h5 class="my-2">You do not have any bookmark yet!</h5>
+            <a routerLink="/public/programs" class="btn btn-orangedark mt-2">
+                Go to programs
+            </a>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="bookmark.length > 0">
+        <div class="row">
+            <div class="col">
+                <h6 class="text-muted mb-2">
+                    <i class="fas fa-bookmark text-primary"></i>
+                    Your bookmarks
+                </h6>
             </div>
-        </a>
-    </div>
-</div>
+        </div>
+        <div class="row text-center">
+            <div class="col-6" *ngFor="let item of bookmark">
+                <a class="card mb-4 border-radius-10 shadow"
+                    [routerLink]="['/public/program', item.program_id, item.program.slug]">
+                    <div class="row card-body">
+                        <div class="col-3 my-auto">
+                            <img class="banner rounded img-fluid"
+                                [src]="'http://192.168.3.65/applyfree/img/logo/'+item.id+'.png'"
+                                [alt]="item.program.school.title">
+                        </div>
+                        <div class="col-9">
+                            <h5 class="card-title">{{item.program.title}}</h5>
+                            <p class="card-text text-dark text-truncate mt-3 mb-2">{{item.program.school.title}}</p>
+                            <p class="card-text text-dark text-truncate">{{item.program.school.city}} /
+                                {{item.program.school.country}}
+                            </p>
+                            <button class="btn btn-danger float-right">
+                                Go to program
+                                <i class="far fa-arrow-alt-circle-right pl-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </ng-container>
+</ng-container>

@@ -38,7 +38,6 @@ export class DashboardComponent implements OnInit {
       this.router.navigate(['/account/login']);
       return;
     }
-
     this.profile();
   }
 }

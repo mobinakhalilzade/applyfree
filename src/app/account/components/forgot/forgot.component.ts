@@ -23,6 +23,7 @@ export class ForgotComponent implements OnInit {
       username:form.username
     }
     this.service.forgot(command).subscribe((response:any)=>{
+      console.log(response);
     })
   }
 

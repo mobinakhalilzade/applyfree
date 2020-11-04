@@ -9,6 +9,10 @@ export class PublicComponent implements OnInit {
   constructor(
   ) { }
 
+  goToLink(url: string) {
+    window.open(url);
+  }
+
   ngOnInit(): void {
   }
 

@@ -12,7 +12,7 @@ export class RegisterComponent implements OnInit {
 
   roles = [
     { id: 1, active: true, name: "I'm student" },
-    { id: 2, active: false, name: "I'm adviser" }
+    { id: 2, active: false, name: "I'm advisor" }
   ]
 
   alert: any = {
@@ -52,7 +52,7 @@ export class RegisterComponent implements OnInit {
       password: form.password,
       firstName: form.firstName,
       lastName: form.lastName,
-      role: form.id,
+      role: form.role,
       image: "avatar.jpg"
     };
 
