@@ -7,16 +7,20 @@ declare var $: any;
   styleUrls: ['./landing.component.css']
 })
 export class LandingComponent implements OnInit {
-  sidebar: boolean; 
-
+  sidebar: boolean;
   constructor() { }
 
-  closeModal(){
+  closeModal() {
     $('#info').modal('hide');
+    localStorage.setItem('close', 'yes');
   }
 
   ngOnInit(): void {
-    $('#info').modal('show');
+    if (localStorage.getItem('close')) {
+      $('#info').modal('hide');
+    }
+    else {
+      $('#info').modal('show');
+    }
   }
-
 }
