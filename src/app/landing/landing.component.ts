@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+
 declare var $: any;
 
 @Component({
@@ -8,19 +10,29 @@ declare var $: any;
 })
 export class LandingComponent implements OnInit {
   sidebar: boolean;
-  constructor() { }
+  isBrowser: boolean
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: any,
+    @Inject('LOCALSTORAGE') private localStorage: any
+  ) {
+    if (isPlatformBrowser(this.platformId)) {
+      this.isBrowser = true;
+    }
+  }
 
   closeModal() {
     $('#info').modal('hide');
-    localStorage.setItem('close', 'yes');
+    localStorage.setItem('notify', 'yes');
   }
 
   ngOnInit(): void {
-    if (localStorage.getItem('close')) {
-      $('#info').modal('hide');
-    }
-    else {
-      $('#info').modal('show');
+    if (this.isBrowser) {
+      if (localStorage.getItem('notify')) {
+        $('#info').modal('hide');
+      }
+      else {
+        $('#info').modal('show');
+      }
     }
   }
 }

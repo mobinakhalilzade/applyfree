@@ -101,8 +101,9 @@ const routes: Routes = [
     onSameUrlNavigation: 'reload',
     anchorScrolling: "enabled",
     urlUpdateStrategy: "eager",
-    scrollPositionRestoration: "enabled"
-  })],
+    scrollPositionRestoration: "enabled",
+    initialNavigation: 'enabled'
+})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
