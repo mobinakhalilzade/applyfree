@@ -89,11 +89,12 @@
                                             <small class="text-muted">(Optional practical training)</small>
                                         </div>
                                     </li>
-                                    <li class="list-group-item py-4">
+                                    <!-- <li class="list-group-item py-4">
                                         <b>{{program.school.type | type }}</b>
-                                    </li>
+                                    </li> -->
                                     <li class="list-group-item py-4 rounded-pill">
-                                        <i class="fas fa-phone-alt mr-2"></i> +123456789
+                                        <b>{{program.school.type | type }}</b>
+                                        <!-- <i class="fas fa-phone-alt mr-2"></i> +123456789 -->
                                     </li>
                                 </ul>
                             </div>
@@ -150,8 +151,8 @@
                                                 </time>
                                             </td>
                                             <td class="py-3" *ngIf="item.submission==null"><button
-                                                    class="btn far fa-question-circle text-warning"
-                                                    data-toggle="tooltip" data-placement="top" title="Unknown"></button>
+                                                    class="btn far fa-question-circle text-warning" placement="bottom"
+                                                    ngbTooltip="Unknown" tooltipClass="bg-tooltip"></button>
                                             </td>
                                             <td *ngIf="item.start_date!==null">
                                                 <a class="btn btn-orangedark"
