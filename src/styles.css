@@ -80,11 +80,11 @@ body, html {
 }
 
 .bg-tooltip .tooltip-inner {
-    background-color: darkgreen;
+    background-color: var(--orangedark);
 }
 
 .bg-tooltip .arrow::before {
-    border-bottom-color: darkgreen;
+    border-bottom-color: var(--orangedark);
 }
 
 .dropdown-filter {

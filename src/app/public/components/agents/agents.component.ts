@@ -11,6 +11,12 @@ export class AgentsComponent implements OnInit {
 
   agents: any;
   loading: boolean = true;
+  input = {
+    advisor: {
+      value: '',
+      result: null
+    }
+  }
   progress = {
     description: 'loading advisors ...',
     loading: 0

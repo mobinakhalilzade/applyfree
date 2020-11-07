@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { DashboardService } from "./dashboard.service";
 import * as menu from 'src/assets/data.json';
@@ -13,7 +13,11 @@ export class DashboardComponent implements OnInit {
   menus = menu['default'][0]['data'];
   subMenus: any[] = this.menus[0]['menus'];
 
-  constructor(public router: Router, private service: DashboardService) { }
+  constructor(
+    public router: Router,
+    private service: DashboardService
+  ) {
+  }
 
   logout() {
     this.service.logout().subscribe((response: any) => {
