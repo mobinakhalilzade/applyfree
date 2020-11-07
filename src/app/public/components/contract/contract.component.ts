@@ -90,7 +90,7 @@ export class ContractComponent implements OnInit {
         const body = response.body;
         if (body.return == 200) {
           this.toast.show('Contract', body.message, { classname: 'bg-success text-light' });
-          window.location.href = `/payment/checkout?c=${body.contractId}`
+          //window.location.href = `/payment/checkout?c=${body.contractId}`
         }
 
         if (body.return == 300) {
