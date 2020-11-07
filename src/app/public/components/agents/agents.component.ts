@@ -33,13 +33,11 @@ export class AgentsComponent implements OnInit {
       code: code
     }
     this.service.join(command).subscribe((response: any) => {
-      console.log(response);
       if (response.status == 200) {
         const body = response.body;
         if (body.return == 200) {
           this.toast.show('Agent', body.message, { classname: 'bg-dark text-light' });
-        }
-        else {
+        } else {
           this.toast.show('Agent', body.message, { classname: 'bg-dark text-light' });
         }
       }

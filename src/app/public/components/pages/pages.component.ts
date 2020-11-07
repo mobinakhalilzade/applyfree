@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as data from 'src/assets/data.json';
 
@@ -7,7 +7,7 @@ import * as data from 'src/assets/data.json';
   templateUrl: './pages.component.html',
   styleUrls: ['./pages.component.css']
 })
-export class PagesComponent implements OnInit {
+export class PagesComponent implements AfterViewInit {
   section: string;
   faq = data['default'][1]['data'];
   team = data['default'][2]['data'];
@@ -21,7 +21,7 @@ export class PagesComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.section = this.route.snapshot.params.section;
   }
 
