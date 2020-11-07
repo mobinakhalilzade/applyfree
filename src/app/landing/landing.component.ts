@@ -13,7 +13,6 @@ export class LandingComponent implements OnInit {
   isBrowser: boolean
   constructor(
     @Inject(PLATFORM_ID) private platformId: any,
-    @Inject('LOCALSTORAGE') private localStorage: any
   ) {
     if (isPlatformBrowser(this.platformId)) {
       this.isBrowser = true;
