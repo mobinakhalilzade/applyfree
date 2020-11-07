@@ -1,17 +1,20 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { DashboardService } from "./dashboard.service";
 import * as menu from 'src/assets/data.json';
+import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit ,AfterViewInit {
   isAuth: boolean = true;
   user: any;
   menus = menu['default'][0]['data'];
   subMenus: any[] = this.menus[0]['menus'];
+
+  @ViewChild('tooltip') public tooltip: NgbTooltip;
 
   constructor(
     public router: Router,
@@ -36,6 +39,12 @@ export class DashboardComponent implements OnInit {
       }
     });
   }
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.tooltip.open();
+    }, 1000);
+}
 
   ngOnInit(): void {
     if (this.isAuth && localStorage.getItem('token') == null) {

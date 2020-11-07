@@ -23,9 +23,8 @@
                     </ul>
                     <div class="text-light ml-auto">
                         <span class="text-light">Hi {{user.firstName}} {{user.lastName}}</span>
-                        <button *ngIf="user.role==2" triggers="manual" 
-                            class="btn btn-sm btn-light ml-3" placement="bottom" ngbTooltip="Your code" 
-                            tooltipClass="bg-tooltip">
+                        <button *ngIf="user.role==2" triggers="manual" class="btn btn-sm btn-light ml-3" (click)="tooltip.open()"
+                            placement="bottom" ngbTooltip="Your code" #tooltip="ngbTooltip" tooltipClass="bg-tooltip">
                             {{user.code}}
                         </button>
                         <button class="btn ml-2" (click)="logout()" placement="bottom" ngbTooltip="Logout"
