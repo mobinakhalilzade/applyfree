@@ -18,26 +18,21 @@
             <div class="row">
                 <div class="col">
                     <h6 class="text-muted mb-2">
-                        <i class="fas fa-bookmark text-primary"></i>
-                        Your bookmarks
+                        <i class="fas fa-bookmark text-primary"></i> Your bookmarks
                     </h6>
                 </div>
             </div>
             <div class="row text-center">
                 <div class="col-6" *ngFor="let item of bookmark">
-                    <a class="card mb-4 border-radius-10 shadow"
-                        [routerLink]="['/public/program', item.program_id, item.program.slug]">
+                    <a class="card mb-4 border-radius-10 shadow" [routerLink]="['/public/program', item.program_id, item.program.slug]">
                         <div class="row card-body">
                             <div class="col-3 my-auto">
-                                <img class="banner rounded img-fluid"
-                                    [src]="'http://192.168.3.65/applyfree/img/logo/'+item.id+'.png'"
-                                    [alt]="item.program.school.title">
+                                <img class="banner rounded img-fluid" [src]="'https://admin.applyfree.us/img/logo/'+item.id+'.png'" [alt]="item.program.school.title">
                             </div>
                             <div class="col-9">
                                 <h5 class="card-title">{{item.program.title}}</h5>
                                 <p class="card-text text-dark text-truncate mt-3 mb-2">{{item.program.school.title}}</p>
-                                <p class="card-text text-dark text-truncate">{{item.program.school.city}} /
-                                    {{item.program.school.country}}
+                                <p class="card-text text-dark text-truncate">{{item.program.school.city}} / {{item.program.school.country}}
                                 </p>
                                 <button class="btn btn-danger float-right">
                                     Go to program

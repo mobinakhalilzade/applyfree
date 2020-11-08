@@ -25,6 +25,7 @@ export class DashboardComponent implements OnInit ,AfterViewInit {
   logout() {
     this.service.logout().subscribe((response: any) => {
       localStorage.removeItem('token');
+      localStorage.removeItem('user');
       this.router.navigate(['account/login']);
     });
   }

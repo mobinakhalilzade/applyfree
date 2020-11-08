@@ -1,23 +1,30 @@
-<div class="container">
-    <div class="row" *ngIf="!loading && program">
+<div class="container" *ngIf="intake">
+    <div class="row" *ngIf="!loading">
         <div class="col-12 text-left mb-4">
             <h2 class="text-orangedark text-capitalize">
-                {{program.title}}
+                <a [routerLink]="['/public/program', intake.program.slug]">
+                    {{intake.program.title}}
+                </a>
             </h2>
             <h6>
-                {{program.school.title}}
+                {{intake.program.school.title}}
             </h6>
-            <ng-container *ngIf="intake">
-                <h6>
-                    <span class="text-primary"> Start date: {{intake.start_date | date}} </span>
-                </h6>
-                <h6>
-                    <span class="text-danger d-block"> Submission deadline: {{intake.submission | date}} </span>
-                </h6>
-            </ng-container>
-            <h6 class="text-success" *ngIf="contract">
-                Signed in {{contract.creationDate | date}}
-            </h6>
+
+            <table class="table table-bordered table-warning mt-3 mb-0">
+                <tr class="text-center">
+                    <th class="w-50">Start date</th>
+                    <th>Submission deadline</th>
+                </tr>
+                <tr>
+                    <td class="text-center">{{intake.start_date | date}}</td>
+                    <td class="text-center" *ngIf="intake.submission">{{intake.submission | date}}</td>
+                    <td class="text-center" *ngIf="!intake.submission"> - </td>
+                </tr>
+            </table>
+
+            <div *ngIf="contract" class="alert alert-success">
+                This contract already signed in {{contract.creationDate | date}}
+            </div>
         </div>
     </div>
     <div class="row align-items-center">
@@ -42,13 +49,13 @@
                             </li>
                         </ul>
                     </div>
-                    <ng-container *ngIf="program">
+                    <ng-container>
                         <div class="jumbotron mt-5 pt-3">
                             <i class="fas fa-signature text-orangedark fa-3x my-3"></i>
                             <h2 class="text-orangedark">Dear <span *ngIf="user">{{user.firstName}} {{user.lastName}}</span> <span *ngIf="!user">User</span></h2>
-                            <p class="lead" *ngIf="program.fee > 0">After you sign the contract, you should pay
+                            <p class="lead" *ngIf="intake.program.fee > 0">After you sign the contract, you should pay
                                 <b>{{program.fee | currency}}</b> for apply this program.</p>
-                            <p class="lead" *ngIf="program.fee == 0">This program is <b class="text-success">free</b> And After you sign the contract you will get it</p>
+                            <p class="lead" *ngIf="intake.program.fee == 0">This program is <b class="text-success">free</b> And After you sign the contract you will get it</p>
                             <hr class="my-4" *ngIf="!user">
                             <p *ngIf="!user">
                                 <i class="fas fa-quote-left px-2"></i> If you didn't log in applyfree , you will redirect to login page.

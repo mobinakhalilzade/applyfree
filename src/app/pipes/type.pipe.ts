@@ -9,14 +9,13 @@ export class TypePipe implements PipeTransform {
     const x = parseInt(value);
     switch (x) {
       case 1:
-        return "University";
-
+        return "Private, College";
       case 2:
-        return "College";
-
+        return "Public, College";
       case 3:
-        return "ESL";
-        
+        return "Public, University";
+      case 4:
+        return "Private, University";
     }
   }
 }

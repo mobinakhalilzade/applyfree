@@ -42,10 +42,10 @@ const routes: Routes = [
   {
     path: 'public', component: PublicComponent,
     children: [
-      { path: 'program/:id/:slug', component: ProgramComponent },
+      { path: 'program/:slug', component: ProgramComponent },
       { path: 'page/:section', component: PagesComponent },
       { path: 'programs', component: ProgramListComponent },
-      { path: 'contract/:intakeId/:id/:slug', component: ContractComponent },
+      { path: 'contract/:intakeId', component: ContractComponent },
       { path: 'advisors', component: AgentsComponent }
     ]
   },

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { EventService } from '../helper/event.service';
 import { PublicService } from '../public/public.service';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 
 @Component({
   selector: 'app-navigator',
@@ -11,10 +12,16 @@ export class NavigatorComponent implements OnInit {
   loading: boolean = true;
   user: any;
   sidebar: boolean;
+  isBrowser: boolean
   constructor(
     private event: EventService,
     private service: PublicService,
-  ) { }
+    @Inject(PLATFORM_ID) private platformId: any,
+  ) {
+    if (isPlatformBrowser(this.platformId)) {
+      this.isBrowser = true;
+    }
+  }
 
   profile() {
     this.service.profile().subscribe((response: any) => {
@@ -22,7 +29,10 @@ export class NavigatorComponent implements OnInit {
         const body = response.body;
         if (body.return == 200) {
           this.user = body.data
-          this.event.put({ request: 'user', data: body.data });
+
+          if (this.isBrowser) {
+            localStorage.setItem('user', JSON.stringify(this.user));
+          }
         }
 
         this.loading = false;
@@ -32,12 +42,6 @@ export class NavigatorComponent implements OnInit {
 
   ngOnInit(): void {
     this.profile();
-
-    this.event.listener.subscribe((response: any) => {
-      if (response.request == 'profile') {
-        this.profile();
-      }
-    });
   }
 
 }

@@ -35,30 +35,15 @@ export class ContractComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
-
-  getProgram(id: string, slug: string, then: any) {
-    this.service.program({ id: id, slug: slug }).subscribe((response: any) => {
-      if (response.status == 200) {
-        const body = response.body;
-        if (body.return == 200) {
-          const data = body.data;
-          this.program = data;
-          this.progress['loading'] = 80;
-          then();
-        }
-      }
-    })
-  }
-
-  getIntake(id: any) {
+  getIntake(id: any, then = null) {
     this.service.intake(id).subscribe((response: any) => {
       if (response.status == 200) {
         const body = response.body;
         if (body.return == 200) {
           const data = body.data;
           this.intake = data;
-          this.progress['loading'] = 100;
-          this.loading = false;
+          this.progress['loading'] = 95;
+          then();
         }
       }
     })
@@ -71,6 +56,8 @@ export class ContractComponent implements OnInit {
         if (body.return == 200) {
           const data = body.data;
           this.contract = data;
+          this.progress['loading'] = 100;
+          this.loading = false;
         }
       }
     })
@@ -111,44 +98,43 @@ export class ContractComponent implements OnInit {
         if (body.return == 200) {
           const data = body.data;
           this.group = data;
+          this.loading = false;
+          this.progress['loading'] = 100;
         }
       }
     })
   }
 
   ngOnInit(): void {
-    const slug = this.route.snapshot.paramMap.get('slug');
-    const id = this.route.snapshot.paramMap.get('id');
     const intakeId = this.route.snapshot.paramMap.get('intakeId');
 
-    this.programSlug = slug;
-    this.programId = id;
     this.intake = intakeId;
 
-    this.progress['loading'] = 50;
-    this.getProgram(id, slug, () => {
-      this.event.listener.subscribe(() => {
-        const $request = this.event.get('user');
-        if ($request) {
-          this.user = $request.data;
-          this.progress['description'] = 'loading intake ...';
-          this.progress['loading'] = 90;
+    this.progress['loading'] = 20;
+    this.progress['description'] = 'loading intake ...';
+
+    this.getIntake(intakeId, () => {
+      const token = localStorage.getItem('token');
+
+      if (token) {
+        const user = JSON.parse(localStorage.getItem('user'));
+
+        if (user) {
+          this.user = user;
+        }
+
+        if (this.user && this.user.role == 1) {
+          this.progress['description'] = 'loading contract ...';
+          this.getContract(intakeId);
+        } else if (this.user && this.user.role == 2) {
+          this.progress['description'] = 'loading group ...';
           this.getGroup();
-          if (this.user.role == 1) {
-            this.getContract(intakeId);
-          }
         }
-      });
 
-      const profile = setInterval(() => {
-        if (this.user == null) {
-          this.event.put({ request: 'profile' });
-        } else {
-          clearInterval(profile);
-        }
-      }, 2000);
+      } else {
+        this.loading = false;
+      }
 
-      this.getIntake(intakeId);
     });
   }
 

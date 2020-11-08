@@ -24,8 +24,8 @@ export class ProgramComponent implements OnInit {
     private route: ActivatedRoute,
     private toast: ToastService,) { }
 
-  getProgram(id: string, slug: string, then: any) {
-    this.service.program({ id: id, slug: slug }).subscribe((response: any) => {
+  getProgram(slug: string, then: any) {
+    this.service.program({ slug: slug }).subscribe((response: any) => {
       if (response.status == 200) {
         const body = response.body;
         if (body.return == 200) {
@@ -33,7 +33,7 @@ export class ProgramComponent implements OnInit {
           data.school.googleMap = 'https://www.google.com/maps/search/?api=1&query=' + data.school.address;
           this.program = data;
           this.loading = false;
-          then();
+          then(data);
         }
       }
     })
@@ -90,9 +90,8 @@ export class ProgramComponent implements OnInit {
       loading: 50
     }
     const slug = this.route.snapshot.paramMap.get('slug');
-    const id = this.route.snapshot.paramMap.get('id');
-    this.getProgram(id, slug, () => {
-      this.userBookmark(id);
+    this.getProgram(slug, (data: any) => {
+      this.userBookmark(data.id);
       this.progress = {
         description: "Loading program",
         loading: 50 * 2

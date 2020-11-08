@@ -6,7 +6,8 @@
     --ice: #f1f5f9;
 }
 
-body, html {
+body,
+html {
     background-color: var(--white);
     min-height: 100%;
     height: 100%;
@@ -139,12 +140,15 @@ body, html {
     color: var(--white);
 }
 
-.btn-custom .btn, .btn-custom .btn:hover, .btn-custom .btn:focus {
+.btn-custom .btn,
+.btn-custom .btn:hover,
+.btn-custom .btn:focus {
     border: none;
     background-color: var(--light);
 }
 
-.btn-custom .btn:last-child:after, .btn-custom .btn:last-child:before {
+.btn-custom .btn:last-child:after,
+.btn-custom .btn:last-child:before {
     content: "";
     position: absolute;
     height: 10px;
@@ -167,7 +171,9 @@ body, html {
     box-shadow: inset 0px 3px 0px 1px var(--light);
 }
 
-.btn-custom.reverse .btn, .btn-custom.reverse .btn:hover, .btn-custom.reverse .btn:focus {
+.btn-custom.reverse .btn,
+.btn-custom.reverse .btn:hover,
+.btn-custom.reverse .btn:focus {
     background-color: var(--orangedark);
 }
 
@@ -187,7 +193,8 @@ body, html {
     opacity: 0.5;
 }
 
-.form-control:focus+.form-control-placeholder, .form-control:valid+.form-control-placeholder {
+.form-control:focus+.form-control-placeholder,
+.form-control:valid+.form-control-placeholder {
     font-size: 75%;
     transform: translate3d(0, -100%, 0);
     opacity: 1;
@@ -200,15 +207,20 @@ body, html {
     position: relative;
 }
 
-.logo.light::before, .logo.light::after {
+.logo.light::before,
+.logo.light::after {
     border-color: var(--light);
 }
 
-.logo.light .line::before, .logo.light .line::after {
+.logo.light .line::before,
+.logo.light .line::after {
     background-color: var(--light);
 }
 
-.logo::before, .logo::after, .logo .line::after, .logo .line::before {
+.logo::before,
+.logo::after,
+.logo .line::after,
+.logo .line::before {
     content: '';
     position: absolute;
 }
@@ -235,7 +247,7 @@ body, html {
     width: 65%;
     height: 78%;
     border-radius: 50%;
-    border: solid 1vw var(--dark);
+    border: solid 0.79vw var(--dark);
     left: 0;
     z-index: 2;
     top: 12%;
@@ -290,7 +302,8 @@ body, html {
     background: #BFBFBF;
 }
 
-header, header::after {
+header,
+header::after {
     height: 31vh;
 }
 
@@ -329,7 +342,8 @@ footer::after {
 @media only screen and (max-width: 1440px) {}
 
 @media only screen and (max-width: 1024px) {
-    header, header::after {
+    header,
+    header::after {
         height: 28vh;
     }
 }
