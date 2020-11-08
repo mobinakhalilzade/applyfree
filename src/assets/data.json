@@ -88,9 +88,39 @@
                 "name": "Vahid Karimi"
             },
             {
+                "img": "assets/images/team/mobina-khalilzade.jpg",
+                "title": "Frontend consultant",
+                "name": "Mobina Khalilzade"
+            },
+            {
                 "img": "assets/images/team/ryan-sharifi.jpg",
                 "title": "CEO",
                 "name": "Ryan Sharifi"
+            },
+            {
+                "img": "assets/images/team/maria-Sadoughi.jpg",
+                "title": "Health Category Manager",
+                "name": "Maria Sadoughi"
+            },
+            {
+                "img": "assets/images/team/Shima-Sadoughi.jpg",
+                "title": "CS Category Manager",
+                "name": "Shima Sadoughi"
+            },
+            {
+                "img": "assets/images/team/Nabi-Khosravani.jpg",
+                "title": "International Students Manager, India",
+                "name": "Nabi Khosravani"
+            },
+            {
+                "img": "assets/images/team/Reza-Sharifi.jpg",
+                "title": "Law Category Manager",
+                "name": "Reza Sharifi"
+            },
+            {
+                "img": "assets/images/team/Mehrzad-Sharifi.jpg",
+                "title": "International Students Manager, Netherlands",
+                "name": "Mehrzad Sharifi"
             }
         ]
     }
