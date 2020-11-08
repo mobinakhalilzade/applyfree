@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 
 import { LandingComponent } from './landing/landing.component';
 import { NavigatorComponent } from './navigator/navigator.component';
+import { FooterComponent } from './footer/footer.component';
 
 import { PublicComponent } from './public/public.component';
 import { ProgramComponent } from './public/components/program/program.component';
@@ -81,7 +82,8 @@ import { SafePipe } from './pipes/safe.pipe';
     SafePipe,
     SignatureComponent,
     ContractDetailComponent,
-    AgentsComponent
+    AgentsComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
