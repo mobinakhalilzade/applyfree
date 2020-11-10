@@ -89,8 +89,13 @@
             },
             {
                 "img": "assets/images/team/mobina-khalilzade.jpg",
-                "title": "Frontend consultant",
+                "title": "Web consultant",
                 "name": "Mobina Khalilzade"
+            },
+            {
+                "img": "assets/images/team/Omid-Yasliani.jpg",
+                "title": "Geraphics consultant",
+                "name": "Omid Yasliani"
             },
             {
                 "img": "assets/images/team/ryan-sharifi.jpg",
@@ -121,6 +126,11 @@
                 "img": "assets/images/team/Mehrzad-Sharifi.jpg",
                 "title": "International Students Manager, Netherlands",
                 "name": "Mehrzad Sharifi"
+            },
+            {
+                "img": "assets/images/team/Hassan-Pishbin.jpg",
+                "title": "International Students Manager, Germany",
+                "name": "Hassan Pishbin"
             }
         ]
     }
