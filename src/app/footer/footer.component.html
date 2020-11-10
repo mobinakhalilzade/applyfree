@@ -1,6 +1,7 @@
 <footer>
     <div class="container position-relative z-index-1 pt-5">
-        <div class="row text-light d-xl-flex d-lg-flex d-md-none d-sm-none d-none justify-content-center pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0">
+        <div
+            class="row text-light d-xl-flex d-lg-flex d-md-none d-sm-none d-none justify-content-center pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-1 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-0">
             <div class="col-xl-3 col-lg-1 col-md-1 col-sm-2 col-12">
                 <a class="d-block" href="https://www.instagram.com/applyfree.us/" target="_blank" rel="nofollow">
                     <i class="fab fa-instagram text-light fa-2x p-2"></i>
@@ -59,7 +60,8 @@
                     </li>
                     <li class="py-2"><a class="text-light pointer" [routerLink]="['/public/programs']">Programs</a></li>
                     <li class="py-2">
-                        <button type="button" class="btn btn-link text-light p-0" data-toggle="modal" data-target="#bugsReport">Bugs
+                        <button type="button" class="btn btn-link text-light p-0" data-toggle="modal"
+                            data-target="#bugsReport">Bugs
                             report</button>
                     </li>
                 </ul>
@@ -93,20 +95,25 @@
             </div>
             <div class="row justify-content-center mr-1 py-4">
                 <div class="col-xl-0 col-lg-0 col-md-2 col-sm-2 col-2">
-                    <a rel="nofollow" href="https://www.instagram.com/applyfree.us/" target="_blank">
+                    <a class="d-block" href="https://www.instagram.com/applyfree.us/" target="_blank" rel="nofollow">
                         <i class="fab fa-instagram text-light fa-2x p-2"></i>
                     </a>
                 </div>
                 <div class="col-xl-0 col-lg-0 col-md-2 col-sm-2 col-2">
-                    <a rel="nofollow" href="https://www.linkedin.com/company/applyfree/" target="_blank">
+                    <a class="d-block" href="https://www.linkedin.com/company/applyfree/" target="_blank"
+                        rel="nofollow">
                         <i class="fab fa-linkedin text-light fa-2x p-2"></i>
                     </a>
                 </div>
                 <div class="col-xl-0 col-lg-0 col-md-2 col-sm-2 col-2">
-                    <i class="fab fa-twitter text-light fa-2x p-2"></i>
+                    <a class="d-block" href="https://twitter.com/ApplyfreeU" target="_blank" rel="nofollow">
+                        <i class="fab fa-twitter text-light fa-2x p-2"></i>
+                    </a>
                 </div>
                 <div class="col-xl-0 col-lg-0 col-md-2 col-sm-2 col-2">
-                    <i class="fab fa-facebook text-light fa-2x p-2"></i>
+                    <a href="https://fb.me/applyfree.us" target="_blank" rel="nofollow">
+                        <i class="fab fa-facebook text-light fa-2x p-2"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -138,11 +145,13 @@
             <div class="modal-body">
                 <form class="mt-2 py-2">
                     <p class="mb-4">
-                        Please report to us any problem regarding use of this website by filling and submitting the following form
+                        Please report to us any problem regarding use of this website by filling and submitting the
+                        following form
                     </p>
                     <div class="form-group">
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" #fileUpload id="fileUpload" name="fileUpload" accept="image/*">
+                            <input type="file" class="custom-file-input" #fileUpload id="fileUpload" name="fileUpload"
+                                accept="image/*">
                             <label class="custom-file-label" for="customFile">Choose file</label>
                         </div>
                     </div>

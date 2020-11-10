@@ -88,12 +88,18 @@ span.as-shadow::after {
 }
 
 .bg-copyright::before {
-    content: "applyfree \00A9 copyright 2020";
+    content: "";
     position: absolute;
     bottom: 10%;
     left: 50%;
     font-size: 1rem;
     transform: translate(-50%, 0%);
+}
+
+.copyright{
+    position: absolute;
+    bottom: -25%;
+    left: 32%;
 }
 
 

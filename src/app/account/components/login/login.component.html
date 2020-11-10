@@ -1,5 +1,6 @@
 <div class="row align-content-center h-100 bg-orangedark bg-baloon">
-    <div class="col-xl-4 col-lg-4 col-md-8 col-sm-8 col-10 shadow-lg px-5 pt-5 pb-4 bg-light mx-auto border-radius-30 bg-duplicate">
+    <div
+        class="col-xl-4 col-lg-4 col-md-8 col-sm-8 col-10 shadow-lg px-5 pt-5 pb-4 bg-light mx-auto border-radius-30 bg-duplicate">
         <span class="as-shadow"></span>
         <div class="row">
             <div class="col-12">
@@ -14,7 +15,9 @@
                     <div class="row my-3">
                         <div class="col">
                             <div class="form-group">
-                                <input formControlName="username" id="username" class="form-control bg-transparent border-right-0 border-left-0 border-top-0" type="email" autocomplete="off" required />
+                                <input formControlName="username" id="username"
+                                    class="form-control bg-transparent border-right-0 border-left-0 border-top-0"
+                                    type="email" autocomplete="off" required />
                                 <label for="username" class="form-control-placeholder">
                                     <i class="far fa-envelope"></i>
                                     Email</label>
@@ -24,26 +27,32 @@
                     <div class="row my-3">
                         <div class="col">
                             <div class="form-group">
-                                <input formControlName="password" id="password" minlength=6 class="form-control bg-transparent border-right-0 border-left-0 border-top-0" type="password" autocomplete="off" required />
+                                <input formControlName="password" id="password" minlength=6
+                                    class="form-control bg-transparent border-right-0 border-left-0 border-top-0"
+                                    type="password" autocomplete="off" required />
                                 <label for="password" class="form-control-placeholder">Password</label>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xl-4 col-lg-9 col-md-4 col-sm-5 col-12 order-lg-last text-xl-left mx-lg-auto mt-lg-3 text-md-left text-sm-left text-center">
+                        <div
+                            class="col-xl-4 col-lg-9 col-md-4 col-sm-5 col-12 order-lg-last text-xl-left mx-lg-auto mt-lg-3 text-md-left text-sm-left text-center">
                             <a routerLink="/account/forgot" class="btn btn-link text-muted text-truncate">Forget my
                                 password</a>
                             <a routerLink="/account/signup" class="btn btn-link text-muted text-truncate">Register
                                 now</a>
                         </div>
-                        <div class="col-xl-8 col-lg-9 col-md-8 col-sm-7 col-11 text-xl-right text-lg-right text-md-right text-sm-right 
+                        <div
+                            class="col-xl-8 col-lg-9 col-md-8 col-sm-7 col-11 text-xl-right text-lg-right text-md-right text-sm-right 
                      mb-xl-0 mb-lg-0 mb-md-0 mb-sm-0 mb-3 order-xl-last order-lg-first order-md-last order-sm-last order-first mt-5">
                             <div class="float-right btn-custom reverse d-block">
-                                <button [disabled]="loading" class="btn border-radius-20 position-relative text-light px-xl-5 px-lg-4 px-md-5 px-sm-5 px-4">
+                                <button [disabled]="loading"
+                                    class="btn border-radius-20 position-relative text-light px-xl-5 px-lg-4 px-md-5 px-sm-5 px-4">
                                     <span *ngIf="loading">Loading...</span>
                                     <span *ngIf="!loading">Log in</span>
                                 </button>
-                                <button [disabled]="loading" class="btn border-radius-full text-light ml-2 position-relative">
+                                <button [disabled]="loading"
+                                    class="btn border-radius-full text-light ml-2 position-relative">
                                     <span *ngIf="loading">
                                         <i class="fa fa-spin fa-spinner"></i>
                                     </span>
@@ -72,8 +81,8 @@
                         </div>
                     </div>
                 </form>
+                <span class="copyright text-light">copyright <i class="far fa-copyright"></i> applyfree 2020</span>
             </div>
         </div>
     </div>
 </div>
-<span class="bg-copyright text-white"></span>
