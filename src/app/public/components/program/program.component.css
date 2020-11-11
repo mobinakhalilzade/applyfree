@@ -8,6 +8,17 @@
     height: 50vh;
 }
 
+.sticky-header {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    width: 100%!important;
+    display: block;
+    padding: 15px;
+    border-bottom: solid 1px;
+    z-index: 1;
+}
+
 .banner {
     width: 100%;
     height: inherit;

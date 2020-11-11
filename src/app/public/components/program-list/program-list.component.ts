@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PublicService } from '../../public.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { urls } from "../../../config/urls";
 declare var $: any;
 @Component({
   selector: 'app-program-list',
@@ -49,6 +50,7 @@ export class ProgramListComponent implements OnInit {
   }
 
   //-----------
+  url: typeof urls = urls;
   loading: boolean = true;
   countries: any;
   categories: any;
