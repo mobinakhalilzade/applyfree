@@ -1,5 +1,5 @@
 ::ng-deep body {
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .background {
@@ -44,15 +44,26 @@ span.as-shadow {
 
 @media (max-width: 768px) {
     .background {
-        background-image: linear-gradient(to left bottom, #eb405e, #ef3d4e, #f23d3d, #f24029, #f0460b);
+        background-image: none;
+        background-color: #f8f9fa;
     }
     .border-radius-30 {
         border-radius: 5px;
     }
+    .copyright {
+        position: static;
+        display: block;
+    }
 }
 
 @media (max-width: 425px) {
+     ::ng-deep body {
+        background-color: #f8f9fa;
+    }
     .ml-auto {
         margin: 0 auto;
+    }
+    .shadow-lg {
+        box-shadow: none!important;
     }
 }
