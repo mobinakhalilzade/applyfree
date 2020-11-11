@@ -5,16 +5,22 @@
             <div class="col text-center">
                 <span class="text-light btn-link" (click)="readMore=!readMore" role="button">
                     <span *ngIf="!readMore">
+                        <p>
+                            Applyfree is a free and all in one platform for finding, being assisted for, applied to and
+                            get
+                            admitted to your desired higher education choice and to finish it successfully free of any
+                            additional charge other than schools’ charges.
+                        </p>
                         Read more about applyfree
                         <i class="far fa-arrow-alt-circle-down text-light"></i>
                     </span>
                 </span>
             </div>
         </div>
-        <div class="row mt-xl-5 mt-lg-3 mt-md-0 mt-5 pb-5 text-light d-xl-flex d-lg-flex d-md-none d-sm-none d-none"
-            [ngClass]="{'d-md-flex , d-sm-flex , d-flex' :readMore}">
+        <div class="row mt-xl-5 mt-lg-3 mt-md-0 mt-sm-2 mt-2 pb-5 text-light d-xl-flex d-lg-flex d-md-none d-sm-none d-none"
+            [ngClass]="{'d-md-flex  d-sm-flex  d-flex' :readMore}">
             <div class="col-xl-6 col-lg-5 col-md-6 col-sm-7 col-10 mx-auto order-last my-auto text-light">
-                <div class="mt-lg-0 mt-md-3 mt-5 mb-4">
+                <div class="mt-xl-2 mt-lg-0 mt-md-3 mt-sm-2 mt-2 mb-4">
                     <h3>All in one platform, no multiple accounts, complete service for free</h3>
                     <p class="my-2">
                         Applyfree is a free and all in one platform for finding, being assisted for, applied to and get
@@ -39,7 +45,7 @@
                         more efficient.
                     </p>
                 </div>
-                <div class="d-flex mt-lg-4 mt-md-0 mt-5">
+                <div class="d-flex mt-xl-4 mt-lg-4 mt-md-0 mt-sm-0 mt-0">
                     <a class="btn btn-dark border-radius-30 px-xl-5 px-lg-5 px-md-5 px-sm-5 px-2"
                         routerLink="/public/advisors">Browse applyfree advisors</a>
                 </div>
@@ -47,7 +53,6 @@
             <div class="col-xl-5 col-lg-6 col-md-6 col-sm-6 col-10 order-md-last ml-xl-auto my-md-auto">
                 <img src="assets/images/header-landing.png" alt="applyfree" class="img-fluid">
             </div>
-          
         </div>
         <div class="row d-xl-none d-lg-none d-md-block d-sm-block d-block">
             <div class="col text-center">
@@ -59,7 +64,6 @@
                 </span>
             </div>
         </div>
-       
     </div>
 </header>
 
@@ -72,7 +76,7 @@
                 </div>
             </div>
             <div
-                class="row justify-content-center mx-auto my-xl-1 mt-lg-1 my-md-5 my-sm-5 my-4 pt-xl-2 pb-xl-4 py-lg-0 py-md-4 py-sm-4 py-3">
+                class="row justify-content-center mx-auto my-xl-1 mt-lg-1 my-md-0 my-sm-4 my-4 pt-xl-2 pb-xl-4 py-lg-0 py-md-4 py-sm-4 py-3">
                 <div class="col-xl-6 col-lg-5 col-md-5 col-sm-12 col-12 my-md-auto pr-md-0 my-lg-auto">
                     <img src="assets/images/landing-1.png" alt="landing-1" class="img-fluid">
                 </div>
@@ -93,9 +97,8 @@
                             student or a registered recruiter to become part of our team.
                         </p>
                         <div class="row mt-xl-5 mt-lg-5 mt-md-4 mt-sm-2 mt-2">
-                            <div class="col text-center">
-                                <a
-                                    class="btn btn-lg btn-success border-radius-30 px-xl-5 px-lg-5 px-md-3 px-sm-5 px-2 w-75"
+                            <div class="col">
+                                <a class="btn btn-lg btn-success border-radius-30 px-xl-5 px-lg-5 px-md-3 px-sm-5 px-2 w-75 text-truncate"
                                     routerLink="public/page/about">Read more about us</a>
                             </div>
                         </div>
@@ -106,7 +109,8 @@
     </section>
     <section id="bg-section-2">
         <div class="container-fluid my-2 py-3">
-            <div class="row mx-xl-5 mx-lg-5 mx-md-4 mx-sm-0 mx-0 my-xl-0 my-lg-0 my-md-5 my-sm-5 my-2 py-xl-4 py-lg-0 py-md-4 py-sm-4 py-3">
+            <div
+                class="row justify-content-xl-center justify-content-lg-center mx-xl-5 mx-lg-5 mx-md-4 mx-sm-0 mx-0 my-xl-0 my-lg-0 my-md-1 my-sm-2 my-2 py-xl-4 py-lg-0 py-md-2 py-sm-4 py-3">
                 <div class="col-xl-4 col-lg-6 col-md-5 col-sm-12 col-12">
                     <div
                         class="mt-xl-5 mt-lg-0 mt-md-5 mt-sm-5 mt-2 my-auto pl-lg-0 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-2 px-xl-5 px-lg-5 px-md-2 px-sm-0">
@@ -117,14 +121,15 @@
                             be created by that efficiency.
                         </p>
                         <div class="row mt-xl-5 mt-lg-5 mt-md-4 mt-sm-2 mt-2">
-                            <div class="col text-center">
+                            <div class="col">
                                 <a class="btn btn-lg btn-info border-radius-30 px-xl-5 px-lg-5 px-md-2 px-sm-5 px-2 w-75"
                                     routerLink="/register">Join applyfree</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-5 col-lg-4 col-md-6 col-sm-12 col-12 my-md-auto order-xl-last order-lg-last order-md-last order-first-sm order-first">
+                <div
+                    class="col-xl-5 col-lg-4 col-md-6 col-sm-12 col-12 my-md-auto order-xl-last order-lg-last order-md-last order-first-sm order-first">
                     <img src="assets/images/landing-2.png" alt="landing-3" class="img-fluid">
                 </div>
 
@@ -133,7 +138,8 @@
     </section>
     <section id="bg-section-3">
         <div class="container-fluid my-2">
-            <div class="row mx-xl-5 mx-lg-5 mx-md-4 mx-sm-2 mx-0 my-md-5 my-sm-5 my-3 py-xl-4 py-lg-4 py-md-4 py-sm-4 py-1">
+            <div
+                class="row justify-content-xl-center justify-content-lg-center mx-xl-5 mx-lg-5 mx-md-4 mx-sm-2 mx-0 my-md-2 my-sm-3 my-3 py-xl-4 py-lg-4 py-md-4 py-sm-4 py-1">
                 <div class="col-xl-5 col-lg-4 col-md-5 col-sm-12 col-12 my-lg-auto my-md-auto">
                     <img src="assets/images/landing-3.png" alt="landing-3" class="img-fluid">
                 </div>
@@ -147,9 +153,8 @@
                         success.
                     </p>
                     <div class="row mt-xl-5 mt-lg-5 mt-md-4 mt-sm-2 mt-2">
-                        <div class="col text-center">
-                            <a
-                                class="btn btn-lg btn-orangedark border-radius-30 px-xl-5 px-lg-5 px-md-3 px-sm-5 px-2 text-uppercase w-75"
+                        <div class="col">
+                            <a class="btn btn-lg btn-orangedark border-radius-30 px-xl-5 px-lg-5 px-md-3 px-sm-5 px-2 text-uppercase w-75"
                                 routerLink="/register">start now</a>
                         </div>
                     </div>
@@ -160,7 +165,7 @@
     <section id="bg-section-4">
         <div class="container-fluid my-3 py-3">
             <div
-                class="row mx-xl-5 mx-lg-5 mx-md-4 mx-sm-2 mx-0 my-xl-5 my-lg-5 my-md-4 my-sm-5 my-3 py-xl-4 py-lg-4 py-md-4 py-sm-4 py-1">
+                class="row justify-content-xl-center justify-content-lg-center justify-content-md-center mx-xl-5 mx-lg-5 mx-md-4 mx-sm-2 mx-0 my-xl-5 my-lg-5 my-md-2 my-sm-3 my-3 py-xl-4 py-lg-4 py-md-4 py-sm-4 py-1">
                 <div class="col-xl-12 col-lg-12 col-md-10 col-sm-12 col-12 text-center">
                     <img src="assets/images/landing-4.png" alt="landing-3" class="img-fluid">
                 </div>
@@ -184,7 +189,7 @@
             </div>
         </div>
     </section>
-    <section class="pb-5">
+    <section>
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-6 col-md-8 col-sm-8 col-9 text-center">
@@ -192,7 +197,7 @@
                 </div>
             </div>
             <div
-                class="row justify-content-center mx-xl-5 mx-lg-5 mx-md-3 mx-sm-5 mx-2 my-xl-5 my-lg-5 my-md-5 my-sm-5 my-1 py-xl-4 py-lg-4 py-md-4 py-sm-4 py-1">
+                class="row justify-content-center mx-xl-5 mx-lg-5 mx-md-3 mx-sm-5 mx-2 mt-xl-4 mt-lg-5 mt-md-4 my-xl-1 my-lg-1 my-md-1 my-sm-3 my-3 my-1 py-xl-4 py-lg-4 py-md-4 py-sm-4 py-1">
                 <div
                     class="col-xl-2 col-lg-2 col-md-3 col-sm-2 col-12 text-center my-xl-0 my-lg-0 my-md-1 my-sm-2 my-2 mr-xl-5 mr-lg-5 mr-md-3 mr-sm-5 mx-auto">
                     <i class="fas fa-graduation-cap fa-6x"></i>
