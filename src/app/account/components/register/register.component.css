@@ -1,101 +1,57 @@
+::ng-deep body {
+    overflow-x: hidden;
+}
+
+.background {
+    background-image: url(/assets/images/bg-account.png), linear-gradient(to left bottom, #eb405e, #ef3d4e, #f23d3d, #f24029, #f0460b);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
 .form-control {
     box-shadow: none;
 }
 
-.dropdown {
-    display: none;
+.w-15px {
+    width: 15px;
 }
 
-.bg-duplicate {
-    z-index: 2;
+.terms-label {
+    white-space: nowrap;
+    line-height: 10px;
 }
 
-.bg-duplicate:before,
-.bg-duplicate:after {
-    content: "";
+.copyright {
     position: absolute;
-    bottom: 0;
+    top: 100%;
+    left: 0;
     width: 100%;
-    height: 500px;
-    background-repeat: no-repeat;
-    background-size: contain;
+    text-align: center;
+    margin-top: 10px;
 }
 
-.bg-duplicate:before {
-    background-image: url(/assets/images/bg2.png);
-    left: 100%;
-}
-
-.bg-duplicate:after {
-    background-image: url(/assets/images/bg3.png);
-    right: 100%;
-}
-
-span.as-shadow {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    bottom: 35%;
-    right: 0;
-}
-
-span.as-shadow:before,
-span.as-shadow:after {
-    content: "";
-    position: absolute;
-    bottom: -208px;
-    width: 100%;
-    height: 400px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    transform: scaleY(-1);
-    margin-bottom: -60px;
-    opacity: 0.1;
-}
-
-span.as-shadow::before {
-    background-image: url(/assets/images/bg2.png);
-    left: 100%;
-}
-
-span.as-shadow::after {
-    background-image: url(/assets/images/bg3.png);
-    right: 100%;
-}
-
-.bg-copyright::before {
-    content: "applyfree \00A9 copyright 2020";
-    position: absolute;
-    bottom: 2%;
-    left: 50%;
-    font-size: 1rem;
-    transform: translate(-50%, 0%);
-}
-
-@media only screen and (max-width: 2560px) {
-    span.as-shadow::after,
-    span.as-shadow::before {
-        top: 72%;
+@media (max-width: 768px) {
+    .background {
+        background-image: #fff;
+    }
+    .border-radius-30 {
+        border-radius: 0;
+    }
+    .copyright {
+        position: static;
+        display: block;
     }
 }
 
-@media only screen and (max-width: 1440px) {
-    span.as-shadow::after,
-    span.as-shadow::before {
-        top: 58%;
+@media (max-width: 425px) {
+     ::ng-deep body {
+        background-color: #fff;
     }
-}
-
-@media only screen and (max-width: 1024px) {
-    span.as-shadow::after,
-    span.as-shadow::before {
-        top: 51%;
+    .ml-auto {
+        margin: 0 auto;
     }
-}
-
-@media only screen and (max-width: 768px) {
-    .bg-duplicate:before,
-    .bg-duplicate:after {
-        display: none;
+    .shadow-lg {
+        box-shadow: none!important;
     }
 }
