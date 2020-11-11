@@ -1,3 +1,14 @@
+::ng-deep body {
+    overflow: hidden;
+}
+
+.background {
+    background-image: url(/assets/images/bg-account.png), linear-gradient(to left bottom, #eb405e, #ef3d4e, #f23d3d, #f24029, #f0460b);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
 .form-control {
     box-shadow: none;
 }
@@ -6,53 +17,12 @@
     z-index: 2;
 }
 
-.bg-baloon::before,
-.bg-baloon::after {
-    content: "";
-    position: fixed;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: auto;
-    height: 206px;
-    background-image: url(/assets/images/baloon.png);
-}
-
-.bg-baloon::before {
-    left: 15%;
-    bottom: 65%;
-}
-
-.bg-baloon::after {
-    left: 7%;
-    bottom: 70%;
-    transform-origin: top left;
-    transform: scale(0.8);
-    opacity: 0.5;
+.w-15px {
+    width: 15px;
 }
 
 .bg-duplicate {
     z-index: 2;
-}
-
-.bg-duplicate:before,
-.bg-duplicate:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 400px;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
-.bg-duplicate:before {
-    background-image: url(/assets/images/bg.png);
-    left: 100%;
-}
-
-.bg-duplicate:after {
-    background-image: url(/assets/images/bg1.png);
-    right: 100%;
 }
 
 span.as-shadow {
@@ -63,81 +33,26 @@ span.as-shadow {
     right: 0;
 }
 
-span.as-shadow:before,
-span.as-shadow:after {
-    content: "";
+.copyright {
     position: absolute;
-    bottom: 0;
+    top: 100%;
+    left: 0;
     width: 100%;
-    height: 400px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    transform: scaleY(-1);
-    margin-bottom: -60px;
-    opacity: 0.1;
+    text-align: center;
+    margin-top: 10px;
 }
 
-span.as-shadow::before {
-    background-image: url(/assets/images/bg.png);
-    left: 100%;
-}
-
-span.as-shadow::after {
-    background-image: url(/assets/images/bg1.png);
-    right: 100%;
-}
-
-.bg-copyright::before {
-    content: "";
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    font-size: 1rem;
-    transform: translate(-50%, 0%);
-}
-
-.copyright{
-    position: absolute;
-    bottom: -25%;
-    left: 32%;
-}
-
-
-@media only screen and (max-width: 2560px) {
-    span.as-shadow::before,
-    span.as-shadow::after {
-        top:34%;
+@media (max-width: 768px) {
+    .background {
+        background-image: linear-gradient(to left bottom, #eb405e, #ef3d4e, #f23d3d, #f24029, #f0460b);
+    }
+    .border-radius-30 {
+        border-radius: 5px;
     }
 }
 
-@media only screen and (max-width: 1440px) {
-    span.as-shadow::before,
-    span.as-shadow::after {
-        top: 11%;
-    }
-}
-
-@media only screen and (max-width: 1024px) {
-    .bg-duplicate:before,
-    .bg-duplicate:after {
-        top: 84%;
-        transform: translate(0, -50%);
-    }
-    .bg-baloon::after {
-        left: 2%;
-    }
-    span.as-shadow::before,
-    span.as-shadow::after {
-        bottom: 22px;
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    .bg-duplicate:before,
-    .bg-duplicate:after,
-    span.as-shadow,
-    .bg-baloon::before,
-    .bg-baloon::after {
-        display: none;
+@media (max-width: 425px) {
+    .ml-auto {
+        margin: 0 auto;
     }
 }

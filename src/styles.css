@@ -145,6 +145,7 @@ html {
 .btn-custom .btn:focus {
     border: none;
     background-color: var(--light);
+    white-space: nowrap;
 }
 
 .btn-custom .btn:last-child:after,
