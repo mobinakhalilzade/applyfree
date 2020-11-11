@@ -302,9 +302,9 @@ html {
     background: #BFBFBF;
 }
 
-header,
-header::after {
-    height: 31vh;
+
+header header::after {
+    height: 20%;
 }
 
 .letter-space-3 {
@@ -323,14 +323,17 @@ header::after {
 @media only screen and (max-width: 1440px) {}
 
 @media only screen and (max-width: 1024px) {
-    header,
+    /* header,
     header::after {
         height: 28vh;
-    }
+    } */
 }
 
 @media only screen and (max-width: 768px) {
-    footer::after {
-        height: 55vh;
+    header , header::after .collapse{
+        height:8%;
     }
+    /* footer::after {
+        height: 55vh;
+    } */
 }

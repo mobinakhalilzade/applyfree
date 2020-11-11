@@ -5,7 +5,7 @@ header::after {
     right: 0;
     top: 0;
     /* height: 100vh; */
-    height: 20%;
+    /* height: 20%; */
     background-image: url(src/assets/svg/header-full.svg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -16,7 +16,7 @@ header::after {
 
 main {
     position: relative;
-    top: 500px;
+    top: 12%;
 }
 
 #bg-section-1,
@@ -46,8 +46,6 @@ main {
     background-image: url(src/assets/images/bg-section-4.png);
 }
 
-
-
 .menu-backdoor {
     display: none;
     background-color: rgba(0, 0, 0, 0.5);
@@ -63,7 +61,8 @@ main {
     transition: all 0.5s;
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 768px) {
+    
     .menu-backdoor.show {
         display: block;
     }
@@ -82,4 +81,6 @@ main {
      ::ng-deep .z-index-effect {
         z-index: 0;
     }
+    
+    
 }

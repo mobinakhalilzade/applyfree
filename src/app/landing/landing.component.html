@@ -1,9 +1,14 @@
 <header>
     <div class="container position-relative z-index-1">
         <app-navigator></app-navigator>
-        <div class="row my-md-4 text-light mt-5 pb-5">
+        <div class="row d-xl-none d-lg-none d-md-block d-sm-block d-block">
+            <div class="col-6">
+                <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Read more ...</a>
+            </div>
+        </div>
+        <div class="row mt-xl-5 mt-lg-3 mt-md-0 mt-5 pb-5 text-light">
             <div class="col-xl-6 col-lg-5 col-md-6 col-sm-7 col-10 mx-auto order-last my-auto text-light">
-                <div class="mt-5 mb-4">
+                <div class="mt-lg-0 mt-md-3 mt-5 mb-4">
                     <h3>All in one platform, no multiple accounts, complete service for free</h3>
                     <p class="my-2">
                         Applyfree is a free and all in one platform for finding, being assisted for, applied to and get
@@ -28,7 +33,7 @@
                         more efficient.
                     </p>
                 </div>
-                <div class="d-flex mt-5 justify-content-center">
+                <div class="d-flex mt-lg-4 mt-md-0 mt-5 justify-content-center">
                     <button
                         class="btn btn-dark border-radius-30 px-xl-5 px-lg-5 px-md-5 px-sm-5 px-2"
                         routerLink="/public/advisors">Browse applyfree advisors</button>
@@ -41,22 +46,22 @@
     </div>
 </header>
 
-<main class="py-1">
+<main class="pt-5 mt-5">
     <section id="bg-section-1">
         <div class="container-fluid">
-            <div class="row my-3 py-2">
+            <div class="row">
                 <div class="col-12 text-center">
-                    <h4>Work with <span class="text-orangered">applyfree</span></h4>
+                    <h4>Work with <span class="text-orangedark">applyfree</span></h4>
                 </div>
             </div>
             <div
-                class="row justify-content-center mx-auto my-xl-1 my-lg-5 my-md-5 my-sm-5 my-3 pt-xl-2 pb-xl-4 py-lg-4 py-md-4 py-sm-4 py-1">
+                class="row justify-content-center mx-auto my-xl-1 mt-lg-1 my-md-5 my-sm-5 my-3 pt-xl-2 pb-xl-4 py-lg-0 py-md-4 py-sm-4 py-1">
                 <div class="col-xl-6 col-lg-5 col-md-5 col-sm-12 col-12 my-md-auto pr-md-0 my-lg-auto">
                     <img src="assets/images/landing-1.png" alt="landing-1" class="img-fluid">
                 </div>
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 my-auto">
                     <div
-                        class="mt-xl-5 mt-lg-5 mt-md-3 mt-sm-5 mt-2 pt-xl-5 pt-lg-5 pt-md-3 pt-sm-5 pt-2 px-xl-5 px-lg-5 px-md-2 px-sm-5 px-3">
+                        class="mt-xl-5 mt-md-3 mt-sm-5 mt-2 pt-xl-5 pt-md-3 pt-sm-5 pt-2 px-xl-5 px-lg-5 px-md-2 px-sm-5 px-3">
                         <h3 class="py-3">Join us if you believe in our mission</h3>
                         <p class="text-justify">
                             We believe in the power of people. Regardless of how powerful a computer algorithm can be, a
@@ -73,7 +78,7 @@
                         <div class="row mt-5">
                             <div class="col text-center">
                                 <button
-                                    class="btn btn-lg btn-success border-radius-30 px-xl-5 px-lg-5 px-md-3 px-sm-5 px-2 w-75"
+                                    class="btn btn-success border-radius-30 px-xl-5 px-lg-5 px-md-3 px-sm-5 px-2 w-75"
                                     routerLink="public/page/about">Read more about us</button>
                             </div>
                         </div>
@@ -85,10 +90,10 @@
     <section id="bg-section-2">
         <div class="container-fluid my-2 py-3">
             <div
-                class="row mx-5 justify-content-center my-xl-5 my-lg-5 my-md-5 my-sm-5 my-5 py-xl-4 py-lg-4 py-md-4 py-sm-4 py-1">
+                class="row mx-5 justify-content-center my-lg-0 my-md-5 my-sm-5 py-xl-4 py-lg-0 py-md-4 py-sm-4 py-1">
                 <div class="col-xl-4 col-lg-6 col-md-5 col-sm-12 col-12">
                     <div
-                        class="mt-xl-5 mt-lg-5 mt-md-5 mt-sm-5 mt-2 my-auto pl-lg-0 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-2 px-xl-5 px-lg-5 px-md-2 px-sm-5 px-1">
+                        class="mt-xl-5 mt-lg-0 mt-md-5 mt-sm-5 mt-2 my-auto pl-lg-0 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-2 px-xl-5 px-lg-5 px-md-2 px-sm-5 px-1">
                         <h3 class="py-3">Create wealth by collaboration</h3>
                         <p>We are not a charity by the way. We charge schools for the service and we compensate every
                             help that is proved to be effective. Our goal is efficient education and we praise who is
@@ -98,13 +103,13 @@
                         <div class="row mt-5">
                             <div class="col text-center">
                                 <button
-                                    class="btn btn-lg btn-info border-radius-30 px-xl-5 px-lg-5 px-md-2 px-sm-5 px-2 text-uppercase w-75"
-                                    routerLink="/">Join applyfree</button>
+                                    class="btn btn-info border-radius-30 px-xl-5 px-lg-5 px-md-2 px-sm-5 px-2 w-75"
+                                    routerLink="/register">Join applyfree</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-5 col-lg-4 col-md-6 col-sm-12 col-12 my-md-auto">
+                <div class="col-xl-5 col-lg-4 col-md-6 col-sm-12 col-12 my-md-auto order-first-sm">
                     <img src="assets/images/landing-2.png" alt="landing-3" class="img-fluid">
                 </div>
 
@@ -112,9 +117,9 @@
         </div>
     </section>
     <section id="bg-section-3">
-        <div class="container-fluid my-3 py-3">
+        <div class="container-fluid my-2">
             <div
-                class="row mx-5 justify-content-center my-xl-5 my-lg-5 my-md-5 my-sm-5 my-3 py-xl-4 py-lg-4 py-md-4 py-sm-4 py-1">
+                class="row mx-5 justify-content-center my-md-5 my-sm-5 my-3 py-xl-4 py-lg-4 py-md-4 py-sm-4 py-1">
                 <div class="col-xl-5 col-lg-4 col-md-5 col-sm-12 col-12 my-lg-auto my-md-auto">
                     <img src="assets/images/landing-3.png" alt="landing-3" class="img-fluid">
                 </div>
@@ -131,7 +136,7 @@
                         <div class="col text-center">
                             <button
                                 class="btn btn-lg btn-orangedark border-radius-30 px-xl-5 px-lg-5 px-md-3 px-sm-5 px-2 text-uppercase w-75"
-                                routerLink="/">start now</button>
+                                routerLink="/register">start now</button>
                         </div>
                     </div>
                 </div>
