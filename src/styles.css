@@ -303,9 +303,9 @@ html {
     background: #BFBFBF;
 }
 
-
-header header::after {
-    height: 20%;
+header {
+    position: relative;
+    padding-bottom: 190px;
 }
 
 .letter-space-3 {
@@ -331,10 +331,27 @@ header header::after {
 }
 
 @media only screen and (max-width: 768px) {
-    header , header::after .collapse{
-        height:8%;
+    header,
+    header::after .collapse {
+        height: 8%;
     }
-    /* footer::after {
-        height: 55vh;
-    } */
+}
+
+@media only screen and (max-width: 425px) {
+    .logo::before {
+        border-width: 3vw;
+    }
+    .logo::after {
+        border-width: 2vw;
+    }
+    .logo .line::before {
+        height: 1.3Vh;
+        left: 44%;
+        bottom: 50%;
+        width: 42%;
+    }
+    .logo .line::after {
+        height: 7%;
+        left: 65%;
+    }
 }

@@ -1,13 +1,14 @@
 header::after {
     content: "";
     position: absolute;
-    top: -13px;
     left: 0;
     right: 0;
-    background-image: url(src/assets/svg/header.svg);
-    transform: rotate(360deg);
+    top: 0;
+    background-image: url(src/assets/svg/header-full.svg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: bottom;
+    z-index: 0;
     width: 100%;
-    z-index: 1;
+    height: 100%;
 }
