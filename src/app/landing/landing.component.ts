@@ -10,6 +10,7 @@ declare var $: any;
 export class LandingComponent implements OnInit {
  
   sidebar: boolean;
+  readMore:boolean;
   isBrowser: boolean;
 
   constructor(

@@ -2,16 +2,24 @@
     <div class="container position-relative z-index-1">
         <app-navigator></app-navigator>
         <div class="row d-xl-none d-lg-none d-md-block d-sm-block d-block">
-            <div class="col-6">
-                <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Read more ...</a>
+            <div class="col text-center">
+                <span class="text-light btn-link" (click)="readMore=!readMore" role="button">
+                    <span *ngIf="!readMore">
+                        Read more about applyfree
+                        <i class="far fa-arrow-alt-circle-down text-light"></i>
+                    </span>
+                </span>
             </div>
         </div>
-        <div class="row mt-xl-5 mt-lg-3 mt-md-0 mt-5 pb-5 text-light">
+        <div class="row mt-xl-5 mt-lg-3 mt-md-0 mt-5 pb-5 text-light d-xl-flex d-lg-flex d-md-none d-sm-none d-none"
+            [ngClass]="{'d-md-flex , d-sm-flex , d-flex' :readMore}">
             <div class="col-xl-6 col-lg-5 col-md-6 col-sm-7 col-10 mx-auto order-last my-auto text-light">
                 <div class="mt-lg-0 mt-md-3 mt-5 mb-4">
                     <h3>All in one platform, no multiple accounts, complete service for free</h3>
                     <p class="my-2">
-                        Applyfree is a free and all in one platform for finding, being assisted for, applied to and get admitted to your desired higher education choice and to finish it successfully free of any additional charge other than schools’ charges.
+                        Applyfree is a free and all in one platform for finding, being assisted for, applied to and get
+                        admitted to your desired higher education choice and to finish it successfully free of any
+                        additional charge other than schools’ charges.
                     </p>
                 </div>
                 <!-- <b>Technology in help of efficiency</b>
@@ -22,19 +30,36 @@
                 <div>
                     <h3>Step by Step human help</h3>
                     <p>
-                        Although we use advanced technology to maximize the chance of student’s success, we believe that one-on-one human help is required for every student to make it till the end. Therefore, applyfree LLC is committed to provide this help by hiring a caring
-                        and knowledgeable advisor for every student. For those students who already have an advisor with whom they like to continue, we provide technological help and financial incentives to make the existing relationship persistent and
+                        Although we use advanced technology to maximize the chance of student’s success, we believe that
+                        one-on-one human help is required for every student to make it till the end. Therefore,
+                        applyfree LLC is committed to provide this help by hiring a caring
+                        and knowledgeable advisor for every student. For those students who already have an advisor with
+                        whom they like to continue, we provide technological help and financial incentives to make the
+                        existing relationship persistent and
                         more efficient.
                     </p>
                 </div>
-                <div class="d-flex mt-lg-4 mt-md-0 mt-5 justify-content-center">
-                    <button class="btn btn-dark border-radius-30 px-xl-5 px-lg-5 px-md-5 px-sm-5 px-2" routerLink="/public/advisors">Browse applyfree advisors</button>
+                <div class="d-flex mt-lg-4 mt-md-0 mt-5">
+                    <a class="btn btn-dark border-radius-30 px-xl-5 px-lg-5 px-md-5 px-sm-5 px-2"
+                        routerLink="/public/advisors">Browse applyfree advisors</a>
                 </div>
             </div>
             <div class="col-xl-5 col-lg-6 col-md-6 col-sm-6 col-10 order-md-last ml-xl-auto my-md-auto">
                 <img src="assets/images/header-landing.png" alt="applyfree" class="img-fluid">
             </div>
+          
         </div>
+        <div class="row d-xl-none d-lg-none d-md-block d-sm-block d-block">
+            <div class="col text-center">
+                <span class="text-light btn-link" (click)="readMore=!readMore" role="button">
+                    <span *ngIf="readMore">
+                        Hide
+                        <i class="far fa-arrow-alt-circle-up text-light"></i>
+                    </span>
+                </span>
+            </div>
+        </div>
+       
     </div>
 </header>
 
@@ -46,22 +71,32 @@
                     <h4>Work with <span class="text-orangedark">applyfree</span></h4>
                 </div>
             </div>
-            <div class="row justify-content-center mx-auto my-xl-1 mt-lg-1 my-md-5 my-sm-5 my-3 pt-xl-2 pb-xl-4 py-lg-0 py-md-4 py-sm-4 py-1">
+            <div
+                class="row justify-content-center mx-auto my-xl-1 mt-lg-1 my-md-5 my-sm-5 my-4 pt-xl-2 pb-xl-4 py-lg-0 py-md-4 py-sm-4 py-3">
                 <div class="col-xl-6 col-lg-5 col-md-5 col-sm-12 col-12 my-md-auto pr-md-0 my-lg-auto">
                     <img src="assets/images/landing-1.png" alt="landing-1" class="img-fluid">
                 </div>
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 my-auto">
-                    <div class="mt-xl-5 mt-md-3 mt-sm-5 mt-2 pt-xl-5 pt-md-3 pt-sm-5 pt-2 px-xl-5 px-lg-5 px-md-2 px-sm-5 px-3">
+                    <div
+                        class="mt-xl-5 mt-md-3 mt-sm-5 mt-2 pt-xl-5 pt-md-3 pt-sm-5 pt-2 px-xl-5 px-lg-5 px-md-2 px-sm-5">
                         <h3 class="py-3">Join us if you believe in our mission</h3>
-                        <p class="text-justify">
-                            We believe in the power of people. Regardless of how powerful a computer algorithm can be, a human being has unique and irreplaceable characteristics with which the algorithm works better. Therefore, we’re not going to move forward with the help of technology
-                            alone. We need partners to come along students and applyfree in this long journey. Failure in finishing an education program has measurable and unmeasurable loss for students and their family. Applyfree asks help from every
-                            individual or company who is working in the industry as well as those who think they owe their successful career and life to education. We ask your help if you are a caring parent, a school advisor, a teacher, a tutor, a successful
+                        <p>
+                            We believe in the power of people. Regardless of how powerful a computer algorithm can be, a
+                            human being has unique and irreplaceable characteristics with which the algorithm works
+                            better. Therefore, we’re not going to move forward with the help of technology
+                            alone. We need partners to come along students and applyfree in this long journey. Failure
+                            in finishing an education program has measurable and unmeasurable loss for students and
+                            their family. Applyfree asks help from every
+                            individual or company who is working in the industry as well as those who think they owe
+                            their successful career and life to education. We ask your help if you are a caring parent,
+                            a school advisor, a teacher, a tutor, a successful
                             student or a registered recruiter to become part of our team.
                         </p>
-                        <div class="row mt-5">
+                        <div class="row mt-xl-5 mt-lg-5 mt-md-4 mt-sm-2 mt-2">
                             <div class="col text-center">
-                                <button class="btn btn-success border-radius-30 px-xl-5 px-lg-5 px-md-3 px-sm-5 px-2 w-75" routerLink="public/page/about">Read more about us</button>
+                                <a
+                                    class="btn btn-lg btn-success border-radius-30 px-xl-5 px-lg-5 px-md-3 px-sm-5 px-2 w-75"
+                                    routerLink="public/page/about">Read more about us</a>
                             </div>
                         </div>
                     </div>
@@ -71,21 +106,25 @@
     </section>
     <section id="bg-section-2">
         <div class="container-fluid my-2 py-3">
-            <div class="row mx-5 justify-content-center my-lg-0 my-md-5 my-sm-5 py-xl-4 py-lg-0 py-md-4 py-sm-4 py-1">
+            <div class="row mx-xl-5 mx-lg-5 mx-md-4 mx-sm-0 mx-0 my-xl-0 my-lg-0 my-md-5 my-sm-5 my-2 py-xl-4 py-lg-0 py-md-4 py-sm-4 py-3">
                 <div class="col-xl-4 col-lg-6 col-md-5 col-sm-12 col-12">
-                    <div class="mt-xl-5 mt-lg-0 mt-md-5 mt-sm-5 mt-2 my-auto pl-lg-0 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-2 px-xl-5 px-lg-5 px-md-2 px-sm-5 px-1">
+                    <div
+                        class="mt-xl-5 mt-lg-0 mt-md-5 mt-sm-5 mt-2 my-auto pl-lg-0 pt-xl-5 pt-lg-5 pt-md-5 pt-sm-5 pt-2 px-xl-5 px-lg-5 px-md-2 px-sm-0">
                         <h3 class="py-3">Create wealth by collaboration</h3>
-                        <p>We are not a charity by the way. We charge schools for the service and we compensate every help that is proved to be effective. Our goal is efficient education and we praise who is committed to this purpose by the wealth that will
+                        <p>We are not a charity by the way. We charge schools for the service and we compensate every
+                            help that is proved to be effective. Our goal is efficient education and we praise who is
+                            committed to this purpose by the wealth that will
                             be created by that efficiency.
                         </p>
-                        <div class="row mt-5">
+                        <div class="row mt-xl-5 mt-lg-5 mt-md-4 mt-sm-2 mt-2">
                             <div class="col text-center">
-                                <button class="btn btn-info border-radius-30 px-xl-5 px-lg-5 px-md-2 px-sm-5 px-2 w-75" routerLink="/register">Join applyfree</button>
+                                <a class="btn btn-lg btn-info border-radius-30 px-xl-5 px-lg-5 px-md-2 px-sm-5 px-2 w-75"
+                                    routerLink="/register">Join applyfree</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-5 col-lg-4 col-md-6 col-sm-12 col-12 my-md-auto order-first-sm">
+                <div class="col-xl-5 col-lg-4 col-md-6 col-sm-12 col-12 my-md-auto order-xl-last order-lg-last order-md-last order-first-sm order-first">
                     <img src="assets/images/landing-2.png" alt="landing-3" class="img-fluid">
                 </div>
 
@@ -94,18 +133,24 @@
     </section>
     <section id="bg-section-3">
         <div class="container-fluid my-2">
-            <div class="row mx-5 justify-content-center my-md-5 my-sm-5 my-3 py-xl-4 py-lg-4 py-md-4 py-sm-4 py-1">
+            <div class="row mx-xl-5 mx-lg-5 mx-md-4 mx-sm-2 mx-0 my-md-5 my-sm-5 my-3 py-xl-4 py-lg-4 py-md-4 py-sm-4 py-1">
                 <div class="col-xl-5 col-lg-4 col-md-5 col-sm-12 col-12 my-lg-auto my-md-auto">
                     <img src="assets/images/landing-3.png" alt="landing-3" class="img-fluid">
                 </div>
-                <div class="col-xl-4 col-lg-7 col-md-6 col-sm-12 col-12 pr-lg-0 my-auto px-xl-5 px-lg-5 px-md-3 px-sm-3 px-1">
+                <div
+                    class="col-xl-4 col-lg-7 col-md-6 col-sm-12 col-12 pr-lg-0 my-auto px-xl-5 px-lg-5 px-md-3 px-sm-3">
                     <h3 class="py-3">Long term benefits and Students first approach</h3>
-                    <p>We are committed to make the process as less risky as possible for students. That’s why we provide the entire service for them for free. However, as the student moves forward and approaches success, all of us will consequently benefit
-                        from that success. The process is simple and has been designed solely based on students’ success.
+                    <p>We are committed to make the process as less risky as possible for students. That’s why we
+                        provide the entire service for them for free. However, as the student moves forward and
+                        approaches success, all of us will consequently benefit
+                        from that success. The process is simple and has been designed solely based on students’
+                        success.
                     </p>
-                    <div class="row mt-5">
+                    <div class="row mt-xl-5 mt-lg-5 mt-md-4 mt-sm-2 mt-2">
                         <div class="col text-center">
-                            <button class="btn btn-lg btn-orangedark border-radius-30 px-xl-5 px-lg-5 px-md-3 px-sm-5 px-2 text-uppercase w-75" routerLink="/register">start now</button>
+                            <a
+                                class="btn btn-lg btn-orangedark border-radius-30 px-xl-5 px-lg-5 px-md-3 px-sm-5 px-2 text-uppercase w-75"
+                                routerLink="/register">start now</a>
                         </div>
                     </div>
                 </div>
@@ -114,17 +159,27 @@
     </section>
     <section id="bg-section-4">
         <div class="container-fluid my-3 py-3">
-            <div class="row mx-5 justify-content-center my-xl-5 my-lg-5 my-md-4 my-sm-5 my-3 py-xl-4 py-lg-4 py-md-4 py-sm-4 py-1">
+            <div
+                class="row mx-xl-5 mx-lg-5 mx-md-4 mx-sm-2 mx-0 my-xl-5 my-lg-5 my-md-4 my-sm-5 my-3 py-xl-4 py-lg-4 py-md-4 py-sm-4 py-1">
                 <div class="col-xl-12 col-lg-12 col-md-10 col-sm-12 col-12 text-center">
                     <img src="assets/images/landing-4.png" alt="landing-3" class="img-fluid">
                 </div>
-                <div class="col-xl-8 col-lg-10 col-md-12 col-sm-12 col-12 my-lg-auto mx-auto px-xl-5 px-lg-5 px-md-2 px-sm-5 px-1 pt-5 text-center">
-                    <h3 class="py-3">Join now</h3>
-                    <p>In order to join applyfree, two possible methods are available. First method – the easiest method – is to ask a student to introduce you to us as her/his advisor. We then immediately contact you and inform you of how to finalize the
-                        contract. The second method is to fill up the following form. Our experts will analyze the information and will guide you on how you can become part of applyfree’s team. anyway contact us if you have any questions. we will be more
+                <div
+                    class="col-xl-8 col-lg-10 col-md-12 col-sm-12 col-12 my-lg-auto px-xl-5 px-lg-5 px-md-2 px-sm-2 pt-xl-4 pt-lg-4 pt-md-4 pt-sm-2 pt-2">
+                    <h3 class="py-3 text-center">Join now</h3>
+                    <p>In order to join applyfree, two possible methods are available. First method – the easiest method
+                        – is to ask a student to introduce you to us as her/his advisor. We then immediately contact you
+                        and inform you of how to finalize the
+                        contract. The second method is to fill up the following form. Our experts will analyze the
+                        information and will guide you on how you can become part of applyfree’s team. anyway contact us
+                        if you have any questions. we will be more
                         than glad to talk.
                     </p>
-                    <a class="btn btn-primary btn-lg rounded-pill w-25" routerLink="/register">Join us</a>
+                    <div class="row mt-xl-5 mt-lg-5 mt-md-4 mt-sm-2 mt-2">
+                        <div class="col text-center">
+                            <a class="btn btn-lg btn-primary border-radius-30 w-50" routerLink="/register">Join us</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -136,8 +191,10 @@
                     <h5>Why <span class="text-orangedark">applyfree</span></h5>
                 </div>
             </div>
-            <div class="row justify-content-center mx-xl-5 mx-lg-5 mx-md-3 mx-sm-5 mx-2 my-xl-5 my-lg-5 my-md-5 my-sm-5 my-1 py-xl-4 py-lg-4 py-md-4 py-sm-4 py-1">
-                <div class="col-xl-2 col-lg-2 col-md-3 col-sm-2 col-12 text-center my-xl-0 my-lg-0 my-md-1 my-sm-2 my-2 mr-xl-5 mr-lg-5 mr-md-3 mr-sm-5 mx-auto">
+            <div
+                class="row justify-content-center mx-xl-5 mx-lg-5 mx-md-3 mx-sm-5 mx-2 my-xl-5 my-lg-5 my-md-5 my-sm-5 my-1 py-xl-4 py-lg-4 py-md-4 py-sm-4 py-1">
+                <div
+                    class="col-xl-2 col-lg-2 col-md-3 col-sm-2 col-12 text-center my-xl-0 my-lg-0 my-md-1 my-sm-2 my-2 mr-xl-5 mr-lg-5 mr-md-3 mr-sm-5 mx-auto">
                     <i class="fas fa-graduation-cap fa-6x"></i>
                     <div class="my-3">
                         <h5>Students first</h5>
@@ -146,7 +203,8 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-xl-2 col-lg-2 col-md-3 col-sm-2 col-12 text-center my-xl-0 my-lg-0 my-md-1 my-sm-2 my-4 mx-xl-5 mx-lg-5 mx-md-3 mx-sm-5 mx-auto">
+                <div
+                    class="col-xl-2 col-lg-2 col-md-3 col-sm-2 col-12 text-center my-xl-0 my-lg-0 my-md-1 my-sm-2 my-4 mx-xl-5 mx-lg-5 mx-md-3 mx-sm-5 mx-auto">
                     <i class="far fa-handshake fa-6x"></i>
                     <div class="my-3">
                         <h5>Win Win partnership</h5>
@@ -185,7 +243,8 @@
             </div>
             <div class="modal-body">
                 <p>
-                    This website is a <b>beta version</b> of the final product and is intended to be used for test purposes.
+                    This website is a <b>beta version</b> of the final product and is intended to be used for test
+                    purposes.
                 </p>
                 <p>
                     Don't use it for any other purpose.
