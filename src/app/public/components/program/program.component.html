@@ -14,7 +14,7 @@
 <ng-container *ngIf="!loading && program">
     <div class="container-fluid px-0">
         <div class="img-banner bg-dark w-100">
-            <div class="banner" [ngStyle]="{'background-image': 'url(https://admin.applyfree.us/img/banner/'+program.school.id+'.jpg)'}">
+            <div class="banner" [ngStyle]="{'background-image': 'url('+ url.banner + program.school.id+'.jpg)'}">
             </div>
             <div class="container">
                 <div class="row header-info w-75">
@@ -31,8 +31,8 @@
                                 <i class="fas fa-university fa-3x"></i>
                             </div>
                             <div class="col pt-1">
-                                <h1 class="mt-2 h4">{{program.title}}</h1>
-                                <h5 class="mt-2">{{program.school.title}}</h5>
+                                <h1 class="mt-2 h4 m-0">{{program.title}}</h1>
+                                <h5 class="mt-2 m-0">{{program.school.title}}</h5>
                             </div>
                         </div>
 
@@ -41,10 +41,9 @@
                                 <i class="fas fa-map-marker-alt fa-2x"></i>
                             </div>
                             <div class="col-9 pt-1">
-                                <h6>
+                                <h6 class="m-0">
                                     {{program.school.country}} , {{program.school.state}} , {{program.school.city}}
                                 </h6>
-
                             </div>
                         </div>
                     </div>
@@ -60,47 +59,42 @@
     <div class="container mt-5">
         <div class="row my-4">
             <div class="col-xl-3 col-lg-3 col-md-4 col-sm-10 col-10 order-xl-first order-lg-first order-md-first order-sm-last order-last">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card shadow border-0 border-radius-20">
-                            <img [src]="'https://admin.applyfree.us/img/logo/'+program.school.id+'.png'" class="img-fluid mx-auto w-75" [alt]="program.school.title">
-                            <div class="card-body">
-                                <ul class="list-group list-group-flush text-center py-0">
-                                    <li class="list-group-item text-left py-4">
-                                        <p>{{program.school.address}}</p>
-                                    </li>
-                                    <li class="list-group-item py-4 text-success" *ngIf="program.school.free_admission">
-                                        <i class="fas fa-check mr-2"></i>
-                                        <span>
-                                            Free admission
-                                        </span>
-                                    </li>
-                                    <li class="list-group-item py-4 text-success" *ngIf="program.school.opt">
-                                        <i class="fas fa-briefcase mr-2"></i>
-                                        <span>
-                                            OPT
-                                        </span>
-                                        <div>
-                                            <small class="text-muted">(Optional practical training)</small>
-                                        </div>
-                                    </li>
-                                    <!-- <li class="list-group-item py-4">
+                <div class="card shadow border-0 border-radius-20 sticky-top">
+                    <img onerror="this.onerror=null;this.src='/assets/images/logo.png';" [src]="url.logo + program.school.id+'.png'" class="img-fluid mx-auto w-75" [alt]="program.school.title">
+
+                    <div class="card-body py-0">
+                        <ul class="list-group list-group-flush text-center py-0">
+                            <li class="list-group-item text-left">
+                                <p>{{program.school.address}}</p>
+                            </li>
+                            <li class="list-group-item py-4 text-success" *ngIf="program.school.free_admission">
+                                <h5 class="m-0">
+                                    Free admission
+                                </h5>
+                            </li>
+                            <li class="list-group-item py-4 text-success" *ngIf="program.school.opt">
+                                <h5 class="m-0">
+                                    CO-OP
+                                </h5>
+                                <div>
+                                    <small class="text-muted">(Co-Operation Program)</small>
+                                </div>
+                            </li>
+                            <!-- <li class="list-group-item py-4">
                                         <b>{{program.school.type | type }}</b>
                                     </li> -->
-                                    <li class="list-group-item py-4 rounded-pill">
-                                        <b>{{program.school.type | type }}</b>
-                                        <!-- <i class="fas fa-phone-alt mr-2"></i> +123456789 -->
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                            <li class="list-group-item py-4 rounded-pill">
+                                <b>{{program.school.type | type }}</b>
+                                <!-- <i class="fas fa-phone-alt mr-2"></i> +123456789 -->
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
             <div class="col-xl-9 col-lg-9 col-md-8 col-sm-10 col-10 order-xl-last order-lg-last order-md-last order-sm-first order-first pl-5">
                 <div class="row">
                     <div class="col mb-4">
-                        <h3>Information</h3>
+                        <h3 class="m-0">Information</h3>
                     </div>
 
                     <div class="col-3 text-right mb-4">
@@ -113,8 +107,8 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="py-3">
-                            <fieldset class="border p-2">
-                                <legend class="text-orangedark w-auto">
+                            <fieldset class="border">
+                                <legend class="text-orangedark sticky-header">
                                     <b class="mx-4">
                                         Intakes
                                     </b>

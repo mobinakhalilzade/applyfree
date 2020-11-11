@@ -26,7 +26,7 @@
             <div class="col-2 ml-auto">
                 <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="opt" [(ngModel)]="filterModel.opt" (change)="filter()">
-                    <label class="custom-control-label" for="opt" ngbTooltip="Optional Practical Training">OPT</label>
+                    <label class="custom-control-label" for="opt" ngbTooltip="Optional Practical Training">CO-OP</label>
                 </div>
             </div>
             <div class="col-2">
@@ -105,7 +105,7 @@
 
                 <span class="badge badge-secondary font-weight-light pointer" title="click to clear this filter" *ngIf="filterModel.opt != null" (click)="filterModel.opt = null;filter()">
                     <i class="fa fa-times mr-2"></i>
-                    schools <span class="text-warning font-italic">{{filterModel.opt ? 'has': 'has not'}} </span> OPT option
+                    schools <span class="text-warning font-italic">{{filterModel.opt ? 'has': 'has not'}} </span> CO-OP option
                 </span>
 
                 <small *ngIf="filterModel.free != null"> AND </small>
@@ -208,12 +208,12 @@
         <div class="row">
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 mb-5" *ngFor="let item of programs">
                 <a class="card shadow h-100" [routerLink]="['/public/program', item.program.slug]">
-                    <img [src]="'https://admin.applyfree.us/img/logo/'+item.program.school.id+'.png'" class="z-index-1 bg-white border-radius-full" [alt]="item.program.school.title">
+                    <img onerror="this.onerror=null;this.src='/assets/images/applyfree-mute-small.png';" [src]="url.logo+item.program.school.id+'.png'" class="z-index-1 bg-white border-radius-full" [alt]="item.program.school.title">
                     <div class="row no-gutters h-100">
                         <div class="col-3 text-center text-muted">
                             <ul class="nav flex-column h-100 nav-fill">
                                 <li class="nav-item border-bottom pt-4">
-                                    <div>
+                                    <div class="px-1">
                                         <small>{{item.program.school.type | type}}</small>
                                     </div>
                                 </li>
@@ -225,13 +225,13 @@
                                 </li>
                                 <li class="nav-item">
                                     <i class="fas fa-dollar-sign"></i>
-                                    <div>
+                                    <div class="mx-auto text-truncate w-75" [title]="item.program.school.city">
                                         <small>{{item.program.school.city}}</small>
                                     </div>
                                 </li>
-                                <li class="nav-item border-top" *ngIf="item.program.school.opt" title="Optional Practical Training">
+                                <li class="nav-item border-top" *ngIf="item.program.school.opt" title="Co-Operation Program">
                                     <div>
-                                        <small>OPT</small>
+                                        <small>CO-OP</small>
                                     </div>
                                 </li>
                             </ul>

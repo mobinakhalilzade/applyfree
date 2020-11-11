@@ -303,9 +303,15 @@ html {
     background: #BFBFBF;
 }
 
+.sticky-top {
+    position: sticky;
+    top: 15px;
+}
+
 header {
     position: relative;
     padding-bottom: 190px;
+    z-index: 1;
 }
 
 .letter-space-3 {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PublicService } from '../../public.service';
 import { ToastService } from '../../../helper/toast.service';
+import { urls } from "../../../config/urls";
 
 @Component({
   selector: 'app-program',
@@ -10,6 +11,7 @@ import { ToastService } from '../../../helper/toast.service';
 })
 export class ProgramComponent implements OnInit {
   loading: boolean = true;
+  url: typeof urls = urls;
   alert: any;
   program: any;
   bookmarked: boolean;
@@ -56,6 +58,10 @@ export class ProgramComponent implements OnInit {
         const body = response.body;
         if (body.return == 200) {
           this.bookmarked = false;
+          this.toast.show('Program', body.message, { classname: 'bg-success text-light' })
+        }
+        if (body.return > 200) {
+          this.toast.show('Program', body.message, { classname: 'bg-danger text-light' })
         }
       }
     });
@@ -69,7 +75,7 @@ export class ProgramComponent implements OnInit {
           this.bookmarked = true;
           this.toast.show('Program', body.message, { classname: 'bg-success text-light' })
         }
-        if (body.return == 300) {
+        if (body.return > 200) {
           this.toast.show('Program', body.message, { classname: 'bg-danger text-light' })
         }
       }

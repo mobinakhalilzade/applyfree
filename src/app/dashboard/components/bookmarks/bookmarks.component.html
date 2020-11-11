@@ -27,7 +27,7 @@
                     <a class="card mb-4 border-radius-10 shadow" [routerLink]="['/public/program', item.program_id, item.program.slug]">
                         <div class="row card-body">
                             <div class="col-3 my-auto">
-                                <img class="banner rounded img-fluid" [src]="'https://admin.applyfree.us/img/logo/'+item.id+'.png'" [alt]="item.program.school.title">
+                                <img class="banner rounded img-fluid" [src]="url.logo+item.id+'.png'" [alt]="item.program.school.title">
                             </div>
                             <div class="col-9">
                                 <h5 class="card-title">{{item.program.title}}</h5>

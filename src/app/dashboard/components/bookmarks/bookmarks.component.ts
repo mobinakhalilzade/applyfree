@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../../dashboard.service';
+import { urls } from "../../../config/urls";
 
 @Component({
   selector: 'app-bookmarks',
@@ -7,7 +8,7 @@ import { DashboardService } from '../../dashboard.service';
   styleUrls: ['./bookmarks.component.css']
 })
 export class BookmarksComponent implements OnInit {
-
+  url: typeof urls = urls;
   bookmark: any;
   loading: boolean = true;
 
