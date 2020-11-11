@@ -28,3 +28,7 @@
     overflow: hidden;
     border-radius: 100%;
 }
+
+img.scale {
+    transform: scale(1.5);
+}
