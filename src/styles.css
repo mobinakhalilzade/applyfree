@@ -334,29 +334,7 @@ header header::after {
     header , header::after .collapse{
         height:8%;
     }
-<<<<<<< HEAD
     /* footer::after {
         height: 55vh;
     } */
-=======
-}
-
-@media only screen and (max-width: 425px) {
-    .logo::before {
-        border-width: 3vw;
-    }
-    .logo::after {
-        border-width: 2vw;
-    }
-    .logo .line::before {
-        height: 1.3Vh;
-        left: 44%;
-        bottom: 50%;
-        width: 42%;
-    }
-    .logo .line::after {
-        height: 7%;
-        left: 65%;
-    }
->>>>>>> 9472455668f80686ef39ccd7db16e339fec881c4
 }
