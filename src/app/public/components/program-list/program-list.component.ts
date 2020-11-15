@@ -52,17 +52,19 @@ export class ProgramListComponent implements OnInit {
   //-----------
   url: typeof urls = urls;
   loading: boolean = true;
+  loadingMore: boolean;
   countries: any;
   categories: any;
   schools: any;
   schoolsType: any;
-  programs: any;
+  programs: any = [];
   maxDate = new Date().toISOString().split("T")[0];
 
   queryParams = this.route.snapshot.queryParams;
   currentPage: any;
   filterModel = {
     active: false,
+    order: null,
     total: 0,
     pageSize: 12,
     pageIndex: this.queryParams.page == undefined ? 1 : this.queryParams.page,
@@ -190,7 +192,7 @@ export class ProgramListComponent implements OnInit {
     });
   }
 
-  getPrograms(filter: any) {
+  getPrograms(filter: any, forDevice: boolean = false, then = null) {
     let params = {
       page: filter.pageIndex
     };
@@ -250,14 +252,21 @@ export class ProgramListComponent implements OnInit {
       if (response.status == 200) {
         const body = response.body;
         if (body.return == 200) {
-          this.programs = body.data;
+          if (forDevice) {
+            body.data.forEach((item: any) => {
+              this.programs.push(item);
+            });
+            then(body.data);
+          } else {
+            this.programs = body.data;
+          }
+
           setTimeout(() => {
             this.filterModel.pageIndex = filter.pageIndex;
             this.filterModel.total = body.total;
             this.filterModel.active = true;
             this.loading = false;
             this.progress['loading'] = 12.5 * 8;
-
           }, 1000);
         }
       }
@@ -328,6 +337,77 @@ export class ProgramListComponent implements OnInit {
         this.getPrograms(filter);
       }
     }, 50);
+  }
+
+  loadMore(filter: any) {
+    this.loadingMore = true;
+    filter.pageIndex += 1;
+
+    let queryParams = {
+      page: filter.pageIndex,
+    };
+
+    if (filter.search != null && filter.search != "") {
+      queryParams['search'] = filter.search;
+    } else {
+      queryParams['category'] = this.inputes.category.result;
+
+      if (filter.submission != null && filter.submission != "") {
+        queryParams['submission'] = filter.submission;
+      }
+
+      if (filter.free != null) {
+        queryParams['free'] = filter.free;
+      }
+
+      if (filter.opt != null) {
+        queryParams['opt'] = filter.opt;
+      }
+
+      if (this.inputes.degree.result != null) {
+        queryParams['degree'] = this.inputes.degree.result;
+      }
+
+      if (this.inputes.city.result != null) {
+        queryParams['city'] = this.inputes.city.result;
+      }
+
+      if (this.inputes.country.result != null) {
+        queryParams['country'] = this.inputes.country.result.name;
+      }
+
+      if (this.inputes.type.result != null) {
+        queryParams['type'] = this.inputes.type.result;
+      }
+
+      if (this.inputes.university.result != null) {
+        queryParams['school'] = this.inputes.university.result;
+      }
+
+      if (filter.tuition != null) {
+        queryParams['tuition'] = filter.tuition;
+      }
+
+      if (filter.living != null) {
+        queryParams['living'] = filter.living;
+      }
+
+      if (filter.sort != null) {
+        queryParams['sort'] = filter.sort;
+        queryParams['direction'] = filter.direction;
+      }
+    }
+
+    this.router.navigate(['.'], { relativeTo: this.route, queryParams: queryParams, queryParamsHandling: 'merge' });
+    this.getPrograms(filter, true, (data: any) => {
+      setTimeout(() => {
+        const firstBox = data[0]['program']['id'];
+        var elmnt = document.getElementById("app_" + firstBox);
+        elmnt.scrollIntoView(true);
+        this.router.navigate(['.'], { relativeTo: this.route, queryParams: queryParams, queryParamsHandling: 'merge', fragment: firstBox });
+      }, 100);
+      this.loadingMore = false;
+    });
   }
 
   filter() {
@@ -420,6 +500,7 @@ export class ProgramListComponent implements OnInit {
     description: 'loading...',
     loading: 0
   };
+
   ngOnInit() {
     this.progress = {
       description: 'loading countries...',
@@ -447,7 +528,13 @@ export class ProgramListComponent implements OnInit {
                   description: 'loading programs...',
                   loading: 12.5 * 7
                 };
-                this.getPrograms(this.filterModel);
+                if (this.route.snapshot.fragment) {
+                  this.getPrograms(this.filterModel, true, () => {
+                  
+                  });
+                } else {
+                  this.getPrograms(this.filterModel);
+                }
               });
             });
           });

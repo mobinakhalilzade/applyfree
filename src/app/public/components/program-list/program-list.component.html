@@ -1,4 +1,4 @@
-<div class="container my-5 pb-4">
+<div class="container">
     <div class="row" *ngIf="loading">
         <div class="col-12 text-center">
             <div class="d-flex">
@@ -11,7 +11,7 @@
 
     <ng-container *ngIf="!loading">
         <div class="row text-right align-items-center">
-            <div class="col-6">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-12">
                 <form (ngSubmit)="filter()">
                     <div class="input-group input-group-sm">
                         <input type="search" class="form-control border-secondary" placeholder="search..." [(ngModel)]="filterModel.search" [ngModelOptions]="{standalone: true}">
@@ -23,13 +23,13 @@
                     </div>
                 </form>
             </div>
-            <div class="col-2 ml-auto">
+            <div class="col-xl-2 col-lg-2 col-md-6 col-6 mt-xl-0 mt-lg-0 mt-3 text-xl-right text-lg-right text-left ml-auto">
                 <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="opt" [(ngModel)]="filterModel.opt" (change)="filter()">
-                    <label class="custom-control-label" for="opt" ngbTooltip="Optional Practical Training">CO-OP</label>
+                    <label class="custom-control-label" for="opt" ngbTooltip="Co-Operation Program">CO-OP</label>
                 </div>
             </div>
-            <div class="col-2">
+            <div class="col-xl-2 col-lg-2 col-md-6 col-6 mt-xl-0 mt-lg-0 mt-3">
                 <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="freeApplications" [(ngModel)]="filterModel.free" (change)="filter()">
                     <label class="custom-control-label" for="freeApplications">Free applications</label>
@@ -39,10 +39,10 @@
         <hr>
 
         <div class="row mb-3">
-            <div class="col-3">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-6">
                 <input type="date" class="form-control form-control-sm border-dark" [min]="maxDate" id="submissionDeadline" [(ngModel)]="filterModel.submission" (change)="filter()">
             </div>
-            <div class="col-3">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-6">
                 <div class="dropdown">
                     <button class="btn btn-outline-secondary dropdown-toggle text-left btn-block btn-sm" type="button" id="degree" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="text-truncate">
@@ -75,12 +75,12 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-6 mt-xl-0 mt-lg-0 mt-3">
                 <button type="button" class="btn btn-outline-secondary btn-block btn-sm text-left" data-toggle="modal" data-target="#categories">
                     Category <span *ngIf="inputes.category.result != null">: {{inputes.category.result}}</span>
                 </button>
             </div>
-            <div class="col-3 text-right">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-6 mt-xl-0 mt-lg-0 mt-3 text-right">
                 <button type="button" class="btn btn-orangedark btn-sm" data-toggle="modal" data-target="#advanceFilters">Advance filters</button>
             </div>
 
@@ -167,9 +167,9 @@
     </div>
 
     <ng-container *ngIf="!loading && filterModel.total > 0">
-        <div class="row mb-5">
+        <div class="row">
             <div class="col-12">
-                <div class="dropdown">
+                <div class="dropdown d-xl-block d-lg-block d-none">
                     <button class="btn btn-sm btn-outline-secondary dropdown-toggle" id="sort" data-toggle="dropdown">
                         <i class="fas fa-sort-amount-up-alt"></i>
                     </button>
@@ -203,10 +203,16 @@
                         </div>
                     </div>
                 </div>
+                <select class="form-control d-xl-none d-lg-none d-block" [(ngModel)]="filterModel.sort" (change)="filter()">
+                    <option [value]="'fee'">Application fee</option>
+                    <option [value]="'length'">Length</option>
+                    <option [value]="'tuition_year'">Tuition year</option>
+                    <option [value]="'cost_living_year'">Cost living year</option>
+                </select>
             </div>
         </div>
         <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 mb-5" *ngFor="let item of programs">
+            <div class="col-xl-4 col-lg-4 col-md-6 col-12 pt-5" [id]="'app_' + item.program.id" *ngFor="let item of programs">
                 <a class="card shadow h-100" [routerLink]="['/public/program', item.program.slug]">
                     <img onerror="this.onerror=null;this.src='/assets/images/applyfree-mute-small.png';" [src]="url.logo+item.program.school.id+'.png'" class="z-index-1 bg-white border-radius-full" [alt]="item.program.school.title">
                     <div class="row no-gutters h-100">
@@ -296,9 +302,19 @@
                 </a>
             </div>
         </div>
-        <div class="row justify-content-center">
+        <div class="d-xl-block d-lg-block d-none mt-3">
             <ngb-pagination *ngIf="!loading" (pageChange)="filterModel.active ? pageChange(filterModel) : null" [collectionSize]="filterModel.total" [pageSize]="filterModel.pageSize" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" [(page)]="filterModel.pageIndex"
                 [directionLinks]="false"></ngb-pagination>
+        </div>
+        <div class="d-xl-none d-lg-none d-block mt-3">
+            <button class="btn btn-orangedark btn-block" (click)="loadMore(filterModel)">
+                <span *ngIf="loadingMore">
+                    loading...
+                </span>
+                <span *ngIf="!loadingMore">
+                    More programs
+                </span>
+            </button>
         </div>
     </ng-container>
     <!--Categories Modal -->

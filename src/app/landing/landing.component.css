@@ -4,7 +4,7 @@ header::after {
     left: 0;
     right: 0;
     top: 0;
-    background-image: url(src/assets/svg/header-full.svg);
+    background-image: url(/assets/svg/header-full.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
@@ -29,19 +29,19 @@ main {
 }
 
 #bg-section-1 {
-    background-image: url(src/assets/images/bg-section-1.png);
+    background-image: url(/assets/images/bg-section-1.png);
 }
 
 #bg-section-2 {
-    background-image: url(src/assets/images/bg-section-2.png);
+    background-image: url(/assets/images/bg-section-2.png);
 }
 
 #bg-section-3 {
-    background-image: url(src/assets/images/bg-section-3.png);
+    background-image: url(/assets/images/bg-section-3.png);
 }
 
 #bg-section-4 {
-    background-image: url(src/assets/images/bg-section-4.png);
+    background-image: url(/assets/images/bg-section-4.png);
 }
 
 .menu-backdoor {

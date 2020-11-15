@@ -29,3 +29,9 @@ a {
 .dropdown-item ul li:hover {
     color: var(--gray);
 }
+
+@media (max-width: 425px) {
+    .btn[data-target="#advanceFilters"] {
+        width: 100%;
+    }
+}

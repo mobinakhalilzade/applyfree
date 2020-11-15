@@ -11,7 +11,7 @@ footer::before {
     bottom: 0;
     left: 0;
     right: 0;
-    background-image: url(src/assets/svg/footer.svg);
+    background-image: url(/assets/svg/footer.svg);
     transform: rotate(360deg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -25,7 +25,7 @@ footer::after {
     bottom: 0;
     left: 0;
     right: 0;
-    background-image: url(src/assets/images/bg-account.png);
+    background-image: url(/assets/images/bg-account.png);
     transform: rotate(360deg);
     background-repeat: no-repeat;
     background-position: top center;
@@ -43,11 +43,9 @@ footer::after {
 @media only screen and (max-width: 1024px) {}
 
 @media only screen and (max-width: 768px) {
-    footer::after{
+    footer::after {
         display: none;
     }
 }
 
-@media only screen and (max-width: 425px) {
-    
-}
+@media only screen and (max-width: 425px) {}
