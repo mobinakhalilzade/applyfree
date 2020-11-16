@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from './helper/event.service';
 import { ToastService } from './helper/toast.service';
+declare var $: any;
 
 @Component({
   selector: 'app-root',
@@ -26,6 +27,18 @@ export class AppComponent implements OnInit {
         this.toasts = $request.data;
       }
     });
+
+    var ua = navigator.userAgent;
+
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(ua)) {
+      $('body').addClass('mobile');
+    }
+    else if (/Chrome/i.test(ua)) {
+      $('body').addClass('desktop chrome');
+    }
+    else {
+      $('body').addClass('desktop other');
+    }
   }
 
 }

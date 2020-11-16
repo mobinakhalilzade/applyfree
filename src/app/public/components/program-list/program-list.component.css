@@ -1,3 +1,11 @@
+::ng-deep body.desktop details:before {
+    content: "";
+}
+
+::ng-deep body.desktop details summary {
+    display: none;
+}
+
 .card>img {
     position: absolute;
     top: -23px;

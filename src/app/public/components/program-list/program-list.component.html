@@ -10,152 +10,171 @@
     </div>
 
     <ng-container *ngIf="!loading">
-        <div class="row text-right align-items-center">
-            <div class="col-xl-6 col-lg-6 col-md-12 col-12">
-                <form (ngSubmit)="filter()">
-                    <div class="input-group input-group-sm">
-                        <input type="search" class="form-control border-secondary" placeholder="search..." [(ngModel)]="filterModel.search" [ngModelOptions]="{standalone: true}">
-                        <div class="input-group-append">
-                            <button class="btn btn-secondary">
+        <details id="tools" [attr.open]="desktop">
+            <summary>
+                <span class="d-xl-none d-lg-none d-inline">
+                    Tools
+                </span>
+            </summary>
+            <div class="row text-right align-items-center mt-xl-0 mt-lg-0 mt-3">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+                    <form (ngSubmit)="filter()">
+                        <div class="input-group input-group-sm">
+                            <input type="search" class="form-control border-secondary" placeholder="search..." [(ngModel)]="filterModel.search" [ngModelOptions]="{standalone: true}">
+                            <div class="input-group-append">
+                                <button class="btn btn-secondary">
                                 <i class="fa fa-search"></i>
                             </button>
+                            </div>
                         </div>
+                    </form>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6 col-6 mt-xl-0 mt-lg-0 mt-3 text-xl-right text-lg-right text-left ml-auto">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="opt" [(ngModel)]="filterModel.opt" (change)="filter()">
+                        <label class="custom-control-label" for="opt" ngbTooltip="Co-Operation Program">CO-OP</label>
                     </div>
-                </form>
-            </div>
-            <div class="col-xl-2 col-lg-2 col-md-6 col-6 mt-xl-0 mt-lg-0 mt-3 text-xl-right text-lg-right text-left ml-auto">
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="opt" [(ngModel)]="filterModel.opt" (change)="filter()">
-                    <label class="custom-control-label" for="opt" ngbTooltip="Co-Operation Program">CO-OP</label>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6 col-6 mt-xl-0 mt-lg-0 mt-3">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="freeApplications" [(ngModel)]="filterModel.free" (change)="filter()">
+                        <label class="custom-control-label" for="freeApplications">Free applications</label>
+                    </div>
                 </div>
             </div>
-            <div class="col-xl-2 col-lg-2 col-md-6 col-6 mt-xl-0 mt-lg-0 mt-3">
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="freeApplications" [(ngModel)]="filterModel.free" (change)="filter()">
-                    <label class="custom-control-label" for="freeApplications">Free applications</label>
-                </div>
-            </div>
-        </div>
-        <hr>
+            <hr>
 
-        <div class="row mb-3">
-            <div class="col-xl-3 col-lg-3 col-md-6 col-6">
-                <input type="date" class="form-control form-control-sm border-dark" [min]="maxDate" id="submissionDeadline" [(ngModel)]="filterModel.submission" (change)="filter()">
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-6">
-                <div class="dropdown">
-                    <button class="btn btn-outline-secondary dropdown-toggle text-left btn-block btn-sm" type="button" id="degree" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="row mb-3">
+                <div class="col-xl-3 col-lg-3 col-md-6 col-6">
+                    <input type="date" class="form-control form-control-sm border-dark" [min]="maxDate" id="submissionDeadline" [(ngModel)]="filterModel.submission" (change)="filter()">
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-6">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle text-left btn-block btn-sm" type="button" id="degree" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="text-truncate">
                             <span *ngIf="inputes.degree.result">{{inputes.degree.result | degree}}</span>
                             <span *ngIf="!inputes.degree.result">Degree</span>
                         </span>
                     </button>
-                    <div class="dropdown-menu dropdown-filter w-100 border-radius-10 bg-ice" aria-labelledby="degree">
-                        <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 1;filter()">
-                            <span>English as Second Language (ESL)</span>
-                        </div>
-                        <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 2;filter()">
-                            <span>1 Year Post-Secondary Certificate</span>
-                        </div>
-                        <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 3;filter()">
-                            <span>2 Year Undergraduate Diploma</span>
-                        </div>
-                        <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 4;filter()">
-                            <span>3 Year Undergraduate Advanced Diploma</span>
-                        </div>
-                        <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 5;filter()">
-                            <span>3 Year Bachelor's Degree</span>
-                        </div>
-                        <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 6;filter()">
-                            <span>4 Year Bachelor's Degree</span>
-                        </div>
-                        <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 7;filter()">
-                            <span>PostGraduate Certificate / Master's Degree</span>
+                        <div class="dropdown-menu dropdown-filter w-100 border-radius-10 bg-ice" aria-labelledby="degree">
+                            <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 1;filter()">
+                                <span>English as Second Language (ESL)</span>
+                            </div>
+                            <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 2;filter()">
+                                <span>1 Year Post-Secondary Certificate</span>
+                            </div>
+                            <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 3;filter()">
+                                <span>2 Year Undergraduate Diploma</span>
+                            </div>
+                            <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 4;filter()">
+                                <span>3 Year Undergraduate Advanced Diploma</span>
+                            </div>
+                            <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 5;filter()">
+                                <span>3 Year Bachelor's Degree</span>
+                            </div>
+                            <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 6;filter()">
+                                <span>4 Year Bachelor's Degree</span>
+                            </div>
+                            <div class="dropdown-item pointer text-truncate px-3 py-2" (click)="inputes.degree.result = 7;filter()">
+                                <span>PostGraduate Certificate / Master's Degree</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-6 mt-xl-0 mt-lg-0 mt-3">
-                <button type="button" class="btn btn-outline-secondary btn-block btn-sm text-left" data-toggle="modal" data-target="#categories">
+                <div class="col-xl-3 col-lg-3 col-md-6 col-6 mt-xl-0 mt-lg-0 mt-3">
+                    <button type="button" class="btn btn-outline-secondary btn-block btn-sm text-left" data-toggle="modal" data-target="#categories">
                     Category <span *ngIf="inputes.category.result != null">: {{inputes.category.result}}</span>
                 </button>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-6 mt-xl-0 mt-lg-0 mt-3 text-right">
-                <button type="button" class="btn btn-orangedark btn-sm" data-toggle="modal" data-target="#advanceFilters">Advance filters</button>
-            </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-6 mt-xl-0 mt-lg-0 mt-3 text-right">
+                    <button type="button" class="btn btn-orangedark btn-sm" data-toggle="modal" data-target="#advanceFilters">Advance filters</button>
+                </div>
 
-            <!-- conditions -->
-            <div class="col-12 mt-3">
-                <span class="badge badge-secondary font-weight-light pointer" title="click to clear this filter" *ngIf="filterModel.submission != null" (click)="filterModel.submission = null;filter()">
+                <div class="col-12 d-xl-none d-lg-none d-block mt-3">
+                    <select class="form-control form-control-sm" [(ngModel)]="filterModel.sort" (change)="filter()">
+                        <option [value]="null">Select your sort</option>
+                        <option [value]="'fee'">Application fee</option>
+                        <option [value]="'length'">Length</option>
+                        <option [value]="'tuition_year'">Tuition year</option>
+                        <option [value]="'cost_living_year'">Cost living year</option>
+                    </select>
+                </div>
+
+                <!-- conditions -->
+                <div class="col-12 mt-3">
+                    <span class="badge badge-secondary font-weight-light pointer" title="click to clear this filter" *ngIf="filterModel.submission != null" (click)="filterModel.submission = null;filter()">
                     <i class="fa fa-times mr-2"></i>
                     find program submission deadline <span class="text-warning font-italic"> {{filterModel.submission}}
                     </span>
-                </span>
+                    </span>
 
-                <span class="badge badge-secondary font-weight-light pointer" title="click to clear this filter" *ngIf="filterModel.onSearch != null" (click)="filterModel.search = null;filter()">
+                    <span class="badge badge-secondary font-weight-light pointer" title="click to clear this filter" *ngIf="filterModel.onSearch != null" (click)="filterModel.search = null;filter()">
                     <i class="fa fa-times mr-2"></i>
                     find <span class="text-warning font-italic">{{filterModel.onSearch}} </span> in programs
-                </span>
+                    </span>
 
-                <span class="badge badge-secondary font-weight-light pointer" *ngIf="inputes.category.result != null && filterModel.onSearch == null && filterModel.submission == null">
+                    <span class="badge badge-secondary font-weight-light pointer" *ngIf="inputes.category.result != null && filterModel.onSearch == null && filterModel.submission == null">
                     search in <span class="text-warning font-italic">{{inputes.category.result}} </span> category
-                </span>
+                    </span>
 
-                <small *ngIf="filterModel.opt != null"> WHERE </small>
+                    <small *ngIf="filterModel.opt != null"> WHERE </small>
 
-                <span class="badge badge-secondary font-weight-light pointer" title="click to clear this filter" *ngIf="filterModel.opt != null" (click)="filterModel.opt = null;filter()">
+                    <span class="badge badge-secondary font-weight-light pointer" title="click to clear this filter" *ngIf="filterModel.opt != null" (click)="filterModel.opt = null;filter()">
                     <i class="fa fa-times mr-2"></i>
                     schools <span class="text-warning font-italic">{{filterModel.opt ? 'has': 'has not'}} </span> CO-OP option
-                </span>
+                    </span>
 
-                <small *ngIf="filterModel.free != null"> AND </small>
+                    <small *ngIf="filterModel.free != null"> AND </small>
 
-                <span class="badge badge-secondary font-weight-light pointer" title="click to clear this filter" *ngIf="filterModel.free != null" (click)="filterModel.free = null;filter()">
+                    <span class="badge badge-secondary font-weight-light pointer" title="click to clear this filter" *ngIf="filterModel.free != null" (click)="filterModel.free = null;filter()">
                     <i class="fa fa-times mr-2"></i>
                     <span *ngIf="filterModel.opt == null">find</span> <span class="text-warning font-italic">{{filterModel.free ? 'Free': 'Primary'}} </span> programs
-                </span>
+                    </span>
 
-                <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="inputes.degree.result != null" (click)="inputes.degree.result = null;filter()">
+                    <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="inputes.degree.result != null" (click)="inputes.degree.result = null;filter()">
                     <i class="fa fa-times mr-2"></i>
                     degree: <span class="text-warning font-italic">{{inputes.degree.result | degree}} </span>
-                </span>
+                    </span>
 
-                <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="filterModel.tuition != null" (click)="filterModel.tuition = null;filter()">
+                    <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="filterModel.tuition != null" (click)="filterModel.tuition = null;filter()">
                     <i class="fa fa-times mr-2"></i>
                     Tuition: <span class="text-warning font-italic">{{filterModel.tuition | currency}}</span>
-                </span>
+                    </span>
 
-                <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="filterModel.living != null" (click)="filterModel.living = null;filter()">
+                    <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="filterModel.living != null" (click)="filterModel.living = null;filter()">
                     <i class="fa fa-times mr-2"></i>
                     Cost of living: <span class="text-warning font-italic">{{filterModel.living | currency}}</span>
-                </span>
+                    </span>
 
-                <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="inputes.university.result != null" (click)="inputes.university.result = null;filter()">
+                    <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="inputes.university.result != null" (click)="inputes.university.result = null;filter()">
                     <i class="fa fa-times mr-2"></i>
                     school name: <span class="text-warning font-italic">{{inputes.university.result}}</span>
-                </span>
+                    </span>
 
-                <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="inputes.type.result != null" (click)="inputes.type.result = null;filter()">
+                    <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="inputes.type.result != null" (click)="inputes.type.result = null;filter()">
                     <i class="fa fa-times mr-2"></i>
                     school type: <span class="text-warning font-italic">{{inputes.type.result | type}}</span>
-                </span>
+                    </span>
 
-                <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="inputes.country.result != null" (click)="inputes.country.result = null;filter()">
+                    <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="inputes.country.result != null" (click)="inputes.country.result = null;filter()">
                     <i class="fa fa-times mr-2"></i>
                     country: <span class="text-warning font-italic">{{inputes.country.result.name}}</span>
-                </span>
+                    </span>
 
-                <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="inputes.city.result != null" (click)="inputes.city.result = null;filter()">
+                    <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="inputes.city.result != null" (click)="inputes.city.result = null;filter()">
                     <i class="fa fa-times mr-2"></i>
                     city: <span class="text-warning font-italic">{{inputes.city.result}}</span>
-                </span>
+                    </span>
 
-                <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="filterModel.sort != null" (click)="filterModel.sort = null;filter()">
+                    <span class="badge badge-secondary font-weight-light pointer ml-3" title="click to clear this filter" *ngIf="filterModel.sort != null" (click)="filterModel.sort = null;filter()">
                     <i class="fa fa-times mr-2"></i>
                     sort by: <span class="text-warning font-italic">{{filterModel.sort}}</span>
-                </span>
+                    </span>
+                </div>
             </div>
-        </div>
+
+
+        </details>
     </ng-container>
 
     <div class="row" *ngIf="!loading && filterModel.total == 0">
@@ -203,12 +222,7 @@
                         </div>
                     </div>
                 </div>
-                <select class="form-control d-xl-none d-lg-none d-block" [(ngModel)]="filterModel.sort" (change)="filter()">
-                    <option [value]="'fee'">Application fee</option>
-                    <option [value]="'length'">Length</option>
-                    <option [value]="'tuition_year'">Tuition year</option>
-                    <option [value]="'cost_living_year'">Cost living year</option>
-                </select>
+
             </div>
         </div>
         <div class="row">
@@ -443,7 +457,7 @@
                     </div>
                     <form>
                         <div class="row my-2">
-                            <div class="col">
+                            <div class="col-xl-6 col-lg-6 col-12">
                                 <div class="form-group" *ngIf="inputes.tuition.max > 0">
                                     <label for="formControlRange" class="text-muted">Tuition</label>
                                     <input type="range" class="form-control-range" id="formControlRange" [min]="inputes.tuition.min" [max]="inputes.tuition.max" [(ngModel)]="filterModel.tuition" [ngModelOptions]="{standalone: true}">
@@ -452,7 +466,7 @@
                                         {{filterModel.tuition}} </span>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-xl-6 col-lg-6 col-12">
                                 <div class="form-group" *ngIf="inputes.costInYear.max > 0">
                                     <label for="formControlRangee" class="text-muted">Cost of Living</label>
                                     <input type="range" class="form-control-range" id="formControlRangee" [min]="inputes.costInYear.min" [max]="inputes.costInYear.max" [(ngModel)]="filterModel.living" [ngModelOptions]="{standalone: true}">

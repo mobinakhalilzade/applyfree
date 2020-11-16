@@ -52,6 +52,7 @@ export class ProgramListComponent implements OnInit {
   //-----------
   url: typeof urls = urls;
   loading: boolean = true;
+  desktop: boolean;
   loadingMore: boolean;
   countries: any;
   categories: any;
@@ -256,7 +257,6 @@ export class ProgramListComponent implements OnInit {
             body.data.forEach((item: any) => {
               this.programs.push(item);
             });
-            then(body.data);
           } else {
             this.programs = body.data;
           }
@@ -267,6 +267,7 @@ export class ProgramListComponent implements OnInit {
             this.filterModel.active = true;
             this.loading = false;
             this.progress['loading'] = 12.5 * 8;
+            then(body.data);
           }, 1000);
         }
       }
@@ -502,6 +503,14 @@ export class ProgramListComponent implements OnInit {
   };
 
   ngOnInit() {
+    var ua = navigator.userAgent;
+
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(ua)) {
+
+    } else {
+      this.desktop = true;
+    }
+
     this.progress = {
       description: 'loading countries...',
       loading: 12.5
@@ -530,7 +539,10 @@ export class ProgramListComponent implements OnInit {
                 };
                 if (this.route.snapshot.fragment) {
                   this.getPrograms(this.filterModel, true, () => {
-                  
+                    setTimeout(() => {
+                      var elmnt = document.getElementById("app_" + this.route.snapshot.fragment);
+                      elmnt.scrollIntoView();
+                    }, 200);
                   });
                 } else {
                   this.getPrograms(this.filterModel);
